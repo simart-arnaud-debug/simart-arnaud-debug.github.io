@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Arnaud SIMART</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero {
+  background:var(--bleu);
+  color:white;
+  padding:60px;
+  text-align:center;
+}
+.page-hero h1 { font-size:48px; font-weight:800; margin-bottom:16px; }
+.page-hero p { font-size:18px; opacity:0.85; max-width:650px; margin:auto; }
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:50px;
+  align-items:start;
+}
+
+/* INFOS */
+.contact-infos h2 {
+  font-size:28px;
+  color:var(--bleu);
+  font-weight:800;
+  margin-bottom:24px;
+}
+.contact-infos p {
+  font-size:16px;
+  color:#555;
+  line-height:1.75;
+  margin-bottom:30px;
+}
+
+.info-item {
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.06);
+  margin-bottom:16px;
+  transition:0.2s;
+  text-decoration:none;
+  color:var(--noir);
+}
+.info-item:hover { transform:translateY(-3px); box-shadow:0 10px 28px rgba(0,0,0,0.1); }
+.info-icon {
+  font-size:28px;
+  flex-shrink:0;
+  width:50px;
+  height:50px;
+  background:var(--gris);
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.info-label { font-size:12px; font-weight:700; color:#999; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
+.info-value { font-size:16px; font-weight:600; color:var(--bleu); }
+
+.signature-block {
+  background:var(--jaune);
+  border-radius:22px;
+  padding:28px;
+  margin-top:24px;
+  text-align:center;
+}
+.signature-block .sig {
+  font-family:'Patrick Hand',cursive;
+  font-size:26px;
+  color:var(--bleu);
+}
+.signature-block p {
+  font-size:14px;
+  color:#555;
+  margin-top:8px;
+  margin-bottom:0;
+}
+
+/* FORMULAIRE */
+.contact-form {
+  background:white;
+  border-radius:28px;
+  padding:45px;
+  box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+.contact-form h2 {
+  font-size:26px;
+  color:var(--bleu);
+  font-weight:800;
+  margin-bottom:8px;
+}
+.contact-form .form-sub {
+  font-size:15px;
+  color:#666;
+  margin-bottom:30px;
+}
+
+.form-group { margin-bottom:20px; }
+.form-group label {
+  display:block;
+  font-size:14px;
+  font-weight:600;
+  color:var(--bleu);
+  margin-bottom:8px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width:100%;
+  padding:14px 18px;
+  border:2px solid #e8e8e8;
+  border-radius:14px;
+  font-family:'Poppins',sans-serif;
+  font-size:15px;
+  color:var(--noir);
+  transition:0.2s;
+  background:#fafafa;
+  outline:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color:var(--bleu);
+  background:white;
+}
+.form-group textarea { resize:vertical; min-height:130px; }
+.form-group select { cursor:pointer; }
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+.form-submit {
+  width:100%;
+  padding:18px;
+  font-size:17px;
+  margin-top:8px;
+}
+
+.form-note {
+  font-size:13px;
+  color:#999;
+  text-align:center;
+  margin-top:14px;
+}
+
+/* SUCCESS */
+.success-msg {
+  display:none;
+  background:#e8f5e9;
+  border:2px solid #4caf50;
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  color:#2e7d32;
+  font-weight:600;
+  margin-top:16px;
+}
+
+/* LEGAL */
+.legal-block {
+  background:var(--gris);
+  border-radius:22px;
+  padding:30px;
+  margin-top:50px;
+  font-size:13px;
+  color:#666;
+  line-height:1.7;
+}
+.legal-block strong { color:var(--bleu); display:block; margin-bottom:6px; }
+
+@media(max-width:900px) {
+  .page-hero { padding:40px 25px; }
+  .page-hero h1 { font-size:32px; }
+  .contact-grid { grid-template-columns:1fr; }
+  .contact-form { padding:28px 20px; }
+  .form-row { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Arnaud Simart</a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="formations.html">Formations</a></li>
+    <li><a href="apropos.html">À propos</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
+    <li><a href="contact.html" class="active nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="badge">Parlons de votre projet</div>
+  <h1>Prendre contact</h1>
+  <p>Une question, un projet, une envie d'échanger ? Je réponds dans les 48h.</p>
+</section>
+
+<section class="section">
+  <div class="contact-grid">
+
+    <!-- INFOS -->
+    <div class="contact-infos">
+      <h2>Restons en contact</h2>
+      <p>Que ce soit pour une formation sur mesure, un accompagnement d'équipe ou simplement pour échanger sur votre projet, n'hésitez pas à me contacter.</p>
+
+      <a href="tel:0642332279" class="info-item">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Téléphone</div>
+          <div class="info-value">06 42 33 22 79</div>
+        </div>
+      </a>
+
+      <a href="mailto:simartarnaud@gmail.com" class="info-item">
+        <div class="info-icon">✉️</div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value">simartarnaud@gmail.com</div>
+        </div>
+      </a>
+
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Adresse</div>
+          <div class="info-value">9 rue Maurice RAVEL<br>10300 Macey</div>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">🏢</div>
+        <div>
+          <div class="info-label">SIRET</div>
+          <div class="info-value">10169169900017</div>
+        </div>
+      </div>
+
+      <div class="signature-block">
+        <div class="sig">Penser ensemble,<br>agir durablement.</div>
+        <p>Je m'adapte à vos besoins et votre contexte.</p>
+      </div>
+    </div>
+
+    <!-- FORMULAIRE -->
+    <div class="contact-form">
+      <h2>Envoyez-moi un message</h2>
+      <p class="form-sub">Je vous répondrai sous 48h pour convenir d'un échange.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prenom">Prénom *</label>
+          <input type="text" id="prenom" placeholder="Votre prénom" required>
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom *</label>
+          <input type="text" id="nom" placeholder="Votre nom" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" placeholder="votre@email.fr" required>
+      </div>
+
+      <div class="form-group">
+        <label for="organisation">Organisation</label>
+        <input type="text" id="organisation" placeholder="Collectivité, association, structure...">
+      </div>
+
+      <div class="form-group">
+        <label for="sujet">Vous souhaitez...</label>
+        <select id="sujet">
+          <option value="">Choisir un sujet</option>
+          <option>Une formation en intelligence collective</option>
+          <option>Une formation cartes mentales</option>
+          <option>Un accompagnement d'équipe</option>
+          <option>Un appui managérial</option>
+          <option>Autre chose</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message *</label>
+        <textarea id="message" placeholder="Décrivez votre projet, vos besoins, votre contexte..." required></textarea>
+      </div>
+
+      <button class="btn form-submit" onclick="handleSubmit()">Envoyer le message →</button>
+      <p class="form-note">* Champs obligatoires · Vos données ne sont pas transmises à des tiers.</p>
+
+      <div class="success-msg" id="successMsg">
+        ✅ Merci ! Votre message a bien été envoyé. Je vous répondrai sous 48h.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MENTIONS LÉGALES -->
+  <div class="legal-block">
+    <strong>Mentions légales</strong>
+    Arnaud SIMART — Facilitateur & formateur en intelligence collective · 9 rue Maurice RAVEL, 10300 Macey · SIRET : 10169169900017 · Contact : simartarnaud@gmail.com · 06 42 33 22 79
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      9 rue Maurice RAVEL · 10300 Macey<br>
+      SIRET : 10169169900017
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement.</div>
+</footer>
+
+<script>
+function handleSubmit() {
+  const prenom = document.getElementById('prenom').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  if (!prenom || !email || !message) {
+    alert('Merci de remplir les champs obligatoires (prénom, email, message).');
+    return;
+  }
+  // Ouvre le client mail avec les infos pré-remplies
+  const nom = document.getElementById('nom').value;
+  const organisation = document.getElementById('organisation').value;
+  const sujet = document.getElementById('sujet').value;
+  const body = `Bonjour Arnaud,\n\n${message}\n\n---\n${prenom} ${nom}${organisation ? '\n' + organisation : ''}\n${email}${sujet ? '\n\nSujet : ' + sujet : ''}`;
+  window.location.href = `mailto:simartarnaud@gmail.com?subject=Contact depuis arnaud-simart.fr&body=${encodeURIComponent(body)}`;
+  document.getElementById('successMsg').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
