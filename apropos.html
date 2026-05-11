@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>À propos — Arnaud SIMART</title>
 <link rel="stylesheet" href="style.css">
+
 <style>
 .page-hero {
   background:var(--bleu);
@@ -28,7 +29,7 @@
   aspect-ratio:1;
   border-radius:28px;
   object-fit:cover;
-  object-position:center top;
+  object-position:center center;
   box-shadow:0 20px 60px rgba(0,0,0,0.15);
   border:4px solid var(--jaune);
 }
@@ -70,6 +71,45 @@
   background:white; border-radius:999px; padding:8px 18px;
   font-size:14px; font-weight:500; color:var(--bleu);
   box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+
+.preuve-vivante {
+  margin-top:34px;
+  background:white;
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  border:3px solid var(--jaune);
+}
+.preuve-vivante h3 {
+  color:var(--bleu);
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+.preuve-vivante p {
+  font-size:16px;
+  color:#444;
+  line-height:1.75;
+}
+.preuve-images {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:22px;
+}
+.preuve-images img {
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.10);
+}
+.preuve-caption {
+  margin-top:16px;
+  font-size:14px;
+  color:#666;
+  font-style:italic;
 }
 
 .parcours { margin-top:50px; }
@@ -126,18 +166,21 @@
   .page-hero h1 { font-size:32px; }
   .profil { grid-template-columns:1fr; }
   .profil-photo-wrap { position:static; }
-  .profil-photo { max-width:200px; }
+  .profil-photo { max-width:240px; }
   .double-casquette { grid-template-columns:1fr; }
   .valeurs { padding:30px 20px; }
   .tl-item { grid-template-columns:1fr; gap:10px; }
   .apropos-cta { padding:30px 20px; }
+  .preuve-images { grid-template-columns:1fr; }
+  .preuve-images img { height:auto; max-height:420px; }
 }
 </style>
 </head>
+
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Arnaud Simart</a>
+  <a href="index.html" class="nav-logo">Arnaud SIMART</a>
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
@@ -145,6 +188,7 @@
     <li><a href="index.html">Accueil</a></li>
     <li><a href="formations.html">Formations</a></li>
     <li><a href="apropos.html" class="active">À propos</a></li>
+    <li><a href="enaction.html">En action</a></li>
     <li><a href="temoignages.html">Témoignages</a></li>
     <li><a href="contact.html" class="nav-cta">Contact</a></li>
   </ul>
@@ -160,15 +204,15 @@
   <div class="profil">
 
     <div class="profil-photo-wrap">
-      <img src="arnaud.png" alt="Arnaud SIMART" class="profil-photo">
+      <img src="portrait-foret.png" alt="Arnaud SIMART, facilitateur et formateur en intelligence collective" class="profil-photo">
       <div class="profil-name">Arnaud SIMART</div>
       <div class="profil-role">
         Chargé de mission Innovation Managériale — CD10<br>
         Formateur & Facilitateur<br>en intelligence collective
       </div>
       <div class="profil-contact">
-        <a href="tel:0642332279">📞 06 42 33 22 79</a>
-        <a href="mailto:simartarnaud@gmail.com">✉️ simartarnaud@gmail.com</a>
+        <a href="tel:0642332279">06 42 33 22 79</a>
+        <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a>
         <a href="contact.html" class="btn" style="justify-content:center;margin-top:6px;">Prendre contact</a>
       </div>
     </div>
@@ -183,7 +227,9 @@
         <p>Fil rouge : 20 ans d'expérience publique au service de la coopération, aujourd'hui mis au profit de la formation, de la facilitation et de la créativité managériale.</p>
       </div>
 
-      <p>Ce n'est pas un hasard si mes formations résonnent — <strong>je vis chaque jour ce que j'enseigne</strong>. Chargé de mission Innovation Managériale au CD10, j'accompagne en continu des équipes dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.</p>
+      <p>Ce n'est pas un hasard si mes formations résonnent : <strong>je vis chaque jour ce que j'enseigne</strong>. Chargé de mission Innovation Managériale au CD10, j'accompagne en continu des équipes dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.</p>
+
+      <p>Ma singularité tient à une conviction simple : une démarche collective fonctionne mieux lorsqu'elle devient <strong>visible, sensible et mémorable</strong>. J'utilise les métaphores, les supports visuels, les objets, les récits et les outils de facilitation pour aider les groupes à comprendre, décider et agir.</p>
 
       <div class="double-casquette">
         <div class="casquette bleu">
@@ -201,19 +247,38 @@
       <div class="atouts">
         <h4>Mes atouts clés</h4>
         <div class="atouts-list">
-          <span class="atout-tag">🎯 Facilitation managériale</span>
-          <span class="atout-tag">🧩 Séminaires collaboratifs</span>
-          <span class="atout-tag">💡 Innovation publique</span>
-          <span class="atout-tag">🧠 Pensée visuelle & cartes mentales</span>
-          <span class="atout-tag">👥 Formation de formateurs</span>
-          <span class="atout-tag">🤝 Co-développement</span>
-          <span class="atout-tag">🌱 Intelligence collective</span>
+          <span class="atout-tag">Facilitation managériale</span>
+          <span class="atout-tag">Séminaires collaboratifs</span>
+          <span class="atout-tag">Innovation publique</span>
+          <span class="atout-tag">Pensée visuelle & cartes mentales</span>
+          <span class="atout-tag">Formation de formateurs</span>
+          <span class="atout-tag">Co-développement</span>
+          <span class="atout-tag">Intelligence collective</span>
+        </div>
+      </div>
+
+      <div class="preuve-vivante">
+        <h3>Quand une formation laisse une trace.</h3>
+        <p>
+          À la fin d'un cycle de formation, les participants m'ont offert ce tableau collectif.
+          Au-delà du cadeau, j'y vois une preuve précieuse : un groupe qui a vécu une expérience,
+          partagé une énergie commune et gardé quelque chose du chemin parcouru.
+        </p>
+        <p>
+          Pour moi, c'est l'une des formes les plus puissantes de retour : les participants repartent
+          avec des outils, mais aussi avec l'envie de marquer le moment.
+        </p>
+        <div class="preuve-images">
+          <img src="photo21.png" alt="Arnaud SIMART recevant un tableau collectif offert par les participants">
+          <img src="photo22.png" alt="Tableau Merci Nono offert par les participants en fin de formation">
+        </div>
+        <div class="preuve-caption">
+          Cadeau collectif offert en fin de formation : une trace vivante du lien créé avec le groupe.
         </div>
       </div>
     </div>
   </div>
 
-  <!-- PARCOURS -->
   <div class="parcours">
     <h2>Parcours professionnel</h2>
     <p class="parcours-sub">20 ans au service du secteur public — une trajectoire cohérente, du terrain à la facilitation.</p>
@@ -253,7 +318,6 @@
     </div>
   </div>
 
-  <!-- DIPLÔMES -->
   <div class="diplomes">
     <h2>Formations & diplômes</h2>
     <div class="diplomes-grid">
@@ -285,7 +349,6 @@
     </div>
   </div>
 
-  <!-- VALEURS -->
   <div class="valeurs">
     <h2>Ce en quoi je crois</h2>
     <div class="valeurs-grid">
@@ -317,7 +380,6 @@
     </div>
   </div>
 
-  <!-- CTA -->
   <div class="apropos-cta">
     <h2>Envie d'échanger ?</h2>
     <p>Je serais ravi de discuter de votre projet et de voir comment je peux vous accompagner.</p>
@@ -329,7 +391,7 @@
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-logo">Arnaud SIMART</div>
       <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
     </div>
     <div>
@@ -337,6 +399,7 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="formations.html">Formations</a></li>
         <li><a href="apropos.html">À propos</a></li>
+        <li><a href="enaction.html">En action</a></li>
         <li><a href="temoignages.html">Témoignages</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
