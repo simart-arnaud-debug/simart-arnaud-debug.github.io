@@ -130,6 +130,51 @@
   font-weight:500;
 }
 
+/* CONFIANCE */
+.confiance {
+  background:white;
+  padding:34px 40px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.confiance-inner {
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+}
+
+.confiance-label {
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  color:#888;
+  margin-bottom:18px;
+  font-weight:700;
+}
+
+.confiance-logos {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+.confiance-logos span {
+  background:var(--gris);
+  color:var(--bleu);
+  padding:12px 20px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:700;
+  transition:0.2s;
+}
+
+.confiance-logos span:hover {
+  background:var(--jaune);
+  transform:translateY(-2px);
+}
+
 /* PRATICIEN */
 .praticien {
   background:white;
@@ -385,6 +430,19 @@
     grid-template-columns:repeat(2,1fr);
   }
 
+  .confiance {
+    padding:28px 20px;
+  }
+
+  .confiance-logos {
+    gap:10px;
+  }
+
+  .confiance-logos span {
+    font-size:13px;
+    padding:10px 16px;
+  }
+
   .praticien {
     margin:0 20px;
     padding:35px 25px;
@@ -433,7 +491,7 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Arnaud Simart</a>
+  <a href="index.html" class="nav-logo">Arnaud SIMART</a>
 
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
     <span></span>
@@ -451,9 +509,7 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-
   <div class="hero-inner">
 
     <div>
@@ -487,16 +543,14 @@
 
     <div class="hero-photo-wrap">
       <img src="portrait-foret.png"
-           alt="Arnaud SIMART"
+           alt="Arnaud SIMART, facilitateur et formateur en intelligence collective"
            class="hero-photo">
     </div>
 
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
-
   <div class="stats-inner">
 
     <div class="stat-item">
@@ -522,7 +576,21 @@
   </div>
 </div>
 
-<!-- PRATICIEN -->
+<section class="confiance">
+  <div class="confiance-inner">
+    <div class="confiance-label">Ils m'ont fait confiance</div>
+
+    <div class="confiance-logos">
+      <span>CD10</span>
+      <span>CNFPT</span>
+      <span>CD88</span>
+      <span>CU Grand Reims</span>
+      <span>IRTS</span>
+      <span>Structures publiques & associatives</span>
+    </div>
+  </div>
+</section>
+
 <section class="section">
 
   <div class="praticien">
@@ -594,7 +662,6 @@
   </div>
 </section>
 
-<!-- FORMATIONS -->
 <section class="section" style="padding-top:0;">
 
   <h2 class="section-title">Les formations</h2>
@@ -636,7 +703,6 @@
   </div>
 </section>
 
-<!-- GALERIE -->
 <section class="section" style="padding-top:0;">
 
   <h2 class="section-title">La pratique en images</h2>
@@ -684,7 +750,7 @@
     </a>
 
     <a href="enaction.html" class="wide gallery-proof">
-      <img src="photo22.png" alt="Merci Nono">
+      <img src="photo22.png" alt="Tableau Merci Nono offert par les participants">
       <div class="home-gallery-caption">
         Quand une formation laisse une trace
       </div>
@@ -700,7 +766,6 @@
 
 </section>
 
-<!-- TÉMOIGNAGE -->
 <section class="section" style="padding-top:0;">
 
   <div class="temoignage-vedette">
@@ -727,7 +792,6 @@
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta-section">
 
   <h2>
@@ -750,7 +814,7 @@
   <div class="footer-inner">
 
     <div>
-      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-logo">Arnaud SIMART</div>
 
       <div class="footer-tagline">
         Facilitateur & formateur en intelligence collective<br>
@@ -772,7 +836,7 @@
     <div class="footer-contact">
       <a href="tel:0642332279">06 42 33 22 79</a><br>
       <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
-       Intervention France entière · Distanciel & présentiel<br>
+      Intervention France entière · Distanciel & présentiel<br>
       SIRET : 10169169900017
     </div>
 
