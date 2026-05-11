@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Arnaud SIMART</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero {
+  background:var(--bleu);
+  color:white;
+  padding:60px;
+  text-align:center;
+}
+.page-hero h1 { font-size:48px; font-weight:800; margin-bottom:16px; }
+.page-hero p { font-size:18px; opacity:0.85; max-width:650px; margin:auto; }
+
+.profil {
+  display:grid;
+  grid-template-columns:0.75fr 1.25fr;
+  gap:60px;
+  align-items:start;
+}
+
+.profil-photo-wrap { position:sticky; top:90px; text-align:center; }
+
+.profil-photo {
+  width:100%;
+  max-width:320px;
+  aspect-ratio:1;
+  border-radius:28px;
+  object-fit:cover;
+  object-position:center top;
+  box-shadow:0 20px 60px rgba(0,0,0,0.15);
+  border:4px solid var(--jaune);
+}
+
+.profil-name {
+  font-size:26px;
+  font-weight:800;
+  color:var(--bleu);
+  margin-top:20px;
+}
+.profil-role {
+  font-size:15px;
+  color:#666;
+  margin-top:6px;
+  line-height:1.5;
+}
+.profil-contact {
+  margin-top:20px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.profil-contact a {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--bleu);
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  background:var(--gris);
+  padding:10px 18px;
+  border-radius:999px;
+  transition:0.2s;
+}
+.profil-contact a:hover { background:var(--jaune); }
+
+.profil-text h2 {
+  font-size:34px;
+  color:var(--bleu);
+  font-weight:800;
+  margin-bottom:20px;
+}
+.profil-text p {
+  font-size:17px;
+  color:#444;
+  line-height:1.85;
+  margin-bottom:20px;
+}
+.profil-text strong { color:var(--bleu); }
+
+/* DOUBLE CASQUETTE */
+.double-casquette {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin:35px 0;
+}
+.casquette {
+  border-radius:22px;
+  padding:30px;
+  transition:0.25s;
+}
+.casquette:hover { transform:translateY(-4px); }
+.casquette.bleu { background:var(--bleu); color:white; }
+.casquette.jaune { background:var(--jaune); }
+.casquette .icon { font-size:36px; margin-bottom:14px; }
+.casquette h3 { font-size:20px; font-weight:700; margin-bottom:10px; }
+.casquette p { font-size:14px; line-height:1.7; opacity:0.9; }
+
+/* VALEURS */
+.valeurs {
+  background:var(--gris);
+  border-radius:28px;
+  padding:50px;
+  margin-top:40px;
+}
+.valeurs h2 {
+  font-size:32px;
+  color:var(--bleu);
+  font-weight:800;
+  margin-bottom:30px;
+}
+.valeurs-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+.valeur {
+  background:white;
+  border-radius:18px;
+  padding:24px;
+  text-align:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05);
+  transition:0.25s;
+}
+.valeur:hover { transform:translateY(-4px); background:var(--jaune); }
+.valeur .icon { font-size:36px; margin-bottom:12px; }
+.valeur h4 { color:var(--bleu); font-size:16px; font-weight:700; margin-bottom:8px; }
+.valeur p { font-size:13px; color:#555; line-height:1.6; }
+
+/* PARCOURS */
+.parcours {
+  margin-top:40px;
+}
+.parcours h2 {
+  font-size:32px;
+  color:var(--bleu);
+  font-weight:800;
+  margin-bottom:30px;
+}
+.timeline {
+  display:grid;
+  gap:16px;
+}
+.tl-item {
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:24px;
+  background:white;
+  border-radius:20px;
+  padding:24px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.05);
+  align-items:center;
+}
+.tl-date {
+  font-size:13px;
+  font-weight:700;
+  color:var(--corail);
+  text-align:center;
+  background:rgba(255,111,97,0.08);
+  padding:8px;
+  border-radius:12px;
+}
+.tl-item h4 { color:var(--bleu); font-size:16px; font-weight:700; margin-bottom:4px; }
+.tl-item p { font-size:14px; color:#666; line-height:1.5; }
+
+@media(max-width:900px) {
+  .page-hero { padding:40px 25px; }
+  .page-hero h1 { font-size:32px; }
+  .profil { grid-template-columns:1fr; }
+  .profil-photo-wrap { position:static; }
+  .profil-photo { max-width:200px; }
+  .double-casquette { grid-template-columns:1fr; }
+  .valeurs { padding:30px 20px; }
+  .tl-item { grid-template-columns:1fr; gap:10px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Arnaud Simart</a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="formations.html">Formations</a></li>
+    <li><a href="apropos.html" class="active">À propos</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="page-hero">
+  <div class="badge">Praticien & formateur</div>
+  <h1>À propos</h1>
+  <p>Une double casquette rare : je vis chaque jour ce que j'enseigne.</p>
+</section>
+
+<section class="section">
+  <div class="profil">
+
+    <div class="profil-photo-wrap">
+      <img src="arnaud.png" alt="Arnaud SIMART" class="profil-photo">
+      <div class="profil-name">Arnaud SIMART</div>
+      <div class="profil-role">Facilitateur & formateur<br>en intelligence collective<br>Fonctionnaire territorial</div>
+      <div class="profil-contact">
+        <a href="tel:0642332279">📞 06 42 33 22 79</a>
+        <a href="mailto:simartarnaud@gmail.com">✉️ simartarnaud@gmail.com</a>
+        <a href="contact.html" class="btn" style="justify-content:center;margin-top:6px;">Prendre contact</a>
+      </div>
+    </div>
+
+    <div class="profil-text">
+      <h2>Penser ensemble,<br>agir durablement.</h2>
+
+      <p>Je suis <strong>facilitateur et formateur en intelligence collective</strong>, mais aussi — et c'est ce qui fait toute la différence — <strong>fonctionnaire territorial au quotidien</strong>. Ce n'est pas un détail : c'est le cœur de ma pratique.</p>
+
+      <p>Chaque jour, j'accompagne des agents territoriaux dans leurs dynamiques de projet, de management et de cohésion. J'anime des ateliers, je facilite des groupes de travail, je soutiens des équipes en mouvement. Ce terrain nourrit en permanence ce que je transmets en formation.</p>
+
+      <p>Pas de discours théorique. <strong>Des outils que j'utilise moi-même. Des situations que je vis moi-même.</strong> Des apprentissages que je mets à jour en continu parce que je suis au cœur du réel.</p>
+
+      <div class="double-casquette">
+        <div class="casquette bleu">
+          <div class="icon">🏛</div>
+          <h3>Praticien terrain</h3>
+          <p>Fonctionnaire territorial, j'accompagne chaque jour des équipes dans leurs dynamiques collectives, leurs projets et leur management.</p>
+        </div>
+        <div class="casquette jaune">
+          <div class="icon">🎓</div>
+          <h3>Formateur</h3>
+          <p>Je conçois et anime des formations pour des collectivités, des structures publiques et associatives, en intra et via le CNFPT.</p>
+        </div>
+      </div>
+
+      <p>Cette double posture crée une <strong>boucle vertueuse</strong> : ce que je vis sur le terrain enrichit mes formations, et ce que j'expérimente en formation retourne dans ma pratique professionnelle. Les participants le ressentent — et c'est souvent ce qu'ils retiennent.</p>
+    </div>
+  </div>
+
+  <!-- VALEURS -->
+  <div class="valeurs">
+    <h2>Ce en quoi je crois</h2>
+    <div class="valeurs-grid">
+      <div class="valeur">
+        <div class="icon">🧠</div>
+        <h4>L'intelligence du collectif</h4>
+        <p>Les meilleures solutions émergent du groupe, pas d'un seul expert.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">🎯</div>
+        <h4>L'ancrage dans le réel</h4>
+        <p>Rien de théorique. Tout ce que j'enseigne, je le pratique.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">✋</div>
+        <h4>Apprendre en faisant</h4>
+        <p>L'expérimentation est le meilleur vecteur d'apprentissage durable.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">🌱</div>
+        <h4>Le pouvoir d'agir</h4>
+        <p>Chaque personne a en elle les ressources pour transformer sa pratique.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">🤝</div>
+        <h4>La coopération</h4>
+        <p>Coopérer, ce n'est pas naturel — ça s'apprend, ça se cultive, ça se facilite.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARCOURS -->
+  <div class="parcours">
+    <h2>Quelques repères de parcours</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">En continu</div>
+        <div>
+          <h4>Fonctionnaire territorial — Appui managérial</h4>
+          <p>Animation du projet managérial de la collectivité, accompagnement des dynamiques d'équipes, animation de groupes de travail.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">18 mois</div>
+        <div>
+          <h4>3 cycles de formation — Intelligence collective</h4>
+          <p>Plus de 40 agents formés sur 4 jours chacun. Formation conçue et animée en intra.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">3 sessions</div>
+        <div>
+          <h4>Formation cartes mentales</h4>
+          <p>Cycles de 2 jours, environ 12 participants par session, en intra et en inter.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Mars 2024</div>
+        <div>
+          <h4>Séminaire européen — IRTS Champagne-Ardenne</h4>
+          <p>3 jours d'animation auprès d'étudiants CAFERUIS et de futurs directeurs belges. Rencontre interculturelle, intelligence collective, coopération.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">CNFPT</div>
+        <div>
+          <h4>Formations pour collectivités</h4>
+          <p>Interventions pour des communautés de communes et des départements sur l'intelligence collective et la co-construction.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Accompagnements</div>
+        <div>
+          <h4>Centre Départemental de l'Enfance & équipes de territoire</h4>
+          <p>Accompagnement sur les dynamiques collectives, les projets sociaux de territoire et la restructuration d'organisations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      9 rue Maurice RAVEL · 10300 Macey<br>
+      SIRET : 10169169900017
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement.</div>
+</footer>
+
+</body>
+</html>
