@@ -175,6 +175,53 @@
   transform:translateY(-2px);
 }
 
+/* MICRO VERBATIMS */
+.micro-verbatims {
+  background:#f6f6f6;
+  padding:42px 40px 28px;
+}
+
+.micro-verbatims-inner {
+  max-width:1200px;
+  margin:auto;
+}
+
+.micro-verbatims-title {
+  text-align:center;
+  color:var(--bleu);
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:28px;
+}
+
+.micro-verbatims-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.micro-verbatim {
+  background:white;
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.06);
+  border-top:4px solid var(--corail);
+  font-size:15px;
+  color:#444;
+  line-height:1.55;
+  font-style:italic;
+}
+
+.micro-verbatim strong {
+  display:block;
+  color:var(--bleu);
+  font-style:normal;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:10px;
+}
+
 /* PRATICIEN */
 .praticien {
   background:white;
@@ -443,6 +490,14 @@
     padding:10px 16px;
   }
 
+  .micro-verbatims {
+    padding:36px 20px 24px;
+  }
+
+  .micro-verbatims-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
   .praticien {
     margin:0 20px;
     padding:35px 25px;
@@ -471,6 +526,10 @@
 }
 
 @media(max-width:520px) {
+
+  .micro-verbatims-grid {
+    grid-template-columns:1fr;
+  }
 
   .home-gallery {
     grid-template-columns:1fr;
@@ -587,6 +646,34 @@
       <span>CU Grand Reims</span>
       <span>IRTS</span>
       <span>Structures publiques & associatives</span>
+    </div>
+  </div>
+</section>
+
+<section class="micro-verbatims">
+  <div class="micro-verbatims-inner">
+    <h2 class="micro-verbatims-title">Ce que les participants disent souvent</h2>
+
+    <div class="micro-verbatims-grid">
+      <div class="micro-verbatim">
+        <strong>Expérimenter</strong>
+        “Enfin une formation où on expérimente vraiment.”
+      </div>
+
+      <div class="micro-verbatim">
+        <strong>Réutiliser</strong>
+        “On repart avec des outils immédiatement utilisables.”
+      </div>
+
+      <div class="micro-verbatim">
+        <strong>Vivre le moment</strong>
+        “On ne voit pas la journée passer.”
+      </div>
+
+      <div class="micro-verbatim">
+        <strong>Oser autrement</strong>
+        “Ça donne envie d’animer autrement.”
+      </div>
     </div>
   </div>
 </section>
