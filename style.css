@@ -208,6 +208,23 @@ footer {
   text-decoration:none;
 }
 
+.footer-linkedin {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+  margin-top:14px;
+  transition:0.2s;
+}
+.footer-linkedin:hover { background:#0077b5; border-color:#0077b5; }
+
 .footer-bottom {
   max-width:1200px;
   margin:30px auto 0;

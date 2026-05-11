@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message envoyé — Arnaud SIMART</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.confirm-wrap {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.confirm-box {
+  background: white;
+  border-radius: 32px;
+  padding: 60px 50px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  border-top: 6px solid var(--corail);
+}
+.confirm-icon {
+  font-size: 72px;
+  margin-bottom: 24px;
+  display: block;
+}
+.confirm-box h1 {
+  font-size: 36px;
+  color: var(--bleu);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.confirm-box p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.confirm-box .signature {
+  font-family: 'Patrick Hand', cursive;
+  color: var(--corail);
+  font-size: 26px;
+  margin: 24px 0;
+}
+.confirm-links {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+@media(max-width:600px) {
+  .confirm-box { padding: 40px 24px; }
+  .confirm-box h1 { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Arnaud SIMART</a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="formations.html">Formations</a></li>
+    <li><a href="apropos.html">À propos</a></li>
+    <li><a href="enaction.html">En action</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="confirm-wrap">
+  <div class="confirm-box">
+    <span class="confirm-icon">🎉</span>
+    <h1>Message bien reçu !</h1>
+    <p>Merci de m'avoir contacté. Je lis tous les messages avec attention et vous répondrai dans les <strong>48 heures</strong>.</p>
+    <p>En attendant, n'hésitez pas à explorer le site pour en savoir plus sur mes formations et mes interventions.</p>
+    <div class="signature">Penser ensemble, agir durablement.</div>
+    <p style="font-size:15px;color:#888;">— Arnaud SIMART</p>
+    <div class="confirm-links">
+      <a href="formations.html" class="btn">Voir les formations</a>
+      <a href="enaction.html" class="btn btn-outline">La pratique en images</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Arnaud SIMART</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="enaction.html">En action</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      9 rue Maurice RAVEL · 10300 Macey<br>
+      SIRET : 10169169900017<br>
+      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">💼 Mon profil LinkedIn</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement.</div>
+</footer>
+
+</body>
+</html>
