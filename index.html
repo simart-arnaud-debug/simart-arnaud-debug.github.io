@@ -3,911 +3,401 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plaquette Formation — Arnaud SIMART</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
-
+<title>Arnaud SIMART — Facilitateur & Formateur</title>
+<link rel="stylesheet" href="style.css">
 <style>
-
-:root{
-  --bleu:#1C3F60;
-  --corail:#FF6F61;
-  --jaune:#F7D774;
-  --gris:#F2F2F2;
-  --noir:#1A1A1A;
-  --blanc:#FFFFFF;
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background:#f6f6f6;
-  color:var(--noir);
-  line-height:1.6;
-}
-
 /* HERO */
-
-.hero{
+.hero {
   background:var(--bleu);
   color:white;
   padding:80px 60px;
   position:relative;
   overflow:hidden;
 }
-
-.hero::after{
+.hero::before {
   content:"";
   position:absolute;
-  width:350px;
-  height:350px;
+  width:500px; height:500px;
   border-radius:50%;
-  background:rgba(255,255,255,0.05);
-  top:-120px;
-  right:-100px;
+  background:rgba(255,255,255,0.04);
+  top:-200px; right:-150px;
 }
-
-.hero-grid{
+.hero::after {
+  content:"";
+  position:absolute;
+  width:300px; height:300px;
+  border-radius:50%;
+  background:rgba(247,215,116,0.08);
+  bottom:-100px; left:10%;
+}
+.hero-inner {
   max-width:1200px;
   margin:auto;
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;
+  grid-template-columns:1.3fr 0.7fr;
   gap:60px;
   align-items:center;
+  position:relative;
+  z-index:1;
 }
-
-.badge{
-  display:inline-block;
-  background:var(--corail);
-  padding:10px 18px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:600;
-  margin-bottom:25px;
-}
-
-.hero h1{
+.hero h1 {
   font-size:58px;
   line-height:1.05;
-  margin-bottom:25px;
+  margin-bottom:20px;
   font-weight:800;
 }
-
-.hero p{
-  font-size:20px;
-  opacity:0.95;
-  max-width:650px;
-}
-
-.signature{
-  font-family:'Patrick Hand',cursive;
+.hero h1 em {
+  font-style:normal;
   color:var(--jaune);
-  font-size:34px;
-  margin-top:28px;
 }
-
-.hero-card{
-  background:white;
-  border-radius:28px;
-  padding:40px;
-  color:var(--noir);
-  box-shadow:0 18px 50px rgba(0,0,0,0.15);
+.hero-desc {
+  font-size:19px;
+  opacity:0.9;
+  max-width:600px;
+  margin-bottom:35px;
 }
-
-.hero-card h3{
-  color:var(--bleu);
-  margin-bottom:25px;
-  font-size:24px;
+.signature {
+  font-family:'Patrick Hand', cursive;
+  color:var(--jaune);
+  font-size:28px;
+  margin-bottom:35px;
 }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
 
-.hero-card ul{
-  list-style:none;
-}
-
-.hero-card li{
-  padding:14px 0;
-  border-bottom:1px solid #ececec;
-  font-size:16px;
-}
-
-.hero-card li:last-child{
-  border:none;
-}
-
-/* SECTIONS */
-
-.section{
-  max-width:1200px;
-  margin:auto;
-  padding:80px 40px;
-}
-
-.section-title{
-  font-size:42px;
-  color:var(--bleu);
-  margin-bottom:15px;
-  font-weight:800;
-}
-
-.section-sub{
-  font-size:18px;
-  color:#555;
-  margin-bottom:50px;
-  max-width:800px;
-}
-
-/* BLOCS */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
-}
-
-.card{
-  border-radius:24px;
-  padding:32px;
-  transition:0.25s ease;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-}
-
-.card h3{
-  font-size:24px;
-  margin-bottom:16px;
-}
-
-.card p{
-  font-size:16px;
-}
-
-.card ul{
-  margin-top:15px;
-  padding-left:18px;
-}
-
-.card li{
-  margin-bottom:10px;
-}
-
-.yellow{
-  background:var(--jaune);
-}
-
-.grey{
-  background:var(--gris);
-}
-
-.corail{
-  background:var(--corail);
-  color:white;
-}
-
-.blue{
-  background:var(--bleu);
-  color:white;
-}
-
-/* PROGRAMME */
-
-.timeline{
-  display:grid;
-  gap:24px;
-}
-
-.step{
-  display:grid;
-  grid-template-columns:80px 1fr;
-  gap:25px;
-  align-items:start;
-  background:white;
-  border-radius:22px;
-  padding:28px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.06);
-}
-
-.number{
-  width:60px;
-  height:60px;
-  background:var(--corail);
-  color:white;
-  border-radius:50%;
+.hero-photo-wrap {
   display:flex;
-  align-items:center;
   justify-content:center;
-  font-size:22px;
-  font-weight:700;
+}
+.hero-photo {
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:center top;
+  border:5px solid var(--jaune);
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
 }
 
-.step h4{
-  color:var(--bleu);
-  font-size:22px;
-  margin-bottom:10px;
+/* STATS */
+.stats-bar {
+  background:var(--jaune);
+  padding:30px 60px;
 }
-
-/* BENEFICES */
-
-.benefits{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.benefit{
-  background:white;
-  border-radius:22px;
-  padding:28px;
-  text-align:center;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-}
-
-.benefit .icon{
-  font-size:42px;
-  margin-bottom:14px;
-}
-
-/* PRATICIEN DU QUOTIDIEN */
-
-.practitioner{
-  background: white;
-  border-radius: 32px;
-  margin: 0 40px;
-  padding: 60px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.07);
-}
-
-.practitioner-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 24px;
-}
-
-.practitioner-card{
-  background: var(--gris);
-  border-radius: 20px;
-  padding: 28px;
-  transition: 0.25s ease;
-}
-
-.practitioner-card:hover{
-  transform: translateY(-4px);
-  background: var(--jaune);
-}
-
-.practitioner-icon{
-  font-size: 36px;
-  margin-bottom: 14px;
-}
-
-.practitioner-card h4{
-  color: var(--bleu);
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.practitioner-card p{
-  font-size: 15px;
-  color: #444;
-  line-height: 1.6;
-}
-
-@media(max-width:900px){
-  .practitioner{
-    margin: 0 25px;
-    padding: 40px 25px;
-  }
-}
-
-/* SOCIAL PROOF */
-
-.social-proof{
-  background:var(--bleu);
-  color:white;
-  padding:80px 0;
-}
-
-.social-proof .inner{
+.stats-inner {
   max-width:1200px;
   margin:auto;
-  padding:0 40px;
-}
-
-.social-proof .section-title{
-  color:white;
-}
-
-.social-proof .section-sub{
-  color:rgba(255,255,255,0.75);
-}
-
-/* Chiffres clés */
-
-.stats{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:24px;
-  margin-bottom:60px;
-}
-
-.stat{
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:22px;
-  padding:32px 24px;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
   text-align:center;
-  transition:0.25s ease;
 }
-
-.stat:hover{
-  background:rgba(255,255,255,0.14);
-  transform:translateY(-4px);
-}
-
-.stat-number{
-  font-size:52px;
+.stat-item strong {
+  display:block;
+  font-size:38px;
   font-weight:800;
-  color:var(--jaune);
+  color:var(--bleu);
   line-height:1;
-  margin-bottom:10px;
 }
-
-.stat-label{
-  font-size:15px;
-  opacity:0.85;
-  line-height:1.4;
-}
-
-/* Contextes / logos texte */
-
-.contexts{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:60px;
-}
-
-.context-tag{
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(255,255,255,0.2);
-  border-radius:999px;
-  padding:10px 20px;
-  font-size:14px;
+.stat-item span {
+  font-size:13px;
+  color:#444;
   font-weight:500;
 }
 
-/* Témoignages */
-
-.testimonials{
+/* INTRO PRATICIEN */
+.praticien {
+  background:white;
+  border-radius:32px;
+  margin:0 40px;
+  padding:60px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.07);
+  margin-top:-20px;
+  position:relative;
+  z-index:2;
+}
+.praticien-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.praticien-text p { font-size:17px; color:#444; line-height:1.8; margin-bottom:20px; }
+.praticien-cards {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.mini-card {
+  background:var(--gris);
+  border-radius:18px;
+  padding:22px;
+  transition:0.25s ease;
+}
+.mini-card:hover { background:var(--jaune); transform:translateY(-3px); }
+.mini-card .icon { font-size:28px; margin-bottom:10px; }
+.mini-card h4 { color:var(--bleu); font-size:15px; margin-bottom:6px; }
+.mini-card p { font-size:13px; color:#555; }
+
+/* FORMATIONS APERÇU */
+.formations-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:24px;
 }
-
-.testimonial{
+.formation-card {
   background:white;
-  color:var(--noir);
-  border-radius:22px;
+  border-radius:24px;
   padding:32px;
-  position:relative;
-}
-
-.quote-mark{
-  font-size:72px;
-  color:var(--jaune);
-  font-family:'Patrick Hand',cursive;
-  line-height:0.6;
-  margin-bottom:18px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.06);
+  border-top:4px solid var(--corail);
+  transition:0.25s ease;
+  text-decoration:none;
+  color:var(--noir);
   display:block;
 }
-
-.testimonial p{
-  font-size:16px;
-  line-height:1.65;
-  font-style:italic;
-  color:#333;
-}
-
-.testimonial-featured{
-  border: 3px solid var(--jaune);
-  grid-column: 1 / -1;
-  background: #fffdf4;
-}
-
-.testimonial-featured p{
-  font-size: 18px;
-}
-
-.testimonial-source{
-  margin-top:20px;
-  font-size:13px;
+.formation-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,0.12); }
+.formation-card .tag {
+  font-size:12px;
   font-weight:600;
-  color:var(--bleu);
+  color:var(--corail);
   text-transform:uppercase;
-  letter-spacing:0.05em;
+  letter-spacing:0.06em;
+  margin-bottom:12px;
+}
+.formation-card h3 { color:var(--bleu); font-size:20px; margin-bottom:10px; }
+.formation-card p { font-size:14px; color:#666; line-height:1.6; }
+.formation-card .arrow {
+  display:inline-block;
+  margin-top:16px;
+  color:var(--corail);
+  font-weight:700;
+  font-size:14px;
 }
 
-/* ============================== */
-
-/* CTA */
-
-.cta{
-  background:linear-gradient(135deg,var(--bleu),#29557f);
-  color:white;
+/* TÉMOIGNAGE VEDETTE */
+.temoignage-vedette {
+  background:var(--bleu);
   border-radius:32px;
   padding:60px;
-  text-align:center;
-  margin-top:50px;
-}
-
-.cta h2{
-  font-size:42px;
-  margin-bottom:18px;
-}
-
-.cta p{
-  font-size:20px;
-  max-width:700px;
-  margin:auto;
-  opacity:0.95;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:30px;
-  background:var(--corail);
   color:white;
-  text-decoration:none;
-  padding:18px 34px;
-  border-radius:999px;
-  font-weight:700;
-  transition:0.2s ease;
-}
-
-.btn:hover{
-  transform:scale(1.04);
-}
-
-/* FOOTER */
-
-footer{
-  padding:50px 40px;
   text-align:center;
-  color:#666;
-  font-size:15px;
+  margin-top:30px;
+}
+.temoignage-vedette .quote {
+  font-size:72px;
+  font-family:'Patrick Hand', cursive;
+  color:var(--jaune);
+  line-height:0.5;
+  margin-bottom:20px;
+  display:block;
+}
+.temoignage-vedette p {
+  font-size:20px;
+  font-style:italic;
+  max-width:750px;
+  margin:0 auto 20px;
+  opacity:0.95;
+  line-height:1.7;
+}
+.temoignage-vedette cite {
+  font-size:14px;
+  opacity:0.65;
+  font-style:normal;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
 }
 
-.footer-name{
-  color:var(--bleu);
-  font-weight:700;
-  font-size:22px;
-  margin-bottom:10px;
+/* CTA FINAL */
+.cta-section {
+  text-align:center;
+  padding:80px 40px;
 }
+.cta-section h2 { font-size:40px; color:var(--bleu); margin-bottom:16px; font-weight:800; }
+.cta-section p { font-size:18px; color:#555; max-width:600px; margin:0 auto 30px; }
 
-.hand{
-  font-family:'Patrick Hand',cursive;
-  color:var(--corail);
-  font-size:28px;
-  margin-top:20px;
+@media(max-width:900px) {
+  .hero { padding:60px 25px; }
+  .hero-inner { grid-template-columns:1fr; }
+  .hero h1 { font-size:38px; }
+  .hero-photo { width:180px; height:180px; }
+  .hero-photo-wrap { order:-1; }
+  .stats-bar { padding:25px; }
+  .stats-inner { grid-template-columns:repeat(2,1fr); }
+  .praticien { margin:0 20px; padding:35px 25px; }
+  .praticien-grid { grid-template-columns:1fr; gap:30px; }
+  .temoignage-vedette { padding:40px 25px; }
+  .temoignage-vedette p { font-size:17px; }
 }
-
-@media(max-width:900px){
-
-.hero-grid{
-  grid-template-columns:1fr;
-}
-
-.hero h1{
-  font-size:44px;
-}
-
-.section{
-  padding:60px 25px;
-}
-
-.cta{
-  padding:40px 25px;
-}
-
-.social-proof .inner{
-  padding:0 25px;
-}
-
-.stat-number{
-  font-size:42px;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
+<nav>
+  <a href="index.html" class="nav-logo">Arnaud Simart</a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Accueil</a></li>
+    <li><a href="formations.html">Formations</a></li>
+    <li><a href="apropos.html">À propos</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
 <!-- HERO -->
-
 <section class="hero">
-
-<div class="hero-grid">
-
-<div>
-
-<div class="badge">
-Facilitateur & formateur en intelligence collective
-</div>
-
-<h1>
-Former autrement.<br>
-Faire vivre les apprentissages.
-</h1>
-
-<p>
-Des formations vivantes, visuelles et concrètes pour développer la coopération, les compétences collectives et le pouvoir d'agir.
-</p>
-
-<div class="signature">
-Penser ensemble, agir durablement.
-</div>
-
-</div>
-
-<div class="hero-card">
-
-<h3>Ce que vous trouverez</h3>
-
-<ul>
-<li>✔ Des formats pédagogiques participatifs</li>
-<li>✔ Une approche immédiatement opérationnelle</li>
-<li>✔ Des outils réutilisables sur le terrain</li>
-<li>✔ Une animation dynamique et humaine</li>
-<li>✔ Des supports visuels modernes et engageants</li>
-</ul>
-
-</div>
-
-</div>
-
+  <div class="hero-inner">
+    <div>
+      <div class="badge">Facilitateur & formateur en intelligence collective</div>
+      <h1>Former autrement.<br><em>Faire vivre</em><br>les apprentissages.</h1>
+      <p class="hero-desc">Des formations vivantes, visuelles et concrètes pour développer la coopération, les compétences collectives et le pouvoir d'agir — ancrées dans une pratique de terrain quotidienne.</p>
+      <div class="signature">Penser ensemble, agir durablement.</div>
+      <div class="hero-btns">
+        <a href="formations.html" class="btn">Voir les formations</a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">Parlons de votre projet</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="arnaud.png" alt="Arnaud SIMART" class="hero-photo">
+    </div>
+  </div>
 </section>
 
-<!-- OFFRE -->
-
-<section class="section">
-
-<h2 class="section-title">
-Une pédagogie qui remet les participants en mouvement
-</h2>
-
-<p class="section-sub">
-Chaque formation est pensée comme une expérience collective : on échange, on expérimente, on construit, on facilite, on repart avec du concret.
-</p>
-
-<div class="grid">
-
-<div class="card yellow">
-<h3>Idée clé</h3>
-<p>
-L'apprentissage devient plus efficace lorsqu'il est vécu, manipulé et partagé.
-</p>
-<ul>
-<li>Approche visuelle</li>
-<li>Intelligence collective</li>
-<li>Méthodes actives</li>
-</ul>
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <strong>+40</strong>
+      <span>agents formés en 18 mois</span>
+    </div>
+    <div class="stat-item">
+      <strong>3</strong>
+      <span>cycles de 4 jours animés</span>
+    </div>
+    <div class="stat-item">
+      <strong>9+</strong>
+      <span>sessions en intra & inter</span>
+    </div>
+    <div class="stat-item">
+      <strong>🇪🇺</strong>
+      <span>Séminaire européen IRTS</span>
+    </div>
+  </div>
 </div>
-
-<div class="card grey">
-<h3>Formats proposés</h3>
-<ul>
-<li>Management collaboratif</li>
-<li>Facilitation & intelligence collective</li>
-<li>Conduite de projet</li>
-<li>Cartes mentales</li>
-<li>Animation de collectifs</li>
-</ul>
-</div>
-
-<div class="card corail">
-<h3>Expérience terrain</h3>
-<p>
-Des dispositifs conçus à partir de situations réelles vécues dans les collectivités, les équipes et les organisations.
-</p>
-</div>
-
-<div class="card blue">
-<h3>Pour qui ?</h3>
-<ul>
-<li>Managers</li>
-<li>Collectivités</li>
-<li>Équipes projet</li>
-<li>Professionnels de terrain</li>
-<li>Structures publiques & associatives</li>
-</ul>
-</div>
-
-</div>
-
-</section>
-
-<!-- PROGRAMME -->
-
-<section class="section">
-
-<h2 class="section-title">
-Une formation qui alterne rythme, pratique et respiration
-</h2>
-
-<p class="section-sub">
-Pas de tunnel PowerPoint. Chaque séquence est conçue pour maintenir l'attention et favoriser l'appropriation.
-</p>
-
-<div class="timeline">
-
-<div class="step">
-<div class="number">1</div>
-<div>
-<h4>Comprendre</h4>
-<p>
-Découvrir les concepts clés avec des formats simples, visuels et accessibles.
-</p>
-</div>
-</div>
-
-<div class="step">
-<div class="number">2</div>
-<div>
-<h4>Expérimenter</h4>
-<p>
-Tester des outils et des méthodes directement pendant la formation.
-</p>
-</div>
-</div>
-
-<div class="step">
-<div class="number">3</div>
-<div>
-<h4>Co-construire</h4>
-<p>
-Faire émerger les idées, pratiques et solutions du collectif.
-</p>
-</div>
-</div>
-
-<div class="step">
-<div class="number">4</div>
-<div>
-<h4>Réutiliser</h4>
-<p>
-Repartir avec des outils concrets, adaptables immédiatement au terrain.
-</p>
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- BENEFICES -->
-
-<section class="section">
-
-<h2 class="section-title">
-Les bénéfices clés
-</h2>
-
-<div class="benefits">
-
-<div class="benefit">
-<div class="icon">🧠</div>
-<h4>Clarifier</h4>
-<p>
-Rendre les idées plus lisibles et structurées.
-</p>
-</div>
-
-<div class="benefit">
-<div class="icon">🤝</div>
-<h4>Coopérer</h4>
-<p>
-Créer des dynamiques collectives plus fluides.
-</p>
-</div>
-
-<div class="benefit">
-<div class="icon">🚀</div>
-<h4>Agir</h4>
-<p>
-Transformer les échanges en actions concrètes.
-</p>
-</div>
-
-<div class="benefit">
-<div class="icon">✏️</div>
-<h4>Faciliter</h4>
-<p>
-Animer des temps de travail plus engageants.
-</p>
-</div>
-
-</div>
-
-</section>
 
 <!-- PRATICIEN DU QUOTIDIEN -->
-
-<section class="section practitioner">
-
-<h2 class="section-title">Une pratique ancrée dans le réel, chaque jour</h2>
-
-<p class="section-sub">
-Ce qui fait la différence ? Je ne forme pas depuis un pupitre. J'accompagne chaque jour des agents territoriaux dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.
-</p>
-
-<div class="practitioner-grid">
-
-<div class="practitioner-card">
-<div class="practitioner-icon">🏛</div>
-<h4>Appui managérial</h4>
-<p>Animation du projet managérial de la collectivité, ateliers de travail, accompagnement des équipes de direction.</p>
-</div>
-
-<div class="practitioner-card">
-<div class="practitioner-icon">🤝</div>
-<h4>Dynamiques d'équipes</h4>
-<p>Cohésion, pouvoir d'agir, projets de direction — je travaille chaque jour sur ce que je transmets en formation.</p>
-</div>
-
-<div class="practitioner-card">
-<div class="practitioner-icon">📍</div>
-<h4>Projets de territoire</h4>
-<p>Accompagnement d'équipes sur les projets sociaux de territoire : posture de chef de projet, facilitation, outils d'intelligence collective.</p>
-</div>
-
-<div class="practitioner-card">
-<div class="practitioner-icon">🔄</div>
-<h4>Une boucle vertueuse</h4>
-<p>Ce que je vis sur le terrain enrichit mes formations. Ce que j'expérimente en formation retourne dans ma pratique. Rien n'est théorique.</p>
-</div>
-
-</div>
-
+<section class="section">
+  <div class="praticien">
+    <div class="praticien-grid">
+      <div class="praticien-text">
+        <div class="badge">Ce qui fait la différence</div>
+        <h2 class="section-title" style="margin-bottom:20px;">Une pratique ancrée dans le réel, chaque jour</h2>
+        <p>Je ne forme pas depuis un pupitre. Fonctionnaire territorial, j'accompagne chaque jour des agents dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.</p>
+        <p>Ce que je vis sur le terrain enrichit mes formations. Ce que j'expérimente en formation retourne dans ma pratique. <strong>Rien n'est théorique.</strong></p>
+        <a href="apropos.html" class="btn btn-outline" style="margin-top:10px;">En savoir plus sur mon parcours</a>
+      </div>
+      <div class="praticien-cards">
+        <div class="mini-card">
+          <div class="icon">🏛</div>
+          <h4>Appui managérial</h4>
+          <p>Animation du projet managérial de la collectivité, ateliers, groupes de direction.</p>
+        </div>
+        <div class="mini-card">
+          <div class="icon">🤝</div>
+          <h4>Dynamiques d'équipes</h4>
+          <p>Cohésion, pouvoir d'agir, projets de direction — chaque jour sur le terrain.</p>
+        </div>
+        <div class="mini-card">
+          <div class="icon">📍</div>
+          <h4>Projets de territoire</h4>
+          <p>Accompagnement sur les projets sociaux : facilitation, outils, posture chef de projet.</p>
+        </div>
+        <div class="mini-card">
+          <div class="icon">🔄</div>
+          <h4>Boucle vertueuse</h4>
+          <p>Terrain → formation → terrain. Une pratique qui s'enrichit en continu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- =====================
-     PREUVES SOCIALES
-     ===================== -->
+<!-- FORMATIONS APERÇU -->
+<section class="section" style="padding-top:0;">
+  <h2 class="section-title">Les formations</h2>
+  <p class="section-sub">Quatre parcours conçus à partir de situations réelles, pour des professionnels qui veulent des outils immédiatement opérationnels.</p>
+  <div class="formations-grid">
+    <a href="formations.html#intelligence-collective" class="formation-card">
+      <div class="tag">4 jours</div>
+      <h3>Intelligence collective</h3>
+      <p>Découvrir, expérimenter et maîtriser les outils de la facilitation et de la coopération.</p>
+      <span class="arrow">Découvrir →</span>
+    </a>
+    <a href="formations.html#cartes-mentales" class="formation-card">
+      <div class="tag">2 jours</div>
+      <h3>Cartes mentales</h3>
+      <p>S'approprier la carte mentale comme outil de facilitation, de synthèse et de communication au quotidien.</p>
+      <span class="arrow">Découvrir →</span>
+    </a>
+    <a href="formations.html#facilitation" class="formation-card">
+      <div class="tag">Sur mesure</div>
+      <h3>Facilitation & animation</h3>
+      <p>Animer des temps de travail engageants, structurer la parole collective, faire émerger les idées.</p>
+      <span class="arrow">Découvrir →</span>
+    </a>
+    <a href="formations.html#appui-managerial" class="formation-card">
+      <div class="tag">Accompagnement</div>
+      <h3>Appui managérial</h3>
+      <p>Accompagner les équipes de direction dans leurs dynamiques collectives et leurs projets.</p>
+      <span class="arrow">Découvrir →</span>
+    </a>
+  </div>
+</section>
 
-<section class="social-proof">
-
-<div class="inner">
-
-<h2 class="section-title">Ils l'ont vécu. Ils en parlent.</h2>
-<p class="section-sub">Des résultats concrets, dans des contextes variés — collectivités, associations, établissements de formation.</p>
-
-<!-- Chiffres clés -->
-
-<div class="stats">
-
-<div class="stat">
-<div class="stat-number">+40</div>
-<div class="stat-label">agents formés à l'intelligence collective en 18 mois</div>
-</div>
-
-<div class="stat">
-<div class="stat-number">3</div>
-<div class="stat-label">cycles de 4 jours sur la facilitation et la coopération</div>
-</div>
-
-<div class="stat">
-<div class="stat-number">9</div>
-<div class="stat-label">sessions de formation animées en intra et en inter</div>
-</div>
-
-<div class="stat">
-<div class="stat-number">3 j</div>
-<div class="stat-label">de séminaire européen animé à l'IRTS Champagne-Ardenne</div>
-</div>
-
-</div>
-
-<!-- Contextes -->
-
-<div class="contexts">
-<span class="context-tag">🏛 Collectivité territoriale</span>
-<span class="context-tag">👶 Centre Départemental de l'Enfance</span>
-<span class="context-tag">🎓 IRTS Champagne-Ardenne</span>
-<span class="context-tag">🇧🇪 Étudiants belges en Master (futurs directeurs)</span>
-<span class="context-tag">🏘 Communautés de communes</span>
-<span class="context-tag">📋 CNFPT</span>
-<span class="context-tag">🤝 Équipes de territoire</span>
-</div>
-
-<!-- Témoignages -->
-
-<div class="testimonials">
-
-<div class="testimonial testimonial-featured">
-<span class="quote-mark">"</span>
-<p>Tu as fait un super travail : la journée a été particulièrement enrichissante et très agréable à suivre. J'ai vraiment apprécié l'ambiance que tu as su instaurer ainsi que la qualité de ton animation, à la fois dynamique et accessible. Cela donne envie de mettre rapidement en pratique !</p>
-<div class="testimonial-source">Angélique — CD10 · Formation intelligence collective</div>
-</div>
-
-<div class="testimonial">
-<span class="quote-mark">"</span>
-<p>La formation a été adaptée en permanence à nos besoins et contraintes. Les nombreuses mises en situation et les échanges avec les collègues ont vraiment favorisé les apprentissages.</p>
-<div class="testimonial-source">Agent territorial — CD55 · Formation intelligence collective</div>
-</div>
-
-<div class="testimonial">
-<span class="quote-mark">"</span>
-<p>Les retours d'expériences du formateur sur le sujet étaient très bénéfiques. Cette posture de partage a enrichi toute la dynamique de groupe.</p>
-<div class="testimonial-source">Apprenant en formation CAFERUIS — IRTS Champagne-Ardenne</div>
-</div>
-
-<div class="testimonial">
-<span class="quote-mark">"</span>
-<p>Cette formation m'a vraiment permis de me rendre compte que c'est un outil puissant. Tu nous as montré de façon très ludique et accessible les usages et comment on pouvait gagner en efficience.</p>
-<div class="testimonial-source">Alexia — Formation cartes mentales</div>
-</div>
-
-</div>
-
-</div>
-
+<!-- TÉMOIGNAGE VEDETTE -->
+<section class="section" style="padding-top:0;">
+  <div class="temoignage-vedette">
+    <span class="quote">"</span>
+    <p>Tu as fait un super travail : la journée a été particulièrement enrichissante et très agréable à suivre. J'ai vraiment apprécié l'ambiance que tu as su instaurer ainsi que la qualité de ton animation, à la fois dynamique et accessible. Cela donne envie de mettre rapidement en pratique !</p>
+    <cite>Angélique — CD10 · Formation intelligence collective</cite>
+    <br><br>
+    <a href="temoignages.html" class="btn" style="background:var(--jaune);color:var(--bleu);">Lire tous les témoignages</a>
+  </div>
 </section>
 
 <!-- CTA -->
-
-<section class="section">
-
-<div class="cta">
-
-<h2>
-Et si vos formations donnaient vraiment envie de participer ?
-</h2>
-
-<p>
-Des formats conçus pour remettre de l'énergie, de la clarté et du collectif dans les apprentissages.
-</p>
-
-<a href="mailto:simartarnaud@gmail.com" class="btn">
-Parlons de votre projet →
-</a>
-
-</div>
-
+<section class="cta-section">
+  <h2>Et si vos formations donnaient vraiment envie de participer ?</h2>
+  <p>Des formats conçus pour remettre de l'énergie, de la clarté et du collectif dans les apprentissages.</p>
+  <a href="contact.html" class="btn">Parlons de votre projet →</a>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-
-<div class="footer-name">
-Arnaud SIMART
-</div>
-
-<div>
-Facilitateur & formateur en intelligence collective<br>
-Appui managérial et gestion de projet
-</div>
-
-<br>
-
-<div>
-06 42 33 22 79 • simartarnaud@gmail.com<br>
-9 rue Maurice RAVEL • 10300 Macey<br>
-SIRET : 10169169900017
-</div>
-
-<div class="hand">
-Penser ensemble, agir durablement.
-</div>
-
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      9 rue Maurice RAVEL · 10300 Macey<br>
+      SIRET : 10169169900017
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement.</div>
 </footer>
 
 </body>
