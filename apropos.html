@@ -4,30 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>À propos — Arnaud SIMART</title>
-
 <link rel="stylesheet" href="style.css">
 
 <style>
-
 .page-hero {
   background:var(--bleu);
   color:white;
   padding:60px;
   text-align:center;
 }
-
-.page-hero h1 {
-  font-size:48px;
-  font-weight:800;
-  margin-bottom:16px;
-}
-
-.page-hero p {
-  font-size:18px;
-  opacity:0.85;
-  max-width:650px;
-  margin:auto;
-}
+.page-hero h1 { font-size:48px; font-weight:800; margin-bottom:16px; }
+.page-hero p { font-size:18px; opacity:0.85; max-width:650px; margin:auto; }
 
 .profil {
   display:grid;
@@ -35,148 +22,47 @@
   gap:60px;
   align-items:start;
 }
-
-.profil-photo-wrap {
-  position:sticky;
-  top:90px;
-  text-align:center;
-}
-
+.profil-photo-wrap { position:sticky; top:90px; text-align:center; }
 .profil-photo {
   width:100%;
   max-width:320px;
   aspect-ratio:1;
   border-radius:28px;
   object-fit:cover;
-  object-position:center top;
+  object-position:center center;
   box-shadow:0 20px 60px rgba(0,0,0,0.15);
   border:4px solid var(--jaune);
 }
-
-.profil-name {
-  font-size:26px;
-  font-weight:800;
-  color:var(--bleu);
-  margin-top:20px;
-}
-
-.profil-role {
-  font-size:14px;
-  color:#666;
-  margin-top:6px;
-  line-height:1.6;
-}
-
-.profil-contact {
-  margin-top:20px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
+.profil-name { font-size:26px; font-weight:800; color:var(--bleu); margin-top:20px; }
+.profil-role { font-size:14px; color:#666; margin-top:6px; line-height:1.6; }
+.profil-contact { margin-top:20px; display:flex; flex-direction:column; gap:10px; }
 .profil-contact a {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  color:var(--bleu);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:600;
-  background:var(--gris);
-  padding:10px 18px;
-  border-radius:999px;
-  transition:0.2s;
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--bleu); text-decoration:none; font-size:14px; font-weight:600;
+  background:var(--gris); padding:10px 18px; border-radius:999px;
+  transition:0.2s; justify-content:center;
 }
+.profil-contact a:hover { background:var(--jaune); }
 
-.profil-contact a:hover {
-  background:var(--jaune);
-}
-
-.profil-text h2 {
-  font-size:34px;
-  color:var(--bleu);
-  font-weight:800;
-  margin-bottom:20px;
-}
-
-.profil-text p {
-  font-size:17px;
-  color:#444;
-  line-height:1.85;
-  margin-bottom:18px;
-}
-
-.profil-text strong {
-  color:var(--bleu);
-}
+.profil-text h2 { font-size:34px; color:var(--bleu); font-weight:800; margin-bottom:20px; }
+.profil-text p { font-size:17px; color:#444; line-height:1.85; margin-bottom:18px; }
+.profil-text strong { color:var(--bleu); }
 
 .fil-rouge {
-  background:var(--jaune);
-  border-radius:20px;
-  padding:24px 28px;
-  margin:28px 0;
-  display:flex;
-  gap:16px;
-  align-items:flex-start;
+  background:var(--jaune); border-radius:20px; padding:24px 28px;
+  margin:28px 0; display:flex; gap:16px; align-items:flex-start;
 }
+.fil-rouge .icon { font-size:28px; flex-shrink:0; }
+.fil-rouge p { font-size:16px; color:var(--bleu); font-weight:600; margin:0; line-height:1.6; }
 
-.fil-rouge .icon {
-  font-size:28px;
-  flex-shrink:0;
-}
-
-.fil-rouge p {
-  font-size:16px;
-  color:var(--bleu);
-  font-weight:600;
-  margin:0;
-  line-height:1.6;
-}
-
-/* CARTES */
-
-.double-casquette {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-  margin:28px 0;
-}
-
-.casquette {
-  border-radius:22px;
-  padding:32px;
-  transition:0.25s;
-}
-
-.casquette:hover {
-  transform:translateY(-4px);
-}
-
-.casquette.bleu {
-  background:var(--bleu);
-}
-
-.casquette.jaune {
-  background:var(--jaune);
-}
-
-.casquette .icon {
-  font-size:34px;
-  margin-bottom:14px;
-}
-
-.casquette h3 {
-  font-size:20px;
-  font-weight:800;
-  margin-bottom:14px;
-}
-
-.casquette p {
-  font-size:15px;
-  line-height:1.75;
-  opacity:1;
-}
+.double-casquette { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:28px 0; }
+.casquette { border-radius:22px; padding:28px; transition:0.25s; }
+.casquette:hover { transform:translateY(-4px); }
+.casquette.bleu { background:var(--bleu); }
+.casquette.jaune { background:var(--jaune); }
+.casquette .icon { font-size:32px; margin-bottom:12px; }
+.casquette h3 { font-size:18px; font-weight:700; margin-bottom:8px; }
+.casquette p { font-size:15px; line-height:1.75; opacity:1; }
 
 .casquette.bleu h3,
 .casquette.bleu p {
@@ -191,68 +77,116 @@
   color:#2b2b2b;
 }
 
-/* ATOUTS */
-
-.atouts {
-  background:var(--gris);
-  border-radius:22px;
-  padding:28px;
-  margin:28px 0;
-}
-
-.atouts h4 {
-  color:var(--bleu);
-  font-size:16px;
-  font-weight:700;
-  margin-bottom:16px;
-}
-
-.atouts-list {
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
-
+.atouts { background:var(--gris); border-radius:22px; padding:28px; margin:28px 0; }
+.atouts h4 { color:var(--bleu); font-size:16px; font-weight:700; margin-bottom:16px; }
+.atouts-list { display:flex; flex-wrap:wrap; gap:10px; }
 .atout-tag {
-  background:white;
-  border-radius:999px;
-  padding:8px 18px;
-  font-size:14px;
-  font-weight:500;
-  color:var(--bleu);
+  background:white; border-radius:999px; padding:8px 18px;
+  font-size:14px; font-weight:500; color:var(--bleu);
   box-shadow:0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* RESPONSIVE */
-
-@media(max-width:900px) {
-
-  .page-hero {
-    padding:40px 25px;
-  }
-
-  .page-hero h1 {
-    font-size:32px;
-  }
-
-  .profil {
-    grid-template-columns:1fr;
-  }
-
-  .profil-photo-wrap {
-    position:static;
-  }
-
-  .profil-photo {
-    max-width:220px;
-  }
-
-  .double-casquette {
-    grid-template-columns:1fr;
-  }
-
+.preuve-vivante {
+  margin-top:34px;
+  background:white;
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.08);
+  border:3px solid var(--jaune);
+}
+.preuve-vivante h3 {
+  color:var(--bleu);
+  font-size:26px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+.preuve-vivante p {
+  font-size:16px;
+  color:#444;
+  line-height:1.75;
+}
+.preuve-images {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:22px;
+}
+.preuve-images img {
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.10);
+}
+.preuve-caption {
+  margin-top:16px;
+  font-size:14px;
+  color:#666;
+  font-style:italic;
 }
 
+.parcours { margin-top:50px; }
+.parcours h2 { font-size:32px; color:var(--bleu); font-weight:800; margin-bottom:8px; }
+.parcours-sub { font-size:16px; color:#666; margin-bottom:30px; }
+.timeline { display:grid; gap:16px; }
+.tl-item {
+  display:grid; grid-template-columns:110px 1fr; gap:24px;
+  background:white; border-radius:20px; padding:24px 28px;
+  box-shadow:0 4px 16px rgba(0,0,0,0.05); align-items:start; transition:0.2s;
+}
+.tl-item:hover { box-shadow:0 8px 28px rgba(0,0,0,0.1); transform:translateY(-2px); }
+.tl-date {
+  font-size:12px; font-weight:700; color:var(--corail); text-align:center;
+  background:rgba(255,111,97,0.08); padding:8px; border-radius:12px; line-height:1.4;
+}
+.tl-content h4 { color:var(--bleu); font-size:16px; font-weight:700; margin-bottom:4px; }
+.tl-content .org { font-size:13px; color:var(--corail); font-weight:600; margin-bottom:6px; }
+.tl-content p { font-size:14px; color:#666; line-height:1.6; }
+
+.diplomes { margin-top:50px; }
+.diplomes h2 { font-size:32px; color:var(--bleu); font-weight:800; margin-bottom:30px; }
+.diplomes-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; }
+.diplome-card {
+  background:white; border-radius:18px; padding:24px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.05); border-left:4px solid var(--jaune); transition:0.2s;
+}
+.diplome-card:hover { transform:translateY(-3px); border-left-color:var(--corail); }
+.diplome-date { font-size:12px; font-weight:700; color:var(--corail); margin-bottom:8px; text-transform:uppercase; letter-spacing:0.05em; }
+.diplome-card h4 { color:var(--bleu); font-size:15px; font-weight:700; margin-bottom:6px; line-height:1.4; }
+.diplome-card p { font-size:13px; color:#888; }
+
+.valeurs { background:var(--bleu); border-radius:28px; padding:50px; margin-top:50px; color:white; }
+.valeurs h2 { font-size:30px; font-weight:800; margin-bottom:30px; }
+.valeurs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:18px; }
+.valeur {
+  background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12);
+  border-radius:18px; padding:22px; text-align:center; transition:0.25s;
+}
+.valeur:hover { background:rgba(255,255,255,0.15); transform:translateY(-3px); }
+.valeur .icon { font-size:32px; margin-bottom:10px; }
+.valeur h4 { font-size:15px; font-weight:700; margin-bottom:8px; color:var(--jaune); }
+.valeur p { font-size:13px; opacity:0.8; line-height:1.5; }
+
+.apropos-cta {
+  text-align:center; margin-top:50px; padding:50px;
+  background:var(--gris); border-radius:28px;
+}
+.apropos-cta h2 { font-size:28px; color:var(--bleu); font-weight:800; margin-bottom:12px; }
+.apropos-cta p { font-size:16px; color:#666; max-width:500px; margin:0 auto 24px; }
+
+@media(max-width:900px) {
+  .page-hero { padding:40px 25px; }
+  .page-hero h1 { font-size:32px; }
+  .profil { grid-template-columns:1fr; }
+  .profil-photo-wrap { position:static; }
+  .profil-photo { max-width:240px; }
+  .double-casquette { grid-template-columns:1fr; }
+  .valeurs { padding:30px 20px; }
+  .tl-item { grid-template-columns:1fr; gap:10px; }
+  .apropos-cta { padding:30px 20px; }
+  .preuve-images { grid-template-columns:1fr; }
+  .preuve-images img { height:auto; max-height:420px; }
+}
 </style>
 </head>
 
@@ -260,13 +194,9 @@
 
 <nav>
   <a href="index.html" class="nav-logo">Arnaud SIMART</a>
-
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
-
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="formations.html">Formations</a></li>
@@ -279,133 +209,223 @@
 
 <section class="page-hero">
   <div class="badge">20 ans d'expérience publique</div>
-
   <h1>Arnaud SIMART</h1>
-
-  <p>
-    Chargé de mission Innovation Managériale ·
-    Formateur · Facilitateur en intelligence collective
-  </p>
+  <p>Chargé de mission Innovation Managériale · Formateur · Facilitateur en intelligence collective</p>
 </section>
 
 <section class="section">
-
   <div class="profil">
 
     <div class="profil-photo-wrap">
-
-      <img src="portrait-foret.png"
-           alt="Arnaud SIMART"
-           class="profil-photo">
-
-      <div class="profil-name">
-        Arnaud SIMART
-      </div>
-
+      <img src="portrait-foret.png" alt="Arnaud SIMART, facilitateur et formateur en intelligence collective" class="profil-photo">
+      <div class="profil-name">Arnaud SIMART</div>
       <div class="profil-role">
         Chargé de mission Innovation Managériale — CD10<br>
-        Formateur & Facilitateur<br>
-        en intelligence collective
+        Formateur & Facilitateur<br>en intelligence collective
       </div>
-
       <div class="profil-contact">
         <a href="tel:0642332279">06 42 33 22 79</a>
         <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a>
+        <a href="contact.html" class="btn" style="justify-content:center;margin-top:6px;">Prendre contact</a>
       </div>
-
     </div>
 
     <div class="profil-text">
+      <h2>Penser ensemble,<br>agir durablement.</h2>
 
-      <h2>
-        Penser ensemble,<br>
-        agir durablement.
-      </h2>
-
-      <p>
-        J'accompagne les organisations publiques et les collectifs à
-        <strong>révéler leur intelligence collective</strong>,
-        renforcer la cohésion et libérer la créativité managériale.
-      </p>
+      <p>J'accompagne les organisations publiques et les collectifs à <strong>révéler leur intelligence collective</strong>, renforcer la cohésion et libérer la créativité managériale. Passionné par la coopération, je conçois et j'anime des démarches participatives qui transforment les façons de faire ensemble.</p>
 
       <div class="fil-rouge">
-
         <div class="icon">🧭</div>
-
-        <p>
-          20 ans d'expérience publique au service de la coopération,
-          aujourd'hui mis au profit de la formation,
-          de la facilitation et de la créativité managériale.
-        </p>
-
+        <p>Fil rouge : 20 ans d'expérience publique au service de la coopération, aujourd'hui mis au profit de la formation, de la facilitation et de la créativité managériale.</p>
       </div>
 
-      <p>
-        Ce n'est pas un hasard si mes formations résonnent :
-        je vis chaque jour ce que j'enseigne.
-      </p>
+      <p>Ce n'est pas un hasard si mes formations résonnent : <strong>je vis chaque jour ce que j'enseigne</strong>. Chargé de mission Innovation Managériale au CD10, j'accompagne en continu des équipes dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.</p>
 
-      <p>
-        Ma singularité tient à une conviction simple :
-        une démarche collective fonctionne mieux lorsqu'elle devient
-        <strong>visible, sensible et mémorable.</strong>
-      </p>
+      <p>Ma singularité tient à une conviction simple : une démarche collective fonctionne mieux lorsqu'elle devient <strong>visible, sensible et mémorable</strong>. J'utilise les métaphores, les supports visuels, les objets, les récits et les outils de facilitation pour aider les groupes à comprendre, décider et agir.</p>
 
       <div class="double-casquette">
-
         <div class="casquette bleu">
-
           <div class="icon">🏛</div>
-
           <h3>Praticien au quotidien</h3>
-
-          <p>
-            Chargé de mission Innovation Managériale au CD10 —
-            j'accompagne chaque jour des équipes dans leurs dynamiques
-            collectives et leurs projets.
-          </p>
-
+          <p>Chargé de mission Innovation Managériale au CD10 — j'accompagne chaque jour des équipes dans leurs dynamiques collectives et leurs projets.</p>
         </div>
-
         <div class="casquette jaune">
-
           <div class="icon">🎓</div>
-
           <h3>Formateur & facilitateur</h3>
-
-          <p>
-            Je conçois et anime des formations pour le CNFPT,
-            CD10, CD88, CU Grand Reims
-            et d'autres structures publiques et associatives.
-          </p>
-
+          <p>Je conçois et anime des formations pour le CNFPT, CD10, CD88, CU Grand Reims et d'autres structures publiques et associatives.</p>
         </div>
-
       </div>
 
       <div class="atouts">
-
         <h4>Mes atouts clés</h4>
-
         <div class="atouts-list">
-
-          <span class="atout-tag">🎯 Facilitation managériale</span>
-          <span class="atout-tag">🧩 Séminaires collaboratifs</span>
-          <span class="atout-tag">💡 Innovation publique</span>
-          <span class="atout-tag">🧠 Pensée visuelle</span>
-          <span class="atout-tag">👥 Formation de formateurs</span>
-          <span class="atout-tag">🤝 Co-développement</span>
-          <span class="atout-tag">🌱 Intelligence collective</span>
-
+          <span class="atout-tag">Facilitation managériale</span>
+          <span class="atout-tag">Séminaires collaboratifs</span>
+          <span class="atout-tag">Innovation publique</span>
+          <span class="atout-tag">Pensée visuelle & cartes mentales</span>
+          <span class="atout-tag">Formation de formateurs</span>
+          <span class="atout-tag">Co-développement</span>
+          <span class="atout-tag">Intelligence collective</span>
         </div>
-
       </div>
 
+      <div class="preuve-vivante">
+        <h3>Quand une formation laisse une trace.</h3>
+        <p>
+          À la fin d'un cycle de formation, les participants m'ont offert ce tableau collectif.
+          Au-delà du cadeau, j'y vois une preuve précieuse : un groupe qui a vécu une expérience,
+          partagé une énergie commune et gardé quelque chose du chemin parcouru.
+        </p>
+        <p>
+          Pour moi, c'est l'une des formes les plus puissantes de retour : les participants repartent
+          avec des outils, mais aussi avec l'envie de marquer le moment.
+        </p>
+        <div class="preuve-images">
+          <img src="photo21.png" alt="Arnaud SIMART recevant un tableau collectif offert par les participants">
+          <img src="photo22.png" alt="Tableau Merci Nono offert par les participants en fin de formation">
+        </div>
+        <div class="preuve-caption">
+          Cadeau collectif offert en fin de formation : une trace vivante du lien créé avec le groupe.
+        </div>
+      </div>
     </div>
+  </div>
 
+  <div class="parcours">
+    <h2>Parcours professionnel</h2>
+    <p class="parcours-sub">20 ans au service du secteur public — une trajectoire cohérente, du terrain à la facilitation.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Depuis 2024</div>
+        <div class="tl-content">
+          <h4>Formateur — Intelligence collective & Facilitation</h4>
+          <div class="org">CNFPT · CD10 · CD88 · CU Grand Reims</div>
+          <p>Formations sur l'intelligence collective, la co-construction et les cartes mentales. Cycles de 4 jours et sessions de 2 jours, en intra et en inter.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Depuis 2023</div>
+        <div class="tl-content">
+          <h4>Chargé de mission Innovation Managériale</h4>
+          <div class="org">Conseil Départemental de l'Aube — CD10</div>
+          <p>Appui à la Direction Générale pour le déploiement du projet managérial. Conception et facilitation de séminaires et d'ateliers collaboratifs.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2018 – 2023</div>
+        <div class="tl-content">
+          <h4>Responsable de territoire</h4>
+          <div class="org">Conseil Départemental de l'Aube — CD10</div>
+          <p>Management collaboratif d'une équipe pluridisciplinaire. Pilotage de projets de territoire et accompagnement au changement.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">2003 – 2018</div>
+        <div class="tl-content">
+          <h4>Assistant socio-éducatif</h4>
+          <div class="org">Conseil Départemental de l'Aube — CD10</div>
+          <p>15 ans d'accompagnement éducatif et social en protection de l'enfance. Soutien à la parentalité et travail en réseau partenarial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="diplomes">
+    <h2>Formations & diplômes</h2>
+    <div class="diplomes-grid">
+      <div class="diplome-card">
+        <div class="diplome-date">Octobre 2025</div>
+        <h4>Formation à la Facilitation & Formation de formateur</h4>
+        <p>Direction Interministérielle de la Transformation Publique (DITP)</p>
+      </div>
+      <div class="diplome-card">
+        <div class="diplome-date">Octobre 2025</div>
+        <h4>Diplôme Universitaire Intelligence Collective</h4>
+        <p>CY Cergy Paris Université</p>
+      </div>
+      <div class="diplome-card">
+        <div class="diplome-date">Avril 2017</div>
+        <h4>CAFERUIS</h4>
+        <p>Certificat d'Aptitude aux Fonctions d'Encadrement et de Responsable d'Unité d'Intervention Sociale — IRTS Champagne-Ardenne, Reims</p>
+      </div>
+      <div class="diplome-card">
+        <div class="diplome-date">Septembre 2015</div>
+        <h4>Diplôme Universitaire Protection de l'Enfance</h4>
+        <p>UFR de Psychologie — Université Paris Diderot Paris 7</p>
+      </div>
+      <div class="diplome-card">
+        <div class="diplome-date">Juin 2004</div>
+        <h4>Diplôme d'État Assistant de Service Social</h4>
+        <p>IRTS de Champagne-Ardenne, Reims</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="valeurs">
+    <h2>Ce en quoi je crois</h2>
+    <div class="valeurs-grid">
+      <div class="valeur">
+        <div class="icon">🧠</div>
+        <h4>L'intelligence du collectif</h4>
+        <p>Les meilleures solutions émergent du groupe, pas d'un seul expert.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">🎯</div>
+        <h4>L'ancrage dans le réel</h4>
+        <p>Rien de théorique. Tout ce que j'enseigne, je le pratique au quotidien.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">✋</div>
+        <h4>Apprendre en faisant</h4>
+        <p>L'expérimentation est le meilleur vecteur d'apprentissage durable.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">🌱</div>
+        <h4>Le pouvoir d'agir</h4>
+        <p>Chaque personne a en elle les ressources pour transformer sa pratique.</p>
+      </div>
+      <div class="valeur">
+        <div class="icon">🤝</div>
+        <h4>La coopération</h4>
+        <p>Coopérer, ça s'apprend, ça se cultive, ça se facilite.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="apropos-cta">
+    <h2>Envie d'échanger ?</h2>
+    <p>Je serais ravi de discuter de votre projet et de voir comment je peux vous accompagner.</p>
+    <a href="contact.html" class="btn">Prendre contact →</a>
   </div>
 
 </section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Arnaud SIMART</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="enaction.html">En action</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      9 rue Maurice RAVEL · 10300 Macey<br>
+      SIRET : 10169169900017
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement.</div>
+</footer>
 
 </body>
 </html>
