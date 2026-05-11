@@ -1,16 +1,11 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arnaud SIMART — Facilitateur & Formateur</title>
-
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-
 <style>
-
 /* HERO */
 .hero {
   background:var(--bleu);
@@ -19,29 +14,22 @@
   position:relative;
   overflow:hidden;
 }
-
 .hero::before {
   content:"";
   position:absolute;
-  width:500px;
-  height:500px;
+  width:500px; height:500px;
   border-radius:50%;
   background:rgba(255,255,255,0.04);
-  top:-200px;
-  right:-150px;
+  top:-200px; right:-150px;
 }
-
 .hero::after {
   content:"";
   position:absolute;
-  width:300px;
-  height:300px;
+  width:300px; height:300px;
   border-radius:50%;
   background:rgba(247,215,116,0.08);
-  bottom:-100px;
-  left:10%;
+  bottom:-100px; left:10%;
 }
-
 .hero-inner {
   max-width:1200px;
   margin:auto;
@@ -52,38 +40,29 @@
   position:relative;
   z-index:1;
 }
-
 .hero h1 {
   font-size:58px;
   line-height:1.05;
   margin-bottom:20px;
   font-weight:800;
 }
-
 .hero h1 em {
   font-style:normal;
   color:var(--jaune);
 }
-
 .hero-desc {
   font-size:19px;
   opacity:0.9;
   max-width:600px;
   margin-bottom:35px;
 }
-
 .signature {
   font-family:'Patrick Hand', cursive;
   color:var(--jaune);
   font-size:28px;
   margin-bottom:35px;
 }
-
-.hero-btns {
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
 
 .hero-photo-wrap {
   display:flex;
@@ -91,10 +70,9 @@
   align-items:center;
   text-align:center;
 }
-
 .hero-photo {
-  width:320px;
-  height:320px;
+  width:280px;
+  height:280px;
   border-radius:50%;
   object-fit:cover;
   object-position:center top;
@@ -107,7 +85,6 @@
   background:var(--jaune);
   padding:30px 60px;
 }
-
 .stats-inner {
   max-width:1200px;
   margin:auto;
@@ -116,7 +93,6 @@
   gap:20px;
   text-align:center;
 }
-
 .stat-item strong {
   display:block;
   font-size:38px;
@@ -124,59 +100,13 @@
   color:var(--bleu);
   line-height:1;
 }
-
 .stat-item span {
   font-size:13px;
   color:#444;
   font-weight:500;
 }
 
-/* CONFIANCE */
-.confiance {
-  background:white;
-  padding:34px 40px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
-}
-
-.confiance-inner {
-  max-width:1200px;
-  margin:auto;
-  text-align:center;
-}
-
-.confiance-label {
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  color:#888;
-  margin-bottom:18px;
-  font-weight:700;
-}
-
-.confiance-logos {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:18px;
-}
-
-.confiance-logos span {
-  background:var(--gris);
-  color:var(--bleu);
-  padding:12px 20px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:700;
-  transition:0.2s;
-}
-
-.confiance-logos span:hover {
-  background:var(--jaune);
-  transform:translateY(-2px);
-}
-
-/* PRATICIEN */
+/* INTRO PRATICIEN */
 .praticien {
   background:white;
   border-radius:32px;
@@ -187,68 +117,35 @@
   position:relative;
   z-index:2;
 }
-
 .praticien-grid {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:60px;
   align-items:center;
 }
-
-.praticien-text p {
-  font-size:17px;
-  color:#444;
-  line-height:1.8;
-  margin-bottom:20px;
-}
-
+.praticien-text p { font-size:17px; color:#444; line-height:1.8; margin-bottom:20px; }
 .praticien-cards {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
 }
-
 .mini-card {
   background:var(--gris);
   border-radius:18px;
   padding:22px;
   transition:0.25s ease;
 }
+.mini-card:hover { background:var(--jaune); transform:translateY(-3px); }
+.mini-card .icon { font-size:28px; margin-bottom:10px; }
+.mini-card h4 { color:var(--bleu); font-size:15px; margin-bottom:6px; }
+.mini-card p { font-size:13px; color:#555; }
 
-.mini-card:hover {
-  background:var(--jaune);
-  transform:translateY(-3px);
-}
-
-.mini-card .icon {
-  font-size:28px;
-  margin-bottom:10px;
-}
-
-.mini-card h4 {
-  color:var(--bleu);
-  font-size:16px;
-  font-weight:700;
-  margin-bottom:8px;
-}
-
-.mini-card p {
-  font-size:14px;
-  color:#2b2b2b;
-  line-height:1.6;
-}
-
-.mini-card:hover p {
-  color:#1A1A1A;
-}
-
-/* FORMATIONS */
+/* FORMATIONS APERÇU */
 .formations-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:24px;
 }
-
 .formation-card {
   background:white;
   border-radius:24px;
@@ -260,12 +157,7 @@
   color:var(--noir);
   display:block;
 }
-
-.formation-card:hover {
-  transform:translateY(-5px);
-  box-shadow:0 16px 40px rgba(0,0,0,0.12);
-}
-
+.formation-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,0.12); }
 .formation-card .tag {
   font-size:12px;
   font-weight:600;
@@ -274,19 +166,8 @@
   letter-spacing:0.06em;
   margin-bottom:12px;
 }
-
-.formation-card h3 {
-  color:var(--bleu);
-  font-size:20px;
-  margin-bottom:10px;
-}
-
-.formation-card p {
-  font-size:14px;
-  color:#666;
-  line-height:1.6;
-}
-
+.formation-card h3 { color:var(--bleu); font-size:20px; margin-bottom:10px; }
+.formation-card p { font-size:14px; color:#666; line-height:1.6; }
 .formation-card .arrow {
   display:inline-block;
   margin-top:16px;
@@ -295,60 +176,7 @@
   font-size:14px;
 }
 
-/* GALERIE */
-.home-gallery {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:14px;
-  margin-bottom:28px;
-}
-
-.home-gallery a {
-  display:block;
-  position:relative;
-  overflow:hidden;
-  border-radius:18px;
-  box-shadow:0 8px 22px rgba(0,0,0,0.08);
-  background:white;
-}
-
-.home-gallery img {
-  width:100%;
-  aspect-ratio:1;
-  object-fit:cover;
-  display:block;
-  transition:0.35s ease;
-}
-
-.home-gallery a:hover img {
-  transform:scale(1.05);
-}
-
-.home-gallery .wide {
-  grid-column:span 2;
-}
-
-.home-gallery .wide img {
-  aspect-ratio:2 / 1;
-}
-
-.home-gallery-caption {
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-  padding:18px;
-  color:white;
-  font-size:14px;
-  font-weight:700;
-  background:linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0));
-}
-
-.gallery-proof {
-  border:4px solid var(--jaune);
-}
-
-/* TÉMOIGNAGE */
+/* TÉMOIGNAGE VEDETTE */
 .temoignage-vedette {
   background:var(--bleu);
   border-radius:32px;
@@ -357,7 +185,6 @@
   text-align:center;
   margin-top:30px;
 }
-
 .temoignage-vedette .quote {
   font-size:72px;
   font-family:'Patrick Hand', cursive;
@@ -366,7 +193,6 @@
   margin-bottom:20px;
   display:block;
 }
-
 .temoignage-vedette p {
   font-size:20px;
   font-style:italic;
@@ -375,7 +201,6 @@
   opacity:0.95;
   line-height:1.7;
 }
-
 .temoignage-vedette cite {
   font-size:14px;
   opacity:0.65;
@@ -385,127 +210,36 @@
   letter-spacing:0.06em;
 }
 
-/* CTA */
+/* CTA FINAL */
 .cta-section {
   text-align:center;
   padding:80px 40px;
 }
+.cta-section h2 { font-size:40px; color:var(--bleu); margin-bottom:16px; font-weight:800; }
+.cta-section p { font-size:18px; color:#555; max-width:600px; margin:0 auto 30px; }
 
-.cta-section h2 {
-  font-size:40px;
-  color:var(--bleu);
-  margin-bottom:16px;
-  font-weight:800;
-}
-
-.cta-section p {
-  font-size:18px;
-  color:#555;
-  max-width:600px;
-  margin:0 auto 30px;
-}
-
-/* RESPONSIVE */
 @media(max-width:900px) {
-
-  .hero {
-    padding:60px 25px;
-  }
-
-  .hero-inner {
-    grid-template-columns:1fr;
-  }
-
-  .hero h1 {
-    font-size:38px;
-  }
-
-  .hero-photo {
-    width:220px;
-    height:220px;
-  }
-
-  .hero-photo-wrap {
-    order:-1;
-  }
-
-  .stats-bar {
-    padding:25px;
-  }
-
-  .stats-inner {
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .confiance {
-    padding:28px 20px;
-  }
-
-  .confiance-logos {
-    gap:10px;
-  }
-
-  .confiance-logos span {
-    font-size:13px;
-    padding:10px 16px;
-  }
-
-  .praticien {
-    margin:0 20px;
-    padding:35px 25px;
-  }
-
-  .praticien-grid {
-    grid-template-columns:1fr;
-    gap:30px;
-  }
-
-  .temoignage-vedette {
-    padding:40px 25px;
-  }
-
-  .temoignage-vedette p {
-    font-size:17px;
-  }
-
-  .home-gallery {
-    grid-template-columns:1fr 1fr;
-  }
-
-  .home-gallery .wide {
-    grid-column:span 2;
-  }
+  .hero { padding:60px 25px; }
+  .hero-inner { grid-template-columns:1fr; }
+  .hero h1 { font-size:38px; }
+  .hero-photo { width:180px; height:180px; }
+  .hero-photo-wrap { order:-1; }
+  .stats-bar { padding:25px; }
+  .stats-inner { grid-template-columns:repeat(2,1fr); }
+  .praticien { margin:0 20px; padding:35px 25px; }
+  .praticien-grid { grid-template-columns:1fr; gap:30px; }
+  .temoignage-vedette { padding:40px 25px; }
+  .temoignage-vedette p { font-size:17px; }
 }
-
-@media(max-width:520px) {
-
-  .home-gallery {
-    grid-template-columns:1fr;
-  }
-
-  .home-gallery .wide {
-    grid-column:span 1;
-  }
-
-  .home-gallery .wide img {
-    aspect-ratio:1;
-  }
-}
-
 </style>
 </head>
-
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Arnaud SIMART</a>
-
+  <a href="index.html" class="nav-logo">Arnaud Simart</a>
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
-
   <ul class="nav-links">
     <li><a href="index.html" class="active">Accueil</a></li>
     <li><a href="formations.html">Formations</a></li>
@@ -516,345 +250,175 @@
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-
     <div>
       <div class="badge">Facilitateur & formateur en intelligence collective</div>
-
-      <h1>
-        Former autrement.<br>
-        <em>Faire vivre</em><br>
-        les apprentissages.
-      </h1>
-
-      <p class="hero-desc">
-        Des formations vivantes, visuelles et concrètes pour développer la coopération,
-        les compétences collectives et le pouvoir d'agir — ancrées dans une pratique de terrain quotidienne.
-      </p>
-
-      <div class="signature">
-        Penser ensemble, agir durablement.
-      </div>
-
+      <h1>Former autrement.<br><em>Faire vivre</em><br>les apprentissages.</h1>
+      <p class="hero-desc">Des formations vivantes, visuelles et concrètes pour développer la coopération, les compétences collectives et le pouvoir d'agir — ancrées dans une pratique de terrain quotidienne.</p>
+      <div class="signature">Penser ensemble, agir durablement.</div>
       <div class="hero-btns">
         <a href="formations.html" class="btn">Voir les formations</a>
-
-        <a href="contact.html"
-           class="btn btn-outline"
-           style="border-color:rgba(255,255,255,0.5);color:white;">
-          Parlons de votre projet
-        </a>
+        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">Parlons de votre projet</a>
       </div>
     </div>
-
     <div class="hero-photo-wrap">
-      <img src="portrait-foret.png"
-           alt="Arnaud SIMART, facilitateur et formateur en intelligence collective"
-           class="hero-photo">
+      <img src="arnaud.png" alt="Arnaud SIMART" class="hero-photo">
     </div>
-
   </div>
 </section>
 
+<!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
-
     <div class="stat-item">
       <strong>+40</strong>
       <span>agents formés en 18 mois</span>
     </div>
-
     <div class="stat-item">
       <strong>3</strong>
       <span>cycles de 4 jours animés</span>
     </div>
-
     <div class="stat-item">
       <strong>9+</strong>
       <span>sessions en intra & inter</span>
     </div>
-
     <div class="stat-item">
-      <strong>UE</strong>
+      <strong>🇪🇺</strong>
       <span>Séminaire européen IRTS</span>
     </div>
-
   </div>
 </div>
 
-<section class="confiance">
-  <div class="confiance-inner">
-    <div class="confiance-label">Ils m'ont fait confiance</div>
-
-    <div class="confiance-logos">
-      <span>CD10</span>
-      <span>CNFPT</span>
-      <span>CD88</span>
-      <span>CU Grand Reims</span>
-      <span>IRTS</span>
-      <span>Structures publiques & associatives</span>
-    </div>
-  </div>
-</section>
-
+<!-- PRATICIEN DU QUOTIDIEN -->
 <section class="section">
-
   <div class="praticien">
-
     <div class="praticien-grid">
-
       <div class="praticien-text">
-
         <div class="badge">Ce qui fait la différence</div>
-
-        <h2 class="section-title" style="margin-bottom:20px;">
-          Une pratique ancrée dans le réel, chaque jour
-        </h2>
-
-        <p>
-          Je ne forme pas depuis un pupitre.
-          Chargé de mission Innovation Managériale au CD10,
-          j'accompagne chaque jour des agents dans leurs dynamiques de projet,
-          de management et de cohésion.
-        </p>
-
-        <p>
-          Je travaille sérieusement en amont pour designer chaque atelier,
-          chaque formation selon la commande, le contexte et le collectif.
-        </p>
-
-        <p>
-          Les métaphores, les supports visuels, les objets et les récits
-          servent ici à créer des expériences collectives mémorables.
-        </p>
-
-        <a href="apropos.html"
-           class="btn btn-outline"
-           style="margin-top:10px;">
-          En savoir plus sur mon parcours
-        </a>
-
+        <h2 class="section-title" style="margin-bottom:20px;">Une pratique ancrée dans le réel, chaque jour</h2>
+        <p>Je ne forme pas depuis un pupitre. Chargé de mission Innovation Managériale au CD10, j'accompagne chaque jour des agents dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.</p>
+        <p>Je travaille sérieusement en amont — pour <strong>designer chaque atelier, chaque formation</strong> selon la commande, le contexte, le collectif. C'est ce travail de fond qui me libère ensuite pour naviguer avec agilité : m'adapter à la dynamique du groupe, aux besoins individuels, à l'énergie du moment.</p>
+        <p>Avant les outils, je travaille avec les participants sur <strong>les postures</strong> : écoute, présence, rapport au groupe et à l'incertitude. Et j'utilise les métaphores et les univers visuels pour embarquer — la montgolfière, le cap, le vol... pour que chacun entre dans l'expérience à sa façon.</p>
+        <a href="apropos.html" class="btn btn-outline" style="margin-top:10px;">En savoir plus sur mon parcours</a>
       </div>
-
       <div class="praticien-cards">
-
         <div class="mini-card">
           <div class="icon">🎨</div>
           <h4>Conçu sur mesure</h4>
-          <p>Chaque atelier est pensé à partir du terrain et des besoins réels.</p>
+          <p>Chaque formation est designée en amont pour coller à votre commande, votre contexte, votre collectif.</p>
         </div>
-
         <div class="mini-card">
           <div class="icon">🧭</div>
-          <h4>Agilité collective</h4>
-          <p>Le cadre est préparé avec précision pour laisser vivre le groupe.</p>
+          <h4>Agile en permanence</h4>
+          <p>La préparation sérieuse libère l'agilité : je navigue selon la dynamique du groupe et les besoins du moment.</p>
         </div>
-
         <div class="mini-card">
           <div class="icon">🎈</div>
-          <h4>Univers visuels</h4>
-          <p>Métaphores, scénographies et objets facilitent l'engagement.</p>
+          <h4>L'art des métaphores</h4>
+          <p>Univers visuels, métaphores, récits — pour embarquer chaque participant à sa façon et donner du sens collectivement.</p>
         </div>
-
         <div class="mini-card">
           <div class="icon">🪞</div>
-          <h4>Posture avant outils</h4>
-          <p>Présence, écoute et relation au collectif sont au cœur des formations.</p>
+          <h4>La posture avant tout</h4>
+          <p>Avant les outils, je travaille avec les participants sur leur posture : écoute, présence et rapport au collectif.</p>
         </div>
-
       </div>
-
     </div>
   </div>
 </section>
 
+<!-- FORMATIONS APERÇU -->
 <section class="section" style="padding-top:0;">
-
   <h2 class="section-title">Les formations</h2>
-
-  <p class="section-sub">
-    Des parcours construits à partir de situations réelles.
-  </p>
-
+  <p class="section-sub">Quatre parcours conçus à partir de situations réelles, pour des professionnels qui veulent des outils immédiatement opérationnels.</p>
   <div class="formations-grid">
-
     <a href="formations.html#intelligence-collective" class="formation-card">
       <div class="tag">4 jours</div>
       <h3>Intelligence collective</h3>
-      <p>Découvrir et expérimenter les outils de coopération et de facilitation.</p>
+      <p>Découvrir, expérimenter et maîtriser les outils de la facilitation et de la coopération.</p>
       <span class="arrow">Découvrir →</span>
     </a>
-
     <a href="formations.html#cartes-mentales" class="formation-card">
       <div class="tag">2 jours</div>
       <h3>Cartes mentales</h3>
-      <p>Structurer les idées, synthétiser et faciliter autrement.</p>
+      <p>S'approprier la carte mentale comme outil de facilitation, de synthèse et de communication au quotidien.</p>
       <span class="arrow">Découvrir →</span>
     </a>
-
     <a href="formations.html#facilitation" class="formation-card">
       <div class="tag">Sur mesure</div>
       <h3>Facilitation & animation</h3>
-      <p>Animer des temps engageants et faire émerger les idées collectives.</p>
+      <p>Animer des temps de travail engageants, structurer la parole collective, faire émerger les idées.</p>
       <span class="arrow">Découvrir →</span>
     </a>
-
     <a href="formations.html#appui-managerial" class="formation-card">
       <div class="tag">Accompagnement</div>
       <h3>Appui managérial</h3>
-      <p>Accompagner les dynamiques d'équipe et les projets collectifs.</p>
+      <p>Accompagner les équipes de direction dans leurs dynamiques collectives et leurs projets.</p>
       <span class="arrow">Découvrir →</span>
     </a>
-
   </div>
 </section>
 
+<!-- GALERIE APERÇU -->
 <section class="section" style="padding-top:0;">
-
   <h2 class="section-title">La pratique en images</h2>
-
-  <p class="section-sub">
-    Métaphores, supports visuels, objets et traces collectives :
-    des ateliers qui se vivent autant qu'ils se voient.
-  </p>
-
-  <div class="home-gallery">
-
-    <a href="enaction.html" class="wide">
-      <img src="photo10.png" alt="Mission Montgolfière CDJ">
-      <div class="home-gallery-caption">
-        Mission Montgolfière CDJ
-      </div>
-    </a>
-
-    <a href="enaction.html">
-      <img src="photo17.png" alt="Cartes de rôles">
-      <div class="home-gallery-caption">
-        Cartes de rôles
-      </div>
-    </a>
-
-    <a href="enaction.html">
-      <img src="photo20.png" alt="Cadre de travail">
-      <div class="home-gallery-caption">
-        Cadre de travail
-      </div>
-    </a>
-
-    <a href="enaction.html">
-      <img src="photo19.png" alt="Boîte à outils">
-      <div class="home-gallery-caption">
-        Boîte à outils
-      </div>
-    </a>
-
-    <a href="enaction.html">
-      <img src="photo11.png" alt="Atelier collaboratif">
-      <div class="home-gallery-caption">
-        Atelier collaboratif
-      </div>
-    </a>
-
-    <a href="enaction.html" class="wide gallery-proof">
-      <img src="photo22.png" alt="Tableau Merci Nono offert par les participants">
-      <div class="home-gallery-caption">
-        Quand une formation laisse une trace
-      </div>
-    </a>
-
+  <p class="section-sub">Lego, Kapla, métaphores, musées éphémères... Des ateliers qui se vivent autant qu'ils se voient.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;">
+    <img src="photo5.png" alt="Formation IC" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="photo3.png" alt="Arbre des postures" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="photo8.png" alt="Atelier onboarding" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="photo9.png" alt="La métaphore du projet" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
   </div>
-
   <div style="text-align:center;">
-    <a href="enaction.html" class="btn btn-outline">
-      Voir tous les moments →
-    </a>
+    <a href="enaction.html" class="btn btn-outline">Voir tous les moments →</a>
   </div>
-
 </section>
 
+<!-- TÉMOIGNAGE VEDETTE -->
 <section class="section" style="padding-top:0;">
-
   <div class="temoignage-vedette">
-
     <span class="quote">"</span>
-
-    <p>
-      Tu as fait un super travail : la journée a été particulièrement enrichissante
-      et très agréable à suivre.
-    </p>
-
-    <cite>
-      Angélique — CD10 · Formation intelligence collective
-    </cite>
-
+    <p>Tu as fait un super travail : la journée a été particulièrement enrichissante et très agréable à suivre. J'ai vraiment apprécié l'ambiance que tu as su instaurer ainsi que la qualité de ton animation, à la fois dynamique et accessible. Cela donne envie de mettre rapidement en pratique !</p>
+    <cite>Angélique — CD10 · Formation intelligence collective</cite>
     <br><br>
-
-    <a href="temoignages.html"
-       class="btn"
-       style="background:var(--jaune);color:var(--bleu);">
-      Lire tous les témoignages
-    </a>
-
+    <a href="temoignages.html" class="btn" style="background:var(--jaune);color:var(--bleu);">Lire tous les témoignages</a>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-section">
-
-  <h2>
-    Et si vos formations donnaient vraiment envie de participer ?
-  </h2>
-
-  <p>
-    Des formats conçus pour remettre de l'énergie,
-    du collectif et du mouvement dans les apprentissages.
-  </p>
-
-  <a href="contact.html" class="btn">
-    Parlons de votre projet →
-  </a>
-
+  <h2>Et si vos formations donnaient vraiment envie de participer ?</h2>
+  <p>Des formats conçus pour remettre de l'énergie, de la clarté et du collectif dans les apprentissages.</p>
+  <a href="contact.html" class="btn">Parlons de votre projet →</a>
 </section>
 
 <footer>
-
   <div class="footer-inner">
-
     <div>
-      <div class="footer-logo">Arnaud SIMART</div>
-
-      <div class="footer-tagline">
-        Facilitateur & formateur en intelligence collective<br>
-        Appui managérial et gestion de projet
-      </div>
+      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
     </div>
-
     <div>
       <ul class="footer-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="formations.html">Formations</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="enaction.html">En action</a></li>
-        <li><a href="temoignages.html">Témoignages</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-
     <div class="footer-contact">
       <a href="tel:0642332279">06 42 33 22 79</a><br>
       <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
-      Intervention France entière · Distanciel & présentiel<br>
+      9 rue Maurice RAVEL · 10300 Macey<br>
       SIRET : 10169169900017
     </div>
-
   </div>
-
-  <div class="footer-bottom">
-    © 2025 Arnaud SIMART · Penser ensemble, agir durablement.
-  </div>
-
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement.</div>
 </footer>
 
 </body>
 </html>
-```
