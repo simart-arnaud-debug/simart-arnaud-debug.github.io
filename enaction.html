@@ -40,6 +40,29 @@
   line-height:1;
   text-align:center;
 }
+.intro-icons {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.intro-icon-item {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:rgba(255,255,255,0.5);
+  border-radius:14px;
+  padding:10px 16px;
+}
+.intro-icon {
+  font-size:28px;
+  flex-shrink:0;
+}
+.intro-icon-label {
+  font-size:14px;
+  font-weight:700;
+  color:var(--bleu);
+  line-height:1.3;
+}
 .intro-block p {
   font-size:18px;
   color:var(--bleu);
@@ -210,7 +233,28 @@
 
   <!-- INTRO -->
   <div class="intro-block">
-    <img src="icones-pratique.png" alt="Intelligence collective, Orientation, Action, Impact, Idées" style="width:100%;max-width:320px;object-fit:contain;">
+    <div class="intro-icons">
+      <div class="intro-icon-item">
+        <div class="intro-icon">🤝</div>
+        <div class="intro-icon-label">Intelligence<br>collective</div>
+      </div>
+      <div class="intro-icon-item">
+        <div class="intro-icon">🧭</div>
+        <div class="intro-icon-label">Orientation</div>
+      </div>
+      <div class="intro-icon-item">
+        <div class="intro-icon">🚀</div>
+        <div class="intro-icon-label">Action</div>
+      </div>
+      <div class="intro-icon-item">
+        <div class="intro-icon">🎯</div>
+        <div class="intro-icon-label">Impact</div>
+      </div>
+      <div class="intro-icon-item">
+        <div class="intro-icon">💡</div>
+        <div class="intro-icon-label">Idées</div>
+      </div>
+    </div>
     <p>Je travaille avec des univers, des métaphores, des objets. Chaque session est conçue sur mesure - Lego, Kapla, cartels, maquettes, arbres de postures... L'important, c'est que chacun entre dans l'expérience à sa façon et en reparte transformé.</p>
   </div>
 
