@@ -1,286 +1,263 @@
-:root{
-  --bleu:#1C3F60;
-  --corail:#FF6F61;
-  --jaune:#F7D774;
-  --gris:#F2F2F2;
-  --noir:#1A1A1A;
-  --blanc:#FFFFFF;
+/* ================================
+   ARNAUD SIMART — style.css
+   Partagé par toutes les pages
+   ================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Patrick+Hand&display=swap');
+
+:root {
+  --bleu:    #1C3F60;
+  --corail:  #FF6F61;
+  --jaune:   #F7D774;
+  --gris:    #F2F2F2;
+  --noir:    #1A1A1A;
+  --blanc:   #FFFFFF;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
 
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background:#f5f5f5;
+body {
+  font-family:'Poppins', sans-serif;
+  background:#f6f6f6;
   color:var(--noir);
   line-height:1.6;
-  overflow-x:hidden;
 }
 
-/* NAVIGATION */
-nav{
-  position:sticky;
-  top:0;
-  z-index:1000;
+/* ---- NAV ---- */
+nav {
   background:var(--bleu);
+  padding:0 60px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 60px;
-  box-shadow:0 4px 18px rgba(0,0,0,0.08);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 20px rgba(0,0,0,0.15);
+  height:70px;
 }
 
-.nav-logo{
+.nav-logo {
+  font-family:'Patrick Hand', cursive;
   color:var(--jaune);
+  font-size:22px;
   text-decoration:none;
-  font-size:18px;
-  font-weight:800;
-  letter-spacing:-0.02em;
+  white-space:nowrap;
 }
 
-.nav-links{
+.nav-links {
   display:flex;
-  align-items:center;
-  gap:18px;
+  gap:8px;
   list-style:none;
 }
 
-.nav-links a{
-  color:white;
+.nav-links a {
+  color:rgba(255,255,255,0.85);
   text-decoration:none;
-  font-size:15px;
-  font-weight:600;
-  padding:10px 16px;
+  font-size:14px;
+  font-weight:500;
+  padding:8px 16px;
   border-radius:999px;
   transition:0.2s ease;
 }
 
-.nav-links a:hover{
-  background:rgba(255,255,255,0.08);
-}
-
-.nav-links a.active{
+.nav-links a:hover,
+.nav-links a.active {
   background:rgba(255,255,255,0.12);
+  color:white;
 }
 
-.nav-cta{
+.nav-links a.nav-cta {
   background:var(--corail);
-  color:white !important;
+  color:white;
+  font-weight:600;
 }
 
-.nav-cta:hover{
-  background:#ff5a4c !important;
+.nav-links a.nav-cta:hover {
+  background:#e85d50;
 }
 
-.nav-toggle{
+/* Hamburger mobile */
+.nav-toggle {
   display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
   background:none;
   border:none;
-  cursor:pointer;
-  flex-direction:column;
-  gap:4px;
+  padding:4px;
 }
-
-.nav-toggle span{
+.nav-toggle span {
+  display:block;
   width:24px;
   height:2px;
   background:white;
-  display:block;
-  border-radius:10px;
+  border-radius:2px;
+  transition:0.3s;
 }
 
-/* SECTIONS */
-.section{
+/* ---- UTILITAIRES ---- */
+.section {
   max-width:1200px;
   margin:auto;
   padding:80px 40px;
 }
 
-.section-title{
+.section-title {
   font-size:42px;
-  font-weight:800;
   color:var(--bleu);
-  margin-bottom:14px;
-  line-height:1.1;
+  margin-bottom:15px;
+  font-weight:800;
 }
 
-.section-sub{
+.section-sub {
   font-size:18px;
-  color:#666;
-  max-width:720px;
-  margin-bottom:40px;
-  line-height:1.7;
+  color:#555;
+  margin-bottom:50px;
+  max-width:800px;
 }
 
-/* BOUTONS */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:14px 24px;
+.badge {
+  display:inline-block;
+  background:var(--corail);
+  padding:10px 18px;
   border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:25px;
+  color:white;
+}
+
+.btn {
+  display:inline-block;
   background:var(--corail);
   color:white;
   text-decoration:none;
+  padding:16px 32px;
+  border-radius:999px;
   font-weight:700;
-  transition:0.25s ease;
+  transition:0.2s ease;
   border:none;
   cursor:pointer;
+  font-size:16px;
+  font-family:'Poppins', sans-serif;
 }
+.btn:hover { transform:scale(1.04); }
 
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 12px 24px rgba(0,0,0,0.12);
-}
-
-.btn-outline{
+.btn-outline {
   background:transparent;
-  border:2px solid var(--bleu);
-  color:var(--bleu);
+  border:2px solid var(--corail);
+  color:var(--corail);
 }
-
-.btn-outline:hover{
-  background:var(--bleu);
+.btn-outline:hover {
+  background:var(--corail);
   color:white;
+  transform:scale(1.04);
 }
 
-/* BADGES */
-.badge{
-  display:inline-block;
-  background:rgba(247,215,116,0.18);
-  color:var(--jaune);
-  padding:10px 18px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  margin-bottom:20px;
-}
-
-/* FOOTER */
-footer{
+/* ---- FOOTER ---- */
+footer {
   background:var(--bleu);
-  color:white;
-  margin-top:80px;
+  color:rgba(255,255,255,0.8);
+  padding:50px 60px;
+  margin-top:60px;
 }
 
-.footer-inner{
+.footer-inner {
   max-width:1200px;
   margin:auto;
-  padding:60px 40px;
   display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr;
   gap:40px;
+  align-items:start;
 }
 
-.footer-logo{
-  font-size:24px;
-  font-weight:800;
-  margin-bottom:12px;
+.footer-logo {
+  font-family:'Patrick Hand', cursive;
   color:var(--jaune);
+  font-size:26px;
+  margin-bottom:10px;
 }
 
-.footer-tagline{
-  font-size:15px;
-  opacity:0.8;
-  line-height:1.7;
-}
-
-.footer-links{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-.footer-links a{
-  color:white;
-  text-decoration:none;
-  opacity:0.8;
-  transition:0.2s;
-}
-
-.footer-links a:hover{
-  opacity:1;
-  color:var(--jaune);
-}
-
-.footer-contact{
+.footer-tagline {
   font-size:14px;
-  line-height:1.9;
-  opacity:0.9;
-}
-
-.footer-contact a{
-  color:white;
-  text-decoration:none;
-}
-
-.footer-contact a:hover{
-  color:var(--jaune);
-}
-
-.footer-bottom{
-  border-top:1px solid rgba(255,255,255,0.08);
-  text-align:center;
-  padding:20px;
-  font-size:13px;
   opacity:0.7;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
+.footer-links {
+  list-style:none;
+}
 
-  nav{
-    padding:14px 20px;
-  }
+.footer-links li { margin-bottom:10px; }
 
-  .nav-toggle{
-    display:flex;
-  }
+.footer-links a {
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;
+  font-size:14px;
+  transition:0.2s;
+}
+.footer-links a:hover { color:var(--jaune); }
 
-  .nav-links{
+.footer-contact {
+  font-size:14px;
+  line-height:2;
+}
+
+.footer-contact a {
+  color:var(--jaune);
+  text-decoration:none;
+}
+
+.footer-linkedin {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+  margin-top:14px;
+  transition:0.2s;
+}
+.footer-linkedin:hover { background:#0077b5; border-color:#0077b5; }
+
+.footer-bottom {
+  max-width:1200px;
+  margin:30px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  font-size:12px;
+  opacity:0.5;
+  text-align:center;
+}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:900px) {
+  nav { padding:0 25px; }
+
+  .nav-toggle { display:flex; }
+
+  .nav-links {
+    display:none;
+    flex-direction:column;
     position:absolute;
     top:70px;
-    right:20px;
+    left:0; right:0;
     background:var(--bleu);
-    border-radius:20px;
-    padding:20px;
-    flex-direction:column;
-    align-items:flex-start;
-    min-width:220px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.18);
-    display:none;
+    padding:20px 25px 30px;
+    gap:4px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
   }
+  .nav-links.open { display:flex; }
+  .nav-links a { border-radius:12px; padding:12px 16px; font-size:16px; }
 
-  .nav-links.open{
-    display:flex;
-  }
+  .section { padding:60px 25px; }
+  .section-title { font-size:32px; }
 
-  .section{
-    padding:60px 20px;
-  }
-
-  .section-title{
-    font-size:32px;
-  }
-
-  .section-sub{
-    font-size:16px;
-  }
-
-  .footer-inner{
-    grid-template-columns:1fr;
-    padding:50px 20px;
-  }
+  .footer-inner { grid-template-columns:1fr; gap:30px; }
+  footer { padding:40px 25px; }
 }
