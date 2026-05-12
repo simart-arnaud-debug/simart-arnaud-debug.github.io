@@ -1,277 +1,109 @@
-mentions-legales.html```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentions légales — Arnaud SIMART</title>
-
+<title>Mentions légales - Arnaud SIMART</title>
 <link rel="stylesheet" href="style.css">
-
 <style>
-
-.page-hero{
-  background:var(--bleu);
-  color:white;
-  padding:60px 30px;
-  text-align:center;
+.page-hero { background:var(--bleu); color:white; padding:60px 30px; text-align:center; }
+.page-hero h1 { font-size:48px; font-weight:800; margin-bottom:14px; }
+.page-hero p { font-size:18px; opacity:0.88; max-width:700px; margin:auto; }
+.legal-wrap { max-width:1000px; margin:0 auto; }
+.legal-card { background:white; border-radius:28px; padding:50px; box-shadow:0 10px 35px rgba(0,0,0,0.06); }
+.legal-section { margin-bottom:42px; }
+.legal-section:last-child { margin-bottom:0; }
+.legal-section h2 { font-size:28px; color:var(--bleu); margin-bottom:18px; font-weight:800; }
+.legal-section p { font-size:16px; line-height:1.9; color:#444; margin-bottom:14px; }
+.legal-section strong { color:var(--bleu); }
+.legal-box { background:var(--gris); border-left:4px solid var(--jaune); border-radius:0 18px 18px 0; padding:22px; margin-top:18px; }
+.legal-box p { margin:0; }
+@media(max-width:900px) {
+  .page-hero { padding:45px 25px; }
+  .page-hero h1 { font-size:34px; }
+  .legal-card { padding:32px 24px; }
+  .legal-section h2 { font-size:24px; }
 }
-
-.page-hero h1{
-  font-size:48px;
-  font-weight:800;
-  margin-bottom:14px;
-}
-
-.page-hero p{
-  font-size:18px;
-  opacity:0.88;
-  max-width:700px;
-  margin:auto;
-}
-
-.legal-wrap{
-  max-width:1000px;
-  margin:0 auto;
-}
-
-.legal-card{
-  background:white;
-  border-radius:28px;
-  padding:50px;
-  box-shadow:0 10px 35px rgba(0,0,0,0.06);
-}
-
-.legal-section{
-  margin-bottom:42px;
-}
-
-.legal-section:last-child{
-  margin-bottom:0;
-}
-
-.legal-section h2{
-  font-size:28px;
-  color:var(--bleu);
-  margin-bottom:18px;
-  font-weight:800;
-}
-
-.legal-section p{
-  font-size:16px;
-  line-height:1.9;
-  color:#444;
-  margin-bottom:14px;
-}
-
-.legal-section strong{
-  color:var(--bleu);
-}
-
-.legal-box{
-  background:var(--gris);
-  border-left:4px solid var(--jaune);
-  border-radius:0 18px 18px 0;
-  padding:22px;
-  margin-top:18px;
-}
-
-.legal-box p{
-  margin:0;
-}
-
-@media(max-width:900px){
-
-  .page-hero{
-    padding:45px 25px;
-  }
-
-  .page-hero h1{
-    font-size:34px;
-  }
-
-  .legal-card{
-    padding:32px 24px;
-  }
-
-  .legal-section h2{
-    font-size:24px;
-  }
-
-}
-
 </style>
 </head>
-
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">Arnaud SIMART</a>
-
   <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
-    <span></span>
-    <span></span>
-    <span></span>
+    <span></span><span></span><span></span>
   </button>
-
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="formations.html">Formations</a></li>
     <li><a href="apropos.html">À propos</a></li>
     <li><a href="enaction.html">En action</a></li>
     <li><a href="temoignages.html">Témoignages</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
 <section class="page-hero">
   <div class="badge">Informations légales</div>
-
   <h1>Mentions légales</h1>
-
-  <p>
-    Informations relatives à l'édition et à l'hébergement du site arnaud-simart.fr
-  </p>
+  <p>Informations relatives à l'édition et à l'hébergement du site arnaud-simart.fr</p>
 </section>
 
 <section class="section">
-
   <div class="legal-wrap">
-
     <div class="legal-card">
 
       <div class="legal-section">
-
         <h2>Éditeur du site</h2>
-
-        <p>
-          <strong>Arnaud SIMART</strong><br>
-          Facilitateur & formateur en intelligence collective<br>
-          Appui managérial et gestion de projet
-        </p>
-
-        <p>
-          Email :
-          <a href="mailto:simartarnaud@gmail.com">
-            simartarnaud@gmail.com
-          </a>
-        </p>
-
-        <p>
-          Téléphone :
-          <a href="tel:0642332279">
-            06 42 33 22 79
-          </a>
-        </p>
-
-        <p>
-          SIRET : <strong>10169169900017</strong>
-        </p>
-
+        <p><strong>Arnaud SIMART</strong><br>
+        Facilitateur & formateur en intelligence collective<br>
+        Appui managérial et gestion de projet</p>
+        <p>Email : <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a></p>
+        <p>Téléphone : <a href="tel:0642332279">06 42 33 22 79</a></p>
+        <p>SIRET : <strong>10169169900017</strong></p>
       </div>
 
       <div class="legal-section">
-
         <h2>Hébergement</h2>
-
-        <p>
-          Ce site est hébergé par :
-        </p>
-
+        <p>Ce site est hébergé par :</p>
         <div class="legal-box">
-          <p>
-            <strong>GitHub Pages</strong><br>
-            GitHub Inc.<br>
-            88 Colin P. Kelly Jr St<br>
-            San Francisco, CA 94107<br>
-            États-Unis
-          </p>
+          <p><strong>GitHub Pages</strong><br>
+          GitHub Inc.<br>
+          88 Colin P. Kelly Jr St<br>
+          San Francisco, CA 94107<br>
+          États-Unis</p>
         </div>
-
       </div>
 
       <div class="legal-section">
-
         <h2>Propriété intellectuelle</h2>
-
-        <p>
-          L'ensemble des contenus présents sur ce site
-          (textes, visuels, photographies, illustrations, éléments graphiques,
-          documents et identité visuelle)
-          est protégé par le droit de la propriété intellectuelle.
-        </p>
-
-        <p>
-          Toute reproduction, diffusion, modification ou utilisation,
-          totale ou partielle, sans autorisation préalable écrite,
-          est interdite.
-        </p>
-
+        <p>L'ensemble des contenus présents sur ce site (textes, visuels, photographies, illustrations, éléments graphiques, documents et identité visuelle) est protégé par le droit de la propriété intellectuelle.</p>
+        <p>Toute reproduction, diffusion, modification ou utilisation, totale ou partielle, sans autorisation préalable écrite, est interdite.</p>
       </div>
 
       <div class="legal-section">
-
         <h2>Données personnelles</h2>
-
-        <p>
-          Les informations éventuellement transmises via les formulaires
-          de contact sont utilisées uniquement dans le cadre des échanges
-          professionnels avec Arnaud SIMART.
-        </p>
-
-        <p>
-          Aucune donnée personnelle n'est vendue ni transmise à des tiers.
-        </p>
-
-        <p>
-          Conformément au Règlement Général sur la Protection des Données (RGPD),
-          vous pouvez demander l'accès, la rectification ou la suppression
-          de vos données en écrivant à :
-        </p>
-
-        <p>
-          <a href="mailto:simartarnaud@gmail.com">
-            simartarnaud@gmail.com
-          </a>
-        </p>
-
+        <p>Les informations éventuellement transmises via les formulaires de contact sont utilisées uniquement dans le cadre des échanges professionnels avec Arnaud SIMART.</p>
+        <p>Aucune donnée personnelle n'est vendue ni transmise à des tiers.</p>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous pouvez demander l'accès, la rectification ou la suppression de vos données en écrivant à : <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a></p>
       </div>
 
       <div class="legal-section">
-
         <h2>Cookies</h2>
-
-        <p>
-          Ce site peut utiliser des cookies techniques nécessaires
-          à son bon fonctionnement et à la mesure d'audience.
-        </p>
-
-        <p>
-          En naviguant sur ce site,
-          vous acceptez l'utilisation de ces cookies.
-        </p>
-
+        <p>Ce site peut utiliser des cookies techniques nécessaires à son bon fonctionnement et à la mesure d'audience.</p>
+        <p>En naviguant sur ce site, vous acceptez l'utilisation de ces cookies.</p>
       </div>
 
     </div>
-
   </div>
-
 </section>
 
 <footer>
-
   <div class="footer-inner">
-
     <div>
       <div class="footer-logo">Arnaud SIMART</div>
-
-      <div class="footer-tagline">
-        Facilitateur & formateur en intelligence collective<br>
-        Appui managérial et gestion de projet
-      </div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
     </div>
-
     <div>
       <ul class="footer-links">
         <li><a href="index.html">Accueil</a></li>
@@ -282,22 +114,18 @@ mentions-legales.html```html
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-
     <div class="footer-contact">
       <a href="tel:0642332279">06 42 33 22 79</a><br>
       <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
       Intervention France entière · Distanciel & présentiel<br>
-      SIRET : 10169169900017
+      SIRET : 10169169900017<br>
+      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">💼 Mon profil LinkedIn</a>
     </div>
-
   </div>
-
   <div class="footer-bottom">
-    © 2025 Arnaud SIMART · Penser ensemble, agir durablement.
+    © 2025 Arnaud SIMART · Penser ensemble, agir durablement. · <a href="mentionslegales.html" style="color:inherit;text-decoration:underline;">Mentions légales</a>
   </div>
-
 </footer>
 
 </body>
 </html>
-```
