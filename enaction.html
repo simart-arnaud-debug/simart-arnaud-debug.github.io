@@ -1,562 +1,797 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Fiches techniques – Inclusion</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Découvrez les ateliers et formations d'Arnaud SIMART en images : musées éphémères, Lego, métaphores, maquettes 3D...">
+<meta name="author" content="Arnaud SIMART">
+<meta property="og:title" content="En action - La pratique en images | Arnaud SIMART">
+<meta property="og:description" content="Découvrez les ateliers et formations d'Arnaud SIMART en images : musées éphémères, Lego, métaphores, maquettes 3D...">
+<meta property="og:url" content="https://arnaud-simart.fr/enaction.html">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://arnaud-simart.fr/enaction.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>En action - Arnaud SIMART</title>
+<link rel="stylesheet" href="style.css">
 
-  <style>
-    :root {
-      --color-rubis: #BF0D3E;
-      --color-rubis-nacre: #8A1538;
-      --color-champagne: #F8CFA9;
-      --color-degrade: #FDAA63;
-      --color-noir: #000000;
-      --color-blanc: #FFFFFF;
+<style>
+/* =========================================================
+   EN ACTION - version sobre premium
+   Cohérence avec index sobre + style.css V2
+========================================================= */
 
-      --color-primaire: var(--color-rubis);
-      --color-primaire-fonce: var(--color-rubis-nacre);
-      --color-secondaire: #FFF5EC;
-      --color-accent: var(--color-degrade);
-      --color-texte: #222222;
-      --color-gris-clair: #E3E7EC;
+.page-hero {
+  background:
+    linear-gradient(135deg, rgba(28,63,96,0.96), rgba(19,45,70,0.98)),
+    url("photo18.png") center/cover;
+  color: white;
+  padding: 76px 40px 86px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-      --radius: 8px;
-      --font-titre: "Segoe UI", Arial, sans-serif;
-      --font-texte: "Segoe UI", Arial, sans-serif;
-    }
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 8% -110px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(247,215,116,0.13);
+}
 
-    body {
-      margin: 0;
-      padding: 24px;
-      font-family: var(--font-texte);
-      background-color: var(--color-blanc);
-      color: var(--color-texte);
-    }
+.page-hero .badge,
+.field-intro .badge {
+  margin-bottom: 18px;
+}
 
-    .fiche {
-      max-width: 1100px;
-      margin: 0 auto 40px auto;
-      border: 1px solid var(--color-gris-clair);
-      border-radius: var(--radius);
-      padding: 24px 28px 28px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      background: var(--color-blanc);
-      page-break-after: always;
-    }
+.page-hero h1 {
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.05;
+}
 
-    .entete {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 3px solid var(--color-primaire);
-      padding-bottom: 12px;
-      margin-bottom: 18px;
-    }
+.page-hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  max-width: 760px;
+  margin: auto;
+  line-height: 1.75;
+}
 
-    .entete-gauche {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+.field-intro {
+  background: white;
+  border-radius: 32px;
+  padding: 44px;
+  margin-top: -32px;
+  margin-bottom: 52px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px;
+  align-items: start;
+}
 
-    .badge-famille {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background-color: var(--color-secondaire);
-      color: var(--color-primaire-fonce);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
+.field-intro h2 {
+  color: var(--bleu);
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.15;
+  font-weight: 800;
+}
 
-    .titre-atelier {
-      font-family: var(--font-titre);
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--color-primaire);
-    }
+.field-intro p {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.85;
+}
 
-    .sous-titre {
-      font-size: 13px;
-      color: #555;
-    }
+.field-tags {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 6px;
+}
 
-    .entete-photo {
-      width: 120px;
-      height: 80px;
-      border-radius: var(--radius);
-      background-color: var(--color-secondaire);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: #777;
-      text-align: center;
-      padding: 4px;
-      font-weight: 600;
-    }
+.field-tags span {
+  background: var(--gris);
+  color: var(--bleu);
+  border-radius: 999px;
+  padding: 9px 15px;
+  font-size: 13px;
+  font-weight: 700;
+}
 
-    .bloc {
-      margin-bottom: 16px;
-      border-radius: var(--radius);
-      background-color: var(--color-secondaire);
-      padding: 14px 16px;
-    }
+.moment {
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+  margin-bottom: 44px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(28,63,96,0.06);
+}
 
-    .bloc-titre {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-primaire-fonce);
-      margin-bottom: 8px;
-    }
+.moment:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 52px rgba(0,0,0,0.11);
+}
 
-    .bloc-contenu {
-      font-size: 13px;
-      line-height: 1.5;
-    }
+.moment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
 
-    .bloc-contenu ul {
-      margin: 6px 0 0 18px;
-      padding: 0;
-    }
+.moment-grid.reverse {
+  direction: rtl;
+}
 
-    .bloc-contenu li {
-      margin-bottom: 6px;
-    }
+.moment-grid.reverse > * {
+  direction: ltr;
+}
 
-    .bloc-objectif { border-left: 4px solid var(--color-accent); }
-    .bloc-deroulement { border-left: 4px solid var(--color-primaire); }
-    .bloc-moyens { border-left: 4px solid var(--color-gris-clair); }
-    .bloc-espace { border-left: 4px solid var(--color-primaire-fonce); }
-    .bloc-vigilance { border-left: 4px solid #d97706; }
+.moment-photos {
+  display: grid;
+  gap: 0;
+  background: #e9edf1;
+  min-height: 100%;
+}
 
-    .grille-meta {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      margin-top: 4px;
-      font-size: 12px;
-    }
+.moment-photos.single img,
+.moment-photos.double img {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
 
-    .meta-col {
-      background-color: var(--color-secondaire);
-      border-radius: var(--radius);
-      padding: 8px 9px;
-      min-height: 80px;
-    }
+.moment-photos.double {
+  grid-template-rows: 1fr 1fr;
+}
 
-    .meta-titre {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--color-primaire-fonce);
-      margin-bottom: 4px;
-    }
+.moment-photos.double img {
+  min-height: 215px;
+}
 
-    .meta-contenu {
-      font-size: 12px;
-      line-height: 1.4;
-    }
+.moment-photos img:hover {
+  transform: scale(1.018);
+  filter: saturate(1.04) contrast(1.02);
+}
 
-    .footer {
-      margin-top: 14px;
-      font-size: 10px;
-      color: #777;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-top: 1px solid var(--color-gris-clair);
-      padding-top: 6px;
-      text-align: center;
-    }
+.moment-content {
+  padding: clamp(30px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .footer span {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-primaire-fonce);
-      font-weight: 600;
-    }
+.moment-tag {
+  display: inline-block;
+  background: rgba(255,111,97,0.10);
+  color: var(--corail);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 7px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+  margin-bottom: 16px;
+  width: fit-content;
+}
 
-    .focus {
-      background: white;
-      border-left: 3px solid var(--color-primaire);
-      padding: 8px 10px;
-      margin-top: 8px;
-      border-radius: 6px;
-    }
+.moment-content h2 {
+  font-size: clamp(24px, 2.6vw, 32px);
+  color: var(--bleu);
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.25;
+}
 
-    .temps {
-      color: var(--color-primaire);
-      font-weight: 700;
-    }
+.moment-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
 
-  </style>
+.moment-content strong {
+  color: var(--bleu);
+}
+
+.quote-block {
+  background: var(--gris);
+  border-left: 4px solid var(--jaune);
+  border-radius: 0 18px 18px 0;
+  padding: 18px 20px;
+  margin-top: 18px;
+  font-style: italic;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.quote-block cite {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--bleu);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.action-cta {
+  background: var(--bleu);
+  color: white;
+  border-radius: 32px;
+  padding: 56px 42px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 54px;
+}
+
+.action-cta::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -90px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(247,215,116,0.13);
+}
+
+.action-cta h2,
+.action-cta p,
+.action-cta a {
+  position: relative;
+  z-index: 1;
+}
+
+.action-cta h2 {
+  font-size: clamp(30px, 4vw, 42px);
+  margin-bottom: 14px;
+  font-weight: 800;
+}
+
+.action-cta p {
+  font-size: 17px;
+  opacity: 0.9;
+  max-width: 640px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+
+/* Lightbox */
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: rgba(7,18,30,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.image-lightbox.open {
+  display: flex;
+}
+
+.lightbox-inner {
+  position: relative;
+  max-width: min(1100px, 94vw);
+  max-height: 88vh;
+}
+
+.lightbox-inner img {
+  display: block;
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lightbox-caption {
+  color: rgba(255,255,255,0.78);
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.10);
+  color: white;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255,255,255,0.20);
+}
+
+.lightbox-close {
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 28px;
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+@media(max-width: 900px) {
+  .page-hero {
+    padding: 54px 24px 68px;
+  }
+
+  .field-intro {
+    grid-template-columns: 1fr;
+    padding: 30px 24px;
+    border-radius: 26px;
+    margin-bottom: 38px;
+  }
+
+  .moment {
+    border-radius: 26px;
+    margin-bottom: 32px;
+  }
+
+  .moment-grid,
+  .moment-grid.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .moment-photos.single img {
+    min-height: 280px;
+    height: 280px;
+  }
+
+  .moment-photos.double img {
+    min-height: 180px;
+    height: 180px;
+  }
+
+  .moment-content {
+    padding: 28px 24px;
+  }
+
+  .action-cta {
+    padding: 40px 24px;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 42px;
+    height: 42px;
+    font-size: 24px;
+  }
+
+  .lightbox-prev {
+    left: 12px;
+  }
+
+  .lightbox-next {
+    right: 12px;
+  }
+
+  .lightbox-close {
+    right: 12px;
+    top: 12px;
+  }
+}
+</style>
+
 </head>
-
 <body>
 
-<!-- FICHE 1 -->
+<nav>
+  <a href="index.html" class="nav-logo">Arnaud Simart</a>
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Ouvrir le menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="formations.html">Formations</a></li>
+    <li><a href="apropos.html">À propos</a></li>
+    <li><a href="enaction.html" class="active">En action</a></li>
+    <li><a href="lesformats.html">Formats de poche</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
 
-<div class="fiche">
+<section class="page-hero">
+  <div class="badge">La pratique en images</div>
+  <h1>En action</h1>
+  <p>Des ateliers, des formations, des moments forts - une façon de travailler qui se voit autant qu'elle se vit.</p>
+</section>
 
-  <header class="entete">
-    <div class="entete-gauche">
-      <div class="badge-famille">Famille : Inclusion / Mise en présence</div>
-      <div class="titre-atelier">Inclusion – Le mot d’entrée</div>
-      <div class="sous-titre">Ouverture simple et rapide · 1 facilitateur · Groupe de 12 personnes · 5 à 8 min</div>
+<section class="section">
+
+  <!-- INTRO -->
+  <div class="field-intro">
+    <div>
+      <div class="badge">Carnet de terrain</div>
+      <h2>Des traces concrètes de coopération.</h2>
     </div>
-
-    <div class="entete-photo">
-      Un mot<br>
-      pour entrer<br>
-      dans la séance
+    <p>Je travaille avec des univers, des métaphores, des objets. Chaque session est conçue sur mesure - Lego, Kapla, cartels, maquettes, arbres de postures... L'important, c'est que chacun entre dans l'expérience à sa façon et en reparte transformé.</p>
+    <div class="field-tags">
+      <span>Intelligence collective</span>
+      <span>Posture</span>
+      <span>Objets</span>
+      <span>Expérience</span>
+      <span>Impact</span>
     </div>
-  </header>
+  </div>
 
-  <section class="bloc bloc-objectif">
-    <div class="bloc-titre">Intention / objectif</div>
-
-    <div class="bloc-contenu">
-      Cette inclusion permet de faire entrer progressivement les participants dans la séance par une prise de parole courte et accessible.
-
-      <br><br>
-
-      L’objectif est de :
-      <ul>
-        <li>mettre le groupe en présence ;</li>
-        <li>ouvrir un premier espace de parole ;</li>
-        <li>installer une dynamique d’écoute ;</li>
-        <li>favoriser une transition entre “l’extérieur” et le temps collectif.</li>
-      </ul>
-
-      <div class="focus">
-        Le format est volontairement simple.
-        Il fonctionne très bien avec un facilitateur débutant.
+  <!-- MOMENT 1 - Musée éphémère RIC -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos single">
+        <img loading="lazy" src="photo1.png" alt="La Lumière Partagée - Réseau IC">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Réseau Intelligence Collective · CD10</div>
+        <h2>La Cité du Vitrail transformée en musée éphémère</h2>
+        <p>Retrouver des agents formés à l'IC pour un point d'étape du réseau interne. Plutôt qu'une réunion classique, j'ai créé un "musée vivant" - le simple fait d'inviter les participants à "venir créer un musée" a suffi à déclencher quelque chose. Ils sont arrivés avec un esprit déjà ouvert, curieux, créatif.</p>
+        <p>Le <strong>Musée des Métaphores</strong> a été un moment fort : chaque objet déposé devenait une histoire, une intention. Dans ces cartels improvisés, on retrouvait tout - la puissance de l'IC, la sécurité psychologique, la posture du facilitateur qui accueille sans juger, relie sans forcer, éclaire sans prendre la lumière.</p>
+        <p><em>Un musée qui n'a existé que 3 heures… mais qui a laissé des traces très concrètes.</em></p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="bloc">
-    <div class="bloc-titre">Principe</div>
+  <!-- MOMENT 2 - Lunettes / Design collectif -->
+  <div class="moment">
+    <div class="moment-grid reverse">
+      <div class="moment-photos single">
+        <img loading="lazy" src="photo2.png" alt="Atelier design collectif - changer de lunettes">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Atelier design collectif · Réhabilitation de locaux</div>
+        <h2>Changer de lunettes, littéralement</h2>
+        <p>Animer un atelier de design collectif à partir de la restitution d'un questionnaire sur les usages et besoins de réhabilitation de locaux. Plutôt que de rester dans les données, nous avons choisi de <strong>changer de lunettes</strong> - littéralement.</p>
+        <p>En adoptant tour à tour les lunettes du public, des agents, de la coopération et du bien-être, le groupe a exploré les futurs espaces comme un designer explore un problème : en déplaçant le regard, en rendant visibles les évidences cachées.</p>
+        <p><em>Moins d'interprétations, plus d'observations. Moins de solutions toutes faites, plus d'intentions partagées.</em></p>
+      </div>
+    </div>
+  </div>
 
-    <div class="bloc-contenu">
-      Chaque participant partage un mot ou une courte expression en lien avec son arrivée dans la séance.
+  <!-- MOMENT 3 - Formation IC intra CD10 (Lego + Playmobil) -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos double">
+        <img loading="lazy" src="photo6.png" alt="Construction Lego - Formation IC">
+        <img loading="lazy" src="photo7.png" alt="Playmobil et scénarios - Formation IC">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Formation IC en intra · CD10 · Dernier jour</div>
+        <h2>Les 4 saisons - bilan créatif de formation</h2>
+        <p>Dernières séquences de la formation Intelligence Collective en intra pour les collègues du Département de l'Aube. Une équipe hors norme, où la bienveillance, la bonne humeur et la créativité ont été de rigueur.</p>
+        <p>Libre cours à la créativité pour le bilan de formation : <strong>Lego, Kapla, découpage, collage, dessin, Playmobil</strong>... Les participants ont construit des univers entiers pour raconter ce qu'ils avaient vécu et retenu.</p>
+        <div class="quote-block">
+          Animateurs du CDJ en force. Comme quoi lorsqu'on y est sensibilisé, on a envie d'aller plus loin et on en est convaincu.
+          <cite>Isabelle GYEJACQUOT - Chargée de Mission Observatoire, CD10</cite>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <br><br>
+  <!-- MOMENT 4 - CDJ bilan mi-mandat -->
+  <div class="moment">
+    <div class="moment-grid reverse">
+      <div class="moment-photos double">
+        <img loading="lazy" src="photo3.png" alt="Arbre des postures fondamentales - CDJ">
+        <img loading="lazy" src="photo4.png" alt="Atouts Super Pouvoirs Pépites Râteaux - CDJ">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Bilan mi-mandat · Conseil Départemental Jeunes</div>
+        <h2>Atouts Super Pouvoirs, Pépites & Râteaux</h2>
+        <p>Animer un bilan de mi-mandat avec les animateurs du Conseil Départemental Jeunes - pas en cochant des cases, mais en faisant parler le terrain, le vécu, l'engagement au quotidien.</p>
+        <p>Un radar de cohésion construit en live, des retours d'expérience, des prises de recul. Et ce virage subtil où on passe de <em>"On fait ce qu'on peut"</em> à <em>"On sait ce qu'on fait, et pourquoi on le fait."</em></p>
+        <p><strong>Constat partagé en fin de séance :</strong> le CDJ, ce n'est pas qu'un projet jeunes. C'est aussi une équipe d'adultes engagés qui tiennent un cap ensemble.</p>
+      </div>
+    </div>
+  </div>
 
-      Exemples :
-      <ul>
-        <li>“curiosité”</li>
-        <li>“fatigue utile”</li>
-        <li>“envie d’outils”</li>
-        <li>“chargé mais présent”</li>
-        <li>“besoin de concret”</li>
+  <!-- MOMENT 5 - CU Grand Reims -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos single">
+        <img loading="lazy" src="photo5.png" alt="Maquette 3D - Formation IC CU Grand Reims">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Formation IC · CU Grand Reims · CNFPT</div>
+        <h2>Un laboratoire d'idées en 3 dimensions</h2>
+        <p>Accompagner un groupe incroyable en formation sur l'intelligence collective. Leur engagement, leur curiosité et leur envie d'expérimenter la co-création ont transformé chaque séquence en un véritable laboratoire d'idées.</p>
+        <p>Ensemble, ils ont montré que <strong>l'intelligence collective n'est pas seulement une méthode : c'est une posture, une énergie partagée</strong> qui permet de faire émerger des solutions créatives, concrètes et durables.</p>
+        <div class="quote-block">
+          Merci Arnaud Simart pour l'animation de cette belle formation au service de la créativité, de la collaboration et de l'action publique. Ravie d'avoir pu collaborer avec vous et quelle satisfaction de contribuer à faire évoluer les pratiques !
+          <cite>Ketty MARTINIE - Responsable d'Antenne, CNFPT</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 6 - Onboarding -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos single">
+        <img loading="lazy" src="photo8.png" alt="Atelier onboarding - Département de l'Aube">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Atelier IC · Département de l'Aube</div>
+        <h2>Et si on repensait l'onboarding ?</h2>
+        <p>Une demi-journée pour faire diverger et converger autour d'une question concrète : repenser l'intégration des nouveaux agents dans la collectivité. Sur un support XXL posé à plat, les participants construisent ensemble les <strong>ingrédients de la réussite</strong> - en rouge et en bleu, les idées s'accumulent, se croisent, se complètent.</p>
+        <p>La facilitation au service d'un enjeu RH concret : aller plus loin, ensemble, en une seule matinée.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 7 - Métaphore du projet -->
+  <div class="moment">
+    <div class="moment-grid reverse">
+      <div class="moment-photos single">
+        <img loading="lazy" src="photo9.png" alt="La métaphore de mon projet - Équipe sociale de territoire">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Accompagnement · Projets sociaux de territoire</div>
+        <h2>Oser la métaphore - "Mon projet, c'est un élastique"</h2>
+        <p>Accompagner 7 professionnelles du social sur leur projet social de territoire. Après une première journée sur la posture de chef de projet et la méthodologie en intelligence collective, retour quelques mois plus tard pour aller plus loin.</p>
+        <p>En préalable : je leur ai demandé de <strong>réfléchir à leur projet et d'oser la métaphore</strong>. L'une d'elles a choisi l'élastique - tendu/détendu, absent/revient, rassemble/laisse libre. Quand la créativité s'en mêle, des vérités profondes émergent sur la posture de chef de projet.</p>
+        <p><em>Retours d'expériences, introspection sur la posture, co-construction d'une fiche projet idéale... Tout cela en intelligence collective.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 8 - Mission Montgolfière CDJ -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos double">
+        <img loading="lazy" src="photo10.png" alt="Mission Montgolfière - CDJ 10">
+        <img loading="lazy" src="photo11.png" alt="Vents porteurs, lests, opportunités, risques">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">CDJ 10 · Mission Montgolfière</div>
+        <h2>Prendre de la hauteur sur nos moyens et notre organisation</h2>
+        <p>Un univers entier créé sur mesure autour de la montgolfière pour accompagner les animateurs du Conseil Départemental Jeunes dans leur travail de coordination et de gestion du temps.</p>
+        <p>Le <strong>Plan de vol</strong>, les <strong>Vents porteurs</strong>, les <strong>Lests</strong>, les <strong>Opportunités</strong>, les <strong>Risques</strong>... Chaque concept prend vie dans la métaphore. Les participants ne réfléchissent plus à leur organisation - ils pilotent leur montgolfière.</p>
+        <p><em>Des supports entièrement conçus pour cette commande, de l'inclusion jusqu'à l'atterrissage.</em></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 9 - Outils du facilitateur -->
+  <div class="moment">
+    <div class="moment-grid reverse">
+      <div class="moment-photos double">
+        <img loading="lazy" src="photo17.png" alt="Cartes de rôles - Scribe, Témoin, Berger, Facilitateur">
+        <img loading="lazy" src="photo20.png" alt="Notre cadre de travail">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Formation IC · Les outils du facilitateur</div>
+        <h2>Des outils pensés pour faire vivre le collectif</h2>
+        <p>Chaque formation est préparée avec soin : des <strong>cartes de rôles</strong> (Scribe, Témoin, Berger, Hôte, Porte-parole, Facilitateur), un cadre de travail co-construit avec le groupe, des supports visuels pensés pour que chacun trouve sa place.</p>
+        <p>Le cadre de travail - Plaisir, Humour, Confidentialité, Équivalence, Déconnexion, Liberté de parole, Intention constructive - est co-construit en début de session. <strong>Ce n'est pas un règlement affiché, c'est un contrat vivant.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 10 - Merci Nono -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos double">
+        <img loading="lazy" src="photo21.png" alt="Arnaud reçoit le tableau Merci Nono">
+        <img loading="lazy" src="photo22.png" alt="Le tableau Merci Nono avec tous les prénoms">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Décembre 2025 · Formation IC · CD10</div>
+        <h2>"Merci Nono !" - Quand les participants offrent leur reconnaissance</h2>
+        <p>À la fin du dernier cycle de formation Intelligence Collective, les participants ont créé ce tableau collectif - avec leurs empreintes, leurs prénoms, leurs mots. <em>"Colibris de robot, le gourou, le bon animateur, et bien + encore..."</em></p>
+        <p>C'est peut-être la plus belle preuve que quelque chose s'est passé. Pas une évaluation à chaud. Un geste. Un tableau. Une mémoire collective.</p>
+        <p><strong>Incroyable espace. Belles rencontres. Entraide. Ondes positives.</strong> - quelques mots écrits par les participants sur ce tableau.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 11 - Le Voyage du Primo -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos single">
+        <img loading="lazy" src="photo23.png" alt="Le Voyage du Primo - atelier onboarding spatial">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Octobre 2025 · Atelier onboarding · CD10</div>
+        <h2>Le Voyage du Primo - Réinventer le premier jour dans la collectivité</h2>
+        <p>Passer d'une logique <em>"on accueille"</em> à une logique <em>"on conçoit une expérience de décollage qui donne envie"</em>. Un atelier entièrement construit autour d'une métaphore spatiale.</p>
+        <p>Les participants ont endossé la combinaison de l'astronaute pour ressentir l'expérience du primo dès le décollage - puis cartographié le voyage : chaque moment clé (accueil café, kit, RH, déjeuner...) est devenu <strong>une planète à explorer</strong>, avec ses intentions et ses émotions associées.</p>
+        <p>Repérer les étoiles et les trous noirs, prototyper des formats vivants (mini escape, fresques, objets-symboles), puis s'engager collectivement sur ce qui va décoller. <strong>Des idées abstraites transformées en expériences concrètes et testables.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOMENT 12 - Séminaire européen IRTS -->
+  <div class="moment">
+    <div class="moment-grid">
+      <div class="moment-photos single">
+        <img loading="lazy" src="arnaudseminaire1.jpg" alt="Arnaud SIMART animant le séminaire européen IRTS">
+      </div>
+      <div class="moment-content">
+        <div class="moment-tag">Mars 2026 · Séminaire européen · IRTS Champagne-Ardenne</div>
+        <h2>Quand l'intelligence collective façonne les managers de demain</h2>
+        <p>Du 25 au 27 mars 2026, l'IRTS de Champagne-Ardenne accueille un événement unique : <strong>22 apprenants CAFERUIS</strong> et <strong>45 étudiants belges</strong> en Master en Ingénierie et Action Sociales (HEPL et HELMo, Liège) se retrouvent pour trois jours d'échanges, d'ateliers et d'outils dédiés à l'intelligence collective.</p>
+        <p>Au programme : des rencontres inspirantes entre futurs managers français et belges, des ateliers collaboratifs et des outils concrets pour développer des compétences clés - le tout facilité et animé en intelligence collective.</p>
+        <p><strong>Objectif : renforcer les liens entre étudiants, partager des bonnes pratiques et innover ensemble.</strong></p>
+        <div class="quote-block">
+          Des ateliers collaboratifs et outils concrets pour développer des compétences clés, accompagnés par Arnaud Simart, facilitateur et formateur en intelligence collective.
+          <cite>Nicolas PERREIN - Coordinateur des projets et partenariats internationaux, IRTS Champagne-Ardenne</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="action-cta">
+    <h2>Vous voulez vivre une expérience similaire ?</h2>
+    <p>Chaque projet est unique - parlons du vôtre et construisons quelque chose ensemble.</p>
+    <a href="contact.html" class="btn">Parlons de votre projet →</a>
+  </div>
+
+</section>
+
+
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Arnaud Simart</div>
+      <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
+    </div>
+    <div>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="enaction.html">En action</a></li>
+        <li><a href="lesformats.html">Formats de poche</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-  </section>
-
-  <section class="bloc bloc-deroulement">
-    <div class="bloc-titre">Déroulement détaillé</div>
-
-    <div class="bloc-contenu">
-
-      <p><strong>1. Introduction <span class="temps">(1 min)</span></strong></p>
-
-      <ul>
-        <li>Accueillir le groupe.</li>
-        <li>Expliquer que chacun partagera un mot d’arrivée.</li>
-        <li>Préciser que les réponses doivent rester courtes.</li>
-      </ul>
-
-      <p><strong>2. Temps de réflexion rapide <span class="temps">(1 min)</span></strong></p>
-
-      <ul>
-        <li>Inviter chacun à choisir un mot ou une expression.</li>
-        <li>Laisser quelques secondes de silence.</li>
-      </ul>
-
-      <p><strong>3. Tour de parole <span class="temps">(4 à 5 min)</span></strong></p>
-
-      <ul>
-        <li>Chaque participant partage son mot.</li>
-        <li>Le facilitateur accueille sans commenter longuement.</li>
-        <li>Il peut simplement remercier ou reformuler brièvement.</li>
-      </ul>
-
-      <p><strong>4. Transition <span class="temps">(1 min)</span></strong></p>
-
-      <ul>
-        <li>Mettre en valeur la diversité des états d’arrivée.</li>
-        <li>Faire le lien avec la suite de la séance.</li>
-      </ul>
-
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      Intervention France entière · Distanciel &amp; présentiel<br>
+      SIRET : 10169169900017<br>
+      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">Mon profil LinkedIn</a>
     </div>
-  </section>
+  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement. · <a href="mentionslegales.html" style="color:inherit;text-decoration:underline;">Mentions légales</a></div>
+</footer>
 
-  <section class="bloc bloc-vigilance">
-    <div class="bloc-titre">Points de vigilance</div>
 
-    <div class="bloc-contenu">
-      <ul>
-        <li>Ne pas analyser les réponses.</li>
-        <li>Garder un rythme fluide.</li>
-        <li>Accepter les silences courts.</li>
-        <li>Ne pas forcer les participants à se justifier.</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <span>MAPP · Support expérimentation posture facilitateur · Mai 2026</span>
-  </footer>
-
+<div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+  <button class="lightbox-close" type="button" aria-label="Fermer">×</button>
+  <button class="lightbox-prev" type="button" aria-label="Image précédente">‹</button>
+  <div class="lightbox-inner">
+    <img src="" alt="">
+    <div class="lightbox-caption"></div>
+  </div>
+  <button class="lightbox-next" type="button" aria-label="Image suivante">›</button>
 </div>
 
-<!-- FICHE 2 -->
+<script>
+const galleryImages = Array.from(document.querySelectorAll('.moment-photos img'));
+const lightbox = document.getElementById('imageLightbox');
+const lightboxImg = lightbox.querySelector('.lightbox-inner img');
+const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+const closeBtn = lightbox.querySelector('.lightbox-close');
+const prevBtn = lightbox.querySelector('.lightbox-prev');
+const nextBtn = lightbox.querySelector('.lightbox-next');
+let currentImageIndex = 0;
 
-<div class="fiche">
+galleryImages.forEach((img, index) => {
+  img.setAttribute('tabindex', '0');
+  img.addEventListener('click', () => openLightbox(index));
+  img.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') openLightbox(index);
+  });
+});
 
-  <header class="entete">
-    <div class="entete-gauche">
-      <div class="badge-famille">Famille : Inclusion / Métaphore</div>
-      <div class="titre-atelier">Inclusion – L’objet invisible</div>
-      <div class="sous-titre">Ouverture imagée · 1 facilitateur · Groupe de 12 personnes · 8 à 12 min</div>
-    </div>
+function openLightbox(index) {
+  currentImageIndex = index;
+  updateLightbox();
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
 
-    <div class="entete-photo">
-      Un objet<br>
-      symbolique<br>
-      pour entrer
-    </div>
-  </header>
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
 
-  <section class="bloc bloc-objectif">
-    <div class="bloc-titre">Intention / objectif</div>
+function updateLightbox() {
+  const img = galleryImages[currentImageIndex];
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt || '';
+  lightboxCaption.textContent = img.alt || '';
+}
 
-    <div class="bloc-contenu">
-      Cette inclusion permet de faire émerger les attentes, les besoins ou les états d’esprit des participants à travers une métaphore simple.
+function showPrevious() {
+  currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateLightbox();
+}
 
-      <br><br>
+function showNext() {
+  currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+  updateLightbox();
+}
 
-      L’objectif est de :
-      <ul>
-        <li>favoriser une entrée plus créative dans la séance ;</li>
-        <li>ouvrir l’imaginaire sans mettre les participants en difficulté ;</li>
-        <li>installer une dynamique collective plus vivante ;</li>
-        <li>faire émerger des représentations utiles pour le facilitateur.</li>
-      </ul>
+closeBtn.addEventListener('click', closeLightbox);
+prevBtn.addEventListener('click', showPrevious);
+nextBtn.addEventListener('click', showNext);
 
-      <div class="focus">
-        Le format fonctionne très bien avec des groupes qui ont déjà vécu quelques ateliers participatifs.
-      </div>
-    </div>
-  </section>
+lightbox.addEventListener('click', (event) => {
+  if (event.target === lightbox) closeLightbox();
+});
 
-  <section class="bloc">
-    <div class="bloc-titre">Principe</div>
+document.addEventListener('keydown', (event) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (event.key === 'Escape') closeLightbox();
+  if (event.key === 'ArrowLeft') showPrevious();
+  if (event.key === 'ArrowRight') showNext();
+});
 
-    <div class="bloc-contenu">
-      Chaque participant répond à la question :
+document.addEventListener('contextmenu', function(event) {
+  if (event.target.tagName === 'IMG') event.preventDefault();
+});
 
-      <div class="focus">
-        “Si vous arriviez aujourd’hui avec un objet invisible dans votre sac, lequel serait-ce ?”
-      </div>
+document.addEventListener('dragstart', function(event) {
+  if (event.target.tagName === 'IMG') event.preventDefault();
+});
+</script>
 
-      Exemples :
-      <ul>
-        <li>une boussole ;</li>
-        <li>une lampe ;</li>
-        <li>un marteau ;</li>
-        <li>un coussin ;</li>
-        <li>un GPS ;</li>
-        <li>une boîte à outils.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="bloc bloc-deroulement">
-    <div class="bloc-titre">Déroulement détaillé</div>
-
-    <div class="bloc-contenu">
-
-      <p><strong>1. Introduction <span class="temps">(2 min)</span></strong></p>
-
-      <ul>
-        <li>Présenter le principe métaphorique.</li>
-        <li>Rassurer : il n’y a pas de bonne réponse.</li>
-        <li>Donner 1 ou 2 exemples simples.</li>
-      </ul>
-
-      <p><strong>2. Réflexion individuelle <span class="temps">(1 à 2 min)</span></strong></p>
-
-      <ul>
-        <li>Inviter chacun à choisir un objet symbolique.</li>
-        <li>Laisser quelques secondes de réflexion.</li>
-      </ul>
-
-      <p><strong>3. Partage <span class="temps">(5 à 7 min)</span></strong></p>
-
-      <ul>
-        <li>Chaque participant partage :</li>
-        <ul>
-          <li>son objet ;</li>
-          <li>la raison de son choix en une phrase.</li>
-        </ul>
-      </ul>
-
-      <p><strong>4. Transition <span class="temps">(1 min)</span></strong></p>
-
-      <ul>
-        <li>Mettre en valeur la richesse des représentations.</li>
-        <li>Faire le lien avec le travail collectif à venir.</li>
-      </ul>
-
-    </div>
-  </section>
-
-  <section class="bloc bloc-vigilance">
-    <div class="bloc-titre">Points de vigilance</div>
-
-    <div class="bloc-contenu">
-      <ul>
-        <li>Ne pas surinterpréter les métaphores.</li>
-        <li>Éviter les commentaires humoristiques qui casseraient la sécurité.</li>
-        <li>Garder des prises de parole courtes.</li>
-        <li>Relancer simplement si une personne bloque.</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <span>MAPP · Support expérimentation posture facilitateur · Mai 2026</span>
-  </footer>
-
-</div>
-
-<!-- FICHE 3 -->
-
-<div class="fiche">
-
-  <header class="entete">
-    <div class="entete-gauche">
-      <div class="badge-famille">Famille : Inclusion / Positionnement rapide</div>
-      <div class="titre-atelier">Inclusion – Le curseur d’arrivée</div>
-      <div class="sous-titre">Prise de température collective · 1 facilitateur · Groupe de 12 personnes · 5 à 10 min</div>
-    </div>
-
-    <div class="entete-photo">
-      Se situer<br>
-      rapidement<br>
-      dans le groupe
-    </div>
-  </header>
-
-  <section class="bloc bloc-objectif">
-    <div class="bloc-titre">Intention / objectif</div>
-
-    <div class="bloc-contenu">
-      Cette inclusion permet de prendre rapidement la température du groupe à partir de quelques affirmations simples.
-
-      <br><br>
-
-      L’objectif est de :
-      <ul>
-        <li>visualiser les niveaux d’énergie ou d’aisance ;</li>
-        <li>mettre le groupe en mouvement léger ;</li>
-        <li>faire émerger les besoins du collectif ;</li>
-        <li>installer une première interaction rapide.</li>
-      </ul>
-
-      <div class="focus">
-        Très utile pour un facilitateur débutant :
-        le cadre est simple, vivant et facile à tenir.
-      </div>
-    </div>
-  </section>
-
-  <section class="bloc">
-    <div class="bloc-titre">Principe</div>
-
-    <div class="bloc-contenu">
-      Le facilitateur propose plusieurs affirmations.
-
-      <br><br>
-
-      Les participants répondent rapidement en montrant un chiffre avec leurs doigts :
-      <ul>
-        <li>0 = pas du tout ;</li>
-        <li>5 = complètement.</li>
-      </ul>
-
-      <br>
-
-      Exemples d’affirmations :
-      <ul>
-        <li>“Je me sens disponible pour travailler aujourd’hui.”</li>
-        <li>“Je me sens à l’aise avec la facilitation.”</li>
-        <li>“J’ai envie de repartir avec du concret.”</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="bloc bloc-deroulement">
-    <div class="bloc-titre">Déroulement détaillé</div>
-
-    <div class="bloc-contenu">
-
-      <p><strong>1. Introduction <span class="temps">(1 min)</span></strong></p>
-
-      <ul>
-        <li>Expliquer rapidement le système de curseur.</li>
-        <li>Préciser qu’il n’y a pas de bonne réponse.</li>
-      </ul>
-
-      <p><strong>2. Série de questions <span class="temps">(4 à 6 min)</span></strong></p>
-
-      <ul>
-        <li>Le facilitateur annonce une affirmation.</li>
-        <li>Les participants montrent leur niveau avec leurs doigts.</li>
-        <li>Le facilitateur observe les tendances.</li>
-      </ul>
-
-      <div class="focus">
-        Il est possible de demander :
-        “Qui souhaite expliquer rapidement son choix ?”
-      </div>
-
-      <p><strong>3. Transition <span class="temps">(1 à 2 min)</span></strong></p>
-
-      <ul>
-        <li>Faire ressortir quelques tendances générales.</li>
-        <li>Relier les réponses à la dynamique de la séance.</li>
-      </ul>
-
-    </div>
-  </section>
-
-  <section class="bloc bloc-vigilance">
-    <div class="bloc-titre">Points de vigilance</div>
-
-    <div class="bloc-contenu">
-      <ul>
-        <li>Ne pas demander de justification à tout le monde.</li>
-        <li>Éviter les affirmations trop personnelles.</li>
-        <li>Garder un rythme rapide.</li>
-        <li>Ne pas transformer l’exercice en débat.</li>
-      </ul>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <span>MAPP · Support expérimentation posture facilitateur · Mai 2026</span>
-  </footer>
-
-</div>
 
 </body>
 </html>
