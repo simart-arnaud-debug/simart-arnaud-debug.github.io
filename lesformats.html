@@ -291,6 +291,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: start;
 }
 
 .preview-card {
@@ -301,6 +302,21 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.preview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.10);
+}
+
+.preview-card.open {
+  box-shadow: 0 18px 46px rgba(0,0,0,0.14);
+}
+
+.preview-card.locked {
+  cursor: pointer;
 }
 
 .preview-card.locked::before {
@@ -328,6 +344,11 @@
   z-index: 4;
   white-space: nowrap;
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.preview-card.unlocked::before,
+.preview-card.unlocked::after {
+  display: none;
 }
 
 .preview-tag {
@@ -370,6 +391,151 @@
   font-weight: 700;
   padding: 6px 10px;
   border-radius: 999px;
+}
+
+.card-toggle {
+  margin-top: 18px;
+  border: none;
+  background: var(--bleu);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card-toggle:hover {
+  background: var(--corail);
+}
+
+.preview-more {
+  display: none;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 2px solid var(--gris);
+}
+
+.preview-card.open .preview-more {
+  display: block;
+}
+
+.preview-more h4 {
+  color: var(--bleu);
+  font-size: 14px;
+  font-weight: 800;
+  margin: 15px 0 6px;
+}
+
+.preview-more ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+
+.preview-more li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 5px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  background: var(--corail);
+  color: white;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.download-btn:hover {
+  background: var(--bleu);
+}
+
+.download-btn.disabled {
+  background: #cfcfcf;
+  color: #666;
+  pointer-events: none;
+}
+
+.unlock-box {
+  margin-top: 24px;
+  background: white;
+  border-radius: 22px;
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.unlock-box label {
+  color: var(--bleu);
+  font-size: 14px;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.unlock-box p {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.unlock-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.unlock-actions input {
+  border: 2px solid #e8e8e8;
+  background: #fafafa;
+  border-radius: 999px;
+  padding: 11px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  min-width: 190px;
+}
+
+.unlock-actions input:focus {
+  border-color: var(--bleu);
+  background: white;
+}
+
+.unlock-actions button {
+  border: none;
+  background: var(--bleu);
+  color: white;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.unlock-status {
+  margin-top: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--corail);
+}
+
+.unlock-status.ok {
+  color: #2f7d32;
 }
 
 /* ACCÈS */
@@ -588,8 +754,19 @@
   .collections-grid,
   .preview-grid,
   .related-links,
-  .form-row {
+  .form-row,
+  .unlock-box {
     grid-template-columns: 1fr;
+  }
+
+  .unlock-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .unlock-actions input {
+    min-width: 0;
+    width: 100%;
   }
 
   .preview-header {
@@ -705,46 +882,137 @@
     </div>
 
     <div class="preview-grid">
-      <div class="preview-card">
+      <div class="preview-card demo-card" data-download="formats/check-in-check-out.pdf">
         <div class="preview-tag">Se synchroniser</div>
         <h3>Check-in / Check-out</h3>
         <p>Ouvrir et fermer un temps collectif en installant présence, écoute et qualité d’attention.</p>
         <div class="preview-details"><span>5-10 min</span><span>Toute taille</span></div>
+        <button type="button" class="card-toggle">Ouvrir la fiche</button>
+        <div class="preview-more">
+          <h4>Objectif</h4>
+          <p>Créer un cadre d’écoute et de présence au début et à la fin d’un temps collectif.</p>
+          <h4>Quand l’utiliser</h4>
+          <p>En début ou fin de réunion, d’atelier, de formation ou lors d’un temps sensible nécessitant une mise en présence du groupe.</p>
+          <h4>Déroulé pas à pas</h4>
+          <ul>
+            <li>Poser une question simple : « Comment j’arrive ? » ou « Avec quoi je repars ? ».</li>
+            <li>Faire un tour rapide, sans réaction ni débat.</li>
+            <li>Clore en reformulant l’intention du temps collectif ou les principaux éléments entendus.</li>
+          </ul>
+          <h4>Conseils d’animation</h4>
+          <ul>
+            <li>Choisir une question adaptée au niveau de maturité du groupe.</li>
+            <li>Autoriser des réponses courtes.</li>
+            <li>Ne pas forcer la confidence.</li>
+          </ul>
+          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        </div>
       </div>
 
-      <div class="preview-card locked">
+      <div class="preview-card locked" data-download="formats/carte-questions-utiles.pdf">
         <div class="preview-tag">Clarifier</div>
         <h3>Carte des questions utiles</h3>
         <p>Faire émerger les vraies questions avant de chercher trop vite les réponses.</p>
         <div class="preview-details"><span>20 min</span><span>6-15 pers.</span></div>
+        <button type="button" class="card-toggle">Ouvrir la fiche</button>
+        <div class="preview-more">
+          <h4>Objectif</h4>
+          <p>Identifier les questions qui structurent réellement le sujet avant d’entrer dans les solutions.</p>
+          <h4>Déroulé pas à pas</h4>
+          <ul>
+            <li>Formuler individuellement les questions importantes.</li>
+            <li>Regrouper les questions par familles.</li>
+            <li>Choisir les questions prioritaires à instruire.</li>
+          </ul>
+          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        </div>
       </div>
 
-      <div class="preview-card locked">
+      <div class="preview-card locked" data-download="formats/matrice-impact-effort.pdf">
         <div class="preview-tag">Décider</div>
         <h3>Matrice impact / effort</h3>
         <p>Prioriser collectivement les actions en fonction de leur valeur et de leur faisabilité.</p>
         <div class="preview-details"><span>30 min</span><span>Groupe projet</span></div>
+        <button type="button" class="card-toggle">Ouvrir la fiche</button>
+        <div class="preview-more">
+          <h4>Objectif</h4>
+          <p>Aider un groupe à choisir les actions à engager en premier.</p>
+          <h4>Déroulé pas à pas</h4>
+          <ul>
+            <li>Lister les actions possibles.</li>
+            <li>Positionner chaque action selon son impact et son effort.</li>
+            <li>Identifier les actions rapides, structurantes ou à différer.</li>
+          </ul>
+          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        </div>
       </div>
 
-      <div class="preview-card locked">
+      <div class="preview-card locked" data-download="formats/portrait-croise.pdf">
         <div class="preview-tag">Créer du lien</div>
         <h3>Portrait croisé</h3>
         <p>Favoriser l’interconnaissance sans tomber dans l’exercice artificiel ou trop personnel.</p>
         <div class="preview-details"><span>15 min</span><span>Binômes</span></div>
+        <button type="button" class="card-toggle">Ouvrir la fiche</button>
+        <div class="preview-more">
+          <h4>Objectif</h4>
+          <p>Permettre aux participants de mieux se connaître par un échange cadré et professionnel.</p>
+          <h4>Déroulé pas à pas</h4>
+          <ul>
+            <li>Échange en binôme à partir de deux ou trois questions.</li>
+            <li>Chaque personne présente ensuite son binôme au groupe.</li>
+          </ul>
+          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        </div>
       </div>
 
-      <div class="preview-card locked">
+      <div class="preview-card locked" data-download="formats/crazy-8.pdf">
         <div class="preview-tag">Générer des idées</div>
         <h3>Crazy 8</h3>
         <p>Produire rapidement plusieurs pistes avant de converger vers les idées les plus prometteuses.</p>
         <div class="preview-details"><span>8-20 min</span><span>Tout groupe</span></div>
+        <button type="button" class="card-toggle">Ouvrir la fiche</button>
+        <div class="preview-more">
+          <h4>Objectif</h4>
+          <p>Sortir des premières idées évidentes et générer rapidement plusieurs alternatives.</p>
+          <h4>Déroulé pas à pas</h4>
+          <ul>
+            <li>Plier une feuille en huit cases.</li>
+            <li>Produire une idée par case dans un temps court.</li>
+            <li>Partager puis sélectionner les pistes les plus utiles.</li>
+          </ul>
+          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        </div>
       </div>
 
-      <div class="preview-card locked">
+      <div class="preview-card locked" data-download="formats/4-coins.pdf">
         <div class="preview-tag">Faire bilan</div>
         <h3>4 coins</h3>
         <p>Faire émerger un bilan collectif vivant, rapide et visuel à partir de positions choisies.</p>
         <div class="preview-details"><span>15-25 min</span><span>Tout groupe</span></div>
+        <button type="button" class="card-toggle">Ouvrir la fiche</button>
+        <div class="preview-more">
+          <h4>Objectif</h4>
+          <p>Permettre à chacun de se positionner physiquement sur un ressenti, une appréciation ou une priorité.</p>
+          <h4>Déroulé pas à pas</h4>
+          <ul>
+            <li>Installer quatre zones dans l’espace.</li>
+            <li>Lire une consigne ou une affirmation.</li>
+            <li>Chaque participant se positionne puis partage brièvement son choix.</li>
+          </ul>
+          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="unlock-box">
+      <div>
+        <label for="access-code">Vous avez reçu un code d’accès ?</label>
+        <p>Entrez-le ici pour ouvrir les fiches verrouillées et activer les téléchargements.</p>
+        <div id="unlock-status" class="unlock-status"></div>
+      </div>
+      <div class="unlock-actions">
+        <input type="password" id="access-code" placeholder="Code d’accès">
+        <button type="button" onclick="unlockFormats()">Déverrouiller</button>
       </div>
     </div>
   </div>
@@ -887,6 +1155,55 @@ document.addEventListener('dragstart', function(event) {
   }
 });
 
+/* Ouverture / fermeture des fiches */
+document.querySelectorAll('.preview-card').forEach(card => {
+  const toggle = card.querySelector('.card-toggle');
+  if (!toggle) return;
+
+  toggle.addEventListener('click', function(event) {
+    event.stopPropagation();
+    if (card.classList.contains('locked') && !card.classList.contains('unlocked') && !card.classList.contains('demo-card')) {
+      document.getElementById('demander-acces').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    card.classList.toggle('open');
+    toggle.textContent = card.classList.contains('open') ? 'Refermer la fiche' : 'Ouvrir la fiche';
+  });
+});
+
+/* Déverrouillage simple côté navigateur.
+   Remplacer la valeur ci-dessous par le code que tu voudras transmettre aux personnes autorisées. */
+const FORMAT_ACCESS_CODE = 'FORMAT-POCHE';
+
+function unlockFormats() {
+  const input = document.getElementById('access-code');
+  const status = document.getElementById('unlock-status');
+  const value = input.value.trim();
+
+  if (value === FORMAT_ACCESS_CODE) {
+    document.querySelectorAll('.preview-card.locked').forEach(card => {
+      card.classList.remove('locked');
+      card.classList.add('unlocked');
+    });
+
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      const card = btn.closest('.preview-card');
+      const file = card.getAttribute('data-download');
+      btn.classList.remove('disabled');
+      btn.textContent = 'Télécharger la fiche';
+      btn.setAttribute('href', file);
+    });
+
+    status.textContent = 'Accès activé. Les fiches sont désormais ouvertes et téléchargeables.';
+    status.classList.add('ok');
+    input.value = '';
+  } else {
+    status.textContent = 'Code non reconnu. Vérifiez le code transmis.';
+    status.classList.remove('ok');
+  }
+}
+
 /* Animation douce au scroll */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -896,7 +1213,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.collection-card, .preview-card, .related-card, .bonus-intro, .access-section').forEach(el => {
+document.querySelectorAll('.collection-card, .preview-card, .related-card, .bonus-intro, .access-section, .unlock-box').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(16px)';
   el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
