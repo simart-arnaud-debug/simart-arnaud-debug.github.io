@@ -3,193 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Témoignages de participants aux formations en intelligence collective et cartes mentales animées par Arnaud SIMART. CD10, CD88, CNFPT, IRTS Champagne-Ardenne.">
+<meta name="description" content="Témoignages et retours d'expérience autour des formations, ateliers et accompagnements animés par Arnaud SIMART en intelligence collective, facilitation et appui managérial.">
 <meta name="author" content="Arnaud SIMART">
-<meta property="og:title" content="Témoignages - Ce qu'ils disent d'Arnaud SIMART">
-<meta property="og:description" content="Témoignages de participants aux formations en intelligence collective et cartes mentales animées par Arnaud SIMART. CD10, CD88, CNFPT, IRTS Champagne-Ardenne.">
+<meta property="og:title" content="Témoignages | Arnaud SIMART">
+<meta property="og:description" content="Des retours authentiques issus de formations, ateliers et accompagnements en intelligence collective.">
 <meta property="og:url" content="https://arnaud-simart.fr/temoignages.html">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://arnaud-simart.fr/temoignages.html">
-<title>Témoignages - Ce qu'ils disent d'Arnaud SIMART</title>
-<meta name="description" content="Témoignages de participants aux formations en intelligence collective et cartes mentales animées par Arnaud SIMART. CD10, CD88, CNFPT, IRTS Champagne-Ardenne.">
-<meta name="author" content="Arnaud SIMART">
-<meta property="og:title" content="Témoignages - Arnaud SIMART">
-<meta property="og:description" content="Ce que disent les participants aux formations d'Arnaud SIMART en intelligence collective.">
-<meta property="og:url" content="https://arnaud-simart.fr/temoignages.html">
-<link rel="canonical" href="https://arnaud-simart.fr/temoignages.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<title>Témoignages | Arnaud SIMART</title>
 <link rel="stylesheet" href="style.css">
+
 <style>
-.page-hero {
-  background:var(--bleu);
+.page-hero{
+  background:linear-gradient(135deg,var(--bleu),#244b71);
   color:white;
-  padding:60px;
+  padding:105px 30px 90px;
   text-align:center;
-}
-.page-hero h1 { font-size:48px; font-weight:800; margin-bottom:16px; }
-.page-hero p { font-size:18px; opacity:0.85; max-width:650px; margin:auto; }
-
-/* STATS */
-.stats-row {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-  margin-bottom:60px;
-}
-.stat-box {
-  background:white;
-  border-radius:22px;
-  padding:30px 20px;
-  text-align:center;
-  box-shadow:0 6px 20px rgba(0,0,0,0.06);
-}
-.stat-box strong {
-  display:block;
-  font-size:44px;
-  font-weight:800;
-  color:var(--corail);
-  line-height:1;
-  margin-bottom:10px;
-}
-.stat-box span { font-size:14px; color:#666; line-height:1.4; }
-
-/* TÉMOIGNAGE STAR */
-.temoignage-star {
-  background:var(--bleu);
-  color:white;
-  border-radius:28px;
-  padding:50px;
-  margin-bottom:30px;
   position:relative;
+  overflow:hidden;
 }
-.temoignage-star .quote-big {
-  font-family:'Patrick Hand',cursive;
-  font-size:100px;
-  color:var(--jaune);
-  line-height:0.5;
-  margin-bottom:20px;
+.page-hero::before{
+  content:"";
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.045);
+  top:-180px;
+  right:-120px;
+}
+.page-hero::after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:rgba(247,215,116,0.12);
+  bottom:-120px;
+  left:8%;
+}
+.page-hero-inner{
+  max-width:900px;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+.page-hero h1{
+  font-size:56px;
+  line-height:1.08;
+  margin-bottom:22px;
+  font-weight:800;
+}
+.page-hero p{
+  max-width:760px;
+  margin:auto;
+  font-size:19px;
+  line-height:1.8;
+  opacity:0.92;
+}
+.trust-intro{
+  margin-top:-42px;
+  position:relative;
+  z-index:4;
+}
+.trust-card{
+  background:white;
+  border-radius:32px;
+  padding:44px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.08);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:42px;
+  align-items:center;
+}
+.trust-card h2{
+  color:var(--bleu);
+  font-size:34px;
+  line-height:1.18;
+  margin-bottom:16px;
+}
+.trust-card p{
+  color:#555;
+  font-size:16px;
+  line-height:1.85;
+}
+.trust-points{
+  display:grid;
+  gap:14px;
+}
+.trust-point{
+  background:var(--gris);
+  border-radius:18px;
+  padding:18px 20px;
+}
+.trust-point strong{
   display:block;
+  color:var(--bleu);
+  margin-bottom:4px;
+  font-size:15px;
 }
-.temoignage-star p {
+.trust-point span{
+  color:#666;
+  font-size:14px;
+  line-height:1.6;
+}
+.featured-testimonial{
+  background:var(--bleu);
+  color:white;
+  border-radius:32px;
+  padding:56px;
+  margin-bottom:34px;
+  position:relative;
+  overflow:hidden;
+}
+.featured-testimonial::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  background:rgba(247,215,116,0.12);
+  right:-90px;
+  top:-80px;
+}
+.featured-testimonial.alt{
+  background:linear-gradient(135deg,#244b71,var(--bleu));
+}
+.quote-symbol{
+  font-family:'Patrick Hand',cursive;
+  font-size:96px;
+  line-height:0.7;
+  color:var(--jaune);
+  display:block;
+  margin-bottom:10px;
+  position:relative;
+  z-index:2;
+}
+.featured-testimonial p{
+  max-width:880px;
   font-size:20px;
+  line-height:1.8;
   font-style:italic;
-  line-height:1.75;
-  max-width:800px;
-  opacity:0.95;
+  opacity:0.96;
+  position:relative;
+  z-index:2;
 }
-.temoignage-star cite {
+.featured-testimonial cite{
   display:block;
   margin-top:24px;
-  font-style:normal;
-  font-size:14px;
-  font-weight:700;
   color:var(--jaune);
+  font-size:14px;
+  font-style:normal;
+  font-weight:800;
   text-transform:uppercase;
   letter-spacing:0.06em;
+  position:relative;
+  z-index:2;
 }
-
-/* GRILLE */
-.temoignages-grid {
+.section-heading{
+  margin:60px 0 28px;
+  max-width:760px;
+}
+.section-heading h2{
+  color:var(--bleu);
+  font-size:36px;
+  line-height:1.18;
+  margin-bottom:12px;
+}
+.section-heading p{
+  color:#666;
+  font-size:16px;
+  line-height:1.75;
+}
+.testimonials-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
   gap:24px;
   margin-bottom:50px;
 }
-.temoignage-card {
+.testimonial-card{
   background:white;
-  border-radius:22px;
+  border-radius:26px;
   padding:32px;
-  box-shadow:0 6px 20px rgba(0,0,0,0.06);
-  transition:0.25s;
+  box-shadow:0 8px 26px rgba(0,0,0,0.06);
+  transition:0.25s ease;
   display:flex;
   flex-direction:column;
+  min-height:100%;
 }
-.temoignage-card:hover { transform:translateY(-4px); box-shadow:0 14px 40px rgba(0,0,0,0.1); }
-.quote-mark {
+.testimonial-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 44px rgba(0,0,0,0.10);
+}
+.testimonial-card .quote-mark{
   font-family:'Patrick Hand',cursive;
-  font-size:64px;
   color:var(--jaune);
-  line-height:0.6;
-  margin-bottom:16px;
-  display:block;
+  font-size:58px;
+  line-height:0.7;
+  margin-bottom:14px;
 }
-.temoignage-card p {
-  font-size:16px;
-  font-style:italic;
+.testimonial-card p{
   color:#333;
-  line-height:1.7;
+  font-size:15.5px;
+  line-height:1.75;
+  font-style:italic;
   flex:1;
 }
-.temoignage-card cite {
+.testimonial-card cite{
   display:block;
-  margin-top:20px;
-  font-style:normal;
-  font-size:13px;
-  font-weight:700;
-  color:var(--bleu);
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  padding-top:16px;
+  margin-top:22px;
+  padding-top:18px;
   border-top:2px solid var(--gris);
-}
-.temoignage-card .formation-badge {
-  display:inline-block;
-  background:rgba(255,111,97,0.1);
-  color:var(--corail);
-  font-size:11px;
-  font-weight:700;
-  padding:4px 10px;
-  border-radius:999px;
-  margin-top:8px;
+  color:var(--bleu);
+  font-size:13px;
+  font-weight:800;
+  font-style:normal;
   text-transform:uppercase;
   letter-spacing:0.05em;
 }
-
-/* CONTEXTES */
-.contextes {
-  background:var(--gris);
-  border-radius:28px;
-  padding:50px;
-  margin-bottom:40px;
-}
-.contextes h2 { font-size:28px; color:var(--bleu); font-weight:800; margin-bottom:20px; }
-.tags-wrap { display:flex; flex-wrap:wrap; gap:12px; }
-.ctx-tag {
-  background:white;
+.context-badge{
+  display:inline-block;
+  margin-top:10px;
+  background:rgba(255,111,97,0.10);
+  color:var(--corail);
   border-radius:999px;
-  padding:10px 22px;
-  font-size:14px;
-  font-weight:500;
+  padding:5px 11px;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.contextes{
+  background:white;
+  border-radius:32px;
+  padding:46px;
+  box-shadow:0 10px 32px rgba(0,0,0,0.06);
+  margin:50px 0 40px;
+}
+.contextes h2{
   color:var(--bleu);
-  box-shadow:0 3px 10px rgba(0,0,0,0.06);
+  font-size:32px;
+  line-height:1.2;
+  margin-bottom:12px;
 }
-
-/* CTA */
-.cta-box {
-  background:linear-gradient(135deg,var(--bleu),#29557f);
+.contextes p{
+  color:#666;
+  font-size:16px;
+  line-height:1.75;
+  max-width:760px;
+  margin-bottom:24px;
+}
+.tags-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.ctx-tag{
+  background:var(--gris);
+  color:var(--bleu);
+  border-radius:999px;
+  padding:10px 18px;
+  font-size:14px;
+  font-weight:700;
+}
+.cta-box{
+  background:linear-gradient(135deg,var(--bleu),#244b71);
   color:white;
-  border-radius:28px;
-  padding:50px;
+  border-radius:32px;
+  padding:52px;
   text-align:center;
+  margin-top:46px;
 }
-.cta-box h2 { font-size:32px; margin-bottom:14px; font-weight:800; }
-.cta-box p { font-size:17px; opacity:0.9; max-width:600px; margin:0 auto 28px; }
-
-@media(max-width:900px) {
-  .page-hero { padding:40px 25px; }
-  .page-hero h1 { font-size:32px; }
-  .stats-row { grid-template-columns:repeat(2,1fr); }
-  .temoignage-star { padding:32px 24px; }
-  .temoignage-star p { font-size:17px; }
-  .contextes { padding:30px 20px; }
-  .cta-box { padding:35px 20px; }
+.cta-box h2{
+  font-size:34px;
+  line-height:1.2;
+  margin-bottom:14px;
+}
+.cta-box p{
+  max-width:620px;
+  margin:0 auto 28px;
+  opacity:0.9;
+  font-size:17px;
+  line-height:1.75;
+}
+.cta-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:14px;
+}
+@media(max-width:900px){
+  .page-hero{
+    padding:90px 22px 70px;
+  }
+  .page-hero h1{
+    font-size:38px;
+  }
+  .page-hero p{
+    font-size:17px;
+  }
+  .trust-card{
+    grid-template-columns:1fr;
+    padding:30px;
+  }
+  .featured-testimonial{
+    padding:34px 26px;
+  }
+  .featured-testimonial p{
+    font-size:17px;
+  }
+  .contextes,
+  .cta-box{
+    padding:30px 24px;
+  }
+  .section-heading h2,
+  .contextes h2,
+  .cta-box h2{
+    font-size:28px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">Arnaud Simart</a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Ouvrir le menu">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links">
@@ -197,118 +339,130 @@
     <li><a href="formations.html">Formations</a></li>
     <li><a href="apropos.html">À propos</a></li>
     <li><a href="enaction.html">En action</a></li>
+    <li><a href="lesformats.html">Formats de poche</a></li>
     <li><a href="temoignages.html" class="active">Témoignages</a></li>
     <li><a href="contact.html" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
 <section class="page-hero">
-  <div class="badge">Ils l'ont vécu</div>
-  <h1>Ce qu'ils en disent</h1>
-  <p>Des retours authentiques, dans des contextes variés - collectivités, associations, établissements de formation.</p>
+  <div class="page-hero-inner">
+    <div class="badge">Ils l’ont vécu</div>
+    <h1>Des retours qui racontent une expérience</h1>
+    <p>Des témoignages issus de formations, d’ateliers et d’accompagnements vécus dans des contextes professionnels variés : collectivités, organismes de formation, équipes projet et collectifs en mouvement.</p>
+  </div>
+</section>
+
+<section class="section trust-intro">
+  <div class="trust-card">
+    <div>
+      <h2>La confiance se construit dans l’expérience</h2>
+      <p>Les retours qui suivent ne parlent pas seulement d’outils ou de méthodes. Ils racontent une manière d’animer : créer un cadre, rendre le collectif acteur, faire émerger des idées utiles et permettre à chacun de trouver sa place.</p>
+    </div>
+    <div class="trust-points">
+      <div class="trust-point">
+        <strong>Des situations réelles</strong>
+        <span>Formations, séminaires, ateliers de coopération, accompagnements d’équipes et dispositifs sur mesure.</span>
+      </div>
+      <div class="trust-point">
+        <strong>Des contextes publics et partenariaux</strong>
+        <span>Collectivités, établissements de formation, CNFPT, IRTS, équipes territoriales et acteurs de l’action sociale.</span>
+      </div>
+      <div class="trust-point">
+        <strong>Une même intention</strong>
+        <span>Faire vivre une expérience collective sérieuse, concrète, engageante et directement réutilisable.</span>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="section">
 
-  <!-- STATS -->
-  <div class="stats-row">
-    <div class="stat-box">
-      <strong>+40</strong>
-      <span>agents formés en 18 mois</span>
-    </div>
-    <div class="stat-box">
-      <strong>3</strong>
-      <span>cycles de 4 jours animés</span>
-    </div>
-    <div class="stat-box">
-      <strong>9+</strong>
-      <span>sessions en intra & inter</span>
-    </div>
-    <div class="stat-box">
-      <strong>🇪🇺</strong>
-      <span>Séminaire européen IRTS</span>
-    </div>
+  <div class="featured-testimonial">
+    <span class="quote-symbol">“</span>
+    <p>Il sait donner sa confiance et a su mettre à l’honneur l’intelligence collective avec rigueur et fluidité dans un contexte à fort enjeu professionnel. Il aime les challenges et se donne les moyens pour les réussir sans oublier le collectif. Les nombreux liens qu’il tisse et ses nombreuses pratiques accumulées lui permettent d’œuvrer avec beaucoup de précision et de pertinence. Il sait fédérer dans et autour de l’équipe pour faire émerger ce qui permet à toutes et tous d’avancer.</p>
+    <cite>Julia Barbotin · Formatrice & Facilitatrice · DU Intelligence Collective, CY Cergy Paris Université</cite>
   </div>
 
-  <!-- TÉMOIGNAGE STAR -->
-  <div class="temoignage-star">
-    <span class="quote-big">"</span>
-    <p>Il sait donner sa confiance et a su mettre à l'honneur l'intelligence collective avec rigueur et fluidité dans un contexte à fort enjeu professionnel. Il aime les challenges et se donne les moyens pour les réussir sans oublier le collectif. Les nombreux liens qu'il tisse et ses nombreuses pratiques accumulées lui permettent d'œuvrer avec beaucoup de précision et de pertinence. Il sait fédérer dans et autour de l'équipe pour faire émerger ce qui permet à toutes et tous d'avancer.</p>
-    <cite>Julia Barbotin - Formatrice & Facilitatrice · DU Intelligence Collective, CY Cergy Paris Université</cite>
+  <div class="featured-testimonial alt">
+    <span class="quote-symbol">“</span>
+    <p>Tu as fait un super travail : la journée a été particulièrement enrichissante et très agréable à suivre. J’ai vraiment apprécié l’ambiance que tu as su instaurer ainsi que la qualité de ton animation, à la fois dynamique et accessible. Cela donne envie de mettre rapidement en pratique !</p>
+    <cite>Angélique · CD10 · Formation intelligence collective</cite>
   </div>
 
-  <!-- TÉMOIGNAGE ANGÉLIQUE -->
-  <div class="temoignage-star" style="background:var(--corail);margin-bottom:30px;">
-    <span class="quote-big">"</span>
-    <p>Tu as fait un super travail : la journée a été particulièrement enrichissante et très agréable à suivre. J'ai vraiment apprécié l'ambiance que tu as su instaurer ainsi que la qualité de ton animation, à la fois dynamique et accessible. Cela donne envie de mettre rapidement en pratique !</p>
-    <cite>Angélique - CD10 · Formation intelligence collective</cite>
+  <div class="section-heading">
+    <h2>Ce que les participants retiennent</h2>
+    <p>Au-delà de la satisfaction immédiate, ces retours mettent en avant la qualité du cadre, la pédagogie, les mises en situation et l’ancrage concret des apprentissages.</p>
   </div>
 
-  <!-- GRILLE -->
-  <div class="temoignages-grid">
+  <div class="testimonials-grid">
 
-    <div class="temoignage-card">
-      <span class="quote-mark">"</span>
-      <p>J'ai eu la chance d'étudier avec Arnaud au DU d'Intelligence collective et de profiter de sa pédagogie, de sa créativité et de son aura solaire. Il est bienveillant et attentif. Sa force de propositions, le soin apporté aux réalisations, sa bonne humeur, son respect et sa vision en font un atout précieux pour une équipe.</p>
-      <cite>Julia Barbotin - Formatrice & Facilitatrice</cite>
-      <span class="formation-badge">DU Intelligence Collective · CY Cergy</span>
+    <div class="testimonial-card">
+      <div class="quote-mark">“</div>
+      <p>J’ai eu la chance d’étudier avec Arnaud au DU d’Intelligence collective et de profiter de sa pédagogie, de sa créativité et de son aura solaire. Il est bienveillant et attentif. Sa force de propositions, le soin apporté aux réalisations, sa bonne humeur, son respect et sa vision en font un atout précieux pour une équipe.</p>
+      <cite>Julia Barbotin · Formatrice & Facilitatrice</cite>
+      <span class="context-badge">DU Intelligence Collective · CY Cergy</span>
     </div>
 
-    <div class="temoignage-card">
-      <span class="quote-mark">"</span>
-      <p>Cette formation m'a vraiment permis de me rendre compte que c'est un outil puissant. Tu nous as montré de façon très ludique et accessible les usages et comment on pouvait gagner en efficience.</p>
+    <div class="testimonial-card">
+      <div class="quote-mark">“</div>
+      <p>Cette formation m’a vraiment permis de me rendre compte que c’est un outil puissant. Tu nous as montré de façon très ludique et accessible les usages et comment on pouvait gagner en efficience.</p>
       <cite>Alexia</cite>
-      <span class="formation-badge">Cartes mentales</span>
+      <span class="context-badge">Cartes mentales</span>
     </div>
 
-    <div class="temoignage-card">
-      <span class="quote-mark">"</span>
+    <div class="testimonial-card">
+      <div class="quote-mark">“</div>
       <p>Des ateliers collaboratifs et outils concrets pour développer des compétences clés, accompagnés par Arnaud Simart, facilitateur et formateur en intelligence collective. Objectif : renforcer les liens entre étudiants, partager des bonnes pratiques et innover ensemble.</p>
-      <cite>Nicolas PERREIN - Coordinateur projets internationaux, IRTS Champagne-Ardenne</cite>
-      <span class="formation-badge">Séminaire européen · 67 participants · France & Belgique</span>
+      <cite>Nicolas PERREIN · Coordinateur projets internationaux, IRTS Champagne-Ardenne</cite>
+      <span class="context-badge">Séminaire européen · France & Belgique</span>
     </div>
 
-    <div class="temoignage-card"> Les nombreuses mises en situation et les échanges avec les collègues ont vraiment favorisé les apprentissages.</p>
-      <cite>Agent territorial - CD55</cite>
-      <span class="formation-badge">Intelligence collective</span>
+    <div class="testimonial-card">
+      <div class="quote-mark">“</div>
+      <p>Les nombreuses mises en situation et les échanges avec les collègues ont vraiment favorisé les apprentissages.</p>
+      <cite>Agent territorial · CD55</cite>
+      <span class="context-badge">Intelligence collective</span>
     </div>
 
-    <div class="temoignage-card">
-      <span class="quote-mark">"</span>
-      <p>Les retours d'expériences du formateur sur le sujet étaient très bénéfiques. Cette posture de partage a enrichi toute la dynamique de groupe.</p>
-      <cite>Apprenant en formation CAFERUIS - IRTS Champagne-Ardenne</cite>
-      <span class="formation-badge">Facilitation</span>
+    <div class="testimonial-card">
+      <div class="quote-mark">“</div>
+      <p>Les retours d’expériences du formateur sur le sujet étaient très bénéfiques. Cette posture de partage a enrichi toute la dynamique de groupe.</p>
+      <cite>Apprenant en formation CAFERUIS · IRTS Champagne-Ardenne</cite>
+      <span class="context-badge">Facilitation</span>
     </div>
 
-    <div class="temoignage-card">
-      <span class="quote-mark">"</span>
+    <div class="testimonial-card">
+      <div class="quote-mark">“</div>
       <p>Les mises en pratique et les échanges entre collègues ont été particulièrement formateurs. Les cas pratiques ont ancré les apports dans le concret.</p>
-      <cite>Participant - Formation intelligence collective</cite>
-      <span class="formation-badge">Intelligence collective</span>
+      <cite>Participant · Formation intelligence collective</cite>
+      <span class="context-badge">Mise en pratique</span>
     </div>
 
   </div>
 
-  <!-- CONTEXTES -->
   <div class="contextes">
     <h2>Des interventions dans des contextes variés</h2>
+    <p>Chaque intervention est adaptée au terrain, aux objectifs et au niveau de maturité du collectif. Les formats changent, mais l’intention reste la même : créer les conditions d’un travail collectif utile.</p>
     <div class="tags-wrap">
-      <span class="ctx-tag">🏛 Collectivité territoriale</span>
-      <span class="ctx-tag">👶 Centre Départemental de l'Enfance</span>
-      <span class="ctx-tag">🎓 IRTS Champagne-Ardenne</span>
-      <span class="ctx-tag">🇧🇪 Étudiants belges - Futurs directeurs</span>
-      <span class="ctx-tag">🏘 Communautés de communes</span>
-      <span class="ctx-tag">📋 CNFPT</span>
-      <span class="ctx-tag">🤝 Équipes de territoire</span>
-      <span class="ctx-tag">🏢 Pôle des Solidarités</span>
+      <span class="ctx-tag">Collectivités territoriales</span>
+      <span class="ctx-tag">Centre Départemental de l’Enfance</span>
+      <span class="ctx-tag">IRTS Champagne-Ardenne</span>
+      <span class="ctx-tag">Étudiants et futurs cadres</span>
+      <span class="ctx-tag">Communautés de communes</span>
+      <span class="ctx-tag">CNFPT</span>
+      <span class="ctx-tag">Équipes de territoire</span>
+      <span class="ctx-tag">Pôle des Solidarités</span>
     </div>
   </div>
 
-  <!-- CTA -->
   <div class="cta-box">
-    <h2>Vous voulez vivre la même expérience ?</h2>
-    <p>Parlons de votre projet - je vous proposerai un format adapté à vos besoins et votre contexte.</p>
-    <a href="contact.html" class="btn">Prendre contact →</a>
+    <h2>Vous voulez créer ce type d’expérience ?</h2>
+    <p>Parlons de votre contexte, de vos équipes et de ce que vous souhaitez faire bouger. Je vous proposerai un format adapté à votre besoin.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn">Prendre contact →</a>
+      <a href="enaction.html" class="btn btn-outline-light">Voir la pratique en images</a>
+    </div>
   </div>
 
 </section>
@@ -325,7 +479,8 @@
         <li><a href="formations.html">Formations</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="enaction.html">En action</a></li>
-    <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="lesformats.html">Formats de poche</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -334,7 +489,7 @@
       <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
       Intervention France entière · Distanciel &amp; présentiel<br>
       SIRET : 10169169900017<br>
-      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">💼 Mon profil LinkedIn</a>
+      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">Mon LinkedIn</a>
     </div>
   </div>
   <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement. · <a href="mentionslegales.html" style="color:inherit;text-decoration:underline;">Mentions légales</a></div>
