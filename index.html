@@ -337,767 +337,55 @@
     </div>
   </div>
 </section>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Arnaud SIMART, facilitateur et formateur en intelligence collective, appui managérial et gestion de projet. Formations vivantes, visuelles et concrètes pour développer la coopération et le pouvoir d'agir.">
-<meta name="author" content="Arnaud SIMART">
-<meta property="og:title" content="Arnaud SIMART - Facilitateur & Formateur en Intelligence Collective">
-<meta property="og:description" content="Des formations vivantes et concrètes pour développer la coopération, les compétences collectives et le pouvoir d'agir.">
-<meta property="og:url" content="https://arnaud-simart.fr">
-<meta property="og:type" content="website">
-<link rel="canonical" href="https://arnaud-simart.fr">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-<title>Arnaud SIMART - Facilitateur & Formateur en Intelligence Collective</title>
-<link rel="stylesheet" href="style.css">
 
-<style>
-/* ================================
-   ACCUEIL — V2 PREMIUM
-   ================================ */
-
-.home-hero {
-  min-height: calc(100vh - 76px);
-  background:
-    linear-gradient(110deg, rgba(16,43,67,0.95) 0%, rgba(16,43,67,0.88) 46%, rgba(16,43,67,0.36) 100%),
-    url('photo18.png') center / cover no-repeat;
-  color: white;
-  padding: 92px 56px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.home-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 18% 18%, rgba(247,215,116,0.18), transparent 28%),
-    radial-gradient(circle at 92% 12%, rgba(255,111,97,0.14), transparent 24%),
-    linear-gradient(rgba(255,255,255,0.026) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.026) 1px, transparent 1px);
-  background-size: auto, auto, 46px 46px, 46px 46px;
-  pointer-events: none;
-}
-
-.home-hero-inner {
-  width: 100%;
-  max-width: var(--container);
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 62px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.home-hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 24px;
-  backdrop-filter: blur(10px);
-}
-
-.home-hero h1 {
-  font-size: clamp(46px, 6vw, 76px);
-  line-height: 0.98;
-  font-weight: 800;
-  letter-spacing: -0.055em;
-  max-width: 780px;
-  margin-bottom: 26px;
-}
-
-.home-hero h1 em {
-  font-style: normal;
-  color: var(--jaune);
-}
-
-.home-hero-desc {
-  font-size: 19px;
-  line-height: 1.82;
-  opacity: 0.92;
-  max-width: 680px;
-  margin-bottom: 28px;
-}
-
-.home-hero .signature {
-  margin-bottom: 32px;
-}
-
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.hero-visual {
-  display: grid;
-  grid-template-columns: 1fr 0.72fr;
-  gap: 18px;
-  align-items: end;
-}
-
-.hero-card-main,
-.hero-card-stack {
-  position: relative;
-}
-
-.hero-card-main img,
-.hero-card-stack img {
-  width: 100%;
-  object-fit: cover;
-  display: block;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.hero-card-main img {
-  aspect-ratio: 0.82;
-  border-radius: 36px;
-  box-shadow: var(--shadow-strong);
-  border: 1px solid rgba(255,255,255,0.18);
-}
-
-.hero-card-stack {
-  display: grid;
-  gap: 18px;
-}
-
-.hero-card-stack img {
-  aspect-ratio: 1.08;
-  border-radius: 28px;
-  box-shadow: var(--shadow-medium);
-  border: 1px solid rgba(255,255,255,0.16);
-}
-
-.hero-note {
-  position: absolute;
-  left: -24px;
-  bottom: 26px;
-  background: rgba(255,255,255,0.94);
-  color: var(--bleu);
-  padding: 18px 22px;
-  border-radius: 24px;
-  max-width: 260px;
-  box-shadow: var(--shadow-medium);
-  font-size: 14px;
-  line-height: 1.55;
-  font-weight: 700;
-}
-
-.home-proof-bar {
-  background: var(--jaune);
-  padding: 28px 40px;
-  position: relative;
-  z-index: 3;
-}
-
-.home-proof-inner {
-  max-width: var(--container);
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.home-proof-item {
-  color: var(--bleu);
-  font-weight: 800;
-  font-size: clamp(18px, 2.5vw, 30px);
-  line-height: 1.15;
-}
-
-.home-proof-item span {
-  display: block;
-  color: rgba(28,63,96,0.72);
-  font-size: 13px;
-  font-weight: 700;
-  margin-top: 8px;
-  line-height: 1.45;
-}
-
-.praticien-premium {
-  margin-top: -24px;
-  position: relative;
-  z-index: 4;
-}
-
-.praticien-grid {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 54px;
-  align-items: center;
-}
-
-.praticien-text p {
-  font-size: 17px;
-  color: #444;
-  line-height: 1.86;
-  margin-bottom: 18px;
-}
-
-.praticien-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.mini-card {
-  background: var(--gris-chaud);
-  border-radius: 24px;
-  padding: 26px;
-  border: 1px solid rgba(28,63,96,0.06);
-  transition: .24s var(--ease);
-}
-
-.mini-card:hover {
-  transform: translateY(-5px);
-  background: var(--champagne);
-  box-shadow: var(--shadow-soft);
-}
-
-.mini-card .icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  color: var(--corail);
-  font-weight: 800;
-  margin-bottom: 14px;
-  box-shadow: 0 8px 18px rgba(16,43,67,0.06);
-}
-
-.mini-card h4 {
-  color: var(--bleu);
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.mini-card p {
-  font-size: 13px;
-  color: #555;
-  line-height: 1.7;
-}
-
-.home-section-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 28px;
-  align-items: end;
-  margin-bottom: 34px;
-}
-
-.home-section-header .section-sub {
-  margin-bottom: 0;
-}
-
-.formations-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
-.formation-card {
-  background: white;
-  border-radius: 28px;
-  padding: 30px;
-  box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(28,63,96,0.06);
-  border-top: 4px solid var(--corail);
-  transition: .24s var(--ease);
-  text-decoration: none;
-  color: var(--noir);
-  display: block;
-  min-height: 250px;
-}
-
-.formation-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-medium);
-}
-
-.formation-card .tag {
-  display: inline-flex;
-  color: var(--corail);
-  background: rgba(255,111,97,0.10);
-  border-radius: 999px;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 16px;
-}
-
-.formation-card h3 {
-  color: var(--bleu);
-  font-size: 20px;
-  line-height: 1.25;
-  margin-bottom: 10px;
-}
-
-.formation-card p {
-  color: #666;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.formation-card .arrow {
-  display: inline-flex;
-  color: var(--corail);
-  font-size: 14px;
-  font-weight: 800;
-  margin-top: 18px;
-}
-
-.home-gallery {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr 0.8fr;
-  gap: 16px;
-}
-
-.home-gallery figure {
-  position: relative;
-  overflow: hidden;
-  border-radius: 30px;
-  box-shadow: var(--shadow-soft);
-  background: var(--bleu);
-}
-
-.home-gallery figure:first-child {
-  grid-row: span 2;
-}
-
-.home-gallery img {
-  width: 100%;
-  height: 100%;
-  min-height: 230px;
-  object-fit: cover;
-  display: block;
-  transition: transform .45s var(--ease), filter .45s var(--ease);
-}
-
-.home-gallery figure:hover img {
-  transform: scale(1.045);
-  filter: brightness(0.92);
-}
-
-.home-gallery figcaption {
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  color: white;
-  font-size: 13px;
-  font-weight: 800;
-  line-height: 1.45;
-  padding: 12px 14px;
-  border-radius: 18px;
-  background: rgba(16,43,67,0.62);
-  backdrop-filter: blur(10px);
-}
-
-.bonus-teaser {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 44px;
-  align-items: center;
-  background:
-    radial-gradient(circle at 90% 0%, rgba(255,111,97,0.12), transparent 32%),
-    linear-gradient(135deg, white, var(--champagne));
-  border-radius: 38px;
-  padding: 52px;
-  box-shadow: var(--shadow-medium);
-  overflow: hidden;
-  position: relative;
-}
-
-.bonus-teaser::after {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  right: -110px;
-  bottom: -120px;
-  background: rgba(247,215,116,0.44);
-}
-
-.bonus-teaser-content,
-.bonus-stack {
-  position: relative;
-  z-index: 1;
-}
-
-.bonus-teaser p {
-  color: #555;
-  line-height: 1.82;
-  margin-bottom: 24px;
-  font-size: 16px;
-}
-
-.bonus-stack {
-  display: grid;
-  gap: 14px;
-}
-
-.bonus-card {
-  background: white;
-  border-radius: 24px;
-  padding: 22px;
-  box-shadow: var(--shadow-soft);
-  border-left: 5px solid var(--corail);
-}
-
-.bonus-card h3 {
-  color: var(--bleu);
-  font-size: 17px;
-  margin-bottom: 6px;
-}
-
-.bonus-card p {
-  font-size: 13px;
-  line-height: 1.65;
-  margin-bottom: 0;
-}
-
-.temoignage-vedette {
-  background:
-    radial-gradient(circle at 15% 0%, rgba(247,215,116,0.16), transparent 26%),
-    linear-gradient(135deg, var(--bleu-fonce), var(--bleu));
-  border-radius: 38px;
-  padding: 58px;
-  color: white;
-  text-align: center;
-  box-shadow: var(--shadow-medium);
-  position: relative;
-  overflow: hidden;
-}
-
-.temoignage-vedette .quote {
-  font-family: 'Patrick Hand', cursive;
-  display: block;
-  color: var(--jaune);
-  font-size: 88px;
-  line-height: 0.5;
-  margin-bottom: 24px;
-}
-
-.temoignage-vedette p {
-  font-size: 20px;
-  line-height: 1.8;
-  max-width: 840px;
-  margin: 0 auto 24px;
-  font-style: italic;
-  opacity: 0.95;
-}
-
-.temoignage-vedette cite {
-  font-style: normal;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--jaune);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.cta-section {
-  text-align: center;
-  padding: 90px 40px;
-}
-
-.cta-section h2 {
-  color: var(--bleu);
-  font-size: clamp(34px, 4vw, 50px);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  max-width: 860px;
-  margin: 0 auto 18px;
-}
-
-.cta-section p {
-  color: #555;
-  font-size: 18px;
-  line-height: 1.75;
-  max-width: 680px;
-  margin: 0 auto 30px;
-}
-
-@media (max-width: 1050px) {
-  .home-hero-inner,
-  .praticien-grid,
-  .bonus-teaser {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-visual {
-    max-width: 720px;
-  }
-
-  .formations-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .home-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .home-gallery figure:first-child {
-    grid-column: span 2;
-    grid-row: auto;
-  }
-}
-
-@media (max-width: 760px) {
-  .home-hero {
-    min-height: auto;
-    padding: 60px 22px;
-  }
-
-  .home-hero h1 {
-    font-size: 42px;
-  }
-
-  .hero-visual {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-card-stack {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero-note {
-    left: 14px;
-    right: 14px;
-    bottom: 14px;
-    max-width: none;
-  }
-
-  .home-proof-inner,
-  .formations-grid,
-  .praticien-cards,
-  .home-section-header,
-  .home-gallery,
-  .home-gallery figure:first-child {
-    grid-template-columns: 1fr;
-    grid-column: auto;
-  }
-
-  .bonus-teaser,
-  .temoignage-vedette {
-    padding: 32px 24px;
-    border-radius: 28px;
-  }
-
-  .home-gallery img {
-    min-height: 260px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-  <a href="index.html" class="nav-logo">Arnaud Simart</a>
-  <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Ouvrir le menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Accueil</a></li>
-    <li><a href="formations.html">Formations</a></li>
-    <li><a href="apropos.html">À propos</a></li>
-    <li><a href="enaction.html">En action</a></li>
-    <li><a href="lesformats.html" class="nav-bonus">Formats de poche</a></li>
-    <li><a href="temoignages.html">Témoignages</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact</a></li>
-  </ul>
-</nav>
-
-<section class="home-hero">
-  <div class="home-hero-inner">
-    <div>
-      <div class="home-hero-kicker">Facilitateur & formateur en intelligence collective</div>
-      <h1>Former autrement.<br><em>Faire vivre</em><br>les apprentissages.</h1>
-      <p class="home-hero-desc">Des formations vivantes, visuelles et concrètes pour développer la coopération, les compétences collectives et le pouvoir d'agir - ancrées dans une pratique de terrain quotidienne.</p>
-      <div class="signature">Penser ensemble, agir durablement.</div>
-      <div class="hero-btns">
-        <a href="formations.html" class="btn">Voir les formations</a>
-        <a href="contact.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.55);color:white;">Parlons de votre projet</a>
-      </div>
-    </div>
-
-    <div class="hero-visual" aria-label="Exemples visuels d'ateliers et de productions collectives">
-      <div class="hero-card-main">
-        <img src="photo18.png" alt="Atelier collaboratif autour d'une production collective" class="gallery-click protected">
-        <div class="hero-note">Des espaces de travail qui rendent la pensée collective visible.</div>
-      </div>
-      <div class="hero-card-stack">
-        <img src="photo23.png" alt="Support visuel Le Voyage du Primo" class="gallery-click protected">
-        <img src="portrait-sobre.png" alt="Portrait professionnel d'Arnaud SIMART" class="gallery-click protected">
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="home-proof-bar">
-  <div class="home-proof-inner">
-    <div class="home-proof-item">Formations en intra<span>Des formats conçus pour les réalités de terrain.</span></div>
-    <div class="home-proof-item">Des cycles sur mesure<span>Une ingénierie adaptée au contexte, au collectif et à la commande.</span></div>
-    <div class="home-proof-item">Se former ou se déformer ?<span>Apprendre autrement, en expérimentant vraiment.</span></div>
-  </div>
-</div>
-
-<section class="section praticien-premium">
-  <div class="premium-card">
-    <div class="praticien-grid">
-      <div class="praticien-text">
-        <div class="badge badge-soft">Ce qui fait la différence</div>
-        <h2 class="section-title">Une pratique ancrée dans le réel, chaque jour</h2>
-        <p>Je ne forme pas depuis un pupitre. Chargé de mission Innovation Managériale au CD10, j'accompagne chaque jour des agents dans leurs dynamiques de projet, de management et de cohésion. Ce terrain nourrit en permanence ma posture de formateur.</p>
-        <p>Je travaille sérieusement en amont - pour <strong>designer chaque atelier, chaque formation</strong> selon la commande, le contexte, le collectif. C'est ce travail de fond qui me libère ensuite pour naviguer avec agilité : m'adapter à la dynamique du groupe, aux besoins individuels, à l'énergie du moment.</p>
-        <p>Avant les outils, je travaille avec les participants sur <strong>les postures</strong> : écoute, présence, rapport au groupe et à l'incertitude. Et j'utilise les métaphores et les univers visuels pour embarquer - la montgolfière, le cap, le vol... pour que chacun entre dans l'expérience à sa façon.</p>
-        <a href="apropos.html" class="btn btn-outline">En savoir plus sur mon parcours</a>
-      </div>
-
-      <div class="praticien-cards">
-        <div class="mini-card">
-          <div class="icon">01</div>
-          <h4>Conçu sur mesure</h4>
-          <p>Chaque formation est designée en amont pour coller à votre commande, votre contexte, votre collectif.</p>
-        </div>
-        <div class="mini-card">
-          <div class="icon">02</div>
-          <h4>Agile en permanence</h4>
-          <p>La préparation sérieuse libère l'agilité : je navigue selon la dynamique du groupe et les besoins du moment.</p>
-        </div>
-        <div class="mini-card">
-          <div class="icon">03</div>
-          <h4>L'art des métaphores</h4>
-          <p>Univers visuels, métaphores, récits - pour embarquer chaque participant à sa façon et donner du sens collectivement.</p>
-        </div>
-        <div class="mini-card">
-          <div class="icon">04</div>
-          <h4>La posture avant tout</h4>
-          <p>Avant les outils, je travaille avec les participants sur leur posture : écoute, présence et rapport au collectif.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- FORMATIONS APERÇU -->
 <section class="section" style="padding-top:0;">
-  <div class="home-section-header">
-    <div>
-      <h2 class="section-title">Les formations</h2>
-      <p class="section-sub">Quatre parcours conçus à partir de situations réelles, pour des professionnels qui veulent des outils immédiatement opérationnels.</p>
-    </div>
-    <a href="formations.html" class="btn btn-outline">Tout voir</a>
-  </div>
-
+  <h2 class="section-title">Les formations</h2>
+  <p class="section-sub">Quatre parcours conçus à partir de situations réelles, pour des professionnels qui veulent des outils immédiatement opérationnels.</p>
   <div class="formations-grid">
     <a href="formations.html#intelligence-collective" class="formation-card">
       <div class="tag">4 jours</div>
       <h3>Intelligence collective</h3>
       <p>Découvrir, expérimenter et maîtriser les outils de la facilitation et de la coopération.</p>
-      <span class="arrow">Découvrir</span>
+      <span class="arrow">Découvrir →</span>
     </a>
     <a href="formations.html#cartes-mentales" class="formation-card">
       <div class="tag">2 jours</div>
       <h3>Cartes mentales</h3>
       <p>S'approprier la carte mentale comme outil de facilitation, de synthèse et de communication au quotidien.</p>
-      <span class="arrow">Découvrir</span>
+      <span class="arrow">Découvrir →</span>
     </a>
     <a href="formations.html#facilitation" class="formation-card">
       <div class="tag">Sur mesure</div>
       <h3>Facilitation & animation</h3>
       <p>Animer des temps de travail engageants, structurer la parole collective, faire émerger les idées.</p>
-      <span class="arrow">Découvrir</span>
+      <span class="arrow">Découvrir →</span>
     </a>
     <a href="formations.html#appui-managerial" class="formation-card">
       <div class="tag">Accompagnement</div>
       <h3>Appui managérial</h3>
       <p>Accompagner les équipes de direction dans leurs dynamiques collectives et leurs projets.</p>
-      <span class="arrow">Découvrir</span>
+      <span class="arrow">Découvrir →</span>
     </a>
   </div>
 </section>
 
+<!-- GALERIE APERÇU -->
 <section class="section" style="padding-top:0;">
-  <div class="home-section-header">
-    <div>
-      <h2 class="section-title">La pratique en images</h2>
-      <p class="section-sub">Lego, Kapla, métaphores, musées éphémères... Des ateliers qui se vivent autant qu'ils se voient.</p>
-    </div>
-    <a href="enaction.html" class="btn btn-outline">Voir tous les moments</a>
+  <h2 class="section-title">La pratique en images</h2>
+  <p class="section-sub">Lego, Kapla, métaphores, musées éphémères... Des ateliers qui se vivent autant qu'ils se voient.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;">
+    <img src="photo23.png" alt="Le Voyage du Primo" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="photo5.png" alt="Formation IC" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="photo10.png" alt="Mission Montgolfière" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="photo21.png" alt="Merci Nono" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:16px;transition:0.25s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
   </div>
-
-  <div class="home-gallery">
-    <figure>
-      <img src="photo23.png" alt="Le Voyage du Primo" class="gallery-click protected">
-      <figcaption>Rendre visible un parcours, une histoire, une expérience collective.</figcaption>
-    </figure>
-    <figure>
-      <img src="photo5.png" alt="Maquette 3D en formation intelligence collective" class="gallery-click protected">
-      <figcaption>Construire ensemble pour penser autrement.</figcaption>
-    </figure>
-    <figure>
-      <img src="photo10.png" alt="Mission Montgolfière" class="gallery-click protected">
-      <figcaption>Utiliser la métaphore pour embarquer un collectif.</figcaption>
-    </figure>
-    <figure>
-      <img src="photo21.png" alt="Merci Nono" class="gallery-click protected">
-      <figcaption>Des traces humaines, simples, directes.</figcaption>
-    </figure>
-    <figure>
-      <img src="photo1.png" alt="La Lumière Partagée - Réseau intelligence collective" class="gallery-click protected">
-      <figcaption>Créer des objets qui portent une intention.</figcaption>
-    </figure>
+  <div style="text-align:center;">
+    <a href="enaction.html" class="btn btn-outline">Voir tous les moments →</a>
   </div>
 </section>
 
-<section class="section" style="padding-top:0;">
-  <div class="bonus-teaser">
-    <div class="bonus-teaser-content">
-      <div class="badge badge-yellow">Ressource terrain</div>
-      <h2 class="section-title">Les Formats en poche</h2>
-      <p>Un outil simple et rapide pour trouver le bon format d’animation selon votre objectif, la durée et la taille du groupe.</p>
-      <a href="lesformats.html" class="btn">Découvrir l’outil</a>
-    </div>
-    <div class="bonus-stack">
-      <div class="bonus-card">
-        <h3>Se synchroniser</h3>
-        <p>Ouvrir, cadrer, aligner et fluidifier les échanges.</p>
-      </div>
-      <div class="bonus-card">
-        <h3>Clarifier</h3>
-        <p>Mettre à plat une situation avant de chercher les solutions.</p>
-      </div>
-      <div class="bonus-card">
-        <h3>Faire bilan</h3>
-        <p>Capitaliser, apprendre et repartir avec des pistes concrètes.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- TÉMOIGNAGE VEDETTE -->
 <section class="section" style="padding-top:0;">
   <div class="temoignage-vedette">
     <span class="quote">"</span>
@@ -1108,139 +396,51 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="badge">Outil</div>
+  <h2 class="section-title">Les Formats en poche</h2>
+  <p class="section-sub">
+    Un outil simple et rapide pour trouver le bon format d’animation selon votre objectif,
+    la durée et la taille du groupe.
+  </p>
+
+  <a href="lesformats.html" class="btn">Découvrir l’outil</a>
+</section>
+
+
+<!-- CTA -->
 <section class="cta-section">
   <h2>Et si vos formations donnaient vraiment envie de participer ?</h2>
   <p>Des formats conçus pour remettre de l'énergie, de la clarté et du collectif dans les apprentissages.</p>
-  <a href="contact.html" class="btn">Parlons de votre projet</a>
+  <a href="contact.html" class="btn">Parlons de votre projet →</a>
 </section>
 
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo">Arnaud SIMART</div>
+      <div class="footer-logo">Arnaud Simart</div>
       <div class="footer-tagline">Facilitateur & formateur en intelligence collective<br>Appui managérial et gestion de projet</div>
-      <div class="footer-manifeste">Créer des espaces où les collectifs peuvent clarifier, coopérer et agir avec plus de justesse.</div>
     </div>
-
     <div>
-      <div class="footer-title">Explorer</div>
       <ul class="footer-links">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="formations.html">Formations</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="enaction.html">En action</a></li>
+    <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-
-    <div>
-      <div class="footer-title">Ressources</div>
-      <ul class="footer-links">
-        <li><a href="lesformats.html">Formats de poche</a></li>
-        <li><a href="temoignages.html">Témoignages</a></li>
-        <li><a href="mentionslegales.html">Mentions légales</a></li>
-      </ul>
-      <a href="lesformats.html" class="footer-bonus">Accès aux formats</a>
-    </div>
-
-    <div>
-      <div class="footer-title">Contact</div>
-      <div class="footer-contact">
-        <div><a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a></div>
-        <div><a href="tel:0642332279">06 42 33 22 79</a></div>
-        <div>Intervention France entière</div>
-      </div>
-      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">LinkedIn</a>
+    <div class="footer-contact">
+      <a href="tel:0642332279">06 42 33 22 79</a><br>
+      <a href="mailto:simartarnaud@gmail.com">simartarnaud@gmail.com</a><br>
+      Intervention France entière · Distanciel &amp; présentiel<br>
+      SIRET : 10169169900017<br>
+      <a href="https://www.linkedin.com/in/arnaud-simart" target="_blank" rel="noopener" class="footer-linkedin">💼 Mon profil LinkedIn</a>
     </div>
   </div>
-
-  <div class="footer-bottom">
-    © Arnaud SIMART · Penser ensemble, agir durablement. · <a href="mentionslegales.html" style="color:inherit;text-decoration:underline;">Mentions légales</a>
-  </div>
+  <div class="footer-bottom">© 2025 Arnaud SIMART · Penser ensemble, agir durablement. · <a href="mentionslegales.html" style="color:inherit;text-decoration:underline;">Mentions légales</a></div>
 </footer>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const protectedImages = document.querySelectorAll('.home-gallery img, .hero-visual img, img.protected');
-  protectedImages.forEach(img => {
-    img.setAttribute('draggable', 'false');
-    img.classList.add('protected');
-  });
-
-  document.addEventListener('contextmenu', function(event) {
-    if (event.target.tagName === 'IMG') {
-      event.preventDefault();
-    }
-  });
-
-  const galleryImages = Array.from(document.querySelectorAll('.home-gallery img, .hero-visual img, img.gallery-click'));
-  if (galleryImages.length) {
-    const lightbox = document.createElement('div');
-    lightbox.className = 'lightbox';
-    lightbox.innerHTML = `
-      <button class="lightbox-close" aria-label="Fermer">×</button>
-      <button class="lightbox-prev" aria-label="Image précédente">‹</button>
-      <img src="" alt="">
-      <button class="lightbox-next" aria-label="Image suivante">›</button>
-      <div class="lightbox-caption"></div>
-    `;
-    document.body.appendChild(lightbox);
-
-    const lightboxImg = lightbox.querySelector('img');
-    const caption = lightbox.querySelector('.lightbox-caption');
-    let currentIndex = 0;
-
-    function openLightbox(index) {
-      currentIndex = index;
-      const img = galleryImages[currentIndex];
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt || '';
-      caption.textContent = img.alt || '';
-      lightbox.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    function move(step) {
-      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
-      openLightbox(currentIndex);
-    }
-
-    galleryImages.forEach((img, index) => {
-      img.addEventListener('click', () => openLightbox(index));
-    });
-
-    lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-    lightbox.querySelector('.lightbox-prev').addEventListener('click', () => move(-1));
-    lightbox.querySelector('.lightbox-next').addEventListener('click', () => move(1));
-
-    lightbox.addEventListener('click', function(event) {
-      if (event.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', function(event) {
-      if (!lightbox.classList.contains('open')) return;
-      if (event.key === 'Escape') closeLightbox();
-      if (event.key === 'ArrowLeft') move(-1);
-      if (event.key === 'ArrowRight') move(1);
-    });
-  }
-
-  const revealItems = document.querySelectorAll('.premium-card, .formation-card, .mini-card, .bonus-teaser, .temoignage-vedette, .cta-section, .home-gallery figure');
-  revealItems.forEach(el => el.classList.add('reveal'));
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-});
-</script>
 
 </body>
 </html>
