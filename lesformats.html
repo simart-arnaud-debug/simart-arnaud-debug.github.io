@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Les formats de poche d'Arnaud SIMART : une bibliothèque de ressources terrain en accès réservé pour animer, coopérer, clarifier, décider et faire bilan.">
+<meta name="description" content="Les formats de poche d'Arnaud SIMART : une bibliothèque complète de ressources terrain en accès réservé pour animer, coopérer, clarifier, décider et faire bilan.">
 <meta name="author" content="Arnaud SIMART">
 <meta property="og:title" content="Les formats de poche - Ressources terrain | Arnaud SIMART">
-<meta property="og:description" content="Une sélection de formats d'animation et de facilitation en accès réservé.">
+<meta property="og:description" content="Une bibliothèque complète de formats d'animation et de facilitation en accès réservé.">
 <meta property="og:url" content="https://arnaud-simart.fr/lesformats.html">
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://arnaud-simart.fr/lesformats.html">
@@ -14,15 +14,24 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* =========================================================
-   PAGE FORMATS DE POCHE - VERSION BONUS PREMIUM
-   Cohérente avec le site existant
-========================================================= */
+:root {
+  --bleu: #1C3F60;
+  --corail: #FF6F61;
+  --jaune: #F7D774;
+  --gris: #F2F2F2;
+  --noir: #1A1A1A;
+  --cat-A: #1C3F60;
+  --cat-B: #FF6F61;
+  --cat-C: #F7D774;
+  --cat-D: #2F5A85;
+  --cat-E: #FF8A7A;
+  --cat-F: #0F2A45;
+}
 
 .page-hero {
   background: var(--bleu);
   color: white;
-  padding: 70px 40px 80px;
+  padding: 70px 40px 82px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -96,7 +105,6 @@
   margin-bottom: 16px;
 }
 
-/* INTRO PREMIUM */
 .bonus-intro {
   background: white;
   border-radius: 32px;
@@ -133,7 +141,7 @@
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
 }
 
-.bonus-box .bonus-label {
+.bonus-label {
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
@@ -155,7 +163,6 @@
   margin-bottom: 0;
 }
 
-/* COLLECTIONS */
 .collections-header {
   text-align: center;
   margin: 70px auto 34px;
@@ -257,15 +264,14 @@
   padding: 6px 11px;
 }
 
-/* APERÇU */
-.preview-zone {
+.library-zone {
   margin-top: 70px;
   background: var(--gris);
   border-radius: 32px;
   padding: 50px;
 }
 
-.preview-header {
+.library-header {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 24px;
@@ -273,131 +279,48 @@
   margin-bottom: 28px;
 }
 
-.preview-header h2 {
+.library-header h2 {
   color: var(--bleu);
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 8px;
 }
 
-.preview-header p {
+.library-header p {
   color: #666;
   font-size: 15px;
   line-height: 1.7;
   max-width: 720px;
 }
 
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: start;
-}
-
-.preview-card {
+.filter-zone {
   background: white;
-  border-radius: 22px;
-  padding: 26px;
-  min-height: 250px;
+  border-radius: 24px;
+  padding: 24px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.25s ease;
+  margin-bottom: 34px;
 }
 
-.preview-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 38px rgba(0,0,0,0.10);
-}
-
-.preview-card.open {
-  box-shadow: 0 18px 46px rgba(0,0,0,0.14);
-}
-
-.preview-card.locked {
-  cursor: pointer;
-}
-
-.preview-card.locked::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0.92));
-  backdrop-filter: blur(1.5px);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.preview-card.locked::after {
-  content: "Accès réservé";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--bleu);
-  color: white;
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-size: 13px;
+.mode-title {
+  color: var(--bleu);
+  font-size: 20px;
   font-weight: 800;
-  z-index: 4;
-  white-space: nowrap;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-}
-
-.preview-card.unlocked::before,
-.preview-card.unlocked::after {
-  display: none;
-}
-
-.preview-tag {
-  display: inline-block;
-  background: rgba(255,111,97,0.1);
-  color: var(--corail);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  padding: 5px 11px;
   margin-bottom: 14px;
 }
 
-.preview-card h3 {
-  color: var(--bleu);
-  font-size: 19px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.preview-card p {
-  color: #555;
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.preview-details {
-  margin-top: 18px;
+.mode-buttons,
+.filter-buttons {
   display: flex;
-  gap: 8px;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
-.preview-details span {
+.mode-buttons button,
+.filter-buttons button,
+.filter-reset {
+  border: none;
   background: var(--gris);
   color: var(--bleu);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-
-.card-toggle {
-  margin-top: 18px;
-  border: none;
-  background: var(--bleu);
-  color: white;
   border-radius: 999px;
   padding: 10px 15px;
   font-family: inherit;
@@ -407,80 +330,45 @@
   transition: 0.2s;
 }
 
-.card-toggle:hover {
-  background: var(--corail);
-}
-
-.preview-more {
-  display: none;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 2px solid var(--gris);
-}
-
-.preview-card.open .preview-more {
-  display: block;
-}
-
-.preview-more h4 {
-  color: var(--bleu);
-  font-size: 14px;
-  font-weight: 800;
-  margin: 15px 0 6px;
-}
-
-.preview-more ul {
-  margin: 8px 0 0 0;
-  padding-left: 18px;
-}
-
-.preview-more li {
-  color: #555;
-  font-size: 14px;
-  line-height: 1.65;
-  margin-bottom: 5px;
-}
-
-.download-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 18px;
+.mode-buttons button:hover,
+.filter-buttons button:hover,
+.mode-buttons button.active,
+.filter-buttons button.active {
   background: var(--corail);
   color: white;
-  border-radius: 999px;
-  padding: 11px 16px;
+}
+
+.filter-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 18px;
+  align-items: end;
+  margin-top: 18px;
+}
+
+.filter-label {
+  color: var(--bleu);
   font-size: 13px;
   font-weight: 800;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.download-btn:hover {
-  background: var(--bleu);
-}
-
-.download-btn.disabled {
-  background: #cfcfcf;
-  color: #666;
-  pointer-events: none;
+  margin-bottom: 8px;
 }
 
 .unlock-box {
-  margin-top: 24px;
+  margin: 30px 0 34px;
   background: white;
-  border-radius: 22px;
-  padding: 22px;
+  border-radius: 24px;
+  padding: 24px;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 14px;
+  gap: 16px;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  border-left: 5px solid var(--jaune);
 }
 
 .unlock-box label {
   color: var(--bleu);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   display: block;
   margin-bottom: 6px;
@@ -538,7 +426,227 @@
   color: #2f7d32;
 }
 
-/* ACCÈS */
+.category-block {
+  margin-top: 44px;
+}
+
+.category-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.category-pill {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.category-pill.cat-A { background: var(--cat-A); }
+.category-pill.cat-B { background: var(--cat-B); }
+.category-pill.cat-C { background: var(--cat-C); color: var(--bleu); }
+.category-pill.cat-D { background: var(--cat-D); }
+.category-pill.cat-E { background: var(--cat-E); }
+.category-pill.cat-F { background: var(--cat-F); }
+
+.category-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--bleu);
+}
+
+.category-desc {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.formats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.format-card {
+  background: white;
+  border-radius: 22px;
+  padding: 24px;
+  min-height: 250px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.format-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.10);
+}
+
+.format-card.open {
+  box-shadow: 0 18px 46px rgba(0,0,0,0.14);
+}
+
+.format-card.locked::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.20), rgba(255,255,255,0.88));
+  backdrop-filter: blur(1.2px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.format-card.locked::after {
+  content: "Accès réservé";
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  background: var(--bleu);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 800;
+  z-index: 4;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.format-card.unlocked::before,
+.format-card.unlocked::after {
+  display: none;
+}
+
+.format-tag {
+  display: inline-block;
+  background: rgba(255,111,97,0.1);
+  color: var(--corail);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 5px 11px;
+  margin-bottom: 14px;
+}
+
+.format-name {
+  color: var(--bleu);
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.format-short {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.format-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.format-meta span {
+  background: var(--gris);
+  color: var(--bleu);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.card-toggle {
+  margin-top: 18px;
+  border: none;
+  background: var(--bleu);
+  color: white;
+  border-radius: 999px;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+  z-index: 5;
+}
+
+.card-toggle:hover {
+  background: var(--corail);
+}
+
+.format-details {
+  display: none;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 2px solid var(--gris);
+}
+
+.format-card.open .format-details {
+  display: block;
+}
+
+.format-details-title {
+  color: var(--bleu);
+  font-size: 14px;
+  font-weight: 800;
+  margin: 15px 0 6px;
+}
+
+.format-details,
+.format-details p,
+.format-details li {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.format-details ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  background: var(--corail);
+  color: white;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.download-btn:hover {
+  background: var(--bleu);
+}
+
+.download-btn.disabled {
+  background: #cfcfcf;
+  color: #666;
+  pointer-events: none;
+}
+
 .access-section {
   margin-top: 70px;
   display: grid;
@@ -675,7 +783,6 @@
   line-height: 1.6;
 }
 
-/* CTA BAS */
 .related-links {
   margin-top: 70px;
   display: grid;
@@ -711,7 +818,35 @@
   line-height: 1.7;
 }
 
-/* RESPONSIVE */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printArea, #printArea * {
+    visibility: visible;
+  }
+  #printArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+  #printArea .format-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    margin-bottom: 18px;
+  }
+  #printArea .download-btn,
+  #printArea .card-toggle {
+    display: none;
+  }
+  #printArea .format-details {
+    display: block !important;
+  }
+}
+
 @media(max-width: 1000px) {
   .bonus-intro,
   .access-section {
@@ -724,9 +859,17 @@
   }
 
   .collections-grid,
-  .preview-grid,
   .related-links {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .library-header,
+  .unlock-box {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -744,7 +887,7 @@
   }
 
   .bonus-intro,
-  .preview-zone,
+  .library-zone,
   .access-panel,
   .access-form {
     padding: 28px;
@@ -752,10 +895,8 @@
   }
 
   .collections-grid,
-  .preview-grid,
   .related-links,
-  .form-row,
-  .unlock-box {
+  .form-row {
     grid-template-columns: 1fr;
   }
 
@@ -767,10 +908,6 @@
   .unlock-actions input {
     min-width: 0;
     width: 100%;
-  }
-
-  .preview-header {
-    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -799,10 +936,10 @@
     <div class="access-pill">Accès réservé</div>
     <div class="badge">Ressources terrain</div>
     <h1>Les formats de poche</h1>
-    <p>Une sélection de formats d’animation, de coopération et de facilitation conçus pour être immédiatement réutilisables sur le terrain.</p>
+    <p>Une bibliothèque complète de formats d’animation, de coopération et de facilitation conçus pour être immédiatement réutilisables sur le terrain.</p>
     <div class="hero-actions">
       <a href="#demander-acces" class="btn">Demander l’accès</a>
-      <a href="#apercu" class="btn btn-outline">Découvrir un aperçu</a>
+      <a href="#bibliotheque" class="btn btn-outline">Découvrir les formats</a>
     </div>
   </div>
 </section>
@@ -872,142 +1009,54 @@
     </div>
   </div>
 
-  <div id="apercu" class="preview-zone">
-    <div class="preview-header">
+  <div id="bibliotheque" class="library-zone">
+    <div class="library-header">
       <div>
-        <h2>Aperçu de la bibliothèque</h2>
-        <p>Quelques exemples de formats présents dans la bibliothèque. L’accès complet est transmis sur demande.</p>
+        <h2>Bibliothèque complète</h2>
+        <p>Toutes les fiches de l’ancienne page sont reprises ici. Une fiche de démonstration est consultable librement ; les autres s’ouvrent et se téléchargent après activation de l’accès.</p>
       </div>
       <a href="#demander-acces" class="btn">Demander l’accès</a>
     </div>
 
-    <div class="preview-grid">
-      <div class="preview-card demo-card" data-download="formats/check-in-check-out.pdf">
-        <div class="preview-tag">Se synchroniser</div>
-        <h3>Check-in / Check-out</h3>
-        <p>Ouvrir et fermer un temps collectif en installant présence, écoute et qualité d’attention.</p>
-        <div class="preview-details"><span>5-10 min</span><span>Toute taille</span></div>
-        <button type="button" class="card-toggle">Ouvrir la fiche</button>
-        <div class="preview-more">
-          <h4>Objectif</h4>
-          <p>Créer un cadre d’écoute et de présence au début et à la fin d’un temps collectif.</p>
-          <h4>Quand l’utiliser</h4>
-          <p>En début ou fin de réunion, d’atelier, de formation ou lors d’un temps sensible nécessitant une mise en présence du groupe.</p>
-          <h4>Déroulé pas à pas</h4>
-          <ul>
-            <li>Poser une question simple : « Comment j’arrive ? » ou « Avec quoi je repars ? ».</li>
-            <li>Faire un tour rapide, sans réaction ni débat.</li>
-            <li>Clore en reformulant l’intention du temps collectif ou les principaux éléments entendus.</li>
-          </ul>
-          <h4>Conseils d’animation</h4>
-          <ul>
-            <li>Choisir une question adaptée au niveau de maturité du groupe.</li>
-            <li>Autoriser des réponses courtes.</li>
-            <li>Ne pas forcer la confidence.</li>
-          </ul>
-          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
-        </div>
+    <div class="filter-zone">
+      <div class="mode-title">Que voulez-vous faire ?</div>
+      <div class="mode-buttons">
+        <button type="button" onclick="selectIntent('all')" class="active">Tout voir</button>
+        <button type="button" onclick="selectIntent('A')">Se synchroniser</button>
+        <button type="button" onclick="selectIntent('B')">Décider</button>
+        <button type="button" onclick="selectIntent('C')">Générer des idées</button>
+        <button type="button" onclick="selectIntent('D')">Clarifier</button>
+        <button type="button" onclick="selectIntent('E')">Créer du lien</button>
+        <button type="button" onclick="selectIntent('F')">Faire un bilan</button>
       </div>
 
-      <div class="preview-card locked" data-download="formats/carte-questions-utiles.pdf">
-        <div class="preview-tag">Clarifier</div>
-        <h3>Carte des questions utiles</h3>
-        <p>Faire émerger les vraies questions avant de chercher trop vite les réponses.</p>
-        <div class="preview-details"><span>20 min</span><span>6-15 pers.</span></div>
-        <button type="button" class="card-toggle">Ouvrir la fiche</button>
-        <div class="preview-more">
-          <h4>Objectif</h4>
-          <p>Identifier les questions qui structurent réellement le sujet avant d’entrer dans les solutions.</p>
-          <h4>Déroulé pas à pas</h4>
-          <ul>
-            <li>Formuler individuellement les questions importantes.</li>
-            <li>Regrouper les questions par familles.</li>
-            <li>Choisir les questions prioritaires à instruire.</li>
-          </ul>
-          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+      <div class="filter-groups">
+        <div>
+          <div class="filter-label">Durée</div>
+          <div class="filter-buttons">
+            <button type="button" class="filter-btn" data-duration="short">≤ 15 min</button>
+            <button type="button" class="filter-btn" data-duration="medium">15-30 min</button>
+            <button type="button" class="filter-btn" data-duration="long">≥ 30 min</button>
+          </div>
         </div>
-      </div>
 
-      <div class="preview-card locked" data-download="formats/matrice-impact-effort.pdf">
-        <div class="preview-tag">Décider</div>
-        <h3>Matrice impact / effort</h3>
-        <p>Prioriser collectivement les actions en fonction de leur valeur et de leur faisabilité.</p>
-        <div class="preview-details"><span>30 min</span><span>Groupe projet</span></div>
-        <button type="button" class="card-toggle">Ouvrir la fiche</button>
-        <div class="preview-more">
-          <h4>Objectif</h4>
-          <p>Aider un groupe à choisir les actions à engager en premier.</p>
-          <h4>Déroulé pas à pas</h4>
-          <ul>
-            <li>Lister les actions possibles.</li>
-            <li>Positionner chaque action selon son impact et son effort.</li>
-            <li>Identifier les actions rapides, structurantes ou à différer.</li>
-          </ul>
-          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+        <div>
+          <div class="filter-label">Taille du groupe</div>
+          <div class="filter-buttons">
+            <button type="button" class="filter-btn" data-size="small">2-5 pers.</button>
+            <button type="button" class="filter-btn" data-size="medium">6-12 pers.</button>
+            <button type="button" class="filter-btn" data-size="large">12+ pers.</button>
+          </div>
         </div>
-      </div>
 
-      <div class="preview-card locked" data-download="formats/portrait-croise.pdf">
-        <div class="preview-tag">Créer du lien</div>
-        <h3>Portrait croisé</h3>
-        <p>Favoriser l’interconnaissance sans tomber dans l’exercice artificiel ou trop personnel.</p>
-        <div class="preview-details"><span>15 min</span><span>Binômes</span></div>
-        <button type="button" class="card-toggle">Ouvrir la fiche</button>
-        <div class="preview-more">
-          <h4>Objectif</h4>
-          <p>Permettre aux participants de mieux se connaître par un échange cadré et professionnel.</p>
-          <h4>Déroulé pas à pas</h4>
-          <ul>
-            <li>Échange en binôme à partir de deux ou trois questions.</li>
-            <li>Chaque personne présente ensuite son binôme au groupe.</li>
-          </ul>
-          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
-        </div>
-      </div>
-
-      <div class="preview-card locked" data-download="formats/crazy-8.pdf">
-        <div class="preview-tag">Générer des idées</div>
-        <h3>Crazy 8</h3>
-        <p>Produire rapidement plusieurs pistes avant de converger vers les idées les plus prometteuses.</p>
-        <div class="preview-details"><span>8-20 min</span><span>Tout groupe</span></div>
-        <button type="button" class="card-toggle">Ouvrir la fiche</button>
-        <div class="preview-more">
-          <h4>Objectif</h4>
-          <p>Sortir des premières idées évidentes et générer rapidement plusieurs alternatives.</p>
-          <h4>Déroulé pas à pas</h4>
-          <ul>
-            <li>Plier une feuille en huit cases.</li>
-            <li>Produire une idée par case dans un temps court.</li>
-            <li>Partager puis sélectionner les pistes les plus utiles.</li>
-          </ul>
-          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
-        </div>
-      </div>
-
-      <div class="preview-card locked" data-download="formats/4-coins.pdf">
-        <div class="preview-tag">Faire bilan</div>
-        <h3>4 coins</h3>
-        <p>Faire émerger un bilan collectif vivant, rapide et visuel à partir de positions choisies.</p>
-        <div class="preview-details"><span>15-25 min</span><span>Tout groupe</span></div>
-        <button type="button" class="card-toggle">Ouvrir la fiche</button>
-        <div class="preview-more">
-          <h4>Objectif</h4>
-          <p>Permettre à chacun de se positionner physiquement sur un ressenti, une appréciation ou une priorité.</p>
-          <h4>Déroulé pas à pas</h4>
-          <ul>
-            <li>Installer quatre zones dans l’espace.</li>
-            <li>Lire une consigne ou une affirmation.</li>
-            <li>Chaque participant se positionne puis partage brièvement son choix.</li>
-          </ul>
-          <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
-        </div>
+        <button type="button" class="filter-reset">Réinitialiser</button>
       </div>
     </div>
 
     <div class="unlock-box">
       <div>
         <label for="access-code">Vous avez reçu un code d’accès ?</label>
-        <p>Entrez-le ici pour ouvrir les fiches verrouillées et activer les téléchargements.</p>
+        <p>Entrez-le ici pour ouvrir toutes les fiches et activer les téléchargements.</p>
         <div id="unlock-status" class="unlock-status"></div>
       </div>
       <div class="unlock-actions">
@@ -1015,6 +1064,1217 @@
         <button type="button" onclick="unlockFormats()">Déverrouiller</button>
       </div>
     </div>
+
+    
+<div class="category-block" data-category="A">
+  <div class="category-header">
+    <div class="category-pill cat-A">A</div>
+    <div>
+      <div class="category-title">Coordination / Synchronisation</div>
+      <div class="category-desc">Aligner qui fait quoi, quand, et lever les blocages.</div>
+    </div>
+  </div>
+  <div class="formats-grid">
+    
+<div class="format-card premium-format-card locked" data-cat="A" data-duration="short" data-size="medium" data-download="formats/daily-standup.pdf">
+  <div class="format-tag">A</div>
+  <div class="format-name">Daily Standup</div>
+  <div class="format-short">Synchronisation rapide debout</div>
+  <div class="format-meta"><span>15 min</span><span>Toute l’équipe</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Synchroniser l’équipe rapidement sur l’avancement, les priorités et les blocages.
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quotidiennement, en début de journée, ou lors d’un projet nécessitant un suivi rapproché.
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Réunion debout, 15 minutes maximum.</li>
+<li>Tour de table strict : hier / aujourd’hui / blocages.</li>
+<li>Aucun débat : discussions après la réunion.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser un timer visible.</li>
+<li>Faire la réunion debout.</li>
+<li>Reporter les discussions longues en “parking lot”.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card demo-card" data-cat="A" data-duration="short" data-size="large" data-download="formats/checkin-checkout.pdf">
+  <div class="format-tag">A</div>
+  <div class="format-name">Check‑in / Check‑out</div>
+  <div class="format-short">Ouvrir et fermer la réunion proprement</div>
+  <div class="format-meta"><span>5–10 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche démo</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Créer un cadre d’écoute et de présence avant et après la réunion.
+    <div class="format-details-title">Quand l’utiliser</div>
+    Début et fin de réunion, ateliers, moments sensibles.
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Check‑in : “Comment j’arrive ?”</li>
+<li>Check‑out : “Avec quoi je repars ?”</li>
+<li>Tour rapide, sans débat.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Favoriser la sincérité et la brièveté.</li>
+<li>Adapter la question au contexte.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="A" data-duration="short" data-size="medium" data-download="formats/lightning-talk-interne.pdf">
+  <div class="format-tag">A</div>
+  <div class="format-name">Lightning Talk interne</div>
+  <div class="format-short">Partage éclair inspirant</div>
+  <div class="format-meta"><span>10 min</span><span>1–3 intervenants</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Diffuser rapidement une idée, une pratique ou un retour d’expérience.
+    <div class="format-details-title">Quand l’utiliser</div>
+    En début de réunion, pour inspirer ou lancer un sujet.
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>1 à 3 mini‑présentations de 3 min chacune.</li>
+<li>Pas de débat, juste écoute active.</li>
+<li>Questions rapides à la fin.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Chronométrer strictement.</li>
+<li>Préparer les intervenants à l’avance.</li>
+<li>Clôturer par une synthèse ou un lien vers les ressources.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="A" data-duration="medium" data-size="large" data-download="formats/speedmeeting-interne.pdf">
+  <div class="format-tag">A</div>
+  <div class="format-name">Speed‑meeting interne</div>
+  <div class="format-short">Mini‑rencontres pour fluidifier</div>
+  <div class="format-meta"><span>20–30 min</span><span>6–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Créer des connexions rapides entre collègues pour fluidifier la coordination.
+    <div class="format-details-title">Quand l’utiliser</div>
+    Lancement de projet, intégration, ou besoin de synchronisation transversale.
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Pairs aléatoires ou tournants.</li>
+<li>3–5 min par échange.</li>
+<li>Question commune : “Sur quoi travailles‑tu ?”</li>
+<li>Rotation jusqu’à 4–5 tours.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser un timer sonore.</li>
+<li>Favoriser la diversité des échanges.</li>
+<li>Clôturer par une synthèse collective.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="A" data-duration="short" data-size="medium" data-download="formats/silence-productif.pdf">
+  <div class="format-tag">A</div>
+  <div class="format-name">Silence productif</div>
+  <div class="format-short">Clarifier avant de parler</div>
+  <div class="format-meta"><span>5–10 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Donner à chacun le temps de réfléchir avant d’échanger.
+    <div class="format-details-title">Quand l’utiliser</div>
+    Avant une discussion complexe ou une prise de décision.
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Temps de silence individuel (5 min).</li>
+<li>Chacun note ses idées.</li>
+<li>Partage ensuite en tour de table.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Prévenir le groupe du silence à venir.</li>
+<li>Respecter le temps sans interruption.</li>
+<li>Utiliser un fond musical léger si besoin.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="A" data-duration="short" data-size="large" data-download="formats/round-robin.pdf">
+  <div class="format-tag">A</div>
+  <div class="format-name">Round Robin</div>
+  <div class="format-short">Tour de table strict</div>
+  <div class="format-meta"><span>10–15 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Donner la parole à chacun sans interruption ni débat.
+    <div class="format-details-title">Quand l’utiliser</div>
+    Pour partager des points de vue ou des retours rapides.
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Tour de table dans un ordre défini.</li>
+<li>Temps limité par personne (ex : 1 min).</li>
+<li>Pas de réaction pendant le tour.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Chronométrer chaque passage.</li>
+<li>Faire un second tour si besoin.</li>
+<li>Clôturer par une synthèse du facilitateur.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="category-block" data-category="B">
+  <div class="category-header">
+    <div class="category-pill cat-B">B</div>
+    <div>
+      <div class="category-title">Décision</div>
+      <div class="category-desc">Trancher, arbitrer, prioriser sans réunionite.</div>
+    </div>
+  </div>
+  <div class="formats-grid">
+    
+<div class="format-card premium-format-card locked" data-cat="B" data-duration="medium" data-size="small" data-download="formats/reunion-decision-pure.pdf">
+  <div class="format-tag">B</div>
+  <div class="format-name">Réunion décision pure</div>
+  <div class="format-short">Un seul sujet, une décision</div>
+  <div class="format-meta"><span>30 min</span><span>3–5 décideurs</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Décider rapidement sur un sujet unique et clairement cadré.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand la décision est mûre et que les informations sont connues.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Pré‑read obligatoire envoyé en amont.</li>
+<li>5 min de rappel du contexte.</li>
+<li>10 min d’échanges ciblés.</li>
+<li>Décision finale formalisée.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Limiter la réunion à un seul sujet.</li>
+<li>Éviter les digressions.</li>
+<li>Noter la décision immédiatement.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="B" data-duration="short" data-size="medium" data-download="formats/point-darbitrage.pdf">
+  <div class="format-tag">B</div>
+  <div class="format-name">Point d’arbitrage</div>
+  <div class="format-short">Trancher un blocage</div>
+  <div class="format-meta"><span>10–15 min</span><span>2–6 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Lever un blocage opérationnel ou stratégique rapidement.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand une décision empêche l’avancement d’un projet.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Exposer le blocage en 1 min.</li>
+<li>Présenter 2–3 options possibles.</li>
+<li>Décision immédiate du sponsor / manager.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Préparer les options en amont.</li>
+<li>Limiter les discussions annexes.</li>
+<li>Clôturer par une action claire.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="B" data-duration="medium" data-size="large" data-download="formats/sprint-de-decision.pdf">
+  <div class="format-tag">B</div>
+  <div class="format-name">Sprint de décision</div>
+  <div class="format-short">Séquence ultra structurée</div>
+  <div class="format-meta"><span>20–30 min</span><span>4–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Décider vite sur un sujet complexe grâce à une séquence cadrée.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand un sujet traîne depuis trop longtemps.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>5 min : rappel du contexte.</li>
+<li>5 min : propositions individuelles.</li>
+<li>10 min : convergence.</li>
+<li>5 min : décision finale.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser un timer strict.</li>
+<li>Limiter les tours de parole.</li>
+<li>Clôturer par une action écrite.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="B" data-duration="short" data-size="small" data-download="formats/duo-darbitrage.pdf">
+  <div class="format-tag">B</div>
+  <div class="format-name">Duo d’arbitrage</div>
+  <div class="format-short">Décision rapide à deux</div>
+  <div class="format-meta"><span>10 min</span><span>2 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Prendre une décision rapide entre deux personnes clés.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand une décision ne nécessite pas un groupe complet.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Clarifier le sujet en 1 min.</li>
+<li>Chacun expose sa position.</li>
+<li>Décision immédiate ou escalade.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Préparer les arguments.</li>
+<li>Limiter la discussion à 10 min.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="B" data-duration="medium" data-size="large" data-download="formats/preread-obligatoire.pdf">
+  <div class="format-tag">B</div>
+  <div class="format-name">Pré‑read obligatoire</div>
+  <div class="format-short">On lit avant, on décide en réunion</div>
+  <div class="format-meta"><span>20–30 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Gagner du temps en lisant individuellement avant la réunion.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand les participants doivent assimiler des informations avant de décider.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>5–10 min de lecture silencieuse.</li>
+<li>Questions de clarification.</li>
+<li>Décision collective.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Interdire la présentation orale du document.</li>
+<li>Prévoir un document court et clair.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="B" data-duration="short" data-size="large" data-download="formats/dot-voting.pdf">
+  <div class="format-tag">B</div>
+  <div class="format-name">Dot Voting</div>
+  <div class="format-short">Priorisation visuelle</div>
+  <div class="format-meta"><span>10–15 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Prioriser rapidement un ensemble d’options.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand il faut faire émerger un top 3 clair.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Chaque personne reçoit 3 gommettes.</li>
+<li>Elle les place sur les options qu’elle préfère.</li>
+<li>On compte les points.</li>
+<li>On retient les 2–3 options gagnantes.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Limiter le nombre d’options.</li>
+<li>Encourager la réflexion individuelle.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="category-block" data-category="C">
+  <div class="category-header">
+    <div class="category-pill cat-C">C</div>
+    <div>
+      <div class="category-title">Générer des idées</div>
+      <div class="category-desc">Produire rapidement des idées variées, originales et exploitables.</div>
+    </div>
+  </div>
+  <div class="formats-grid">
+    
+<div class="format-card premium-format-card locked" data-cat="C" data-duration="medium" data-size="large" data-download="formats/brainwriting-635.pdf">
+  <div class="format-tag">C</div>
+  <div class="format-name">Brainwriting 6–3–5</div>
+  <div class="format-short">18 idées en 6 minutes</div>
+  <div class="format-meta"><span>15–20 min</span><span>6–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Générer un grand volume d’idées en un temps très court.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand le groupe tourne en rond ou que les idées ne viennent plus.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Chaque personne note 3 idées en 1 minute.</li>
+<li>On passe la feuille à son voisin.</li>
+<li>On complète, enrichit ou détourne les idées reçues.</li>
+<li>6 tours → 18 idées par personne.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser un timer strict.</li>
+<li>Favoriser la quantité avant la qualité.</li>
+<li>Débriefer ensuite pour sélectionner.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="C" data-duration="medium" data-size="large" data-download="formats/boule-de-neige-creative.pdf">
+  <div class="format-tag">C</div>
+  <div class="format-name">Boule de neige créative</div>
+  <div class="format-short">Amplifier les idées par paliers</div>
+  <div class="format-meta"><span>20–30 min</span><span>6–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Faire émerger des idées fortes par enrichissements successifs.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Pour faire monter en puissance une idée initiale.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Individuel : chacun note 1 idée.</li>
+<li>Binômes : on fusionne et améliore.</li>
+<li>Groupes de 4 : on sélectionne la meilleure.</li>
+<li>Plénière : on partage les finalistes.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Limiter le temps à chaque étape.</li>
+<li>Encourager les idées “folles”.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="C" data-duration="short" data-size="medium" data-download="formats/ideation-par-contraintes.pdf">
+  <div class="format-tag">C</div>
+  <div class="format-name">Idéation par contraintes</div>
+  <div class="format-short">Créer sous pression créative</div>
+  <div class="format-meta"><span>10–15 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Stimuler la créativité en imposant une contrainte volontaire.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand les idées sont trop classiques ou répétitives.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Choisir une contrainte (budget 0€, 1 seul mot, 1 minute…).</li>
+<li>Produire un maximum d’idées.</li>
+<li>Débriefer et sélectionner les plus prometteuses.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Changer de contrainte à chaque tour.</li>
+<li>Favoriser les idées inattendues.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="C" data-duration="medium" data-size="large" data-download="formats/carte-mentale-collective.pdf">
+  <div class="format-tag">C</div>
+  <div class="format-name">Carte mentale collective</div>
+  <div class="format-short">Explorer un sujet en profondeur</div>
+  <div class="format-meta"><span>20–30 min</span><span>4–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Faire émerger des idées en structurant visuellement la pensée.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Pour explorer un sujet complexe ou large.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Écrire le sujet au centre.</li>
+<li>Ajouter des branches principales.</li>
+<li>Développer en sous‑branches.</li>
+<li>Identifier les pistes prometteuses.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser des couleurs et des symboles.</li>
+<li>Encourager les associations libres.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="C" data-duration="medium" data-size="medium" data-download="formats/brainstorming-inverse.pdf">
+  <div class="format-tag">C</div>
+  <div class="format-name">Brainstorming inversé</div>
+  <div class="format-short">Chercher le pire pour trouver le meilleur</div>
+  <div class="format-meta"><span>15–20 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Trouver des solutions en imaginant d’abord le pire scénario.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand le groupe est bloqué ou trop sérieux.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Imaginer “comment rater complètement”.</li>
+<li>Lister les pires idées.</li>
+<li>Inverser chaque idée pour trouver une solution.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Encourager l’humour.</li>
+<li>Clôturer par une sélection des meilleures solutions inversées.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="C" data-duration="medium" data-size="large" data-download="formats/scamper.pdf">
+  <div class="format-tag">C</div>
+  <div class="format-name">SCAMPER</div>
+  <div class="format-short">Transformer une idée existante</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Améliorer ou transformer une idée existante grâce à 7 leviers.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand on veut enrichir une idée déjà posée.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>S — Substituer</li>
+<li>C — Combiner</li>
+<li>A — Adapter</li>
+<li>M — Modifier</li>
+<li>P — Proposer d’autres usages</li>
+<li>E — Éliminer</li>
+<li>R — Réorganiser</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Appliquer SCAMPER sur une idée précise.</li>
+<li>Noter les transformations les plus prometteuses.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="category-block" data-category="D">
+  <div class="category-header">
+    <div class="category-pill cat-D">D</div>
+    <div>
+      <div class="category-title">Clarifier</div>
+      <div class="category-desc">Mettre à plat, structurer, comprendre avant d’agir.</div>
+    </div>
+  </div>
+  <div class="formats-grid">
+    
+<div class="format-card premium-format-card locked" data-cat="D" data-duration="medium" data-size="large" data-download="formats/qqoqcp.pdf">
+  <div class="format-tag">D</div>
+  <div class="format-name">QQOQCP</div>
+  <div class="format-short">Comprendre un sujet en profondeur</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Clarifier un sujet en répondant aux 6 questions clés.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand un sujet est flou, mal cadré ou mal compris.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Quoi ?</li>
+<li>Qui ?</li>
+<li>Où ?</li>
+<li>Quand ?</li>
+<li>Comment ?</li>
+<li>Pourquoi ?</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Noter les réponses en direct.</li>
+<li>Identifier les zones d’incertitude.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="D" data-duration="medium" data-size="large" data-download="formats/arbre-des-causes.pdf">
+  <div class="format-tag">D</div>
+  <div class="format-name">Arbre des causes</div>
+  <div class="format-short">Remonter aux causes profondes</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–10 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Identifier les causes racines d’un problème.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand un problème revient régulièrement ou semble complexe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Décrire le problème.</li>
+<li>Identifier les causes directes.</li>
+<li>Remonter aux causes des causes.</li>
+<li>Construire l’arbre visuel.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Ne pas chercher un coupable.</li>
+<li>Valider les liens de causalité.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="D" data-duration="short" data-size="medium" data-download="formats/5-pourquoi.pdf">
+  <div class="format-tag">D</div>
+  <div class="format-name">5 Pourquoi</div>
+  <div class="format-short">Trouver la cause racine</div>
+  <div class="format-meta"><span>10–15 min</span><span>2–8 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Remonter à la cause profonde d’un problème.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand un problème semble simple mais persistant.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Décrire le problème.</li>
+<li>Demander “Pourquoi ?” cinq fois.</li>
+<li>Identifier la cause racine.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Rester factuel.</li>
+<li>Ne pas sauter trop vite aux conclusions.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="D" data-duration="medium" data-size="large" data-download="formats/carte-dempathie.pdf">
+  <div class="format-tag">D</div>
+  <div class="format-name">Carte d’empathie</div>
+  <div class="format-short">Comprendre un utilisateur</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Clarifier les besoins, émotions et attentes d’un utilisateur.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Pour préparer un projet centré utilisateur.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Ce qu’il pense et ressent.</li>
+<li>Ce qu’il voit.</li>
+<li>Ce qu’il entend.</li>
+<li>Ce qu’il dit et fait.</li>
+<li>Ses gains et ses douleurs.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser des post‑its.</li>
+<li>Se baser sur des faits, pas des suppositions.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="D" data-duration="short" data-size="medium" data-download="formats/matrice-importance-urgence.pdf">
+  <div class="format-tag">D</div>
+  <div class="format-name">Matrice Importance / Urgence</div>
+  <div class="format-short">Prioriser ce qui compte</div>
+  <div class="format-meta"><span>10–15 min</span><span>2–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Clarifier les priorités d’un ensemble d’actions.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Quand tout semble urgent ou important.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Lister les actions.</li>
+<li>Placer dans les 4 cases.</li>
+<li>Décider des actions immédiates.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Limiter le nombre d’actions.</li>
+<li>Ne pas surcharger la case “urgent / important”.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="D" data-duration="medium" data-size="large" data-download="formats/frise-chronologique.pdf">
+  <div class="format-tag">D</div>
+  <div class="format-name">Frise chronologique</div>
+  <div class="format-short">Mettre à plat un historique</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Clarifier un historique, un parcours ou une séquence d’événements.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Pour comprendre un projet, un incident ou une situation complexe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Tracer une ligne du temps.</li>
+<li>Placer les événements clés.</li>
+<li>Identifier les zones floues.</li>
+<li>Faire émerger les points de bascule.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser des couleurs pour les catégories.</li>
+<li>Valider les dates et faits.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="category-block" data-category="E">
+  <div class="category-header">
+    <div class="category-pill cat-E">E</div>
+    <div>
+      <div class="category-title">Créer du lien</div>
+      <div class="category-desc">Renforcer la cohésion, la confiance et la dynamique collective.</div>
+    </div>
+  </div>
+  <div class="formats-grid">
+    
+<div class="format-card premium-format-card locked" data-cat="E" data-duration="short" data-size="large" data-download="formats/meteo-interieure.pdf">
+  <div class="format-tag">E</div>
+  <div class="format-name">Météo intérieure</div>
+  <div class="format-short">Partager son état du moment</div>
+  <div class="format-meta"><span>5–10 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Créer un climat d’écoute et de présence.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Début de réunion, ateliers sensibles, moments de tension.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Chacun partage sa “météo” : ensoleillé, nuageux, orageux…</li>
+<li>Tour rapide, sans débat.</li>
+<li>Le facilitateur remercie simplement.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Proposer des exemples pour rassurer.</li>
+<li>Ne jamais commenter les réponses.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="E" data-duration="short" data-size="medium" data-download="formats/portrait-chinois.pdf">
+  <div class="format-tag">E</div>
+  <div class="format-name">Portrait chinois</div>
+  <div class="format-short">Se découvrir autrement</div>
+  <div class="format-meta"><span>10–15 min</span><span>3–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Apprendre à mieux se connaître de manière ludique.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Début d’atelier, intégration, cohésion d’équipe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Choisir 3 à 5 questions (ex : un animal, un film, une saison…).</li>
+<li>Chacun répond en 30 secondes.</li>
+<li>Échanges libres ensuite.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Adapter les questions au contexte.</li>
+<li>Favoriser l’humour et la spontanéité.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="E" data-duration="medium" data-size="large" data-download="formats/speedfriending.pdf">
+  <div class="format-tag">E</div>
+  <div class="format-name">Speed‑friending</div>
+  <div class="format-short">Créer des connexions rapides</div>
+  <div class="format-meta"><span>15–20 min</span><span>6–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Favoriser les rencontres et la cohésion.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Intégration, lancement de projet, moments de transition.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Binômes aléatoires.</li>
+<li>2 minutes pour répondre à une question (ex : “Ce qui me motive ?”).</li>
+<li>Rotation toutes les 2 minutes.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Préparer une liste de questions.</li>
+<li>Utiliser un timer sonore.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="E" data-duration="medium" data-size="large" data-download="formats/cercle-douverture.pdf">
+  <div class="format-tag">E</div>
+  <div class="format-name">Cercle d’ouverture</div>
+  <div class="format-short">Créer un espace d’écoute</div>
+  <div class="format-meta"><span>15–20 min</span><span>4–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Installer un climat de confiance et d’écoute.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Début d’atelier, moments sensibles, séminaires.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Disposer les chaises en cercle.</li>
+<li>Poser une question simple (ex : “Qu’attendez‑vous d’aujourd’hui ?”).</li>
+<li>Tour de parole avec un bâton de parole.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Respecter le silence.</li>
+<li>Ne pas commenter les réponses.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="E" data-duration="medium" data-size="medium" data-download="formats/photolangage.pdf">
+  <div class="format-tag">E</div>
+  <div class="format-name">Photo‑langage</div>
+  <div class="format-short">Exprimer par l’image</div>
+  <div class="format-meta"><span>15–20 min</span><span>3–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Faire émerger émotions, représentations et attentes.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Début d’atelier, bilan, cohésion.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Étaler des images sur une table.</li>
+<li>Chacun choisit une image qui représente son état ou son attente.</li>
+<li>Partage en 1 minute chacun.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Utiliser des images variées.</li>
+<li>Encourager la spontanéité.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="E" data-duration="medium" data-size="large" data-download="formats/compliment-circle.pdf">
+  <div class="format-tag">E</div>
+  <div class="format-name">Compliment Circle</div>
+  <div class="format-short">Renforcer la reconnaissance</div>
+  <div class="format-meta"><span>15–20 min</span><span>4–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Renforcer la confiance et la reconnaissance dans l’équipe.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Fin d’atelier, séminaire, moment de cohésion.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Chacun écrit un compliment pour une autre personne.</li>
+<li>On lit les compliments à voix haute.</li>
+<li>On remercie simplement.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Encourager la sincérité.</li>
+<li>Éviter l’humour ou l’ironie.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="category-block" data-category="F">
+  <div class="category-header">
+    <div class="category-pill cat-F">F</div>
+    <div>
+      <div class="category-title">Faire un bilan</div>
+      <div class="category-desc">Prendre du recul, analyser, apprendre et améliorer.</div>
+    </div>
+  </div>
+  <div class="formats-grid">
+    
+<div class="format-card premium-format-card locked" data-cat="F" data-duration="medium" data-size="large" data-download="formats/start-stop-continue.pdf">
+  <div class="format-tag">F</div>
+  <div class="format-name">Start · Stop · Continue</div>
+  <div class="format-short">Identifier ce qu’on change</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Identifier ce qu’il faut commencer, arrêter et continuer.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Fin de sprint, fin de projet, bilan d’équipe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>3 colonnes : Start / Stop / Continue.</li>
+<li>Chacun note ses idées.</li>
+<li>Regroupement et priorisation.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Encourager la franchise.</li>
+<li>Clôturer par 2–3 actions concrètes.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="F" data-duration="medium" data-size="large" data-download="formats/retrospective-4l.pdf">
+  <div class="format-tag">F</div>
+  <div class="format-name">Rétrospective 4L</div>
+  <div class="format-short">Liked · Learned · Lacked · Longed for</div>
+  <div class="format-meta"><span>20–30 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Faire un bilan complet et nuancé.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Fin de projet, fin de période, bilan d’équipe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Liked : ce qu’on a aimé.</li>
+<li>Learned : ce qu’on a appris.</li>
+<li>Lacked : ce qui a manqué.</li>
+<li>Longed for : ce qu’on aurait voulu.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Favoriser l’honnêteté.</li>
+<li>Clôturer par des actions d’amélioration.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="F" data-duration="medium" data-size="large" data-download="formats/timeline-emotionnelle.pdf">
+  <div class="format-tag">F</div>
+  <div class="format-name">Timeline émotionnelle</div>
+  <div class="format-short">Comprendre les hauts et les bas</div>
+  <div class="format-meta"><span>20–30 min</span><span>4–20 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Visualiser les moments forts et faibles d’un projet.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Pour comprendre la dynamique émotionnelle d’un groupe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Tracer une ligne du temps.</li>
+<li>Chacun place ses hauts et bas émotionnels.</li>
+<li>Débrief collectif.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Créer un climat de confiance.</li>
+<li>Ne pas juger les ressentis.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="F" data-duration="short" data-size="medium" data-download="formats/feedback-360-express.pdf">
+  <div class="format-tag">F</div>
+  <div class="format-name">Feedback 360° express</div>
+  <div class="format-short">Retour rapide et structuré</div>
+  <div class="format-meta"><span>10–15 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Recueillir des retours rapides et utiles.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Fin d’atelier, fin de réunion, fin de sprint.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Ce que j’ai aimé.</li>
+<li>Ce que j’ai moins aimé.</li>
+<li>Ce que je propose pour la suite.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Encourager la bienveillance.</li>
+<li>Noter les propositions d’amélioration.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="F" data-duration="short" data-size="large" data-download="formats/bilan-en-1-mot.pdf">
+  <div class="format-tag">F</div>
+  <div class="format-name">Bilan en 1 mot</div>
+  <div class="format-short">Synthèse ultra rapide</div>
+  <div class="format-meta"><span>5 min</span><span>Toute taille</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Faire émerger une synthèse collective en un clin d’œil.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Fin de réunion, fin d’atelier, fin de séminaire.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Chacun dit un mot qui résume son ressenti.</li>
+<li>Le facilitateur note les mots.</li>
+<li>On observe les tendances.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Favoriser la spontanéité.</li>
+<li>Ne pas commenter les mots.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+
+<div class="format-card premium-format-card locked" data-cat="F" data-duration="medium" data-size="medium" data-download="formats/rose-epine-bourgeon.pdf">
+  <div class="format-tag">F</div>
+  <div class="format-name">Rose · Épine · Bourgeon</div>
+  <div class="format-short">Positif · Difficile · Potentiel</div>
+  <div class="format-meta"><span>15–20 min</span><span>3–12 pers.</span></div>
+  <button type="button" class="card-toggle">Ouvrir la fiche</button>
+  <div class="format-details">
+    
+<div class="format-details-title">Objectif</div>
+    Faire un bilan équilibré entre positif, difficultés et pistes d’avenir.
+
+    <div class="format-details-title">Quand l’utiliser</div>
+    Fin de projet, fin de période, bilan d’équipe.
+
+    <div class="format-details-title">Déroulé pas à pas</div>
+<ul>
+<li>Rose : ce qui a été positif.</li>
+<li>Épine : ce qui a été difficile.</li>
+<li>Bourgeon : ce qui peut grandir.</li>
+</ul>
+<div class="format-details-title">Conseils d’animation</div>
+<ul>
+<li>Encourager la nuance.</li>
+<li>Clôturer par 1–2 actions concrètes.</li>
+</ul>
+
+    <a class="download-btn disabled" href="#" download>Téléchargement réservé</a>
+  </div>
+</div>
+
+  </div>
+</div>
+
   </div>
 
   <div id="demander-acces" class="access-section">
@@ -1142,7 +2402,6 @@
 </footer>
 
 <script>
-/* Protection légère : décourage le téléchargement direct sans dégrader l’expérience */
 document.addEventListener('contextmenu', function(event) {
   if (event.target.tagName === 'IMG') {
     event.preventDefault();
@@ -1155,25 +2414,102 @@ document.addEventListener('dragstart', function(event) {
   }
 });
 
-/* Ouverture / fermeture des fiches */
-document.querySelectorAll('.preview-card').forEach(card => {
+let activeCat = null;
+let activeDuration = null;
+let activeSize = null;
+
+function applyFilters() {
+  document.querySelectorAll('.format-card').forEach(card => {
+    const matchCat = !activeCat || card.dataset.cat === activeCat;
+    const matchDuration = !activeDuration || card.dataset.duration === activeDuration;
+    const matchSize = !activeSize || card.dataset.size === activeSize;
+    card.style.display = (matchCat && matchDuration && matchSize) ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.category-block').forEach(block => {
+    const visibleCards = block.querySelectorAll('.format-card[style*="block"], .format-card:not([style])');
+    let hasVisible = false;
+    block.querySelectorAll('.format-card').forEach(card => {
+      if (card.style.display !== 'none') hasVisible = true;
+    });
+    block.style.display = hasVisible ? 'block' : 'none';
+  });
+}
+
+function selectIntent(cat) {
+  activeCat = (cat === 'all') ? null : cat;
+
+  document.querySelectorAll('.mode-buttons button').forEach(btn => btn.classList.remove('active'));
+  const labels = {
+    all: 'Tout voir',
+    A: 'Se synchroniser',
+    B: 'Décider',
+    C: 'Générer des idées',
+    D: 'Clarifier',
+    E: 'Créer du lien',
+    F: 'Faire un bilan'
+  };
+
+  document.querySelectorAll('.mode-buttons button').forEach(btn => {
+    if (btn.textContent.trim() === labels[cat]) btn.classList.add('active');
+  });
+
+  applyFilters();
+}
+
+document.querySelectorAll('.filter-btn[data-duration]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn[data-duration]').forEach(b => b.classList.remove('active'));
+    if (activeDuration === btn.dataset.duration) {
+      activeDuration = null;
+    } else {
+      activeDuration = btn.dataset.duration;
+      btn.classList.add('active');
+    }
+    applyFilters();
+  });
+});
+
+document.querySelectorAll('.filter-btn[data-size]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn[data-size]').forEach(b => b.classList.remove('active'));
+    if (activeSize === btn.dataset.size) {
+      activeSize = null;
+    } else {
+      activeSize = btn.dataset.size;
+      btn.classList.add('active');
+    }
+    applyFilters();
+  });
+});
+
+document.querySelector('.filter-reset').addEventListener('click', () => {
+  activeCat = null;
+  activeDuration = null;
+  activeSize = null;
+  document.querySelectorAll('.filter-btn, .mode-buttons button').forEach(b => b.classList.remove('active'));
+  document.querySelector('.mode-buttons button').classList.add('active');
+  applyFilters();
+});
+
+document.querySelectorAll('.format-card').forEach(card => {
   const toggle = card.querySelector('.card-toggle');
   if (!toggle) return;
 
   toggle.addEventListener('click', function(event) {
     event.stopPropagation();
+
     if (card.classList.contains('locked') && !card.classList.contains('unlocked') && !card.classList.contains('demo-card')) {
       document.getElementById('demander-acces').scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
 
     card.classList.toggle('open');
-    toggle.textContent = card.classList.contains('open') ? 'Refermer la fiche' : 'Ouvrir la fiche';
+    toggle.textContent = card.classList.contains('open') ? 'Refermer la fiche' : (card.classList.contains('demo-card') ? 'Ouvrir la fiche démo' : 'Ouvrir la fiche');
   });
 });
 
-/* Déverrouillage simple côté navigateur.
-   Remplacer la valeur ci-dessous par le code que tu voudras transmettre aux personnes autorisées. */
+/* Remplacer la valeur ci-dessous par le code que tu souhaites transmettre aux personnes autorisées. */
 const FORMAT_ACCESS_CODE = 'FORMAT-POCHE';
 
 function unlockFormats() {
@@ -1182,13 +2518,13 @@ function unlockFormats() {
   const value = input.value.trim();
 
   if (value === FORMAT_ACCESS_CODE) {
-    document.querySelectorAll('.preview-card.locked').forEach(card => {
+    document.querySelectorAll('.format-card.locked').forEach(card => {
       card.classList.remove('locked');
       card.classList.add('unlocked');
     });
 
     document.querySelectorAll('.download-btn').forEach(btn => {
-      const card = btn.closest('.preview-card');
+      const card = btn.closest('.format-card');
       const file = card.getAttribute('data-download');
       btn.classList.remove('disabled');
       btn.textContent = 'Télécharger la fiche';
@@ -1204,7 +2540,37 @@ function unlockFormats() {
   }
 }
 
-/* Animation douce au scroll */
+function openAll() {
+  document.querySelectorAll('.format-card:not(.locked), .format-card.demo-card').forEach(card => {
+    card.classList.add('open');
+    const toggle = card.querySelector('.card-toggle');
+    if (toggle) toggle.textContent = 'Refermer la fiche';
+  });
+}
+
+function closeAll() {
+  document.querySelectorAll('.format-card').forEach(card => {
+    card.classList.remove('open');
+    const toggle = card.querySelector('.card-toggle');
+    if (toggle) toggle.textContent = card.classList.contains('demo-card') ? 'Ouvrir la fiche démo' : 'Ouvrir la fiche';
+  });
+}
+
+function exportPDF() {
+  const selected = Array.from(document.querySelectorAll('.format-card.unlocked.open, .format-card.demo-card.open'));
+  if (selected.length === 0) {
+    alert('Ouvrez au moins une fiche accessible avant d’exporter.');
+    return;
+  }
+
+  const printArea = document.createElement('div');
+  printArea.id = 'printArea';
+  selected.forEach(card => printArea.appendChild(card.cloneNode(true)));
+  document.body.appendChild(printArea);
+  window.print();
+  document.body.removeChild(printArea);
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1213,7 +2579,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.collection-card, .preview-card, .related-card, .bonus-intro, .access-section, .unlock-box').forEach(el => {
+document.querySelectorAll('.collection-card, .format-card, .related-card, .bonus-intro, .access-section, .unlock-box').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(16px)';
   el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
