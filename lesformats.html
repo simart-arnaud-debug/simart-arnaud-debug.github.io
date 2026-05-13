@@ -11,6 +11,8 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://arnaud-simart.fr/lesformats.html">
 <title>Les formats de poche - Arnaud SIMART</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -910,6 +912,392 @@
     width: 100%;
   }
 }
+
+
+/* =========================================================
+   V2 PREMIUM - BOITE TERRAIN / ATELIER PRIVE
+========================================================= */
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(247,215,116,0.20), transparent 28%),
+    radial-gradient(circle at 86% 18%, rgba(255,111,97,0.10), transparent 30%),
+    #f6f6f6;
+}
+
+.formats-hero-v2 {
+  min-height: 680px;
+  padding: 96px 42px 118px;
+  text-align: left;
+  background:
+    linear-gradient(135deg, rgba(15,42,69,0.98), rgba(28,63,96,0.96)),
+    url('photo5.png') center/cover;
+}
+
+.formats-hero-v2::before,
+.formats-hero-v2::after {
+  display: none;
+}
+
+.hero-ambient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.hero-ambient-one {
+  width: 520px;
+  height: 520px;
+  top: -250px;
+  right: -130px;
+  background: rgba(247,215,116,0.10);
+}
+
+.hero-ambient-two {
+  width: 280px;
+  height: 280px;
+  bottom: 40px;
+  left: -90px;
+  background: rgba(255,111,97,0.12);
+}
+
+.formats-hero-inner-v2 {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.04fr 0.96fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.formats-hero-copy h1 {
+  font-size: clamp(44px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.formats-hero-copy p {
+  margin: 0 0 18px;
+  max-width: 660px;
+  font-size: 19px;
+  line-height: 1.78;
+  color: rgba(255,255,255,0.86);
+}
+
+.hero-outline {
+  border-color: rgba(255,255,255,0.55) !important;
+  color: white !important;
+}
+
+.hero-outline:hover {
+  border-color: var(--corail) !important;
+}
+
+.hero-note {
+  margin-top: 22px;
+  color: rgba(255,255,255,0.66);
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.hero-studio {
+  position: relative;
+  min-height: 490px;
+}
+
+.studio-card {
+  position: absolute;
+  border-radius: 30px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 28px 80px rgba(0,0,0,0.34);
+  border: 1px solid rgba(255,255,255,0.26);
+}
+
+.studio-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.studio-card-main {
+  width: 72%;
+  height: 360px;
+  right: 20px;
+  top: 52px;
+  transform: rotate(1.5deg);
+}
+
+.studio-card-top {
+  width: 260px;
+  height: 190px;
+  left: 12px;
+  top: 8px;
+  transform: rotate(-5deg);
+}
+
+.studio-card-bottom {
+  width: 290px;
+  height: 180px;
+  left: 44px;
+  bottom: 2px;
+  transform: rotate(4deg);
+}
+
+.floating-format-card {
+  position: absolute;
+  right: 10px;
+  bottom: 34px;
+  background: rgba(255,255,255,0.92);
+  color: var(--bleu);
+  border-radius: 22px;
+  padding: 18px 22px;
+  box-shadow: 0 18px 44px rgba(0,0,0,0.22);
+  max-width: 260px;
+  backdrop-filter: blur(8px);
+}
+
+.floating-format-card span {
+  display: block;
+  color: var(--corail);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.floating-format-card strong {
+  display: block;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.bonus-intro-v2 {
+  margin-top: -54px;
+  border: 1px solid rgba(28,63,96,0.07);
+}
+
+.eyebrow {
+  color: var(--corail);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin-bottom: 12px;
+}
+
+.manifesto-card {
+  background:
+    linear-gradient(135deg, rgba(247,215,116,0.96), rgba(248,207,169,0.62)),
+    #F7D774;
+  border-radius: 30px;
+  padding: 34px;
+  color: var(--bleu);
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+}
+
+.manifesto-card::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  right: -80px;
+  bottom: -80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.34);
+}
+
+.manifesto-card h3 {
+  font-size: 29px;
+  line-height: 1.12;
+  margin-bottom: 14px;
+}
+
+.manifesto-card p {
+  color: #2b2b2b;
+  font-size: 15px;
+  line-height: 1.82;
+  position: relative;
+  z-index: 1;
+}
+
+.field-proof-strip {
+  max-width: 1120px;
+  margin: 26px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.field-proof-item {
+  background: white;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(28,63,96,0.05);
+}
+
+.field-proof-item strong {
+  display: block;
+  color: var(--bleu);
+  font-size: 27px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.field-proof-item span {
+  color: #666;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.collections-grid .collection-card {
+  border-top: 0;
+  border: 1px solid rgba(28,63,96,0.07);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.055);
+}
+
+.collection-card:hover .collection-icon,
+.collection-card:focus-within .collection-icon {
+  background: var(--bleu);
+  color: white;
+}
+
+.library-zone {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.72), rgba(242,242,242,0.96)),
+    var(--gris);
+  border: 1px solid rgba(28,63,96,0.06);
+}
+
+.filter-zone,
+.unlock-box,
+.format-card,
+.related-card,
+.access-form {
+  border: 1px solid rgba(28,63,96,0.06);
+}
+
+.format-card {
+  min-height: 270px;
+}
+
+.format-card::before {
+  transition: opacity 0.25s ease;
+}
+
+.format-card.demo-card {
+  border: 2px solid rgba(247,215,116,0.95);
+}
+
+.format-card.demo-card .format-tag::after {
+  content: " · démo";
+}
+
+.format-name {
+  letter-spacing: -0.01em;
+}
+
+.card-toggle,
+.unlock-actions button,
+.mode-buttons button,
+.filter-buttons button,
+.filter-reset {
+  box-shadow: 0 8px 18px rgba(28,63,96,0.08);
+}
+
+.access-panel {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(247,215,116,0.18), transparent 30%),
+    linear-gradient(135deg, #0F2A45, var(--bleu));
+}
+
+.related-links .related-card:first-child {
+  background: linear-gradient(135deg, #fff, rgba(247,215,116,0.22));
+}
+
+nav .nav-logo::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background: url('favicon.png') center/contain no-repeat;
+  display: inline-block;
+  vertical-align: -6px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+@media(max-width: 1000px) {
+  .formats-hero-v2 {
+    padding: 72px 24px 96px;
+  }
+  .formats-hero-inner-v2 {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+  .hero-studio {
+    min-height: 420px;
+  }
+  .studio-card-main {
+    width: 72%;
+    right: 0;
+  }
+  .field-proof-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media(max-width: 700px) {
+  .formats-hero-v2 {
+    min-height: auto;
+    padding: 56px 22px 80px;
+  }
+  .formats-hero-copy h1 {
+    font-size: 42px;
+  }
+  .formats-hero-copy p {
+    font-size: 16px;
+  }
+  .hero-studio {
+    min-height: 330px;
+  }
+  .studio-card-main {
+    width: 82%;
+    height: 230px;
+    top: 56px;
+  }
+  .studio-card-top {
+    width: 160px;
+    height: 125px;
+  }
+  .studio-card-bottom {
+    width: 185px;
+    height: 120px;
+    left: 0;
+  }
+  .floating-format-card {
+    right: 0;
+    bottom: 0;
+    max-width: 210px;
+    padding: 14px 16px;
+  }
+  .field-proof-item strong {
+    font-size: 24px;
+  }
+}
+
 </style>
 </head>
 
@@ -931,33 +1319,61 @@
   </ul>
 </nav>
 
-<section class="page-hero">
-  <div class="page-hero-inner">
-    <div class="access-pill">Accès réservé</div>
-    <div class="badge">Ressources terrain</div>
-    <h1>Les formats de poche</h1>
-    <p>Une bibliothèque complète de formats d’animation, de coopération et de facilitation conçus pour être immédiatement réutilisables sur le terrain.</p>
-    <div class="hero-actions">
-      <a href="#demander-acces" class="btn">Demander l’accès</a>
-      <a href="#bibliotheque" class="btn btn-outline">Découvrir les formats</a>
+<section class="page-hero formats-hero-v2">
+  <div class="hero-ambient hero-ambient-one"></div>
+  <div class="hero-ambient hero-ambient-two"></div>
+  <div class="formats-hero-inner-v2">
+    <div class="formats-hero-copy">
+      <div class="access-pill">Accès réservé</div>
+      <div class="badge">Ressources terrain</div>
+      <h1>La boîte terrain des formats de facilitation.</h1>
+      <p>Des formats courts, testés et pensés pour ouvrir un échange, clarifier une situation, produire des idées, décider ou faire bilan sans transformer la réunion en brouillard organisé.</p>
+      <div class="hero-actions">
+        <a href="#demander-acces" class="btn">Demander l’accès</a>
+        <a href="#bibliotheque" class="btn btn-outline hero-outline">Explorer la bibliothèque</a>
+      </div>
+      <div class="hero-note">Une fiche de démonstration est ouverte. Les autres se déverrouillent avec le code transmis après demande.</div>
+    </div>
+
+    <div class="hero-studio" aria-label="Aperçu de l’univers des formats de poche">
+      <div class="studio-card studio-card-main">
+        <img src="photo17.png" alt="Cartes de rôles et matériel de facilitation">
+      </div>
+      <div class="studio-card studio-card-small studio-card-top">
+        <img src="photo1.png" alt="Objet métaphore La lumière partagée">
+      </div>
+      <div class="studio-card studio-card-small studio-card-bottom">
+        <img src="photo5.png" alt="Maquette collaborative en atelier">
+      </div>
+      <div class="floating-format-card">
+        <span>Format terrain</span>
+        <strong>Ouvrir · Clarifier · Décider</strong>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section">
 
-  <div class="bonus-intro">
+  <div class="bonus-intro bonus-intro-v2">
     <div>
-      <h2>Une bibliothèque utile, concrète et pensée pour l’action.</h2>
+      <div class="eyebrow">Atelier privé</div>
+      <h2>Une bibliothèque conçue comme un appui de terrain, pas comme un catalogue de recettes.</h2>
       <p>Les formats de poche rassemblent des formats courts, structurés et directement mobilisables pour animer une réunion, ouvrir un échange, clarifier un sujet, faire émerger des idées, décider ou clôturer un temps collectif.</p>
-      <p>Ils ne remplacent pas une démarche d’accompagnement. Ils offrent des repères simples pour gagner en clarté, en qualité de dialogue et en efficacité collective.</p>
+      <p>Ils ne remplacent ni l’intention, ni l’écoute, ni la posture. Ils donnent simplement un cadre solide pour aider un collectif à mieux penser, mieux choisir et mieux agir.</p>
     </div>
 
-    <div class="bonus-box">
-      <div class="bonus-label">Bonus professionnel</div>
-      <h3>Un accès sur demande</h3>
-      <p>Cette ressource est proposée comme un cadeau relationnel : un bonus utile pour les personnes qui souhaitent découvrir mon univers, mes méthodes et ma façon de travailler les collectifs.</p>
+    <div class="manifesto-card">
+      <div class="bonus-label">Manifeste court</div>
+      <h3>Un bon format ouvre un espace.</h3>
+      <p>Il ne force pas la parole. Il rend possible. Il donne un bord au travail collectif, assez clair pour sécuriser, assez souple pour laisser émerger ce qui compte.</p>
     </div>
+  </div>
+
+  <div class="field-proof-strip">
+    <div class="field-proof-item"><strong>6 familles</strong><span>pour choisir selon l’intention</span></div>
+    <div class="field-proof-item"><strong>36 formats</strong><span>courts, lisibles et actionnables</span></div>
+    <div class="field-proof-item"><strong>1 fiche démo</strong><span>accessible avant déverrouillage</span></div>
   </div>
 
   <div class="collections-header">
