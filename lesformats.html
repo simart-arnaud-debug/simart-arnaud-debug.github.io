@@ -1,1110 +1,657 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Les formats de poche d'Arnaud SIMART : une bibliothèque complète de ressources terrain en accès réservé pour animer, coopérer, clarifier, décider et faire bilan." name="description"/>
-<meta content="Arnaud SIMART" name="author"/>
-<meta content="Les formats de poche - Ressources terrain | Arnaud SIMART" property="og:title"/>
-<meta content="Une bibliothèque complète de formats d'animation et de facilitation en accès réservé." property="og:description"/>
-<meta content="https://arnaud-simart.fr/lesformats.html" property="og:url"/>
-<meta content="website" property="og:type"/>
-<link href="https://arnaud-simart.fr/lesformats.html" rel="canonical"/>
-<title>Les formats de poche - Arnaud SIMART</title>
-<link href="favicon.png" rel="icon" type="image/png"/>
-<link href="favicon.png" rel="apple-touch-icon"/>
-<link href="style.css" rel="stylesheet"/>
-<style>
-:root {
-  --bleu: #1C3F60;
-  --corail: #FF6F61;
-  --jaune: #F7D774;
-  --gris: #F2F2F2;
-  --noir: #1A1A1A;
-  --cat-A: #1C3F60;
-  --cat-B: #FF6F61;
-  --cat-C: #F7D774;
-  --cat-D: #2F5A85;
-  --cat-E: #FF8A7A;
-  --cat-F: #0F2A45;
-}
-/* =========================================================
-   HERO + INTRO
-========================================================= */
-.page-hero {
-  padding: 90px 42px 120px;
-  text-align: center;
-  background:
-    linear-gradient(135deg, rgba(15,42,69,0.96), rgba(28,63,96,0.94)),
-    url('photo5.png') center/cover;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-hero h1 {
-  font-size: clamp(42px, 5vw, 72px);
-  line-height: 1.02;
-  font-weight: 800;
-  margin-bottom: 18px;
-}
-
-.page-hero p {
-  font-size: 18px;
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.7;
-  opacity: 0.9;
-}
-
-.page-hero .btn {
-  margin-top: 26px;
-}
-
-.bonus-intro {
-  background: white;
-  border-radius: 32px;
-  padding: 42px;
-  margin-top: -60px;
-  box-shadow: 0 10px 36px rgba(0,0,0,0.08);
-  position: relative;
-  z-index: 2;
-}
-.library-zone {
-  margin-top: 90px;
-  background: white;
-  border-radius: 32px;
-  padding: 42px;
-  box-shadow: 0 10px 36px rgba(0,0,0,0.08);
-}
-
-.library-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 40px;
-}
-
-.library-header h2 {
-  font-size: 32px;
-  font-weight: 800;
-  color: var(--bleu);
-}
-
-.library-header p {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.7;
-  max-width: 620px;
-}
-
-.filter-zone {
-  margin-top: 30px;
-  padding: 26px;
-  background: var(--gris);
-  border-radius: 22px;
-}
-
-.mode-title {
-  font-size: 15px;
-  font-weight: 800;
-  color: var(--bleu);
-  margin-bottom: 12px;
-}
-
-.mode-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-.mode-buttons button {
-  background: white;
-  border: 2px solid var(--bleu);
-  color: var(--bleu);
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.mode-buttons button.active,
-.mode-buttons button:hover {
-  background: var(--bleu);
-  color: white;
-}
-
-.filter-groups {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  gap: 20px;
-  align-items: end;
-}
-
-.filter-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--bleu);
-  margin-bottom: 8px;
-}
-
-.filter-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.filter-btn {
-  background: white;
-  border: 2px solid #ddd;
-  color: #444;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  border-color: var(--bleu);
-  color: var(--bleu);
-}
-.filter-reset {
-  background: var(--corail);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.filter-reset:hover {
-  background: var(--bleu);
-}
-
-.unlock-box {
-  margin-top: 40px;
-  padding: 30px;
-  background: white;
-  border-radius: 22px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 20px;
-  align-items: center;
-}
-
-.unlock-box label {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--bleu);
-}
-
-.unlock-box p {
-  font-size: 14px;
-  color: #666;
-  margin-top: 6px;
-}
-
-.unlock-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.unlock-actions input {
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 2px solid #ddd;
-  font-size: 14px;
-  min-width: 180px;
-}
-
-.unlock-actions button {
-  background: var(--bleu);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.unlock-actions button:hover {
-  background: var(--corail);
-}
-.unlock-status {
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--corail);
-  font-weight: 700;
-}
-
-.unlock-status.ok {
-  color: #2a8f4a;
-}
-
-.category-block {
-  margin-top: 60px;
-}
-
-.category-header {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.category-pill {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  color: white;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
-
-.cat-A { background: var(--cat-A); }
-.cat-B { background: var(--cat-B); }
-.cat-C { background: var(--cat-C); }
-.cat-D { background: var(--cat-D); }
-.cat-E { background: var(--cat-E); }
-.cat-F { background: var(--cat-F); }
-
-.category-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--bleu);
-}
-
-.category-desc {
-  font-size: 14px;
-  color: #666;
-  margin-top: 4px;
-}
-
-.formats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 26px;
-}
-.format-card {
-  background: white;
-  border-radius: 22px;
-  padding: 26px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  border: 1px solid rgba(28,63,96,0.06);
-  position: relative;
-  transition: 0.25s;
-}
-
-.format-card.open {
-  border-color: var(--bleu);
-}
-
-.format-tag {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: var(--bleu);
-  color: white;
-  font-size: 12px;
-  font-weight: 800;
-  padding: 6px 10px;
-  border-radius: 999px;
-}
-
-.format-name {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--bleu);
-  margin-bottom: 6px;
-}
-
-.format-short {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.format-meta span {
-  background: var(--gris);
-  color: var(--bleu);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 999px;
-  margin-right: 6px;
-}
-
-.card-toggle {
-  margin-top: 14px;
-  background: var(--bleu);
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.card-toggle:hover {
-  background: var(--corail);
-}
-.format-details {
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid #eee;
-  display: none;
-  font-size: 14px;
-  color: #444;
-  line-height: 1.7;
-}
-
-.format-card.open .format-details {
-  display: block;
-}
-
-.format-details-title {
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--bleu);
-  margin-top: 14px;
-  margin-bottom: 6px;
-}
-
-.download-btn {
-  margin-top: 14px;
-  display: inline-block;
-  background: #ddd;
-  color: #666;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: not-allowed;
-}
-
-.download-btn:not(.disabled) {
-  background: var(--bleu);
-  color: white;
-  cursor: pointer;
-}
-
-.download-btn:not(.disabled):hover {
-  background: var(--corail);
-}
-.access-section {
-  margin-top: 90px;
-}
-
-.access-panel {
-  background: var(--bleu);
-  color: white;
-  padding: 42px;
-  border-radius: 32px;
-  margin-bottom: 40px;
-}
-
-.access-panel h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-
-.access-panel p {
-  font-size: 15px;
-  line-height: 1.7;
-  opacity: 0.9;
-}
-
-.access-steps {
-  margin-top: 26px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 20px;
-}
-
-.access-step {
-  background: rgba(255,255,255,0.12);
-  padding: 18px;
-  border-radius: 18px;
-  text-align: center;
-}
-
-.access-step strong {
-  display: block;
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.access-form {
-  background: white;
-  padding: 42px;
-  border-radius: 32px;
-  box-shadow: 0 10px 36px rgba(0,0,0,0.08);
-}
-
-.access-form h2 {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--bleu);
-  margin-bottom: 10px;
-}
-
-.form-sub {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 26px;
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--bleu);
-  margin-bottom: 6px;
-  display: block;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 2px solid #ddd;
-  font-size: 14px;
-  font-family: inherit;
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.form-submit {
-  margin-top: 20px;
-  background: var(--bleu);
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.form-submit:hover {
-  background: var(--corail);
-}
-
-.form-note {
-  font-size: 13px;
-  color: #666;
-  margin-top: 12px;
-}
-.related-links {
-  margin-top: 70px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 26px;
-}
-
-.related-card {
-  background: white;
-  border-radius: 22px;
-  padding: 26px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  text-decoration: none;
-  color: inherit;
-  transition: 0.25s;
-}
-
-.related-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 38px rgba(0,0,0,0.10);
-}
-
-.related-card h3 {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--bleu);
-  margin-bottom: 8px;
-}
-
-.related-card p {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.7;
-}
-footer {
-  margin-top: 90px;
-  background: var(--bleu);
-  color: white;
-  padding: 42px 0;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 42px;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 40px;
-}
-
-.footer-logo {
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.footer-tagline {
-  font-size: 14px;
-  line-height: 1.7;
-  opacity: 0.9;
-}
-
-.footer-links li {
-  list-style: none;
-  margin-bottom: 8px;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.9;
-  transition: 0.2s;
-}
-
-.footer-links a:hover {
-  opacity: 1;
-}
-
-@media(max-width: 900px) {
-  .footer-inner {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les formats de poche — Bibliothèque</title>
+    <style>
+        /* ================================
+           ARNAUD SIMART — style.css V2 PREMIUM
+           Socle global pour toutes les pages
+           ================================ */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Patrick+Hand&display=swap');
+
+        :root {
+          --bleu: #1C3F60;
+          --bleu-fonce: #102B43;
+          --bleu-clair: #2F5A85;
+          --corail: #FF6F61;
+          --corail-fonce: #E85D50;
+          --jaune: #F7D774;
+          --champagne: #FFF3D6;
+          --gris: #F2F2F2;
+          --gris-chaud: #F7F4EF;
+          --noir: #1A1A1A;
+          --blanc: #FFFFFF;
+
+          --shadow-soft: 0 10px 30px rgba(16,43,67,0.08);
+          --shadow-medium: 0 18px 48px rgba(16,43,67,0.14);
+          --shadow-strong: 0 28px 80px rgba(16,43,67,0.20);
+
+          --radius-sm: 14px;
+          --radius-md: 22px;
+          --radius-lg: 32px;
+          --radius-xl: 42px;
+
+          --container: 1200px;
+          --ease: cubic-bezier(.2,.8,.2,1);
+        }
+
+        /* ---- RESET GLOBAL ---- */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body {
+          font-family:'Poppins', sans-serif;
+          background:
+            radial-gradient(circle at 8% 0%, rgba(247,215,116,0.14), transparent 30%),
+            radial-gradient(circle at 100% 20%, rgba(255,111,97,0.08), transparent 26%),
+            #f6f6f6;
+          color:var(--noir);
+          line-height:1.6;
+          overflow-x:hidden;
+          text-rendering:optimizeLegibility;
+        }
+        img { max-width:100%; }
+        a { color:inherit; }
+
+        /* ---- ACCESSIBILITÉ ---- */
+        :focus-visible { outline:3px solid rgba(255,111,97,0.55); outline-offset:4px; border-radius:10px; }
+        @media (prefers-reduced-motion: reduce) {
+          * { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+        }
+
+        /* ---- NAVIGATION PREMIUM ---- */
+        nav {
+          background:rgba(28,63,96,0.92);
+          backdrop-filter:blur(18px);
+          -webkit-backdrop-filter:blur(18px);
+          padding:0 56px;
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          position:sticky;
+          top:0;
+          z-index:1000;
+          height:76px;
+          box-shadow:0 8px 30px rgba(16,43,67,0.16);
+          border-bottom:1px solid rgba(255,255,255,0.10);
+        }
+        .nav-logo { font-family:'Patrick Hand', cursive; color:var(--jaune); font-size:24px; text-decoration:none; white-space:nowrap; letter-spacing:0.01em; position:relative; }
+        .nav-logo::after { content:""; display:block; height:2px; width:38px; background:var(--corail); border-radius:999px; margin-top:2px; opacity:0.9; }
+        .nav-links { display:flex; align-items:center; gap:7px; list-style:none; }
+        .nav-links a { color:rgba(255,255,255,0.84); text-decoration:none; font-size:14px; font-weight:600; padding:9px 15px; border-radius:999px; transition:background .22s var(--ease), color .22s var(--ease), transform .22s var(--ease); }
+        .nav-links a:hover, .nav-links a.active { background:rgba(255,255,255,0.13); color:white; transform:translateY(-1px); }
+        .nav-links a.nav-cta { background:var(--corail); color:white; font-weight:700; box-shadow:0 8px 20px rgba(255,111,97,0.24); }
+        .nav-links a.nav-cta:hover { background:var(--corail-fonce); transform:translateY(-2px); }
+        .nav-links a.nav-bonus { background:rgba(247,215,116,0.15); color:var(--jaune); border:1px solid rgba(247,215,116,0.25); }
+        .nav-links a.nav-bonus:hover, .nav-links a.nav-bonus.active { background:var(--jaune); color:var(--bleu); }
+        .nav-toggle { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:6px; }
+        .nav-toggle span { display:block; width:25px; height:2px; background:white; border-radius:2px; transition:0.3s; }
+
+        /* ---- UTILITAIRES & SECTIONS ---- */
+        .section { max-width:var(--container); margin:auto; padding:86px 40px; }
+        .section-title { font-size:clamp(32px, 4vw, 46px); color:var(--bleu); margin-bottom:16px; font-weight:800; line-height:1.10; letter-spacing:-0.03em; text-align:center; }
+        .section-sub { font-size:18px; color:#555; margin-bottom:50px; max-width:820px; line-height:1.75; text-align:center; margin-left:auto; margin-right:auto; }
+        
+        .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; background:var(--corail); color:white; text-decoration:none; padding:12px 24px; border-radius:999px; font-weight:800; transition:transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease); border:none; cursor:pointer; font-size:14px; font-family:'Poppins', sans-serif; box-shadow:0 12px 28px rgba(255,111,97,0.24); width:100%; text-align:center; }
+        .btn:hover { transform:translateY(-2px); box-shadow:0 18px 38px rgba(255,111,97,0.28); }
+        .btn-outline { background:transparent; border:2px solid var(--corail); color:var(--corail); box-shadow:none; }
+        .btn-outline:hover { background:var(--corail); color:white; }
+        .btn.disabled { background:#cbd5e1 !important; color:#94a3b8 !important; box-shadow:none !important; cursor:not-allowed; transform:none !important; }
+
+        /* ---- FILTRES & INTENTIONS FONCTIONNELS ---- */
+        .mode-buttons { display:flex; justify-content:center; gap:10px; margin:-20px auto 40px; flex-wrap:wrap; max-width:var(--container); padding:0 20px; }
+        .mode-buttons button { background:var(--blanc); border:1px solid rgba(28,63,96,0.15); color:var(--bleu); font-family:'Poppins', sans-serif; font-weight:600; padding:10px 20px; border-radius:999px; cursor:pointer; transition:all 0.22s var(--ease); box-shadow:var(--shadow-soft); }
+        .mode-buttons button:hover, .mode-buttons button.active { background:var(--bleu); color:var(--blanc); border-color:var(--bleu); transform:translateY(-1px); }
+
+        /* ---- GRILLE & CARTES DES FORMATS ---- */
+        .category-block { margin-bottom: 60px; }
+        .category-title { font-size: 24px; color: var(--bleu-fonce); margin-bottom: 24px; font-weight: 800; border-left: 5px solid var(--corail); padding-left: 14px; }
+        .formats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        
+        .format-card { display: flex; flex-direction: column; justify-content: space-between; background: var(--blanc); }
+        .format-card h3 { font-size: 19px; color: var(--bleu); margin-bottom: 8px; font-weight: 700; }
+        .format-card p { font-size: 14px; color: #555; margin-bottom: 20px; flex-grow: 1; }
+        
+        .format-card img { width: 100%; height: auto; display: none; margin-top: 20px; border-radius: var(--radius-sm); border: 1px solid rgba(28,63,96,0.08); box-shadow: var(--shadow-soft); cursor: zoom-in; }
+        .format-card.open img { display: block; }
+        
+        .card-actions { display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 15px; }
+
+        /* ---- VERROUILLAGE & ACCÈS ---- */
+        .unlock-section { display: flex; justify-content: center; padding: 0 20px; margin-bottom: 40px; }
+        .unlock-box { max-width: 550px; width: 100%; text-align: center; background: var(--champagne); border: 2px dashed var(--jaune); }
+        .unlock-box h3 { font-size: 20px; color: var(--bleu-fonce); margin-bottom: 8px; font-weight: 700; }
+        .unlock-box p { font-size: 14px; margin-bottom: 18px; color: var(--bleu); }
+        .unlock-inputs { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .unlock-inputs input { padding: 12px 20px; border-radius: 999px; border: 1px solid rgba(28,63,96,0.15); font-family: 'Poppins', sans-serif; font-size: 14px; width: 240px; max-width: 100%; }
+        .unlock-inputs .btn { width: auto; }
+        #unlock-status { margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--corail-fonce); }
+        #unlock-status.ok { color: #2e7d32; }
+
+        /* ---- REVEAL SCROLL ---- */
+        .reveal { opacity:0; transform:translateY(18px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
+        .reveal.visible { opacity:1; transform:translateY(0); }
+
+        /* ---- FOOTER IMMERSIF ---- */
+        footer {
+          background:
+            radial-gradient(circle at 15% 0%, rgba(247,215,116,0.12), transparent 26%),
+            radial-gradient(circle at 92% 20%, rgba(255,111,97,0.12), transparent 24%),
+            linear-gradient(135deg, var(--bleu-fonce), var(--bleu));
+          color:rgba(255,255,255,0.82); padding:64px 60px 34px; margin-top:70px; position:relative; overflow:hidden;
+        }
+        footer::before { content:""; position:absolute; inset:0; background: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size:46px 46px; opacity:0.8; }
+        .footer-inner, .footer-bottom { position:relative; z-index:1; }
+        .footer-inner { max-width:var(--container); margin:auto; display:grid; grid-template-columns:1.25fr 0.75fr 0.75fr 1fr; gap:38px; align-items:start; }
+        .footer-logo { font-family:'Patrick Hand', cursive; color:var(--jaune); font-size:30px; margin-bottom:10px; }
+        .footer-tagline { font-size:14px; opacity:0.76; line-height:1.8; max-width:340px; }
+        .footer-title { color:white; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; }
+        .footer-links { list-style:none; }
+        .footer-links li { margin-bottom:10px; }
+        .footer-links a { color:rgba(255,255,255,0.74); text-decoration:none; font-size:14px; transition:color .2s var(--ease), transform .2s var(--ease); display:inline-block; }
+        .footer-links a:hover { color:var(--jaune); transform:translateX(3px); }
+        .footer-linkedin { display:inline-flex; align-items:center; gap:8px; color:white; text-decoration:none; padding:10px 17px; border-radius:999px; font-size:13px; font-weight:700; margin-top:12px; transition:0.22s var(--ease); background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.18); }
+        .footer-linkedin:hover { background:#0077b5; border-color:#0077b5; transform:translateY(-2px); }
+        .footer-bottom { max-width:var(--container); margin:34px auto 0; padding-top:22px; border-top:1px solid rgba(255,255,255,0.12); font-size:12px; opacity:0.58; text-align:center; }
+
+        /* RESPONSIVE */
+        @media (max-width:1100px) { nav { padding:0 28px; } .nav-links a { padding:8px 11px; font-size:13px; } .footer-inner { grid-template-columns:1fr 1fr; } }
+        @media (max-width:900px) {
+          nav { height:auto; min-height:70px; padding:14px 18px; } .nav-toggle { display:flex; }
+          .nav-links { display:none; flex-direction:column; position:absolute; top:70px; left:0; right:0; background:rgba(28,63,96,0.98); padding:18px 20px 26px; gap:8px; box-shadow:0 18px 42px rgba(0,0,0,0.22); border-bottom:1px solid rgba(255,255,255,0.10); }
+          .nav-links.open { display:flex; } .nav-links a { border-radius:14px; padding:13px 16px; font-size:15px; }
+          .footer-inner { grid-template-columns:1fr; gap:30px; }
+        }
+    </style>
 </head>
 <body>
+
+<!-- DEBUT NAVIGATION PREMIUM -->
 <nav>
-<a class="nav-logo" href="index.html">Arnaud Simart</a>
-<button aria-label="Ouvrir le menu" class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
-<span></span><span></span><span></span>
-</button>
-<ul class="nav-links">
-<li><a href="index.html">Accueil</a></li>
-<li><a href="formations.html">Formations</a></li>
-<li><a href="apropos.html">À propos</a></li>
-<li><a href="enaction.html">En action</a></li>
-<li><a class="active" href="lesformats.html">Les formats en poche</a></li>
-<li><a href="temoignages.html">Témoignages</a></li>
-<li><a class="nav-cta" href="contact.html">Contact</a></li>
-</ul>
+    <a href="index.html" class="nav-logo">Arnaud Simart</a>
+    <button class="nav-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="lesformats.html" class="active">Les formats de poche</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://linkedin.com" target="_blank" class="nav-cta">Me suivre sur LinkedIn</a></li>
+    </ul>
 </nav>
 
-<section class="page-hero formats-hero-v2">
-<div class="hero-ambient hero-ambient-one"></div>
-<div class="hero-ambient hero-ambient-two"></div>
-<div class="formats-hero-inner-v2">
-<div class="formats-hero-copy">
-<div class="access-pill">Accès réservé</div>
-<div class="badge">Ressources terrain</div>
-<h1>La boîte terrain des formats de facilitation.</h1>
-<p>Des formats courts, testés et pensés pour ouvrir un échange, clarifier une situation, produire des idées, décider ou faire bilan sans transformer la réunion en brouillard organisé.</p>
-<div class="hero-actions">
-<a class="btn" href="#demander-acces">Demander l’accès</a>
-<a class="btn btn-outline hero-outline" href="#bibliotheque">Explorer la bibliothèque</a>
-</div>
-<div class="hero-note">Une fiche de démonstration est ouverte. Les autres se déverrouillent avec le code transmis après demande.</div>
-</div>
-<div aria-label="Aperçu de l’univers des formats de poche" class="hero-studio">
-<div class="studio-card studio-card-main">
-<img alt="Cartes de rôles et matériel de facilitation" src="photo17.png"/>
-</div>
-<div class="studio-card studio-card-small studio-card-top">
-<img alt="Objet métaphore La lumière partagée" src="photo1.png"/>
-</div>
-<div class="studio-card studio-card-small studio-card-bottom">
-<img alt="Maquette collaborative en atelier" src="photo5.png"/>
-</div>
-<div class="floating-format-card">
-<span>Format terrain</span>
-<strong>Ouvrir · Clarifier · Décider</strong>
-</div>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="bonus-intro bonus-intro-v2">
-<div>
-<div class="eyebrow">Atelier privé</div>
-<h2>Une bibliothèque conçue comme un appui de terrain, pas comme un catalogue de recettes.</h2>
-<p>Les formats de poche rassemblent des formats courts, structurés et directement mobilisables pour animer une réunion, ouvrir un échange, clarifier un sujet, faire émerger des idées, décider ou clôturer un temps collectif.</p>
-<p>Ils ne remplacent ni l’intention, ni l’écoute, ni la posture. Ils donnent simplement un cadre solide pour aider un collectif à mieux penser, mieux choisir et mieux agir.</p>
+<!-- HERO DE LA PAGE -->
+<header class="page-hero">
+    <h1>La Bibliothèque des Formats en Poche</h1>
+    <p>34 ressources prêtes à l'action pour structurer, animer et libérer la force collective de vos équipes.</p>
+</header>
+
+<!-- SÉLECTION INTENTIONS (FILTRES) -->
+<div class="mode-buttons reveal">
+    <button class="active" onclick="selectIntent('all')">Tout voir</button>
+    <button onclick="selectIntent('A')">Se synchroniser</button>
+    <button onclick="selectIntent('B')">Décider</button>
+    <button onclick="selectIntent('C')">Générer des idées</button>
+    <button onclick="selectIntent('D')">Clarifier</button>
+    <button onclick="selectIntent('E')">Créer du lien</button>
+    <button onclick="selectIntent('F')">Faire un bilan</button>
 </div>
 
-<div class="manifesto-card">
-<div class="bonus-label">Manifeste court</div>
-<h3>Un bon format ouvre un espace.</h3>
-<p>Il ne force pas la parole. Il rend possible. Il donne un bord au travail collectif, assez clair pour sécuriser, assez souple pour laisser émerger ce qui compte.</p>
-</div>
-</div>
-
-<div class="field-proof-strip">
-<div class="field-proof-item"><strong>6 familles</strong><span>pour choisir selon l’intention</span></div>
-<div class="field-proof-item"><strong>36 formats</strong><span>courts, lisibles et actionnables</span></div>
-<div class="field-proof-item"><strong>1 fiche démo</strong><span>accessible avant déverrouillage</span></div>
-</div>
-
-<div class="collections-header">
-<h2>Des formats classés par intention</h2>
-<p>Chaque format répond à une intention simple : créer du lien, produire, clarifier, décider, se synchroniser ou faire bilan.</p>
-</div>
-
-<div class="collections-grid">
-<div class="collection-card">
-<div class="collection-icon">A</div>
-<h3>Se synchroniser</h3>
-<p>Aligner rapidement une équipe, partager les priorités, identifier les blocages et fluidifier la coordination.</p>
-<div class="collection-meta"><span>Réunion</span><span>Projet</span><span>Équipe</span></div>
-</div>
-
-<div class="collection-card">
-<div class="collection-icon">B</div>
-<h3>Décider ensemble</h3>
-<p>Structurer une décision collective, rendre visibles les critères, arbitrer et sécuriser les suites.</p>
-<div class="collection-meta"><span>Choix</span><span>Priorisation</span><span>Arbitrage</span></div>
-</div>
-
-<div class="collection-card">
-<div class="collection-icon">C</div>
-<h3>Générer des idées</h3>
-<p>Stimuler la créativité, ouvrir le champ des possibles et transformer les idées en pistes exploitables.</p>
-<div class="collection-meta"><span>Créativité</span><span>Solutions</span><span>Innovation</span></div>
-</div>
-
-<div class="collection-card">
-<div class="collection-icon">D</div>
-<h3>Clarifier</h3>
-<p>Mettre à plat une situation, distinguer les faits, les besoins, les questions et les zones d’incertitude.</p>
-<div class="collection-meta"><span>Diagnostic</span><span>Analyse</span><span>Lisibilité</span></div>
-</div>
-
-<div class="collection-card">
-<div class="collection-icon">E</div>
-<h3>Créer du lien</h3>
-<p>Installer un climat de confiance, favoriser l’interconnaissance et permettre à chacun de prendre sa place.</p>
-<div class="collection-meta"><span>Inclusion</span><span>Équipe</span><span>Confiance</span></div>
-</div>
-
-<div class="collection-card">
-<div class="collection-icon">F</div>
-<h3>Faire un bilan</h3>
-<p>Relire une expérience, identifier les apprentissages, faire émerger les points d’appui et les ajustements.</p>
-<div class="collection-meta"><span>RETEX</span><span>Capitalisation</span><span>Progrès</span></div>
-</div>
-</div>
-
-<div class="library-zone" id="bibliotheque">
-<div class="library-header">
-<div>
-<h2>Bibliothèque complète</h2>
-<p>Toutes les fiches de l’ancienne page sont reprises ici. Une fiche de démonstration est consultable librement ; les autres s’ouvrent et se téléchargent après activation de l’accès.</p>
-</div>
-<a class="btn" href="#demander-acces">Demander l’accès</a>
-</div>
-
-<div class="filter-zone">
-<div class="mode-title">Que voulez-vous faire ?</div>
-<div class="mode-buttons">
-<button class="active" onclick="selectIntent('all')" type="button">Tout voir</button>
-<button onclick="selectIntent('A')" type="button">Se synchroniser</button>
-<button onclick="selectIntent('B')" type="button">Décider</button>
-<button onclick="selectIntent('C')" type="button">Générer des idées</button>
-<button onclick="selectIntent('D')" type="button">Clarifier</button>
-<button onclick="selectIntent('E')" type="button">Créer du lien</button>
-<button onclick="selectIntent('F')" type="button">Faire un bilan</button>
-</div>
-
-<div class="filter-groups">
-<div>
-<div class="filter-label">Durée</div>
-<div class="filter-buttons">
-<button class="filter-btn" data-duration="short" type="button">≤ 15 min</button>
-<button class="filter-btn" data-duration="medium" type="button">15-30 min</button>
-<button class="filter-btn" data-duration="long" type="button">≥ 30 min</button>
-</div>
-</div>
-
-<div>
-<div class="filter-label">Taille du groupe</div>
-<div class="filter-buttons">
-<button class="filter-btn" data-size="small" type="button">2-5 pers.</button>
-<button class="filter-btn" data-size="medium" type="button">6-12 pers.</button>
-<button class="filter-btn" data-size="large" type="button">12+ pers.</button>
-</div>
-</div>
-
-<button class="filter-reset" type="button">Réinitialiser</button>
-</div>
-</div>
-<div class="unlock-box">
-<div>
-<label for="access-code">Vous avez reçu un code d’accès ?</label>
-<p>Entrez-le ici pour ouvrir toutes les fiches et activer les téléchargements.</p>
-<div class="unlock-status" id="unlock-status"></div>
-</div>
-
-<div class="unlock-actions">
-<input id="access-code" placeholder="Code d’accès" type="password"/>
-<button onclick="unlockFormats()" type="button">Déverrouiller</button>
-</div>
-</div>
-<div class="category-block" data-category="A">
-  <div class="category-header">
-    <div class="category-pill cat-A">A</div>
-    <div>
-      <div class="category-title">Coordination & Synchronisation</div>
-      <div class="category-desc">Fluidifier la communication, aligner les priorités et lever les blocages.</div>
+<!-- SECTION CODE D'ACCÈS -->
+<div class="unlock-section reveal">
+    <div id="demander-acces" class="card-premium unlock-box">
+        <h3>Déverrouiller les fichiers originaux</h3>
+        <p>Saisissez le code secret pour activer l'affichage des fiches et débloquer les téléchargements.</p>
+        <div class="unlock-inputs">
+            <input type="text" id="access-code" placeholder="Votre code d'accès...">
+            <button class="btn" onclick="unlockFormats()">Activer l'accès</button>
+        </div>
+        <div id="unlock-status"></div>
     </div>
-  </div>
+</div>
 
-  <div class="formats-grid">
+<!-- CONTAINER PRINCIPAL DES FORMATS -->
+<main class="section" style="padding-top: 0;">
 
-    <!-- ENREGISTREMENT _ DÉPART -->
-    <div class="format-card premium-format-card locked" data-cat="A" data-download="formats/Enregistrement _ Départ.jpg">
-      <div class="format-tag">A</div>
-      <div class="format-name">Enregistrement _ Départ</div>
-      <div class="format-short">Check-in / Check-out interne</div>
-      <div class="format-meta"><span>5–10 min</span><span>Toute taille</span></div>
-      <button class="card-toggle" type="button">Ouvrir la fiche</button>
-      <div class="format-details">
-        <a class="download-btn disabled" href="formats/Enregistrement _ Départ.jpg" download="Enregistrement _ Départ.jpg">Téléchargement réservé</a>
-      </div>
+    <!-- FAMILLE A -->
+    <div class="category-block reveal" data-family="A">
+        <h2 class="category-title">A. Coordination & Synchronisation</h2>
+        <div class="formats-grid">
+            <div class="card-premium format-card demo-card" data-download="Enregistrement _ Départ.jpg">
+                <h3>Enregistrement & Départ</h3>
+                <p>Anciennement Check-in / Check-out. Parfait pour cadrer l'énergie de début et fin de réunion.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche démo</button>
+                    <a class="btn download-btn" href="Enregistrement _ Départ.jpg" download target="_blank" rel="noopener">Télécharger</a>
+                </div>
+                <img src="Enregistrement _ Départ.jpg" alt="Enregistrement & Départ" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Stand-up quotidien.jpg">
+                <h3>Stand-up quotidien</h3>
+                <p>Fluidifier la communication opérationnelle de l'équipe au quotidien.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Stand-up quotidien.jpg" alt="Stand-up quotidien" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Conférence éclair interne.jpg">
+                <h3>Conférence éclair interne</h3>
+                <p>Partager des retours d'expérience condensés et percutants.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Conférence éclair interne.jpg" alt="Conférence éclair interne" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Réunion rapide interne.jpg">
+                <h3>Réunion rapide interne</h3>
+                <p>Rythmer une session courte pour aligner tout le monde efficacement.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Réunion rapide interne.jpg" alt="Réunion rapide interne" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Silence productif.jpg">
+                <h3>Silence productif</h3>
+                <p>Exploiter la puissance de la réflexion individuelle asynchrone en réunion.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Silence productif.jpg" alt="Silence productif" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Round Robin.jpg">
+                <h3>Round Robin</h3>
+                <p>Distribuer équitablement la parole pour n'oublier aucune voix.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Round Robin.jpg" alt="Round Robin" class="protected">
+            </div>
+        </div>
     </div>
 
-    <!-- STAND-UP QUOTIDIEN -->
-    <div class="format-card premium-format-card locked" data-cat="A" data-download="formats/Stand-up quotidien.jpg">
-      <div class="format-tag">A</div>
-      <div class="format-name">Stand-up quotidien</div>
-      <div class="format-short">Synchronisation rapide debout</div>
-      <div class="format-meta"><span>15 min</span><span>Toute l’équipe</span></div>
-      <button class="card-toggle" type="button">Ouvrir la fiche</button>
-      <div class="format-details">
-        <a class="download-btn disabled" href="formats/Stand-up quotidien.jpg" download="Stand-up quotidien.jpg">Téléchargement réservé</a>
-      </div>
+    <!-- FAMILLE B -->
+    <div class="category-block reveal" data-family="B">
+        <h2 class="category-title">B. Décision</h2>
+        <div class="formats-grid">
+            <div class="card-premium format-card locked" data-download="Décision de réunion pure.jpg">
+                <h3>Décision de réunion pure</h3>
+                <p>Zéro blabla : focus intégral sur les arbitrages structurants.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Décision de réunion pure.jpg" alt="Décision de réunion pure" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Point d’arbitrage.jpg">
+                <h3>Point d’arbitrage</h3>
+                <p>Sécuriser la prise de décision rapide avec les bonnes parties prenantes.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Point d’arbitrage.jpg" alt="Point d’arbitrage" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Sprint de décision.jpg">
+                <h3>Sprint de décision</h3>
+                <p>Trancher les problématiques complexes en un minimum de temps.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Sprint de décision.jpg" alt="Sprint de décision" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Duo d’arbitrage.jpg">
+                <h3>Duo d’arbitrage</h3>
+                <p>Responsabiliser deux collaborateurs pour débloquer un point critique.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Duo d’arbitrage.jpg" alt="Duo d’arbitrage" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="pré‑cours obligatoire.jpg">
+                <h3>Pré-cours obligatoire</h3>
+                <p>S'assurer que les bases sont lues avant d'entrer en session collective.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="pré‑cours obligatoire.jpg" alt="Pré-cours obligatoire" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Vote par points.jpg">
+                <h3>Vote par points</h3>
+                <p>Prioriser visuellement et démocratiquement les sujets clés.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Vote par points.jpg" alt="Vote par points" class="protected">
+            </div>
+        </div>
     </div>
 
-    <!-- CONFÉRENCE ÉCLAIR INTERNE -->
-    <div class="format-card premium-format-card locked" data-cat="A" data-download="formats/Conférence éclair interne.jpg">
-      <div class="format-tag">A</div>
-      <div class="format-name">Conférence éclair interne</div>
-      <div class="format-short">Partage rapide interne</div>
-      <div class="format-meta"><span>10–15 min</span><span>3–12 pers.</span></div>
-      <button class="card-toggle" type="button">Ouvrir la fiche</button>
-      <div class="format-details">
-        <a class="download-btn disabled" href="formats/Conférence éclair interne.jpg" download="Conférence éclair interne.jpg">Téléchargement réservé</a>
-      </div>
+    <!-- FAMILLE C -->
+    <div class="category-block reveal" data-family="C">
+        <h2 class="category-title">C. Générer des idées</h2>
+        <div class="formats-grid">
+            <div class="card-premium format-card locked" data-download="6 - 3 - 5.jpg">
+                <h3>6 - 3 - 5 (Brainwriting)</h3>
+                <p>Générer massivement des concepts en construisant sur l'idée du voisin.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="6 - 3 - 5.jpg" alt="6 - 3 - 5" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Boule de neige créative.jpg">
+                <h3>Boule de neige créative</h3>
+                <p>Faire grandir une idée de l'individuel au collectif de façon incrémentale.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Boule de neige créative.jpg" alt="Boule de neige créative" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Idéation par contraintes.jpg">
+                <h3>Idéation par contraintes</h3>
+                <p>Forcer la créativité en imposant des règles du jeu inattendues.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Idéation par contraintes.jpg" alt="Idéation par contraintes" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Sabotage.jpg">
+                <h3>Sabotage</h3>
+                <p>Imaginer le pire scénario pour identifier les vraies solutions innovantes.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Sabotage.jpg" alt="Sabotage" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="SCAMPER.jpg">
+                <h3>SCAMPER</h3>
+                <p>Questionner un produit ou service sous 7 angles pour le faire évoluer.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="SCAMPER.jpg" alt="SCAMPER" class="protected">
+            </div>
+        </div>
     </div>
 
-    <!-- RÉUNION RAPIDE INTERNE -->
-    <div class="format-card premium-format-card locked" data-cat="A" data-download="formats/Réunion rapide interne.jpg">
-      <div class="format-tag">A</div>
-      <div class="format-name">Réunion rapide interne</div>
-      <div class="format-short">Alignement express</div>
-      <div class="format-meta"><span>10–15 min</span><span>Toute taille</span></div>
-      <button class="card-toggle" type="button">Ouvrir la fiche</button>
-      <div class="format-details">
-        <a class="download-btn disabled" href="formats/Réunion rapide interne.jpg" download="Réunion rapide interne.jpg">Téléchargement réservé</a>
-      </div>
+    <!-- FAMILLE D -->
+    <div class="category-block reveal" data-family="D">
+        <h2 class="category-title">D. Clarifier</h2>
+        <div class="formats-grid">
+            <div class="card-premium format-card locked" data-download="CQQCOQP.jpg">
+                <h3>CQQCOQP</h3>
+                <p>Le socle universel pour cerner complètement et rigoureusement un problème.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="CQQCOQP.jpg" alt="CQQCOQP" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Arbre des causes.jpg">
+                <h3>Arbre des causes</h3>
+                <p>Remonter méthodiquement la chaîne d'événements liés à un incident.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Arbre des causes.jpg" alt="Arbre des causes" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="5 POURQUOI.jpg">
+                <h3>5 Pourquoi</h3>
+                <p>Forer en profondeur pour toucher la cause racine d'un dysfonctionnement.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="5 POURQUOI.jpg" alt="5 Pourquoi" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Carte d’empathie.jpg">
+                <h3>Carte d’empathie</h3>
+                <p>Se mettre profondément à la place de l'utilisateur ou du client.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Carte d’empathie.jpg" alt="Carte d’empathie" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Matrice Importance _ Urgence.jpg">
+                <h3>Matrice Importance / Urgence</h3>
+                <p>Filtrer sa charge mentale et structurer ses priorités opérationnelles.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Matrice Importance _ Urgence.jpg" alt="Matrice Importance Urgence" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Frise chronologique.jpg">
+                <h3>Frise chronologique</h3>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Frise chronologique.jpg" alt="Frise chronologique" class="protected">
+            </div>
+        </div>
     </div>
 
-    <!-- SILENCE PRODUCTIF -->
-    <div class="format-card premium-format-card locked" data-cat="A" data-download="formats/Silence productif.jpg">
-      <div class="format-tag">A</div>
-      <div class="format-name">Silence productif</div>
-      <div class="format-short">Réflexion individuelle silencieuse</div>
-      <div class="format-meta"><span>5–10 min</span><span>Toute taille</span></div>
-      <button class="card-toggle" type="button">Ouvrir la fiche</button>
-      <div class="format-details">
-        <a class="download-btn disabled" href="formats/Silence productif.jpg" download="Silence productif.jpg">Téléchargement réservé</a>
-      </div>
+    <!-- FAMILLE E -->
+    <div class="category-block reveal" data-family="E">
+        <h2 class="category-title">E. Créer du lien</h2>
+        <div class="formats-grid">
+            <div class="card-premium format-card locked" data-download="Météo intérieure.jpg">
+                <h3>Météo intérieure</h3>
+                <p>Prendre le pouls émotionnel de l'équipe avant de travailler.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Météo intérieure.jpg" alt="Météo intérieure" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Portrait chinois.jpg">
+                <h3>Portrait chinois</h3>
+                <p>Découvrir ses collègues sous un angle ludique et métaphorique.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Portrait chinois.jpg" alt="Portrait chinois" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Speed friending.jpg">
+                <h3>Speed friending</h3>
+                <p>Connecter rapidement les binômes pour briser la glace.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Speed friending.jpg" alt="Speed friending" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Cercle d’ouverture.jpg">
+                <h3>Cercle d’ouverture</h3>
+                <p>Instaurer une écoute profonde et un espace de parole authentique.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Cercle d’ouverture.jpg" alt="Cercle d’ouverture" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Photo langage.jpg">
+                <h3>Photo langage</h3>
+                <p>Projeter sa vision ou son ressenti à travers la force d'une image.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Photo langage.jpg" alt="Photo langage" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Cercle de Compliments.jpg">
+                <h3>Cercle de Compliments</h3>
+                <p>Renforcer l'engagement individuel par la reconnaissance positive.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Cercle de Compliments.jpg" alt="Cercle de Compliments" class="protected">
+            </div>
+        </div>
     </div>
 
-    <!-- ROUND ROBIN -->
-    <div class="format-card premium-format-card locked" data-cat="A" data-download="formats/Round Robin.jpg">
-      <div class="format-tag">A</div>
-      <div class="format-name">Round Robin</div>
-      <div class="format-short">Tour de table structuré</div>
-      <div class="format-meta"><span>10–15 min</span><span>Toute taille</span></div>
-      <button class="card-toggle" type="button">Ouvrir la fiche</button>
-      <div class="format-details">
-        <a class="download-btn disabled" href="formats/Round Robin.jpg" download="Round Robin.jpg">Téléchargement réservé</a>
-      </div>
+    <!-- FAMILLE F -->
+    <div class="category-block reveal" data-family="F">
+        <h2 class="category-title">F. Faire un bilan</h2>
+        <div class="formats-grid">
+            <div class="card-premium format-card locked" data-download="Démarrer ‑ Arrêter ‑ Continuer.jpg">
+                <h3>Démarrer - Arrêter - Continuer</h3>
+                <p>Un classique d'amélioration continue pour ajuster immédiatement le tir.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Démarrer ‑ Arrêter ‑ Continuer.jpg" alt="Démarrer Arrêter Continuer" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Rétrospective 4L">
+                <h3>Rétrospective 4L</h3>
+                <p>Analyser un sprint via : Liked, Learned, Lacked, Longed for.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Rétrospective 4L.jpg" alt="Rétrospective 4L" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Feedback 360° express.jpg">
+                <h3>Feedback 360° express</h3>
+                <p>Partager des retours constructifs croisés en un temps record.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Feedback 360° express.jpg" alt="Feedback 360 express" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Bilan en 1 mot.jpg">
+                <h3>Bilan en 1 mot</h3>
+                <p>Synthétiser l'état d'esprit général ou l'avis de fin de session.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Bilan en 1 mot.jpg" alt="Bilan en 1 mot" class="protected">
+            </div>
+            <div class="card-premium format-card locked" data-download="Rose ‑ Épine ‑ Bourgeon.jpg">
+                <h3>Rose - Épine - Bourgeon</h3>
+                <p>Faire émerger les victoires, les points de friction et le potentiel à venir.</p>
+                <div class="card-actions">
+                    <button class="btn btn-outline card-toggle">Ouvrir la fiche</button>
+                    <a class="btn disabled download-btn">Aperçu verrouillé</a>
+                </div>
+                <img src="Rose ‑ Épine ‑ Bourgeon.jpg" alt="Rose Épine Bourgeon" class="protected">
+            </div>
+        </div>
     </div>
 
-  </div>
-</div>
+</main>
 
-
-
-
-
-<section class="access-section" id="demander-acces">
-<div class="access-panel">
-<h2>Accès réservé aux formats</h2>
-<p>Les formats de poche sont accessibles sur demande. L’objectif : garantir un usage professionnel, contextualisé et aligné avec la posture de facilitation.</p>
-
-<div class="access-steps">
-<div class="access-step">
-<strong>1</strong>
-Faire une demande
-</div>
-<div class="access-step">
-<strong>2</strong>
-Recevoir le code
-</div>
-<div class="access-step">
-<strong>3</strong>
-Déverrouiller les fiches
-</div>
-</div>
-</div>
-<div class="access-form">
-<h2>Demander l’accès</h2>
-<p class="form-sub">Quelques informations pour comprendre votre contexte d’usage.</p>
-
-<form action="https://formspree.io/f/mnqekrkj" method="POST">
-<div class="form-row">
-<div class="form-group">
-<label for="prenom">Prénom</label>
-<input id="prenom" name="prenom" required="" type="text"/>
-</div>
-
-<div class="form-group">
-<label for="nom">Nom</label>
-<input id="nom" name="nom" required="" type="text"/>
-</div>
-</div>
-
-<div class="form-row">
-<div class="form-group">
-<label for="email">Adresse e‑mail</label>
-<input id="email" name="email" required="" type="email"/>
-</div>
-
-<div class="form-group">
-<label for="organisation">Organisation</label>
-<input id="organisation" name="organisation" type="text"/>
-</div>
-</div>
-
-<div class="form-group">
-<label for="profil">Votre profil</label>
-<select id="profil" name="profil">
-<option value="">Sélectionner</option>
-<option>Manager / responsable d’équipe</option>
-<option>Formateur / formatrice</option>
-<option>Facilitateur / facilitatrice</option>
-<option>Agent public / collectivité</option>
-<option>Consultant / accompagnant</option>
-<option>Autre</option>
-</select>
-</div>
-
-<div class="form-group">
-<label for="linkedin">Lien LinkedIn</label>
-<input id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/..." type="url"/>
-</div>
-
-<div class="form-group">
-<label for="message">Pourquoi souhaitez-vous accéder aux formats ?</label>
-<textarea id="message" name="message" placeholder="Quelques mots sur votre contexte, vos besoins ou vos usages possibles."></textarea>
-</div>
-
-<button class="btn form-submit" type="submit">Envoyer ma demande</button>
-<p class="form-note">Les informations transmises servent uniquement à traiter votre demande d’accès.</p>
-</form>
-</div>
-</section>
-<div class="related-links">
-<a class="related-card" href="formations.html">
-<h3>Voir les formations</h3>
-<p>Découvrir les parcours et formats d’intervention proposés autour de l’intelligence collective.</p>
-</a>
-
-<a class="related-card" href="enaction.html">
-<h3>Voir la pratique en images</h3>
-<p>Explorer des exemples concrets d’ateliers, de supports et de situations facilitées.</p>
-</a>
-
-<a class="related-card" href="contact.html">
-<h3>Parler d’un besoin</h3>
-<p>Échanger sur un projet, une formation, une équipe ou une problématique collective.</p>
-</a>
-</div>
+<!-- FOOTER IMMERSIF PREMIUM V2 -->
 <footer>
-<div class="footer-inner">
-<div>
-<div class="footer-logo">Arnaud SIMART</div>
-<div class="footer-tagline">Facilitateur &amp; formateur en intelligence collective<br/>Appui managérial et gestion de projet</div>
-</div>
-
-<div>
-<ul class="footer-links">
-<li><a href="index.html">Accueil</a></li>
-<li><a href="formations.html">Formations</a></li>
-<li><a href="apropos.html">À propos</a></li>
-<li><a href="enaction.html">En action</a></li>
-</ul>
-</div>
-
-<div>
-<ul class="footer-links">
-<li><a href="lesformats.html">Les formats de poche</a></li>
-<li><a href="temoignages.html">Témoignages</a></li>
-<li><a href="contact.html">Contact</a></li>
-<li><a href="mentionslegales.html">Mentions légales</a></li>
-</ul>
-</div>
-</div>
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">Arnaud Simart</div>
+            <p class="footer-tagline">Accompagnement, formation & outils premium d'intelligence collective pour les équipes de terrain.</p>
+        </div>
+        <div>
+            <div class="footer-title">Navigation</div>
+            <ul class="footer-links">
+                <li><a href="lesformats.html">Les formats de poche</a></li>
+                <li><a href="temoignages.html">Témoignages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="mentionslegales.html">Mentions légales</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-title">Ressources</div>
+            <ul class="footer-links">
+                <li><a href="#demander-acces">Demander un code</a></li>
+                <li><a href="https://linkedin.com" target="_blank" class="footer-linkedin">Mon profil LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <div class="footer-title">Contact</div>
+            <p>Une question ? Un projet d'équipe ?<br>Écrivez-moi directement via la page contact.</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 Arnaud Simart — Tous droits réservés. Style Premium V2.
+    </div>
 </footer>
+
 <script>
+// --- LOGIQUE MOBILE NAVIGATION ---
+function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+}
+
+// --- PROTECTION IMAGES SÉCURISÉE ---
 document.addEventListener('contextmenu', function(event) {
-  if (event.target.tagName === 'IMG') {
-    event.preventDefault();
-  }
+  if (event.target.tagName === 'IMG' || event.target.classList.contains('protected')) event.preventDefault();
 });
-
 document.addEventListener('dragstart', function(event) {
-  if (event.target.tagName === 'IMG') {
-    event.preventDefault();
-  }
+  if (event.target.tagName === 'IMG' || event.target.classList.contains('protected')) event.preventDefault();
 });
 
+// --- LOGIQUE DE FILTRES PAR INTENTION ---
 let activeCat = null;
-let activeDuration = null;
-let activeSize = null;
-
 function applyFilters() {
-  document.querySelectorAll('.format-card').forEach(card => {
-    const matchCat = !activeCat || card.dataset.cat === activeCat;
-    const matchDuration = !activeDuration || card.dataset.duration === activeDuration;
-    const matchSize = !activeSize || card.dataset.size === activeSize;
-    card.style.display = (matchCat && matchDuration && matchSize) ? 'block' : 'none';
-  });
-
   document.querySelectorAll('.category-block').forEach(block => {
-    const visibleCards = block.querySelectorAll('.format-card[style*="block"], .format-card:not([style])');
-    let hasVisible = false;
-    block.querySelectorAll('.format-card').forEach(card => {
-      if (card.style.display !== 'none') hasVisible = true;
-    });
-    block.style.display = hasVisible ? 'block' : 'none';
+    const family = block.getAttribute('data-family');
+    if (!activeCat || activeCat === family) {
+        block.style.display = 'block';
+    } else {
+        block.style.display = 'none';
+    }
   });
 }
 
 function selectIntent(cat) {
   activeCat = (cat === 'all') ? null : cat;
-
   document.querySelectorAll('.mode-buttons button').forEach(btn => btn.classList.remove('active'));
-  const labels = {
-    all: 'Tout voir',
-    A: 'Se synchroniser',
-    B: 'Décider',
-    C: 'Générer des idées',
-    D: 'Clarifier',
-    E: 'Créer du lien',
-    F: 'Faire un bilan'
-  };
-
+  
+  const labels = { all: 'Tout voir', A: 'Se synchroniser', B: 'Décider', C: 'Générer des idées', D: 'Clarifier', E: 'Créer du lien', F: 'Faire un bilan' };
   document.querySelectorAll('.mode-buttons button').forEach(btn => {
     if (btn.textContent.trim() === labels[cat]) btn.classList.add('active');
   });
 
   applyFilters();
 }
-document.querySelectorAll('.filter-btn[data-duration]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn[data-duration]').forEach(b => b.classList.remove('active'));
-    if (activeDuration === btn.dataset.duration) {
-      activeDuration = null;
-    } else {
-      activeDuration = btn.dataset.duration;
-      btn.classList.add('active');
-    }
-    applyFilters();
-  });
-});
 
-document.querySelectorAll('.filter-btn[data-size]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn[data-size]').forEach(b => b.classList.remove('active'));
-    if (activeSize === btn.dataset.size) {
-      activeSize = null;
-    } else {
-      activeSize = btn.dataset.size;
-      btn.classList.add('active');
-    }
-    applyFilters();
-  });
-});
-
-document.querySelector('.filter-reset').addEventListener('click', () => {
-  activeCat = null;
-  activeDuration = null;
-  activeSize = null;
-  document.querySelectorAll('.filter-btn, .mode-buttons button').forEach(b => b.classList.remove('active'));
-  document.querySelector('.mode-buttons button').classList.add('active');
-  applyFilters();
-});
+// --- INTERACTION OUVERTURE CARTES ---
 document.querySelectorAll('.format-card').forEach(card => {
   const toggle = card.querySelector('.card-toggle');
   if (!toggle) return;
 
   toggle.addEventListener('click', function(event) {
     event.stopPropagation();
-
     if (card.classList.contains('locked') && !card.classList.contains('unlocked') && !card.classList.contains('demo-card')) {
       document.getElementById('demander-acces').scrollIntoView({ behavior: 'smooth', block: 'start' });
       return;
     }
-
     card.classList.toggle('open');
     toggle.textContent = card.classList.contains('open') ? 'Refermer la fiche' : (card.classList.contains('demo-card') ? 'Ouvrir la fiche démo' : 'Ouvrir la fiche');
   });
 });
 
-/* Remplacer la valeur ci-dessous par le code que tu souhaites transmettre aux personnes autorisées. */
+// --- SYSTEME DE DEVERROUILLAGE ---
 const FORMAT_ACCESS_CODE = 'FORMAT-POCHE';
 
 function unlockFormats() {
@@ -1122,12 +669,9 @@ function unlockFormats() {
       const card = btn.closest('.format-card');
       const file = card.getAttribute('data-download');
       btn.classList.remove('disabled');
-      btn.textContent = 'Télécharger la fiche';
+      btn.textContent = 'Télécharger';
       if (file) {
         btn.setAttribute('href', file);
-        btn.setAttribute('download', file.split('/').pop());
-        btn.setAttribute('target', '_blank');
-        btn.setAttribute('rel', 'noopener');
       }
     });
 
@@ -1139,66 +683,17 @@ function unlockFormats() {
     status.classList.remove('ok');
   }
 }
-function openAll() {
-  document.querySelectorAll('.format-card:not(.locked), .format-card.demo-card').forEach(card => {
-    card.classList.add('open');
-    const toggle = card.querySelector('.card-toggle');
-    if (toggle) toggle.textContent = 'Refermer la fiche';
-  });
-}
 
-function closeAll() {
-  document.querySelectorAll('.format-card').forEach(card => {
-    card.classList.remove('open');
-    const toggle = card.querySelector('.card-toggle');
-    if (toggle) toggle.textContent = card.classList.contains('demo-card') ? 'Ouvrir la fiche démo' : 'Ouvrir la fiche';
-  });
-}
-
-function exportPDF() {
-  const selected = Array.from(document.querySelectorAll('.format-card.unlocked.open, .format-card.demo-card.open'));
-  if (selected.length === 0) {
-    alert('Ouvrez au moins une fiche accessible avant d’exporter.');
-    return;
-  }
-
-  const printArea = document.createElement('div');
-  printArea.id = 'printArea';
-  selected.forEach(card => printArea.appendChild(card.cloneNode(true)));
-  document.body.appendChild(printArea);
-  window.print();
-  document.body.removeChild(printArea);
-}
-
+// --- REVEAL ANIMATION AU SCROLL ---
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.collection-card, .format-card, .related-card, .bonus-intro, .access-section, .unlock-box').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(16px)';
-  el.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+document.querySelectorAll('.reveal').forEach(el => {
   observer.observe(el);
 });
-
-const style = document.createElement('style');
-style.textContent = `.visible{opacity:1!important;transform:translateY(0)!important;}`;
-document.head.appendChild(style);
 </script>
-
-<!-- DEBUG TELECHARGEMENT
-Pour vérifier le dépôt, ouvrir directement :
-https://arnaud-simart.fr/formats/daily-standup.pdf
-Si cette adresse ne fonctionne pas, le problème vient du dépôt GitHub, pas du code.
--->
-
 </body>
 </html>
-
-
-
-
