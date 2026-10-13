@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Kit facilitateur — Jenga détourné, le cadre commun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; --vert:#2F6E5C; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:38px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .bloc{ border-radius:14px; padding:18px 22px; margin-bottom:14px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-corail{ background:#FFF0EE; border:1px solid var(--corail); }
+  .bloc-title{ font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:8px; }
+  .bloc p{ margin:0 0 8px 0; font-size:14px; }
+  .bloc p:last-child{ margin-bottom:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:5px; font-size:14px; }
+
+  .etape{ display:flex; gap:16px; margin-bottom:18px; align-items:flex-start; }
+  .etape-num{ background:var(--bleu); color:#fff; width:32px;height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .etape-content{ flex:1; }
+  .etape-content .titre{ font-weight:700; color:var(--bleu); font-size:14.5px; margin-bottom:3px; }
+  .etape-content p{ margin:0; font-size:13.5px; color:#3A4552; }
+
+  .banque{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px; }
+  .carte-regle{ background:#fff; border:2px solid var(--gris); border-radius:10px; padding:10px 14px; font-size:12.5px; }
+  .carte-regle .cat{ font-family:'Patrick Hand',cursive; font-size:11.5px; color:var(--corail); display:block; margin-bottom:2px; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="tag">Kit facilitateur — Jour 1, 9h30-9h50</span>
+    <h1>Jenga détourné — Le cadre commun</h1>
+    <p>La tour grandit avec le groupe, personne ne veut la faire tomber</p>
+  </div>
+
+  <h2><span class="h2num">1</span>Intention</h2>
+  <div class="bloc bloc-gris">
+    <p style="margin-bottom:0;">Co-construire un cadre de fonctionnement pour les deux jours, en douceur, sans rapport de force. Comportements recherchés : proposer, écouter, accepter de lâcher une idée si le groupe ne la retient pas, prendre soin collectivement de quelque chose de fragile. La mécanique qui produit ça : construction progressive et prise de risque partagée, la tour est le miroir du groupe.</p>
+  </div>
+
+  <h2><span class="h2num">2</span>Matériel</h2>
+  <div class="bloc bloc-jaune">
+    <ul style="margin-bottom:0;">
+      <li>Un jeu de Jenga classique (54 pièces), monté en tour de 18 étages avant l'arrivée du groupe</li>
+      <li>Un paperboard ou une grande feuille, intitulée "Notre cadre pour les deux jours", affichée à côté de la tour</li>
+      <li>Un feutre</li>
+      <li>La banque de propositions ci-dessous, imprimée ou gardée en tête, pour dépanner ceux qui sèchent</li>
+    </ul>
+  </div>
+
+  <h2><span class="h2num">3</span>Déroulé, pas à pas</h2>
+
+  <div class="etape">
+    <div class="etape-num">1</div>
+    <div class="etape-content">
+      <div class="titre">Consigne de lancement (1 min)</div>
+      <p>"Cette tour va devenir le cadre de fonctionnement de nos deux jours ensemble. Chacun votre tour, vous allez retirer une brique n'importe où dans la tour, sans la faire tomber. En la retirant, vous proposez une règle de fonctionnement pour le groupe, une seule phrase. Le groupe en discute quelques secondes, on la garde ou pas. Dans tous les cas, la brique revient se poser en haut de la tour. La tour grandit avec nous."</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-num">2</div>
+    <div class="etape-content">
+      <div class="titre">Le tour de jeu (environ 60-70 secondes par personne)</div>
+      <p>La personne retire une brique, propose sa règle à voix haute. Je lance un tour de réactions très court (10-15 secondes maximum, un ou deux avis suffisent). Je tranche vite si ça traîne : "on la garde" ou "on la laisse de côté". Si retenue, je la note sur le paperboard. La brique est reposée en haut, quelle que soit la décision.</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-num">3</div>
+    <div class="etape-content">
+      <div class="titre">Le tirage (aléatoire, pas de volontariat)</div>
+      <p>Je fais tourner dans l'ordre des places assises, ou je tire un prénom au hasard dans le tas de badges du Bingo qui vient de se terminer. Personne ne se porte volontaire, personne ne peut se dérober, ce qui évite que seuls les plus à l'aise proposent des règles.</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-num">4</div>
+    <div class="etape-content">
+      <div class="titre">Si quelqu'un sèche</div>
+      <p>Je propose deux ou trois exemples de la banque ci-dessous, sans jamais choisir à sa place, juste pour débloquer l'imagination. Je ne laisse jamais un silence gênant s'installer plus de 5-6 secondes.</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-num">5</div>
+    <div class="etape-content">
+      <div class="titre">Si la tour tombe</div>
+      <p>Je ne dramatise jamais. Ma phrase prête à l'avance : "Elle tombe, on la reconstruit, et on continue." Je reconstruis en 30 secondes avec les règles déjà retenues, sans les redemander. C'est souvent un moment fort, presque toujours accueilli avec un rire collectif plutôt qu'une gêne, à condition que mon ton reste léger.</p>
+    </div>
+  </div>
+
+  <div class="etape">
+    <div class="etape-num">6</div>
+    <div class="etape-content">
+      <div class="titre">Clôture et bascule (30 secondes)</div>
+      <p>Je récapitule les règles retenues affichées sur le paperboard, je le laisse visible pour les deux jours. Puis, avant d'enchaîner sur la suite : "Ce que vous venez de faire a un nom, on y reviendra plus tard dans la journée." Rien de plus, juste planter la graine du jeu détourné sans développer, le grand dévoilement de midi s'en chargera.</p>
+    </div>
+  </div>
+
+  <h2><span class="h2num">4</span>Banque de propositions, en secours</h2>
+  <div class="banque">
+    <div class="carte-regle"><span class="cat">Fonctionnement pratique</span>On coupe les téléphones, ou on les met en silencieux visible sur la table</div>
+    <div class="carte-regle"><span class="cat">Fonctionnement pratique</span>On respecte les horaires de pause annoncés</div>
+    <div class="carte-regle"><span class="cat">Fonctionnement pratique</span>Chacun peut sortir de la salle sans avoir à se justifier</div>
+    <div class="carte-regle"><span class="cat">Posture</span>Droit à l'erreur, ici on peut se tromper sans être jugé</div>
+    <div class="carte-regle"><span class="cat">Posture</span>On ne juge pas une idée avant qu'elle soit terminée</div>
+    <div class="carte-regle"><span class="cat">Posture</span>On peut dire "je ne suis pas d'accord" sans avoir à se justifier longuement</div>
+    <div class="carte-regle"><span class="cat">Participation</span>On essaie de laisser de la place à ceux qui parlent moins</div>
+    <div class="carte-regle"><span class="cat">Participation</span>On a le droit de passer son tour sans explication</div>
+    <div class="carte-regle"><span class="cat">Participation</span>Une seule personne parle à la fois</div>
+    <div class="carte-regle"><span class="cat">Énergie</span>L'humour est autorisé, même pendant les moments sérieux</div>
+    <div class="carte-regle"><span class="cat">Énergie</span>On respecte les silences, ils ne sont pas gênants</div>
+    <div class="carte-regle"><span class="cat">Énergie</span>Ce qui se dit ici reste ici, sauf accord contraire</div>
+  </div>
+
+  <div style="text-align:center;">
+    <span class="postit">On ne dit jamais "ne faites pas tomber la tour", ils s'en chargent tout seuls</span>
+  </div>
+
+  <h2><span class="h2num">5</span>Points de vigilance</h2>
+  <div class="bloc bloc-corail">
+    <ul style="margin-bottom:0;">
+      <li>Ne jamais laisser une règle sans trancher, ça casse le rythme. Décider vite, quitte à revenir dessus plus tard dans la journée si besoin.</li>
+      <li>À 15 personnes sur 20 minutes, viser environ 70-80 secondes par tour. Recadrer gentiment si une discussion s'éternise.</li>
+      <li>La banque de secours ne doit jamais être lue telle quelle à voix haute comme une liste, sinon ça tue l'effet de proposition spontanée. Elle sert seulement à débloquer une personne en particulier, en aparté.</li>
+      <li>Garder le paperboard des règles retenues affiché et visible pendant toute la formation, il devient une référence à laquelle on peut renvoyer le groupe si besoin le jour 2.</li>
+    </ul>
+  </div>
+
+  <footer>
+    Arnaud Simart · Facilitateur & formateur en intelligence collective
+  </footer>
+
+</div>
+</body>
+</html>
