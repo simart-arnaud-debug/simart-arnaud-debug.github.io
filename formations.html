@@ -348,6 +348,129 @@
     white-space:nowrap;
 }
 
+/* ===== JEU & CRÉATIVITÉ ===== */
+
+.jeu-crea-head{
+    max-width:780px;
+    margin-bottom:34px;
+}
+
+.jeu-crea-head h2{
+    color:var(--bleu);
+    font-size:38px;
+    line-height:1.15;
+    margin:14px 0 14px;
+}
+
+.jeu-crea-head p{
+    color:#555;
+    font-size:16px;
+    line-height:1.85;
+}
+
+.hand-note{
+    font-family:'Patrick Hand',cursive;
+    color:var(--corail);
+    font-size:22px;
+}
+
+.status-pill{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.status-pill::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:currentColor;
+}
+
+.status-done{
+    background:rgba(28,63,96,0.08);
+    color:var(--bleu);
+}
+
+.status-soon{
+    background:var(--jaune);
+    color:var(--bleu);
+}
+
+.formation-block.crea::after{
+    background:rgba(255,111,97,0.14);
+}
+
+.formation-col li strong{
+    color:var(--bleu);
+}
+
+.formation-quote{
+    margin-top:28px;
+    background:var(--gris);
+    border-left:5px solid var(--jaune);
+    border-radius:0 20px 20px 0;
+    padding:22px 26px;
+    font-family:'Patrick Hand',cursive;
+    font-size:21px;
+    line-height:1.5;
+    color:var(--bleu);
+    position:relative;
+    z-index:2;
+}
+
+.stagiaires-access{
+    margin-top:10px;
+    background:var(--jaune);
+    border-radius:26px;
+    padding:30px 34px;
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    gap:24px;
+    align-items:center;
+}
+
+.stagiaires-icon{
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.stagiaires-access h3{
+    color:var(--bleu);
+    font-size:21px;
+    margin-bottom:4px;
+}
+
+.stagiaires-access p{
+    color:#4d4d4d;
+    font-size:15px;
+    line-height:1.7;
+    margin:0;
+}
+
+@media(max-width:800px){
+    .stagiaires-access{
+        grid-template-columns:1fr;
+        padding:26px;
+    }
+    .jeu-crea-head h2{
+        font-size:30px;
+    }
+}
+
 @media(max-width:1000px){
 
     .intro-card,
@@ -694,6 +817,156 @@
 
     </div>
 
+</div>
+
+</section>
+
+<!-- ===== JEU & CRÉATIVITÉ ===== -->
+
+<section class="section" id="jeu-creativite" style="padding-top:0;">
+
+<div class="jeu-crea-head">
+    <div class="badge">Jeu & créativité</div>
+    <h2>Mettre du mouvement dans les groupes</h2>
+    <p>
+        Le jeu pour souder une équipe, la créativité pour l'aider à inventer.
+        Deux formations qui se vivent les mains dans la matière.
+    </p>
+</div>
+
+<!-- FORMATION JEU -->
+
+<div class="formation-block" id="jeu-dynamique-groupe">
+
+    <div class="formation-header">
+        <div>
+            <div class="status-pill status-done">Formation dispensée · CNFPT Grand Est</div>
+            <h2>Le jeu pour stimuler la dynamique de groupe et l'animation d'une équipe</h2>
+            <p>
+                Deux jours pour vivre le jeu, le comprendre, puis oser l'utiliser.
+                Pas de diaporama, pas de cours magistral : on joue d'abord, on met des mots ensuite.
+                Et chacun repart avec un format ludique conçu sur une vraie situation de son travail.
+            </p>
+        </div>
+        <div class="formation-meta">
+            <strong>2 jours</strong>
+            <span>Présentiel · 15 stagiaires</span>
+        </div>
+    </div>
+
+    <div class="formation-body">
+        <div class="formation-col">
+            <h4>Objectifs</h4>
+            <ul>
+                <li>Reconnaître les bénéfices de la ludification dans l'animation de temps collectifs</li>
+                <li>Identifier des méthodes et outils ludiques pour animer un groupe</li>
+                <li>Concevoir des animations ludiques qui favorisent engagement et créativité</li>
+                <li>Prendre confiance dans ses animations grâce aux leviers ludiques</li>
+            </ul>
+        </div>
+        <div class="formation-col">
+            <h4>Programme</h4>
+            <ul>
+                <li><strong>Jour 1</strong> : se rencontrer, se cadrer, vivre et comprendre. Bingo humain, Jenga détourné, Bataille Navale des Intentions, Taboo des notions en classe inversée</li>
+                <li><strong>Jour 2</strong> : concevoir, prototyper, oser. Escape game « La Salle des Mécanismes », puis conception et test de son propre format</li>
+                <li>En fil rouge : ludopédagogie, flow, autodétermination, nudge, profils de joueurs, et les limites du jeu</li>
+            </ul>
+        </div>
+        <div class="formation-col">
+            <h4>Méthodes</h4>
+            <ul>
+                <li>Jeux du commerce détournés (Jenga, UNO, Taboo, Skyjo, Blokus...)</li>
+                <li>Escape game conçu sur mesure</li>
+                <li>Classe inversée et photolangage</li>
+                <li>Prototypage et tests croisés entre pairs</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="formation-quote">
+        « Introduire le jeu dans nos pratiques, ce n'est pas rendre le travail moins sérieux.
+        C'est trouver une autre manière de travailler sérieusement. »
+    </div>
+
+    <div class="formation-cta">
+        <div class="formation-public">
+            <strong>Public :</strong> agents et cadres qui animent réunions, ateliers, groupes de travail ou concertations
+        </div>
+        <a href="contact.html" class="btn">Organiser cette formation →</a>
+    </div>
+
+</div>
+
+<!-- FORMATION CRÉATIVITÉ -->
+
+<div class="formation-block crea" id="techniques-creativite">
+
+    <div class="formation-header">
+        <div>
+            <div class="status-pill status-soon">Prochainement · CNFPT</div>
+            <h2>Les techniques de créativité pour dynamiser un groupe et innover</h2>
+            <p>
+                <span class="hand-note">Cultiver la créativité</span><br>
+                La créativité n'est pas un don réservé à quelques-uns. Elle se travaille, et elle se cultive en équipe.
+                Trois jours sur un vrai défi de service, avec presque rien : du carton, de la ficelle, des magazines.
+            </p>
+        </div>
+        <div class="formation-meta">
+            <strong>3 jours</strong>
+            <span>Présentiel · 8 à 14 stagiaires</span>
+        </div>
+    </div>
+
+    <div class="formation-body">
+        <div class="formation-col">
+            <h4>Objectifs</h4>
+            <ul>
+                <li>Comprendre le fonctionnement de la créativité, ses étapes et ses freins</li>
+                <li>Situer et développer sa propre capacité créative</li>
+                <li>Mobiliser les techniques usuelles selon la situation</li>
+                <li>Choisir, exploiter et évaluer les idées d'un groupe</li>
+                <li>Concevoir et animer une courte séance de créativité dans son service</li>
+            </ul>
+        </div>
+        <div class="formation-col">
+            <h4>Programme</h4>
+            <ul>
+                <li><strong>Jour 1</strong> : réveiller sa créativité. Défi spaghetti, « oui mais » contre « oui, et », détournement d'objets, brainstorming</li>
+                <li><strong>Jour 2</strong> : créer à plusieurs, puis choisir. Crazy 8, techniques de détour, carte mentale, World Café en mouvement</li>
+                <li><strong>Jour 3</strong> : concevoir et animer. Posture de l'animateur, mini séance en binôme, mises en situation</li>
+            </ul>
+        </div>
+        <div class="formation-col">
+            <h4>Méthodes</h4>
+            <ul>
+                <li>Fil rouge : les 4 personnalités du créatif (von Oech, Brasseur)</li>
+                <li>Diverger, incuber, converger</li>
+                <li>Fabrication chaque jour avec des matériaux de récupération</li>
+                <li>Un carnet de recettes personnel, complété à chaque séquence</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="formation-cta">
+        <div class="formation-public">
+            <strong>Public :</strong> pilotes de projet, animateurs de réunion, tout agent curieux de créativité. Aucun prérequis.
+        </div>
+        <a href="contact.html" class="btn">Être informé·e des dates →</a>
+    </div>
+
+</div>
+
+<!-- ACCÈS STAGIAIRES -->
+
+<div class="stagiaires-access">
+    <div class="stagiaires-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1C3F60" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="3"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+    </div>
+    <div>
+        <h3>Vous avez suivi la formation sur le jeu ?</h3>
+        <p>Retrouvez vos supports et ressources dans votre espace stagiaires, avec le code remis en fin de session.</p>
+    </div>
+    <a href="espace-stagiaires-jeu.html" class="btn">Accéder à mon espace →</a>
 </div>
 
 </section>
