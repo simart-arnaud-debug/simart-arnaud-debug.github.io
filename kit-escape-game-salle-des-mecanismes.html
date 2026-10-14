@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Kit facilitateur — Escape Game "La Salle des Mécanismes"</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:42px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .defi{ border:2px solid var(--gris); border-radius:18px; padding:22px 26px; margin-bottom:20px; }
+  .defi-header{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px; }
+  .defi-title{ font-size:16px; font-weight:700; color:var(--bleu); }
+  .defi-mecanique{ font-family:'Patrick Hand',cursive; font-size:14px; color:var(--corail); background:#FFF0EE; padding:4px 12px; border-radius:14px; }
+
+  .bloc{ border-radius:12px; padding:14px 18px; margin-bottom:10px; font-size:13.5px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-title{ font-weight:700; font-size:11.5px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:6px; }
+  .bloc p{ margin:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:3px; }
+
+  .code-box{ display:inline-flex; align-items:center; gap:8px; background:var(--bleu); color:#fff; padding:6px 16px; border-radius:10px; font-weight:700; font-size:15px; letter-spacing:2px; margin-top:6px; }
+  .letter-box{ display:inline-flex; align-items:center; gap:8px; background:var(--corail); color:#fff; padding:6px 16px; border-radius:10px; font-weight:700; font-size:18px; margin-top:6px; }
+
+  .affiche{ background:#fff; border:2px dashed var(--corail); border-radius:12px; padding:14px 18px; margin-top:6px; font-size:13.5px; font-style:italic; color:#3A4552; }
+
+  table{ width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+  th, td{ border:1px solid #ddd; padding:6px 10px; text-align:left; }
+  th{ background:var(--gris); }
+
+  .final-word{ text-align:center; margin:40px 0; }
+  .final-word .letters{ display:flex; justify-content:center; gap:10px; margin-top:14px; }
+  .final-word .letters span{ background:var(--jaune); color:var(--noir); font-weight:700; font-size:26px; width:50px; height:50px; border-radius:10px; display:flex; align-items:center; justify-content:center; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,0.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+
+  /* ===== Impression A4 : une page par défi ===== */
+  @page { size: A4; margin: 14mm; }
+  @media print {
+    body { background:#fff; }
+    .page { max-width:none; margin:0; padding:0; }
+    .hero, .bloc, .defi, .affiche, .code-box, .letter-box, .letters, .final-word, .postit { break-inside: avoid; page-break-inside: avoid; }
+    /* chaque défi démarre sur une nouvelle page */
+    .defi { break-before: page; page-break-before: always; margin-bottom:0; }
+    /* la section "Le débrief" repart aussi sur une page propre, après le 7e défi */
+    h2 { break-after: avoid; page-break-after: avoid; }
+    .page-break-avant { break-before: page; page-break-before: always; }
+
+    /* Resserrage print pour maximiser un défi par page */
+    body { font-size: 13px; line-height: 1.4; }
+    .defi { padding: 14px 18px; }
+    .defi table { font-size: 12px; }
+    .defi td, .defi th { padding: 4px 8px; }
+    .bloc { padding: 12px 16px; margin: 8px 0; }
+    .affiche { padding: 10px 14px; font-size: 12.5px; }
+    h2 { font-size: 18px; margin: 6px 0 10px; }
+    a { color: inherit; text-decoration: none; }
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="tag">Kit facilitateur — Ouverture du Jour 1</span>
+    <h1>Escape Game "La Salle des Mécanismes"</h1>
+    <p>Une station unique, sept défis, groupe complet de 15</p>
+  </div>
+
+  <h2><span class="h2num">1</span>Principe général</h2>
+  <div class="bloc bloc-gris">
+    <p>Six défis sont accessibles en même temps, dans n'importe quel ordre. Le groupe se répartit spontanément en mini-équipes de 2 à 4, sans consigne de répartition de ma part. Chaque défi résolu ouvre un cadenas à code, qui contient une affiche et un jeton avec une lettre et un chiffre. Le chiffre ne sert qu'à ouvrir son propre cadenas, il n'est réutilisé nulle part ensuite. Ce sont les lettres des boîtes 1 à 5 qui comptent pour la suite. Le septième cadenas, à mot de 5 lettres, ne s'ouvre qu'une fois les six premiers résolus.</p>
+  </div>
+
+  <div class="bloc bloc-jaune">
+    <div class="bloc-title">🔒 Ce qui muscle la difficulté cette fois</div>
+    <ul>
+      <li><strong>Un sablier ou un minuteur géant, visible de toute la salle, tourne pour l'ensemble du dispositif</strong>, pas seulement pour le défi 6. Le temps s'écoule pour tout le monde en même temps, ce qui crée une vraie pression collective : les mini-équipes ont intérêt à se signaler leurs avancées entre elles plutôt qu'à travailler chacune dans son coin jusqu'au bout.</li>
+      <li><strong>La méthode de calcul n'est jamais affichée à côté du défi qu'elle résout.</strong> Pour deux défis, la règle qui permet de transformer une réponse en code est planquée dans le matériel d'un autre défi. Il faut donc explorer, pas seulement résoudre.</li>
+      <li><strong>Des fausses pistes volontaires</strong>, qui ressemblent à s'y méprendre à de vrais éléments de jeu, mais qui mènent à une impasse si on les suit jusqu'au bout.</li>
+      <li><strong>Le défi physique (n°6) a en plus son propre chrono caché</strong>, personne ne voit le temps qui lui est spécifiquement alloué, seulement le début et la fin annoncés à voix haute.</li>
+    </ul>
+  </div>
+
+  <h2><span class="h2num">2</span>Matériel global à préparer</h2>
+  <div class="bloc bloc-jaune">
+    <ul>
+      <li>8 cadenas à code réutilisables : 1 cadenas à 3 chiffres (défi 1), 5 cadenas à 4 chiffres (défis 2 à 6, un zéro ajouté devant le code calculé), et 2 cadenas à 3 chiffres pour la boîte finale (défi 7)</li>
+      <li>7 boîtes ou enveloppes rigides, numérotées de 1 à 7</li>
+      <li>Un jeu de Memory (ou des cartes vierges à personnaliser), 8 cartes</li>
+      <li>3 valises circulaires avec objets de vacances collés (26 objets, 5 catégories) pour le défi 6</li>
+      <li>Un grand sablier ou un minuteur bien visible, affiché ou projeté, qui tourne pour toute la durée du dispositif (35-40 minutes), distinct du chrono caché utilisé spécifiquement au défi 6</li>
+      <li>Un mur ou un paperboard pour coller les 6 affiches au fur et à mesure</li>
+      <li>Impression des 7 affiches, du support de Memory, et des supports des défis 2 à 6 (modèles ci-dessous)</li>
+    </ul>
+  </div>
+
+  <h2><span class="h2num">3</span>Les sept défis</h2>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 1 — Le Memory détourné</span>
+      <span class="defi-mecanique">révèle : jeu détourné</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Matériel</div>
+      <p>12 cartes au total, mais seulement <strong>3 vraies paires</strong>. Les 6 autres cartes sont des mots isolés, sans jumelle nulle part dans le jeu, pour qu'ils ne sachent pas d'avance combien de paires chercher :</p>
+      <table>
+        <tr><th>Mot</th><th>Statut</th><th>Chiffre imprimé</th></tr>
+        <tr><td>ATSEM (x2)</td><td>Vraie paire</td><td>2</td></tr>
+        <tr><td>CCAS (x2)</td><td>Vraie paire</td><td>6</td></tr>
+        <tr><td>RPE (x2)</td><td>Vraie paire</td><td>4</td></tr>
+        <tr><td>DOSSIER</td><td>Carte isolée, sans jumelle</td><td>1 (leurre)</td></tr>
+        <tr><td>RÉUNION</td><td>Carte isolée, sans jumelle</td><td>3 (leurre)</td></tr>
+        <tr><td>PLANNING</td><td>Carte isolée, sans jumelle</td><td>5 (leurre)</td></tr>
+        <tr><td>USAGER</td><td>Carte isolée, sans jumelle</td><td>7 (leurre)</td></tr>
+        <tr><td>COURRIER</td><td>Carte isolée, sans jumelle</td><td>8 (leurre)</td></tr>
+        <tr><td>ACCUEIL</td><td>Carte isolée, sans jumelle</td><td>9 (leurre)</td></tr>
+      </table>
+      <p>Sur chaque carte, imprimer en tout petit dans un coin un chiffre : le même sur les deux exemplaires pour une vraie paire, un chiffre différent et sans fonction sur chaque carte isolée. Toutes les cartes portent donc un chiffre, sans exception. Sans ça, la seule présence d'un chiffre trahirait immédiatement les vraies paires, avant même d'avoir cherché à les apparier.</p>
+    </div>
+    <div class="bloc bloc-jaune">
+      <div class="bloc-title">Consigne visible dès le départ</div>
+      <p>"Retrouvez les vraies paires. Toutes les cartes n'en ont pas." (Rien de plus. Ni le nombre de paires, ni la règle de lecture des chiffres ne sont ici.)</p>
+    </div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail);">
+      <div class="bloc-title">🔎 Règle cachée, à placer ailleurs dans la salle</div>
+      <p>Imprimer au dos de la feuille du <strong>défi 5</strong> (la liste des synonymes) cette phrase, en petits caractères : "Pour le Memory : une fois les 3 vraies paires trouvées, lisez leurs chiffres dans l'ordre alphabétique des mots. Les chiffres des cartes isolées ne comptent pas." Le groupe doit donc être passé par le défi 5, ou l'explorer par hasard, pour comprendre comment lire le code du défi 1.</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Code du cadenas (3 chiffres)</div>
+    <div class="code-box">264</div>
+    <div class="bloc-title" style="margin-top:10px;">Jeton contenu dans la boîte</div>
+    <div class="letter-box">R = 3</div>
+    <div class="affiche">Affiche : "Vous venez de jouer à un jeu détourné : un jeu existant, ici un Memory, dont on a changé l'habillage pour servir une intention qui n'est pas le simple divertissement. Quand cette intention est pédagogique, on parle aussi de jeu sérieux."</div>
+  </div>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 2 — Les anagrammes</span>
+      <span class="defi-mecanique">révèle : points</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Contenu du défi</div>
+      <p>Sept groupes de lettres mélangées sont affichés. Quatre forment de vrais mots. Trois ne forment aucun mot recensé, mais utilisent des lettres courantes, pour qu'ils ne se repèrent qu'à l'usure, pas d'un coup d'œil :</p>
+      <table>
+        <tr><th>Affiché</th><th>Nature</th><th>Résultat</th></tr>
+        <tr><td>ETICHUG</td><td>Vrai mot</td><td>GUICHET (7 lettres)</td></tr>
+        <tr><td>ORLU</td><td>Impossible</td><td>aucun mot (4 lettres)</td></tr>
+        <tr><td>TNEGA</td><td>Vrai mot</td><td>AGENT (5 lettres)</td></tr>
+        <tr><td>RADEUN</td><td>Impossible</td><td>aucun mot (6 lettres)</td></tr>
+        <tr><td>UEJ</td><td>Vrai mot</td><td>JEU (3 lettres)</td></tr>
+        <tr><td>RICNO</td><td>Impossible</td><td>aucun mot (5 lettres)</td></tr>
+        <tr><td>EIUQPE</td><td>Vrai mot</td><td>EQUIPE (6 lettres)</td></tr>
+      </table>
+      <p>La consigne, affichée en clair cette fois, précise que le code vient des trois groupes qui ne forment aucun mot, pas des quatre vrais mots. La vraie difficulté, c'est d'être sûr qu'un groupe est bien impossible, et pas juste pas encore trouvé.</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Code du cadenas (4 chiffres)</div>
+    <div class="code-box">0465</div>
+    <div class="bloc-title" style="margin-top:10px;">Jeton contenu dans la boîte</div>
+    <div class="letter-box">E = 1</div>
+    <div class="affiche">Affiche : "Points. Chaque réussite est comptée et rendue visible, ce qui incite à continuer et donne un repère concret de progression."</div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail); margin-top:10px;">
+      <div class="bloc-title">🔎 Cette feuille héberge aussi la règle cachée du défi 5</div>
+      <p>Au dos de la feuille des anagrammes, en petits caractères : "Pour l'intrus : sa position dans la liste, puis le nombre total de mots, puis le nombre de lettres du mot intrus lui-même." Le groupe doit donc être passé par le défi 2, ou l'explorer par hasard, pour comprendre comment lire le code du défi 5.</p>
+    </div>
+  </div>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 3 — Le sigle intrus</span>
+      <span class="defi-mecanique">révèle : badges</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Contenu du défi</div>
+      <p>Une liste de 5 sigles à associer à leur signification. Quatre existent réellement, un est un intrus construit par une lettre modifiée sur un vrai sigle, pour qu'il passe presque inaperçu à une lecture rapide :</p>
+      <ul>
+        <li>RPE → Relais Petite Enfance</li>
+        <li>CCAS → Centre Communal d'Action Sociale</li>
+        <li><strong>ATSEP</strong> → n'existe pas (une lettre change par rapport au suivant), c'est l'intrus à repérer</li>
+        <li>ATSEM → Agent Territorial Spécialisé des Écoles Maternelles</li>
+        <li>DGS → Directeur Général des Services</li>
+      </ul>
+      <p>ATSEP est glissé juste avant ATSEM dans la liste, exprès, pour que l'œil les confonde si on ne lit pas lettre à lettre. Rien d'autre n'est indiqué ici sur la façon de transformer cette découverte en code.</p>
+    </div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail);">
+      <div class="bloc-title">🔎 Règle cachée, à placer ailleurs dans la salle</div>
+      <p>Scotcher une petite étiquette sous le bac de tri du <strong>défi 6</strong>, visible seulement si on soulève le bac : "Pour le sigle intrus : nombre total de sigles, puis position de l'intrus dans la liste, puis nombre de ses lettres." (5, 3, 5)</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Code du cadenas (4 chiffres)</div>
+    <div class="code-box">0535</div>
+    <div class="bloc-title" style="margin-top:10px;">Jeton contenu dans la boîte</div>
+    <div class="letter-box">G = 8</div>
+    <div class="affiche">Affiche : "Badges. Une marque visible et partagée d'une étape franchie, qui donne à voir une progression que les autres peuvent reconnaître."</div>
+  </div>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 4 — Les suites logiques (version experte)</span>
+      <span class="defi-mecanique">révèle : temps limité</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Contenu du défi</div>
+      <p>Quatre suites affichées côte à côte, avec exactement la même présentation, aucune ne doit se distinguer visuellement des autres. Une seule est la vraie, les trois autres sont des leurres crédibles qui demandent un vrai calcul avant d'être écartés :</p>
+      <table>
+        <tr><th>Suite affichée</th><th>Logique</th><th>Résultat</th><th>Statut</th></tr>
+        <tr><td>3 — 6 — 12 — 24 — 48 — ?</td><td>×2</td><td>96</td><td><strong>La vraie</strong>, discrète car banale</td></tr>
+        <tr><td>2 — 5 — 11 — 23 — 47 — ?</td><td>×2 puis +1</td><td>95</td><td>Fausse, trop propre pour être vraie</td></tr>
+        <tr><td>10 — 20 — 21 — 42 — 43 — ?</td><td>alterne ×2 et +1</td><td>86</td><td>Fausse, ressemble à une coquille</td></tr>
+        <tr><td>7 — 11 — 18 — 28 — 41 — ?</td><td>écarts +4, +7, +10, +13, +16</td><td>57</td><td>Fausse, demande une vraie observation</td></tr>
+      </table>
+      <p>Le code vient uniquement de la suite en ×2. Rien n'indique laquelle est la bonne, il faut résoudre les quatre pour en être certain.</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Code du cadenas (4 chiffres)</div>
+    <div class="code-box">0096</div>
+    <div class="bloc-title" style="margin-top:10px;">Jeton contenu dans la boîte</div>
+    <div class="letter-box">L = 7</div>
+    <div class="affiche">Affiche : "Temps limité. Une contrainte de durée qui intensifie l'engagement et la concentration, tant qu'elle reste atteignable."</div>
+  </div>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 5 — L'intrus dans la liste</span>
+      <span class="defi-mecanique">révèle : défis & quêtes</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Contenu du défi</div>
+      <p>Une liste de 6 mots, tous liés au travail collectif en apparence. Cinq sont de vrais synonymes de "coopérer", un est un faux ami qui sonne positif dans le vocabulaire d'entreprise mais qui signifie en réalité l'inverse :</p>
+      <ol style="margin:0; padding-left:20px;">
+        <li>Coopérer</li>
+        <li>Mutualiser</li>
+        <li>S'associer</li>
+        <li><strong>Diverger</strong> (le faux ami : souvent employé positivement en créativité, "diverger puis converger", mais son sens premier est de s'écarter, pas de coopérer)</li>
+        <li>Faire équipe</li>
+        <li>Se coordonner</li>
+      </ol>
+      <p>Repérer l'intrus, c'est le plus facile. Rien ici n'indique comment transformer ça en code, la règle est cachée ailleurs (voir le défi 2).</p>
+    </div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail);">
+      <div class="bloc-title">🔎 Rappel de la règle cachée (détail au dos du défi 2)</div>
+      <p>Position de l'intrus (4), nombre total de mots (6), nombre de lettres de "Diverger" (8).</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Code du cadenas (4 chiffres)</div>
+    <div class="code-box">0468</div>
+    <div class="bloc-title" style="margin-top:10px;">Jeton contenu dans la boîte</div>
+    <div class="letter-box">E = 1</div>
+    <div class="affiche">Affiche : "Défis et quêtes. Des missions structurantes, avec un objectif clair, qui donnent une direction concrète à l'effort collectif."</div>
+  </div>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 6 — Fais ta valise</span>
+      <span class="defi-mecanique">révèle : rétroaction, et nourrit le débrief sur les profils de joueurs</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Contenu du défi</div>
+      <p>3 valises circulaires, chacune couverte d'objets de vacances (lunettes de soleil, bouée, tuba, peluche, crème solaire, tongs, gourde...), 26 objets au total répartis sur les 3 valises, 13 catégories d'objets visibles (3+1=4). Consigne : "Rangez les objets dans les valises et fermez-les."</p>
+    </div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail);">
+      <div class="bloc-title">🎭 Le twist, en deux paliers</div>
+      <p>Dès qu'ils annoncent avoir fini : premier indice discret, "Regardez encore une fois ce que vous avez sous les yeux, il y a peut-être plus que du rangement ici." Tu observes s'ils recommencent à chercher par eux-mêmes. Si rien ne se débloque après quelques secondes, la phrase complète : "Le vrai défi n'était pas de ranger... mais de trouver le code."</p>
+    </div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail);">
+      <div class="bloc-title">⏱️ Chrono caché</div>
+      <p>Pas de minuteur visible. J'annonce "top départ" à voix haute, je chronomètre discrètement, j'annonce "stop" à 3 minutes pile, sans avoir prévenu du temps imparti. L'incertitude sur le temps crée la tension pendant le rangement, avant même qu'ils sachent que ranger n'était pas le vrai objectif.</p>
+    </div>
+    <div class="bloc bloc-jaune">
+      <div class="bloc-title">Ce que je fais pendant ce défi</div>
+      <p>Je n'interviens pas pendant le rangement, je regarde qui prend le lead, qui explore, qui fait circuler l'info, qui pousse le rythme. Je note mentalement les prénoms, pour les restituer plus tard sans les avoir écrits devant eux.</p>
+    </div>
+    <div class="bloc" style="background:#FFF0EE; border:1px dashed var(--corail);">
+      <div class="bloc-title">🔎 Règle cachée, à coller sous une des valises</div>
+      <p>"Pour le code : total d'objets, catégories visibles, nombre de valises ." (26, 4, 3). Étiquette prête à imprimer et découper, voir le fichier dédié.</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Code du cadenas (4 chiffres)</div>
+    <div class="code-box">2643</div>
+    <div class="bloc-title" style="margin-top:10px;">Jeton contenu dans la boîte</div>
+    <div class="letter-box">S = 9</div>
+    <div class="affiche">Affiche : "Rétroaction. Un retour immédiat sur l'action, qui permet d'ajuster tout de suite plutôt que de découvrir l'erreur trop tard."</div>
+    <div class="bloc bloc-gris" style="margin-top:10px;">
+      <div class="bloc-title">💡 Pourquoi l'univers vacances, volontairement</div>
+      <p>Ce décalage est assumé, pas une erreur de cohérence : au milieu de défis très administratifs, ces objets de plage rappellent qu'on prend parfois les choses à la légère (les vacances, le soleil), alors que rien n'est aussi simple qu'il y paraît, exactement ce que le twist du "vrai défi caché" vient démontrer.</p>
+    </div>
+  </div>
+
+  <div class="final-word">
+    <p style="font-size:14px; color:#6B7684;">Les lettres et chiffres récoltés dans les boîtes 1 à 6 :</p>
+    <div class="letters">
+      <span>R=3</span><span>E=1</span><span>G=8</span><span>L=7</span><span>E=1</span><span>S=9</span>
+    </div>
+    <p style="font-family:'Patrick Hand',cursive; font-size:17px; color:var(--corail); margin-top:10px;">RÈGLES — éclaté en deux moitiés : REG (318) et LES (719).</p>
+    <p style="font-size:12.5px; color:#8A94A0; margin-top:6px;">Faute d'un cadenas à mot de 6 lettres, le mot est traduit en chiffres et réparti sur deux cadenas à 3 chiffres, un pour chaque moitié du mot.</p>
+  </div>
+
+  <div class="defi">
+    <div class="defi-header">
+      <span class="defi-title">Défi 7 — La synthèse finale</span>
+      <span class="defi-mecanique">révèle : la ludification, dans son ensemble</span>
+    </div>
+    <div class="bloc bloc-gris">
+      <div class="bloc-title">Déblocage</div>
+      <p>La boîte finale est fermée par deux cadenas à 3 chiffres, tous deux nécessaires pour l'ouvrir. Chaque chiffre vient d'une lettre récoltée dans les boîtes 1 à 6, dans l'ordre : le premier cadenas correspond à R-E-G, le second à L-E-S.</p>
+    </div>
+    <div class="bloc-title" style="margin-top:10px;">Cadenas A — R, E, G (3 chiffres)</div>
+    <div class="code-box">318</div>
+    <div class="bloc-title" style="margin-top:10px;">Cadenas B — L, E, S (3 chiffres)</div>
+    <div class="code-box">719</div>
+    <div class="bloc bloc-jaune">
+      <div class="bloc-title">Contenu de la boîte finale</div>
+      <p>Une carte qui dit : "Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification." Et en dessous, la mission de classe inversée : la consigne à remplir pour le lendemain, sur la situation réelle que chacun repère dans son quotidien.</p>
+    </div>
+  </div>
+
+  <h2 class="page-break-avant"><span class="h2num">4</span>Le débrief "Sous le capot"</h2>
+  <div class="bloc bloc-gris">
+    <p>Un seul temps continu, en trois mouvements, juste après l'ouverture de la boîte finale :</p>
+    <ul>
+      <li><strong>1er mouvement</strong> — je pointe le Memory encore sur la table pour nommer ludification, serious game et jeu détourné.</li>
+      <li><strong>2e mouvement</strong> — je fais le tour du mur où les 6 affiches sont collées, une par une, pour nommer les mécaniques qu'ils viennent de reconnaître.</li>
+      <li><strong>3e mouvement</strong> — je restitue ce que j'ai observé au défi 6, avec leurs prénoms, pour amener les profils de joueurs : qui a mené, qui a exploré, qui a fait le lien, qui a poussé le rythme.</li>
+    </ul>
+  </div>
+
+  <div style="text-align:center;">
+    <span class="postit">Sept défis, une seule règle : tout le monde peut commencer n'importe où, sauf le dernier</span>
+  </div>
+
+  <footer>
+    Arnaud Simart · Facilitateur & formateur en intelligence collective
+  </footer>
+
+</div>
+</body>
+</html>
