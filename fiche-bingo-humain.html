@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Kit facilitateur · Bingo humain</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; --vert:#2F6E5C; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:38px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .bloc{ border-radius:14px; padding:18px 22px; margin-bottom:14px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-corail{ background:#FFF0EE; border:1px solid var(--corail); }
+  .bloc-title{ font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:8px; }
+  .bloc p{ margin:0 0 8px 0; font-size:14px; }
+  .bloc p:last-child{ margin-bottom:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:5px; font-size:14px; }
+
+  .etape{ display:flex; gap:16px; margin-bottom:18px; align-items:flex-start; }
+  .etape-num{ background:var(--bleu); color:#fff; width:32px;height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .etape-content{ flex:1; }
+  .etape-content .titre{ font-weight:700; color:var(--bleu); font-size:14.5px; margin-bottom:3px; }
+  .etape-content p{ margin:0; font-size:13.5px; color:#3A4552; }
+
+  .banque{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px; }
+  .carte-regle{ background:#fff; border:2px solid var(--gris); border-radius:10px; padding:10px 14px; font-size:12.5px; }
+  .carte-regle .cat{ font-family:'Patrick Hand',cursive; font-size:11.5px; color:var(--corail); display:block; margin-bottom:2px; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+
+  .bingo{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:3px solid var(--bleu); border-radius:16px; overflow:hidden; }
+  .bingo div{ border:1.5px solid var(--bleu); min-height:118px; padding:10px 10px 8px; display:flex; flex-direction:column; justify-content:space-between; font-size:13px; font-weight:500; color:var(--bleu); line-height:1.35; }
+  .bingo div:nth-child(odd){ background:#FDF3DC; }
+  .bingo .prenom{ font-family:'Patrick Hand',cursive; font-size:12px; color:#999; border-top:1px dashed #bbb; padding-top:4px; }
+  .bingo.vierge div{ background:#fff; }
+  .bingo.deux{ grid-template-columns:repeat(2,1fr); }
+  .bingo.deux div{ min-height:96px; font-size:14px; }
+  .pill{ display:inline-block; color:#fff; font-family:Poppins; font-weight:700; font-size:14px; padding:4px 16px; border-radius:20px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .print-page{ page-break-before:always; }
+  .print-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:14px; }
+  .print-head h1{ color:var(--bleu); font-size:30px; margin:0; }
+  .print-head p{ font-family:'Patrick Hand',cursive; color:var(--corail); font-size:18px; margin:0; }
+  .consigne{ background:var(--gris); border-radius:12px; padding:10px 16px; font-size:13px; margin-bottom:14px; }
+  .print-btn{ display:inline-block; background:var(--corail); color:#fff; border:0; border-radius:30px; padding:10px 22px; font-family:Poppins; font-weight:700; cursor:pointer; margin-top:8px; }
+  .sign{ text-align:right; font-family:'Patrick Hand',cursive; color:var(--corail); margin-top:10px; }
+  table.grille{ width:100%; border-collapse:separate; border-spacing:0 8px; font-size:13.5px; }
+  table.grille th{ text-align:left; color:#fff; background:var(--bleu); padding:10px 14px; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; }
+  table.grille th:first-child{ border-radius:10px 0 0 10px; } table.grille th:last-child{ border-radius:0 10px 10px 0; }
+  table.grille td{ background:var(--gris); padding:12px 14px; vertical-align:top; }
+  table.grille td:first-child{ border-radius:10px 0 0 10px; font-weight:700; color:var(--bleu); width:26%; }
+  table.grille td:last-child{ border-radius:0 10px 10px 0; }
+  .ecrire{ min-width:150px; border-bottom:1px dashed #aaa; }
+  .score{ white-space:nowrap; font-family:'Patrick Hand',cursive; font-size:18px; color:var(--bleu); }
+  .duo{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .formule{ background:var(--bleu); color:#fff; border-radius:16px; padding:18px 22px; text-align:center; font-size:17px; margin:10px 0 18px; }
+  .formule b{ color:var(--jaune); }
+  @media(max-width:700px){ .bingo{ grid-template-columns:repeat(2,1fr);} .duo{grid-template-columns:1fr;} }
+  @media print{ .page{padding:0 10mm;} .noprint{display:none;} .hero{ -webkit-print-color-adjust:exact; print-color-adjust:exact;} body{-webkit-print-color-adjust:exact; print-color-adjust:exact;} .bingo div{min-height:42mm;} .bingo.deux div{min-height:40mm;} }
+  @page{ size:A4; margin:12mm 0; }
+</style>
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="tag">Kit facilitateur · Jour 1, 9h00-9h30</span>
+    <h1>Bingo humain</h1>
+    <p>Se rencontrer pour de vrai, avant tout enjeu collectif</p>
+  </div>
+
+  <h2><span class="h2num">1</span>Intention</h2>
+  <div class="bloc bloc-gris">
+    <p>Lancer la formation par le mouvement et la curiosité. Chacun se lève, va vers les autres, pose des questions et découvre des choses inattendues. Personne n'a à se présenter devant tout le monde, et les plus timides ont une bonne raison d'aller parler à quelqu'un : la case à remplir.</p>
+    <p>La mécanique qui produit ça : une collection à compléter (une case vide appelle la suivante), un peu de course contre la montre, et un « BINGO ! » qui fait rire.</p>
+  </div>
+
+  <h2><span class="h2num">2</span>Matériel</h2>
+  <div class="bloc bloc-jaune">
+    <ul>
+      <li>Trois versions de grille (A, B, C), une par personne : pour 15 participants, 5 de chaque. Plus une grille vierge pour inventer la vôtre</li>
+      <li>Un stylo par personne</li>
+      <li>Un signal sonore pour le début et la fin : clochette, sifflet, musique</li>
+      <li>Un petit lot symbolique pour le premier bingo, si vous aimez ça</li>
+    </ul>
+  </div>
+
+  <h2><span class="h2num">3</span>Déroulé, pas à pas</h2>
+  <div class="etape"><div class="etape-num">1</div><div class="etape-content"><div class="titre">Consigne (1 min)</div>
+    <p>« Vous avez chacun une grille. Elles ne sont pas toutes identiques, à vous de le découvrir en discutant vraiment, pas en recopiant celle du voisin. Pour chaque case, trouvez une personne qui correspond, notez son prénom. Une personne ne peut être notée qu'une seule fois sur votre grille. » Le premier qui a rempli toute sa grille crie BINGO !</p></div></div>
+  <div class="etape"><div class="etape-num">2</div><div class="etape-content"><div class="titre">Le jeu (12 à 15 min)</div>
+    <p>Je lance le signal, et je circule. J'observe qui va vers qui, qui reste en retrait. Si quelqu'un est seul, je l'accompagne vers un petit groupe. Je ne joue pas moi-même, ou alors je signe des cases aussi, pour en faire partie.</p></div></div>
+  <div class="etape"><div class="etape-num">3</div><div class="etape-content"><div class="titre">Le premier BINGO, et on continue</div>
+    <p>On applaudit le premier bingo, puis on laisse tourner encore deux ou trois minutes : l'objectif, c'est la rencontre, pas la victoire. C'est souvent là qu'on découvre, en riant, que les grilles n'étaient pas les mêmes.</p></div></div>
+  <div class="etape"><div class="etape-num">4</div><div class="etape-content"><div class="titre">Débrief en cercle (5 à 10 min)</div>
+    <p>Deux ou trois questions suffisent : « Qu'avez-vous appris d'étonnant ? », « Qui a un talent caché qu'on doit connaître ? », « Comment vous sentez-vous, là, maintenant, par rapport à l'arrivée ? » Ce dernier écart, c'est souvent tout l'intérêt de l'exercice.</p></div></div>
+
+  <h2><span class="h2num">4</span>L'astuce des trois grilles</h2>
+  <div class="bloc bloc-jaune">
+    <p>Les grilles A, B et C partagent un socle commun de 5 cases, et ont chacune 5 cases qui leur sont propres. L'ordre des cases communes change aussi d'une grille à l'autre, pour qu'on ne repère pas le socle en comparant les positions. Résultat : impossible de recopier la grille du voisin, il faut vraiment aller parler aux gens.</p>
+  </div>
+
+  <h2><span class="h2num">5</span>Créer vos propres cases</h2>
+  <div class="bloc bloc-gris">
+    <ul>
+      <li>Mélangez trois types de cases : des cases <b>faciles</b> (pour que tout le monde réussisse), des cases <b>étonnantes</b> (pour faire parler) et des cases <b>liées au thème</b> de votre réunion</li>
+      <li>Dix cases suffisent pour un groupe de 15. Au-delà, ajoutez une quatrième version de grille plutôt que des cases</li>
+      <li>Une case « joker » ou « talent caché » ouvre toujours de belles conversations</li>
+    </ul>
+    <span class="postit">Une bonne case, c'est une question qu'on a envie de poser</span>
+  </div>
+
+  <h2><span class="h2num">6</span>Points de vigilance</h2>
+  <div class="bloc bloc-corail">
+    <ul>
+      <li>Rien de trop personnel : pas de santé, de situation familiale ou de convictions. Personne ne doit avoir à se justifier devant une case.</li>
+      <li>Au-delà de 15 minutes, ça s'essouffle. Mieux vaut couper un peu tôt.</li>
+      <li>En groupe qui se connaît déjà, misez sur les cases étonnantes : c'est là que les collègues se redécouvrent.</li>
+    </ul>
+  </div>
+
+  <div class="noprint" style="text-align:center"><button class="print-btn" onclick="window.print()">Imprimer la fiche et les grilles</button></div>
+
+
+  <section class="print-page">
+    <div class="print-head"><h1>Bingo humain</h1><p><span class="pill" style="background:var(--corail)">Grille A</span></p></div>
+    <div class="consigne">Trouvez une personne différente pour chaque case et notez son prénom. Une même personne ne peut être notée qu'une fois.</div>
+    <div class="bingo deux"><div><span>Trouvez quelqu'un qui travaille dans le même secteur que vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a déjà utilisé un jeu pour animer une réunion</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a moins de 3 ans d'ancienneté</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un dont le prénom commence par la même lettre que le vôtre</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui partage un détail insolite avec vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a grandi dans une autre région que vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui anime déjà des réunions régulièrement</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a déjà managé une équipe</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a plus de 10 ans d'ancienneté dans la fonction publique</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a un lien avec la petite enfance</span><span class="prenom">prénom :</span></div></div>
+    <div class="sign">✎ arnaud-simart.fr</div>
+  </section>
+
+  <section class="print-page">
+    <div class="print-head"><h1>Bingo humain</h1><p><span class="pill" style="background:var(--bleu)">Grille B</span></p></div>
+    <div class="consigne">Trouvez une personne différente pour chaque case et notez son prénom. Une même personne ne peut être notée qu'une fois.</div>
+    <div class="bingo deux"><div><span>Trouvez quelqu'un qui a plus de 10 ans d'ancienneté dans la fonction publique</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a une passion créative (dessin, musique, écriture...)</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui partage un détail insolite avec vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui n'a jamais suivi de formation sur l'intelligence collective</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui travaille dans le même secteur que vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a changé de poste au moins 3 fois</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui anime déjà des réunions régulièrement</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a un lien avec le secteur culturel ou touristique</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a moins de 3 ans d'ancienneté</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a déjà travaillé dans le privé avant la fonction publique</span><span class="prenom">prénom :</span></div></div>
+    <div class="sign">✎ arnaud-simart.fr</div>
+  </section>
+
+  <section class="print-page">
+    <div class="print-head"><h1>Bingo humain</h1><p><span class="pill" style="background:var(--vert)">Grille C</span></p></div>
+    <div class="consigne">Trouvez une personne différente pour chaque case et notez son prénom. Une même personne ne peut être notée qu'une fois.</div>
+    <div class="bingo deux"><div><span>Trouvez quelqu'un qui anime déjà des réunions régulièrement</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui vient d'arriver dans son poste (moins d'1 an)</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a moins de 3 ans d'ancienneté</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui préfère animer plutôt que participer</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui travaille dans le même secteur que vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui aime la même activité de loisir que vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui partage un détail insolite avec vous</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a un talent caché insolite</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui a plus de 10 ans d'ancienneté dans la fonction publique</span><span class="prenom">prénom :</span></div><div><span>Trouvez quelqu'un qui vient d'un service différent du vôtre</span><span class="prenom">prénom :</span></div></div>
+    <div class="sign">✎ arnaud-simart.fr</div>
+  </section>
+
+  <section class="print-page">
+    <div class="print-head"><h1>Bingo humain</h1><p>Votre grille à inventer</p></div>
+    <div class="consigne">Écrivez « Trouvez quelqu'un qui… » dans chaque case : quelques cases faciles, quelques étonnantes, quelques liées à votre thème.</div>
+    <div class="bingo deux vierge"><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div><div><span></span><span class="prenom">prénom :</span></div></div>
+    <div class="sign">✎ arnaud-simart.fr</div>
+  </section>
+
+  <footer>✎ arnaud-simart.fr · Arnaud Simart, facilitateur & formateur en intelligence collective</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Carte de mission · Classe inversée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#e8e8e8; }
+
+  .sheet{
+    width:210mm; min-height:297mm;
+    margin:0 auto 16px;
+    background:#fff;
+    padding:14mm;
+    box-sizing:border-box;
+    page-break-after:always;
+  }
+  .sheet:last-child{ page-break-after:auto; }
+
+  .intro{ background:var(--bleu); color:#fff; border-radius:16px; padding:16px 20px; margin-bottom:14px; }
+  .intro h1{ font-size:16px; margin:0 0 4px 0; }
+  .intro p{ font-family:'Patrick Hand',cursive; font-size:12.5px; color:var(--jaune); margin:0; }
+
+  .grid{ display:grid; grid-template-columns:repeat(2, 1fr); grid-auto-rows:98mm; gap:6mm; }
+
+  .carte{
+    border:2px solid var(--bleu);
+    border-radius:18px;
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    overflow:hidden;
+    background:#fff;
+  }
+  .carte::before{ content:""; position:absolute; width:110px;height:110px; background:var(--corail); opacity:.07; border-radius:50%; top:-36px; right:-36px; }
+
+  .carte .tag{
+    display:inline-block;
+    background:var(--corail);
+    color:#fff;
+    font-size:9px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    padding:3px 10px;
+    border-radius:10px;
+    margin-bottom:7px;
+    width:fit-content;
+  }
+  .carte h2{ font-size:14px; color:var(--bleu); margin:0 0 8px 0; }
+  .carte p{ font-size:10.5px; margin:0 0 7px 0; line-height:1.35; color:#2A3340; }
+  .carte .revele{
+    background:var(--gris);
+    border-radius:10px;
+    padding:7px 9px;
+    font-size:10px;
+    font-style:italic;
+    margin-bottom:8px;
+  }
+  .carte .question{ font-size:10px; font-weight:700; color:var(--bleu); margin:6px 0 2px 0; }
+  .carte .ligne{ border-bottom:1px dotted #C9CED6; height:12px; margin-bottom:3px; }
+  .carte .footer{ margin-top:auto; text-align:right; font-family:'Patrick Hand',cursive; font-size:9.5px; color:#B7BEC8; }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<style>@media print{body{background:#fff}.sheet{margin:0}} @page{size:A4;margin:0} body{-webkit-print-color-adjust:exact;print-color-adjust:exact}</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="intro">
+    <h1>Carte de mission, dans la boîte finale de l'escape game</h1>
+    <p>Une carte par personne, 4 par page. À découper et glisser dans la boîte finale avant le début de la matinée.</p>
+  </div>
+
+  <div class="grid">
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="grid">
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="grid">
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+    <div class="carte">
+      <span class="tag">Mission débloquée</span>
+      <h2>Ce que vous venez de vivre</h2>
+      <div class="revele">"Vous venez de combiner plusieurs mécaniques de jeu dans un contexte qui n'en était pas un. C'est ça, la ludification."</div>
+      <p><strong>Votre mission pour demain :</strong> repérer, dans votre quotidien professionnel, une situation réelle où vous aimeriez tester un levier ludique.</p>
+      <div class="question">Le contexte</div>
+      <div class="ligne"></div>
+      <div class="ligne"></div>
+      <div class="question">Ce que vous avez déjà essayé (ou pas)</div>
+      <div class="ligne"></div>
+      <div class="question">Ce qui vous freine aujourd'hui</div>
+      <div class="ligne"></div>
+      <p style="margin-top:8px; font-size:9.5px; color:#8A94A0;">Vous partagerez cette situation en 2 minutes demain matin, à 9h00.</p>
+      <div class="footer">Le jeu pour stimuler la dynamique de groupe</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

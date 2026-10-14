@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Jeux détournés · Effet waouh</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; --vert:#2F6E5C; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:38px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .bloc{ border-radius:14px; padding:18px 22px; margin-bottom:14px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-corail{ background:#FFF0EE; border:1px solid var(--corail); }
+  .bloc-title{ font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:8px; }
+  .bloc p{ margin:0 0 8px 0; font-size:14px; }
+  .bloc p:last-child{ margin-bottom:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:5px; font-size:14px; }
+
+  .etape{ display:flex; gap:16px; margin-bottom:18px; align-items:flex-start; }
+  .etape-num{ background:var(--bleu); color:#fff; width:32px;height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .etape-content{ flex:1; }
+  .etape-content .titre{ font-weight:700; color:var(--bleu); font-size:14.5px; margin-bottom:3px; }
+  .etape-content p{ margin:0; font-size:13.5px; color:#3A4552; }
+
+  .banque{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px; }
+  .carte-regle{ background:#fff; border:2px solid var(--gris); border-radius:10px; padding:10px 14px; font-size:12.5px; }
+  .carte-regle .cat{ font-family:'Patrick Hand',cursive; font-size:11.5px; color:var(--corail); display:block; margin-bottom:2px; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+
+  .bingo{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:3px solid var(--bleu); border-radius:16px; overflow:hidden; }
+  .bingo div{ border:1.5px solid var(--bleu); min-height:118px; padding:10px 10px 8px; display:flex; flex-direction:column; justify-content:space-between; font-size:13px; font-weight:500; color:var(--bleu); line-height:1.35; }
+  .bingo div:nth-child(odd){ background:#FDF3DC; }
+  .bingo .prenom{ font-family:'Patrick Hand',cursive; font-size:12px; color:#999; border-top:1px dashed #bbb; padding-top:4px; }
+  .bingo.vierge div{ background:#fff; }
+  .bingo.deux{ grid-template-columns:repeat(2,1fr); }
+  .bingo.deux div{ min-height:96px; font-size:14px; }
+  .pill{ display:inline-block; color:#fff; font-family:Poppins; font-weight:700; font-size:14px; padding:4px 16px; border-radius:20px; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .print-page{ page-break-before:always; }
+  .print-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:14px; }
+  .print-head h1{ color:var(--bleu); font-size:30px; margin:0; }
+  .print-head p{ font-family:'Patrick Hand',cursive; color:var(--corail); font-size:18px; margin:0; }
+  .consigne{ background:var(--gris); border-radius:12px; padding:10px 16px; font-size:13px; margin-bottom:14px; }
+  .print-btn{ display:inline-block; background:var(--corail); color:#fff; border:0; border-radius:30px; padding:10px 22px; font-family:Poppins; font-weight:700; cursor:pointer; margin-top:8px; }
+  .sign{ text-align:right; font-family:'Patrick Hand',cursive; color:var(--corail); margin-top:10px; }
+  table.grille{ width:100%; border-collapse:separate; border-spacing:0 8px; font-size:13.5px; }
+  table.grille th{ text-align:left; color:#fff; background:var(--bleu); padding:10px 14px; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; }
+  table.grille th:first-child{ border-radius:10px 0 0 10px; } table.grille th:last-child{ border-radius:0 10px 10px 0; }
+  table.grille td{ background:var(--gris); padding:12px 14px; vertical-align:top; }
+  table.grille td:first-child{ border-radius:10px 0 0 10px; font-weight:700; color:var(--bleu); width:26%; }
+  table.grille td:last-child{ border-radius:0 10px 10px 0; }
+  .ecrire{ min-width:150px; border-bottom:1px dashed #aaa; }
+  .score{ white-space:nowrap; font-family:'Patrick Hand',cursive; font-size:18px; color:var(--bleu); }
+  .duo{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .formule{ background:var(--bleu); color:#fff; border-radius:16px; padding:18px 22px; text-align:center; font-size:17px; margin:10px 0 18px; }
+  .formule b{ color:var(--jaune); }
+  @media(max-width:700px){ .bingo{ grid-template-columns:repeat(2,1fr);} .duo{grid-template-columns:1fr;} }
+  @media print{ .page{padding:0 10mm;} .noprint{display:none;} .hero{ -webkit-print-color-adjust:exact; print-color-adjust:exact;} body{-webkit-print-color-adjust:exact; print-color-adjust:exact;} .bingo div{min-height:42mm;} .bingo.deux div{min-height:40mm;} }
+  @page{ size:A4; margin:12mm 0; }
+</style>
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <span class="tag">Boîte à outils · Jeux du commerce</span>
+    <h1>Jeux détournés pour un effet « waouh »</h1>
+    <p>Une sélection pour révéler les dynamiques de groupe, surprendre et ancrer les apprentissages</p>
+  </div>
+  <h2><span class="h2num">1</span>Concept</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Communication non verbale</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Ce que ça révèle</div><ul><li>La capacité à se comprendre sans mots</li><li>La construction collective du sens</li><li>Les biais d'interprétation</li><li>La puissance des indices visuels</li></ul></div>
+    <div class="bloc bloc-jaune"><div class="bloc-title">Le détournement</div><ul><li>Faire deviner des notions professionnelles : valeurs, principes, règles</li><li>Créer des cartes « situations de travail » à représenter uniquement par icônes</li><li>Débrief : comment nos équipes interprètent les signaux faibles</li></ul></div>
+  </div>
+  <h2><span class="h2num">2</span>Banditos</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Coordination sous pression</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Ce que ça révèle</div><ul><li>La synchronisation des actions</li><li>La gestion du temps et des priorités</li><li>La communication rapide et efficace</li></ul></div>
+    <div class="bloc bloc-jaune"><div class="bloc-title">Le détournement</div><ul><li>Simuler une équipe projet qui doit « fermer les issues » avant une échéance</li><li>Débrief : comment mieux se coordonner en situation d'urgence</li></ul></div>
+  </div>
+  <h2><span class="h2num">3</span>Twinit</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Observation et attention</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Ce que ça révèle</div><ul><li>L'attention aux détails</li><li>La capacité à repérer les différences dans un environnement complexe</li><li>La vigilance collective</li></ul></div>
+    <div class="bloc bloc-jaune"><div class="bloc-title">Le détournement</div><ul><li>Comparer deux pratiques professionnelles, la bonne et la moins bonne</li><li>Identifier les micro-signaux d'un dysfonctionnement</li><li>Débrief : comment améliorer la vigilance dans un collectif</li></ul></div>
+  </div>
+  <h2><span class="h2num">4</span>Skyjo</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Gestion des ressources et stratégie</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Ce que ça révèle</div><ul><li>La prise de décision à long terme</li><li>La gestion des risques</li><li>La capacité à renoncer pour mieux avancer</li></ul></div>
+    <div class="bloc bloc-jaune"><div class="bloc-title">Le détournement</div><ul><li>Simuler la gestion d'un portefeuille de projets</li><li>Débrief : comment on arbitre dans une équipe</li></ul></div>
+  </div>
+  <h2><span class="h2num">5</span>Galèrapagos</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Coopération sous tension</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Effet waouh garanti</div><ul><li>Les stagiaires vivent une vraie tension collective</li><li>Ils voient apparaître les rôles spontanés</li><li>Ils comprennent la difficulté de coopérer sous contrainte</li></ul></div>
+    
+  </div>
+  <h2><span class="h2num">6</span>Saboteur</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Confiance et ambiguïté</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Effet waouh garanti</div><ul><li>On découvre comment naissent les soupçons</li><li>On vit la difficulté de collaborer quand les intentions sont floues</li><li>Un débrief puissant sur la communication interne</li></ul></div>
+    
+  </div>
+  <h2><span class="h2num">7</span>Mito</h2>
+  <p style="margin:-8px 0 12px;font-family:'Patrick Hand',cursive;color:var(--corail);font-size:18px">Règles implicites et micro-transgressions</p>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Effet waouh garanti</div><ul><li>On rit, mais on observe des comportements très révélateurs</li><li>On parle des « petites triches » du quotidien professionnel</li><li>Un débrief très fort sur le cadre et la confiance</li></ul></div>
+    
+  </div>
+  <h2><span class="h2num">✎</span>Les combiner sur deux jours</h2>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Jour 1 · Explorer</div><ul>
+      <li><b>Concept</b> : communication non verbale</li><li><b>Twinit</b> : vigilance collective</li><li><b>Skyjo</b> : stratégie et arbitrage</li><li><b>Galèrapagos</b> : coopération sous tension</li></ul></div>
+    <div class="bloc bloc-corail"><div class="bloc-title">Jour 2 · Révéler et transférer</div><ul>
+      <li><b>Saboteur</b> : confiance, rôles cachés</li><li><b>Mito</b> : règles implicites</li><li><b>Banditos</b> : coordination rapide</li><li>Création de micro-séances inspirées de ces jeux</li><li>Animation et débrief : transformer les pratiques</li></ul></div>
+  </div>
+  <span class="postit">Le jeu ne fait pas le travail. C'est le débrief qui le fait.</span>
+
+  <footer>✎ arnaud-simart.fr · Arnaud Simart, facilitateur & formateur en intelligence collective</footer>
+</div>
+</body>
+</html>
