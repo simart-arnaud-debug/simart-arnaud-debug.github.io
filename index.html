@@ -157,8 +157,16 @@
 /* FORMATIONS APERÇU */
 .formations-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(6,1fr);
   gap:24px;
+}
+.formations-grid > a { grid-column:span 2; }
+.formations-grid > a:nth-child(4) { grid-column:2 / span 2; }
+.formations-grid .formation-card.jeu { border-top-color:var(--jaune); }
+.formations-grid .formation-card.jeu .tag { color:var(--bleu); background:var(--jaune); display:inline-block; padding:2px 10px; border-radius:20px; }
+@media(max-width:900px){
+  .formations-grid { grid-template-columns:1fr; }
+  .formations-grid > a, .formations-grid > a:nth-child(4) { grid-column:auto; }
 }
 .formation-card {
   background:white;
@@ -294,7 +302,7 @@
       <strong>Formations<br>en intra</strong>
           </div>
     <div class="stat-item">
-      <strong>Des cycles<br>sur mesure</span>
+      <strong>Des cycles<br>sur mesure</strong>
     </div>
    
     <div class="stat-item">
@@ -344,7 +352,7 @@
 <!-- FORMATIONS APERÇU -->
 <section class="section" style="padding-top:0;">
   <h2 class="section-title">Les formations</h2>
-  <p class="section-sub">Trois parcours conçus à partir de situations réelles, pour des professionnels qui veulent des outils immédiatement opérationnels.</p>
+  <p class="section-sub">Cinq parcours conçus à partir de situations réelles, pour des professionnels qui veulent des outils immédiatement opérationnels.</p>
   <div class="formations-grid">
     <a href="formations.html#intelligence-collective" class="formation-card">
       <div class="tag">4 jours</div>
@@ -362,6 +370,18 @@
       <div class="tag">Accompagnement</div>
       <h3>Appui managérial</h3>
       <p>Accompagner les équipes de direction dans leurs dynamiques collectives et leurs projets.</p>
+      <span class="arrow">Découvrir →</span>
+    </a>
+    <a href="formations.html#jeu-dynamique-groupe" class="formation-card jeu">
+      <div class="tag">2 jours</div>
+      <h3>Le jeu au service du groupe</h3>
+      <p>Utiliser le jeu pour stimuler la dynamique de groupe et animer une équipe. Et repartir avec son propre prototype.</p>
+      <span class="arrow">Découvrir →</span>
+    </a>
+    <a href="formations.html#techniques-creativite" class="formation-card jeu">
+      <div class="tag">3 jours</div>
+      <h3>Techniques de créativité</h3>
+      <p>Dynamiser un groupe et innover avec presque rien : du carton, de la ficelle, et quelques bonnes techniques.</p>
       <span class="arrow">Découvrir →</span>
     </a>
   </div>
@@ -424,7 +444,8 @@
         <li><a href="formations.html">Formations</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="enaction.html">En action</a></li>
-    <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="lesformats.html">Formats de poche</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
