@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Boîte à outils · Détourner, choisir, évaluer</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; --vert:#2F6E5C; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:38px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .bloc{ border-radius:14px; padding:18px 22px; margin-bottom:14px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-corail{ background:#FFF0EE; border:1px solid var(--corail); }
+  .bloc-title{ font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:8px; }
+  .bloc p{ margin:0 0 8px 0; font-size:14px; }
+  .bloc p:last-child{ margin-bottom:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:5px; font-size:14px; }
+
+  .etape{ display:flex; gap:16px; margin-bottom:18px; align-items:flex-start; }
+  .etape-num{ background:var(--bleu); color:#fff; width:32px;height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .etape-content{ flex:1; }
+  .etape-content .titre{ font-weight:700; color:var(--bleu); font-size:14.5px; margin-bottom:3px; }
+  .etape-content p{ margin:0; font-size:13.5px; color:#3A4552; }
+
+  .banque{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px; }
+  .carte-regle{ background:#fff; border:2px solid var(--gris); border-radius:10px; padding:10px 14px; font-size:12.5px; }
+  .carte-regle .cat{ font-family:'Patrick Hand',cursive; font-size:11.5px; color:var(--corail); display:block; margin-bottom:2px; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+
+  .bingo{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:3px solid var(--bleu); border-radius:16px; overflow:hidden; }
+  .bingo div{ border:1.5px solid var(--bleu); min-height:118px; padding:10px 10px 8px; display:flex; flex-direction:column; justify-content:space-between; font-size:13px; font-weight:500; color:var(--bleu); line-height:1.35; }
+  .bingo div:nth-child(odd){ background:#FDF3DC; }
+  .bingo .prenom{ font-family:'Patrick Hand',cursive; font-size:12px; color:#999; border-top:1px dashed #bbb; padding-top:4px; }
+  .bingo.vierge div{ background:#fff; }
+  .print-page{ page-break-before:always; }
+  .print-head{ display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:14px; }
+  .print-head h1{ color:var(--bleu); font-size:30px; margin:0; }
+  .print-head p{ font-family:'Patrick Hand',cursive; color:var(--corail); font-size:18px; margin:0; }
+  .consigne{ background:var(--gris); border-radius:12px; padding:10px 16px; font-size:13px; margin-bottom:14px; }
+  .print-btn{ display:inline-block; background:var(--corail); color:#fff; border:0; border-radius:30px; padding:10px 22px; font-family:Poppins; font-weight:700; cursor:pointer; margin-top:8px; }
+  .sign{ text-align:right; font-family:'Patrick Hand',cursive; color:var(--corail); margin-top:10px; }
+  table.grille{ width:100%; border-collapse:separate; border-spacing:0 8px; font-size:13.5px; }
+  table.grille th{ text-align:left; color:#fff; background:var(--bleu); padding:10px 14px; font-size:12.5px; text-transform:uppercase; letter-spacing:.3px; }
+  table.grille th:first-child{ border-radius:10px 0 0 10px; } table.grille th:last-child{ border-radius:0 10px 10px 0; }
+  table.grille td{ background:var(--gris); padding:12px 14px; vertical-align:top; }
+  table.grille td:first-child{ border-radius:10px 0 0 10px; font-weight:700; color:var(--bleu); width:26%; }
+  table.grille td:last-child{ border-radius:0 10px 10px 0; }
+  .ecrire{ min-width:150px; border-bottom:1px dashed #aaa; }
+  .score{ white-space:nowrap; font-family:'Patrick Hand',cursive; font-size:18px; color:var(--bleu); }
+  .duo{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .formule{ background:var(--bleu); color:#fff; border-radius:16px; padding:18px 22px; text-align:center; font-size:17px; margin:10px 0 18px; }
+  .formule b{ color:var(--jaune); }
+  @media(max-width:700px){ .bingo{ grid-template-columns:repeat(2,1fr);} .duo{grid-template-columns:1fr;} }
+  @media print{ .page{padding:0 10mm;} .noprint{display:none;} .hero{ -webkit-print-color-adjust:exact; print-color-adjust:exact;} body{-webkit-print-color-adjust:exact; print-color-adjust:exact;} .bingo div{min-height:42mm;} }
+  @page{ size:A4; margin:12mm 0; }
+</style>
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="tag">Boîte à outils · Concevoir son format ludique</span>
+    <h1>Détourner, choisir, évaluer</h1>
+    <p>Les trois outils du jour 2, à ressortir chaque fois que vous concevez un jeu</p>
+  </div>
+
+  <h2><span class="h2num">1</span>La méthode de détournement</h2>
+  <div class="formule">Garder la <b>mécanique</b>, changer l'<b>habillage</b>.<br><span style="font-size:14px;opacity:.85">La mécanique crée la dynamique. L'habillage crée le sens.</span></div>
+  <div class="duo">
+    <div class="bloc bloc-gris"><div class="bloc-title">Ce que l'on garde</div><ul>
+      <li>La règle qui fait agir les joueurs</li><li>La contrainte qui crée la tension</li><li>La boucle de feedback qui fait avancer la partie</li><li>Le rythme qui structure l'expérience</li></ul></div>
+    <div class="bloc bloc-jaune"><div class="bloc-title">Ce que l'on transforme</div><ul>
+      <li>Les cartes deviennent des dossiers, des situations, des décisions</li><li>Les personnages deviennent des agents, des usagers, des partenaires</li><li>Les ressources deviennent des priorités, des contraintes, des moyens</li><li>Le décor devient un contexte professionnel crédible</li></ul></div>
+  </div>
+  <div class="bloc bloc-corail"><div class="bloc-title">La structure simple d'un détournement</div><ul>
+    <li>Un objectif clair pour le groupe</li><li>Une règle simple qui crée l'action</li><li>Une contrainte qui oblige à s'organiser</li><li>Un débrief qui révèle ce qui s'est joué</li></ul></div>
+
+  <section class="print-page">
+  <h2><span class="h2num">2</span>Grille de choix des mécaniques</h2>
+  <p style="font-size:14px">Chaque mécanique produit une dynamique particulière dans un groupe. Partez de votre intention, pas du jeu que vous avez sous la main.</p>
+  <table class="grille"><tr><th>Pour créer…</th><th>Ce qu'il faut dans le jeu</th><th>Mécaniques possibles</th></tr><tr><td>Coopération</td><td>Tout le monde avance ensemble, ressources partagées, décisions collectives.</td><td>Coopération, survie collective, progression commune</td></tr><tr><td>Synchronisation</td><td>Le rythme est central, des actions simultanées.</td><td>Rythme, choix simultanés, écoute silencieuse</td></tr><tr><td>Prise de décision</td><td>Des arbitrages visibles, des ressources ou des contraintes limitées.</td><td>Gestion de ressources, arbitrage, dilemmes</td></tr><tr><td>Créativité</td><td>Une mécanique ouverte, des associations d'idées, plusieurs interprétations possibles.</td><td>Narration, association, construction libre</td></tr><tr><td>Observation</td><td>Les détails comptent, des comparaisons fines.</td><td>Vigilance, repérage, comparaison</td></tr></table>
+  <div class="bloc bloc-jaune" style="margin-top:14px"><div class="bloc-title">À vous</div>
+    <p>Mon intention : ......................................................................................................</p>
+    <p>La dynamique que je cherche : .........................................................................................</p>
+    <p>La mécanique que je choisis : ..........................................................................................</p>
+    <p>Le jeu que je pourrais détourner : .....................................................................................</p></div>
+  <span class="postit">Une intention claire permet de choisir la bonne mécanique</span>
+  </section>
+
+  <section class="print-page">
+  <h2><span class="h2num">3</span>Grille d'évaluation d'un format</h2>
+  <p style="font-size:14px">Pour tester votre format ou celui d'un collègue, de manière simple et constructive. Cochez de 1 à 3 ronds, et notez une piste d'amélioration.</p>
+  <table class="grille"><tr><th>Critère</th><th>On le voit quand…</th><th>Score</th><th>Une piste</th></tr><tr><td>Clarté de la règle</td><td>Compréhensible en moins d'une minute, actions simples et visibles, le groupe démarre sans hésiter.</td><td class="score">○ ○ ○</td><td class="ecrire"></td></tr><tr><td>Cohérence mécanique / habillage</td><td>La mécanique sert l'intention, l'habillage est crédible, le lien entre le jeu et la situation saute aux yeux.</td><td class="score">○ ○ ○</td><td class="ecrire"></td></tr><tr><td>Dynamique créée</td><td>Une vraie interaction, des rôles qui émergent tout seuls, une expérience plutôt qu'un exercice.</td><td class="score">○ ○ ○</td><td class="ecrire"></td></tr><tr><td>Transposabilité</td><td>Animable en dix minutes, matériel simple, adaptable à d'autres publics.</td><td class="score">○ ○ ○</td><td class="ecrire"></td></tr><tr><td>Impact ressenti</td><td>Le groupe a vécu quelque chose, une émotion ou une tension est apparue, le débrief a révélé des apprentissages.</td><td class="score">○ ○ ○</td><td class="ecrire"></td></tr></table>
+  <div class="bloc bloc-gris" style="margin-top:14px"><div class="bloc-title">Pour le test croisé</div>
+    <p>Un binôme anime, un autre joue, un troisième observe avec cette grille. Au débrief, on commence toujours par ce qui a marché.</p></div>
+  <span class="postit">Une bonne animation est simple, cohérente et transposable</span>
+  </section>
+
+  <div class="noprint" style="text-align:center"><button class="print-btn" onclick="window.print()">Imprimer les trois outils</button></div>
+
+  <footer>✎ arnaud-simart.fr · Arnaud Simart, facilitateur & formateur en intelligence collective</footer>
+</div>
+</body>
+</html>
