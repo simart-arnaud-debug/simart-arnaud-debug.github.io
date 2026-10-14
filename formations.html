@@ -427,6 +427,44 @@
     z-index:2;
 }
 
+.photo-strip{
+    margin-top:28px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    position:relative;
+    z-index:2;
+}
+.photo-strip.duo{ grid-template-columns:repeat(2,1fr); max-width:560px; }
+.photo-strip figure{ margin:0; }
+.photo-strip img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    border-radius:18px;
+    display:block;
+    cursor:zoom-in;
+    transition:transform .25s ease, box-shadow .25s ease;
+}
+.photo-strip img:hover{ transform:translateY(-4px) rotate(-0.6deg); box-shadow:0 12px 28px rgba(0,0,0,0.14); }
+.photo-strip figcaption{
+    font-family:'Patrick Hand',cursive;
+    font-size:17px;
+    color:var(--bleu);
+    margin-top:6px;
+    text-align:center;
+}
+.zoom-box{
+    position:fixed; inset:0; background:rgba(15,25,40,0.88);
+    display:none; align-items:center; justify-content:center;
+    z-index:9999; padding:20px; cursor:zoom-out;
+}
+.zoom-box.open{ display:flex; }
+.zoom-box img{ max-width:100%; max-height:90vh; border-radius:14px; }
+@media(max-width:800px){
+    .photo-strip{ grid-template-columns:repeat(2,1fr); }
+}
+
 .stagiaires-access{
     margin-top:10px;
     background:var(--jaune);
@@ -827,6 +865,13 @@
         C'est trouver une autre manière de travailler sérieusement. »
     </div>
 
+    <div class="photo-strip">
+        <figure><img loading="lazy" src="photo24.jpg" alt="Table de jeux de société et de matériel ludique"><figcaption>la malle à jeux</figcaption></figure>
+        <figure><img loading="lazy" src="photo31.jpg" alt="Diagramme des 5M détourné avec des cartes de jeu"><figcaption>les 5M, en jouant</figcaption></figure>
+        <figure><img loading="lazy" src="photo30.jpg" alt="Stagiaires devant un fil à linge de cartes"><figcaption>le fil des cartes</figcaption></figure>
+        <figure><img loading="lazy" src="photo27.jpg" alt="Grille de bingo collée au mur avec des post-it"><figcaption>un bingo au mur</figcaption></figure>
+    </div>
+
     <div class="formation-cta">
         <div class="formation-public">
             <strong>Public :</strong> agents et cadres qui animent réunions, ateliers, groupes de travail ou concertations
@@ -884,6 +929,11 @@
                 <li>Un carnet de recettes personnel, complété à chaque séquence</li>
             </ul>
         </div>
+    </div>
+
+    <div class="photo-strip duo">
+        <figure><img loading="lazy" src="photo28.jpg" alt="Mains construisant une tour en spaghettis"><figcaption>défi spaghetti</figcaption></figure>
+        <figure><img loading="lazy" src="photo29.jpg" alt="Passerelle construite en papier"><figcaption>une passerelle en papier</figcaption></figure>
     </div>
 
     <div class="formation-cta">
@@ -992,6 +1042,18 @@
     </div>
 
 </footer>
+
+<div class="zoom-box" id="zoomBox"><img src="" alt=""></div>
+<script>
+(function(){
+  var box=document.getElementById('zoomBox'), big=box.querySelector('img');
+  document.querySelectorAll('.photo-strip img').forEach(function(im){
+    im.addEventListener('click',function(){ big.src=im.src; big.alt=im.alt; box.classList.add('open'); });
+  });
+  box.addEventListener('click',function(){ box.classList.remove('open'); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') box.classList.remove('open'); });
+})();
+</script>
 
 </body>
 </html>
