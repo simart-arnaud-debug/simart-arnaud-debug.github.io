@@ -41,14 +41,13 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
 .vl{width:22mm;height:1mm;border-radius:1mm;background:var(--j);margin-top:9mm}
 .vs{font-family:"Patrick Hand",cursive;font-size:11pt;color:rgba(255,255,255,.8);position:absolute;bottom:6mm}
 .page.verso-page .card+.card::before{display:none}
-body:not(.versos) .verso-page{display:none}
 .tools{max-width:297mm;margin:10mm auto 0;display:flex;gap:12px;align-items:center;font-family:Poppins}
 .tools button{font:500 14px Poppins;padding:9px 18px;border-radius:999px;border:2px solid var(--b);background:#fff;color:var(--b);cursor:pointer}
 .tools button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
 .tools span{font-family:"Patrick Hand",cursive;color:#555;font-size:16px}
 @media print{.tools{display:none}.card.v,.vdot,.vl{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style><script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body class="versos">
-<div class="tools"><button id="btv" aria-pressed="true" onclick="document.body.classList.toggle('versos');this.setAttribute('aria-pressed',document.body.classList.contains('versos'))">Avec les dos</button><span>Impression recto-verso, A4 paysage, retourner sur le bord court. Sans imprimante recto-verso, désactivez les dos.</span></div>
+<div class="tools"><span>Impression recto-verso, A4 paysage, retourner sur le bord court, taille réelle (100 %).</span></div>
 <section class="page guide">
  <div class="gcol">
   <h1>Les rôles en atelier</h1>

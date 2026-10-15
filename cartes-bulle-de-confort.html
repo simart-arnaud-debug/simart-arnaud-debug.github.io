@@ -111,7 +111,7 @@ header.intro p { margin: 0; line-height: 1.6; color: var(--muted); }
 <div class="wrap">
   <header class="intro">
     <h1>Cartes Bulle de confort <span>façon sketchnote</span></h1>
-    <p>39 principes de fonctionnement dessinés, en 4 familles repérables à la couleur du cadre : la parole en corail, le collectif en bleu encre, le rythme en jaune, prendre soin de soi en bleu gris. Deux cartes mode d'emploi, des cartes vierges à dessiner, et un verso commun si vous imprimez en recto-verso.</p>
+    <p>39 principes de fonctionnement dessinés, en 4 familles repérables à la couleur du cadre : la parole en corail, le collectif en bleu encre, le rythme en jaune, prendre soin de soi en bleu gris. Deux cartes mode d'emploi, des cartes vierges à dessiner, et un verso commun.</p>
   </header>
 
   <p class="back" style="margin:14px 0 0"><a href="espace-stagiaires-jeu.html" style="color:var(--corail);font-weight:500;text-decoration:none">← Retour à l'espace stagiaires</a></p>
@@ -120,8 +120,7 @@ header.intro p { margin: 0; line-height: 1.6; color: var(--muted); }
     <button id="bt-a6" aria-pressed="true">A6 · 4 par feuille</button>
     <button id="bt-a5" aria-pressed="false">A5 · 2 par feuille</button>
     <button id="bt-cuts" aria-pressed="true">Traits de coupe</button>
-    <button id="bt-verso" aria-pressed="false">Ajouter les versos</button>
-    <span class="hint">Pour imprimer : Ctrl+P, format A4, marges « aucune », graphiques d'arrière-plan cochés. En recto-verso, retournez sur le bord long.</span>
+    <span class="hint">Pour imprimer : Ctrl+P, format A4, recto-verso, marges « aucune », taille réelle, graphiques d'arrière-plan cochés. En A6, retournez sur le bord long ; en A5, sur le bord court.</span>
   </div>
 
   <div class="sheets" id="sheets"></div>
@@ -326,7 +325,7 @@ const all = [guideHTML(), guide2HTML()];
 Object.keys(FAMS).forEach(f => FAMS[f].forEach(t => all.push(cardHTML(f, t))));
 while (all.length % 4 !== 0 || all.length < 48) all.push(blankHTML());
 
-let fmt = "a6", cuts = true, verso = false;
+let fmt = "a6", cuts = true, verso = true;
 function sheet(items) {
   return '<div class="sheet-scroll"><div class="sheet ' + fmt + (cuts ? " cuts" : "") + '">' + items.map(h => '<div class="slot">' + (h || "") + '</div>').join("") + '</div></div>';
 }
@@ -342,12 +341,10 @@ function render() {
   document.getElementById("bt-a6").setAttribute("aria-pressed", fmt === "a6");
   document.getElementById("bt-a5").setAttribute("aria-pressed", fmt === "a5");
   document.getElementById("bt-cuts").setAttribute("aria-pressed", cuts);
-  document.getElementById("bt-verso").setAttribute("aria-pressed", verso);
 }
 document.getElementById("bt-a6").onclick = () => { fmt = "a6"; render(); };
 document.getElementById("bt-a5").onclick = () => { fmt = "a5"; render(); };
 document.getElementById("bt-cuts").onclick = () => { cuts = !cuts; render(); };
-document.getElementById("bt-verso").onclick = () => { verso = !verso; render(); };
 render();
 </script>
 </body>
