@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,follow">
+<title>Cartes Bulle de confort</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap">
+<style id="pagesize">@page { size: A4 portrait; margin: 0; }</style>
+<style>
+/* Cartes façon sketchnote : grand dessin, titre manuscrit, cadre de couleur par famille. Planches A4 (4×A6 ou 2×A5). */
+:root {
+  --encre: #1C3F60;
+  --corail: #FF6F61;
+  --jaune: #F7D774;
+  --gris: #F2F2F2;
+  --noir: #1A1A1A;
+  --bg: #E9ECEF;
+  --fg: #1A1A1A;
+  --muted: #5B6670;
+  --panel: #FFFFFF;
+  --f-txt: "Poppins", "Segoe UI", Arial, sans-serif;
+  --f-main: "Patrick Hand", "Comic Sans MS", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #12202E; --fg: #EEF1F4; --muted: #A9B6C2; --panel: #1C2C3C; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #12202E; --fg: #EEF1F4; --muted: #A9B6C2; --panel: #1C2C3C; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--f-txt); margin: 0; }
+.wrap { padding-block: 28px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); max-width: 1100px; margin: 0 auto; }
+header.intro { display: grid; gap: 10px; max-width: 68ch; }
+header.intro h1 { font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 0; text-wrap: balance; }
+header.intro h1 span { font-family: var(--f-main); font-weight: 400; color: var(--corail); }
+header.intro p { margin: 0; line-height: 1.6; color: var(--muted); }
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 22px 0 26px; }
+.tools button { font: 500 0.92rem var(--f-txt); padding: 9px 16px; border-radius: 999px; border: 2px solid var(--muted); background: var(--panel); color: var(--fg); cursor: pointer; }
+.tools button[aria-pressed="true"] { background: var(--corail); border-color: var(--corail); color: #fff; }
+.tools button:focus-visible { outline: 3px solid var(--jaune); outline-offset: 2px; }
+.tools .hint { font-family: var(--f-main); font-size: 1.05rem; color: var(--muted); flex-basis: 100%; }
+
+.sheets { display: grid; gap: 28px; }
+.sheet-scroll { overflow-x: auto; }
+.sheet { background: #fff; display: grid; box-shadow: 0 6px 24px rgba(0,0,0,.12); margin: 0 auto; }
+.sheet.a6 { width: 210mm; height: 297mm; grid-template-columns: 105mm 105mm; grid-template-rows: 148.5mm 148.5mm; }
+.sheet.a5 { width: 297mm; height: 210mm; grid-template-columns: 148.5mm 148.5mm; grid-template-rows: 210mm; }
+.sheet.cuts .slot { outline: 0.2mm dashed #C3C9CF; outline-offset: -0.1mm; }
+.slot { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+/* ---- la carte ---- */
+.card { --u: 3.5mm; --fc: #1C3F60; font-size: var(--u); position: relative; width: 97mm; height: 140mm; background: #fff; color: #1A1A1A; box-sizing: border-box; padding: 10mm 9mm 7mm; display: flex; flex-direction: column; }
+.a5 .card { --u: 4.95mm; width: 138mm; height: 198mm; padding: 14mm 13mm 10mm; }
+.card .frame { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.card .art { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 0; }
+.card .art svg { width: 100%; height: 100%; max-height: 100%; overflow: visible; }
+.card h2 { font-family: var(--f-main); font-weight: 400; text-transform: uppercase; text-align: center; font-size: 2.55em; line-height: 1; letter-spacing: .02em; margin: .25em 0 .3em; color: #1A1A1A; text-wrap: balance; min-height: 2em; display: flex; align-items: center; justify-content: center; }
+.card .sig { font-family: var(--f-main); font-size: .85em; color: #8A939B; text-align: left; }
+.f-parole { --fc: #FF6F61; }
+.f-collectif { --fc: #1C3F60; }
+.f-rythme { --fc: #EFC94C; }
+.f-soi { --fc: #6E8BA6; }
+.f-vierge { --fc: #B9C0C7; }
+.f-vierge h2 { border-bottom: .35mm dotted #9AA4AE; }
+
+/* mode d'emploi */
+.guide h2 { font-size: 2.2em; min-height: 0; margin: 0 0 .35em; }
+.guide .txt { flex: 1; display: flex; flex-direction: column; gap: .55em; font-size: .92em; line-height: 1.42; }
+.guide .txt p { margin: 0; }
+.guide .k { font-family: var(--f-main); font-size: 1.3em; color: #FF6F61; }
+.guide .q { font-family: var(--f-main); font-size: 1.2em; line-height: 1.2; color: #1C3F60; background: #F7D774; border-radius: 2mm; padding: .35em .7em; }
+
+/* verso */
+.verso h2 { font-size: 3em; min-height: 0; color: #1C3F60; }
+.verso .sig { text-align: center; font-size: 1.05em; }
+
+@media print {
+  body { background: #fff; }
+  .wrap { padding: 0; max-width: none; }
+  header.intro, .tools, .back { display: none; }
+  .sheets { display: block; }
+  .sheet-scroll { overflow: visible; }
+  .sheet { box-shadow: none; margin: 0; break-after: page; page-break-after: always; }
+  .sheet:last-child { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="wob" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/>
+      <feDisplacementMap in="SourceGraphic" scale="2.6"/>
+    </filter>
+    <filter id="wobf" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="9"/>
+      <feDisplacementMap in="SourceGraphic" scale="0.9"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="wrap">
+  <header class="intro">
+    <h1>Cartes Bulle de confort <span>façon sketchnote</span></h1>
+    <p>39 principes de fonctionnement dessinés, en 4 familles repérables à la couleur du cadre : la parole en corail, le collectif en bleu encre, le rythme en jaune, prendre soin de soi en bleu gris. Deux cartes mode d'emploi, des cartes vierges à dessiner, et un verso commun si vous imprimez en recto-verso.</p>
+  </header>
+
+  <p class="back" style="margin:14px 0 0"><a href="espace-stagiaires-jeu.html" style="color:var(--corail);font-weight:500;text-decoration:none">← Retour à l'espace stagiaires</a></p>
+
+  <div class="tools" role="toolbar" aria-label="Options d'impression">
+    <button id="bt-a6" aria-pressed="true">A6 · 4 par feuille</button>
+    <button id="bt-a5" aria-pressed="false">A5 · 2 par feuille</button>
+    <button id="bt-cuts" aria-pressed="true">Traits de coupe</button>
+    <button id="bt-verso" aria-pressed="false">Ajouter les versos</button>
+    <span class="hint">Pour imprimer : Ctrl+P, format A4, marges « aucune », graphiques d'arrière-plan cochés. En recto-verso, retournez sur le bord long.</span>
+  </div>
+
+  <div class="sheets" id="sheets"></div>
+</div>
+
+<script>
+const C = "#FF6F61", E = "#1C3F60", J = "#F7D774", G = "#E8E6E3", B = "#C9DCEB", W = "#fff", N = "#1A1A1A";
+
+/* ---------- petits outils de dessin ---------- */
+const st = (fill, stroke, sw) => 'style="fill:' + (fill || "none") + ';stroke:' + (stroke || N) + ';stroke-width:' + (sw || 3.2) + ';stroke-linecap:round;stroke-linejoin:round"';
+function P(cx, by, o) {
+  o = o || {}; const s = o.s || 1, hy = by - 77 * s;
+  let out = o.noShadow ? "" : '<ellipse cx="' + cx + '" cy="' + by + '" rx="' + 30 * s + '" ry="' + 5 * s + '" style="fill:' + G + '"/>';
+  out += '<path ' + st(o.fill || W) + ' d="M' + (cx - 22 * s) + ' ' + by + ' C' + (cx - 22 * s) + ' ' + (by - 40 * s) + ' ' + (cx - 16 * s) + ' ' + (by - 62 * s) + ' ' + cx + ' ' + (by - 62 * s) + ' C' + (cx + 16 * s) + ' ' + (by - 62 * s) + ' ' + (cx + 22 * s) + ' ' + (by - 40 * s) + ' ' + (cx + 22 * s) + ' ' + by + ' Z"/>';
+  out += '<ellipse ' + st(W) + ' cx="' + cx + '" cy="' + hy + '" rx="' + 14 * s + '" ry="' + 17 * s + '"/>';
+  if (o.closed) out += '<path ' + st() + ' d="M' + (cx - 8 * s) + ' ' + (hy - 2 * s) + ' q3 2 6 0 M' + (cx + 2 * s) + ' ' + (hy - 2 * s) + ' q3 2 6 0"/>';
+  else out += '<path ' + st() + ' d="M' + (cx - 5 * s) + ' ' + (hy - 4 * s) + ' v3 M' + (cx + 5 * s) + ' ' + (hy - 4 * s) + ' v3"/>';
+  out += o.open
+    ? '<ellipse ' + st(C, N, 2.4) + ' cx="' + cx + '" cy="' + (hy + 7 * s) + '" rx="' + 4 * s + '" ry="' + 3 * s + '"/>'
+    : '<path ' + st() + ' d="M' + (cx - 5 * s) + ' ' + (hy + 6 * s) + ' q' + 5 * s + ' ' + 4 * s + ' ' + 10 * s + ' 0"/>';
+  return out;
+}
+function bubble(x, y, w, h, tx, ty, fill) {
+  const r = 12, bx = Math.min(Math.max(tx, x + r + 10), x + w - r - 10);
+  return '<path ' + st(fill || W) + ' d="M' + (x + r) + ' ' + y + ' H' + (x + w - r) + ' Q' + (x + w) + ' ' + y + ' ' + (x + w) + ' ' + (y + r) + ' V' + (y + h - r) + ' Q' + (x + w) + ' ' + (y + h) + ' ' + (x + w - r) + ' ' + (y + h) + ' H' + (bx + 8) + ' L' + tx + ' ' + ty + ' L' + (bx - 6) + ' ' + (y + h) + ' H' + (x + r) + ' Q' + x + ' ' + (y + h) + ' ' + x + ' ' + (y + h - r) + ' V' + (y + r) + ' Q' + x + ' ' + y + ' ' + (x + r) + ' ' + y + 'Z"/>';
+}
+const T = (x, y, s, size, color, rot) => '<text x="' + x + '" y="' + y + '" text-anchor="middle" style="font-family:\'Patrick Hand\',cursive;font-size:' + size + 'px;fill:' + (color || N) + '"' + (rot ? ' transform="rotate(' + rot + ' ' + x + ' ' + y + ')"' : '') + '>' + s + '</text>';
+const heart = (x, y, s, fill) => '<path ' + st(fill || C) + ' d="M' + x + ' ' + (y + s * .9) + ' C' + (x - s * 1.2) + ' ' + (y + s * .1) + ' ' + (x - s * .6) + ' ' + (y - s * .7) + ' ' + x + ' ' + (y - s * .15) + ' C' + (x + s * .6) + ' ' + (y - s * .7) + ' ' + (x + s * 1.2) + ' ' + (y + s * .1) + ' ' + x + ' ' + (y + s * .9) + 'Z"/>';
+function star(x, y, r, fill) {
+  let d = "";
+  for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r * .45 : r; d += (i ? "L" : "M") + (x + rr * Math.cos(a)).toFixed(1) + " " + (y + rr * Math.sin(a)).toFixed(1); }
+  return '<path ' + st(fill || J, N, 2.4) + ' d="' + d + 'Z"/>';
+}
+function gear(cx, cy, r, n, fill) {
+  let d = ""; const pts = n * 4;
+  for (let i = 0; i < pts; i++) { const a = i / pts * Math.PI * 2, rr = (i % 4 === 1 || i % 4 === 2) ? r + 9 : r; d += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + " " + (cy + rr * Math.sin(a)).toFixed(1); }
+  return '<path ' + st(fill) + ' d="' + d + 'Z"/><circle ' + st(W) + ' cx="' + cx + '" cy="' + cy + '" r="' + r * .35 + '"/>';
+}
+const L = (d, color, sw) => '<path ' + st(null, color, sw) + ' d="' + d + '"/>';
+const hand = (x, y, fill) => '<circle ' + st(fill || W, N, 2.6) + ' cx="' + x + '" cy="' + y + '" r="4.5"/>';
+
+/* ---------- les 36 dessins (viewBox 200×170) ---------- */
+const ART = {
+  "Écoute active": () => P(80, 150) + L("M96 100 Q114 88 101 74") + hand(100, 73) +
+    L("M122 60 q10 13 0 26", C) + L("M135 52 q16 21 0 42", C) + L("M148 44 q22 29 0 58", C),
+  "Une parole à la fois": () => P(60, 150, { s: .85, fill: J, open: true }) + P(148, 150, { s: .85 }) +
+    L("M78 112 L96 70", E, 7) + '<circle ' + st(C) + ' cx="97" cy="66" r="6"/>' +
+    bubble(10, 10, 80, 40, 52, 62, C) + L("M24 24 h50 M24 36 h36", W, 3) +
+    L("M170 70 q8 9 0 18 M180 64 q12 15 0 30", E),
+  "Parler en « je »": () => P(85, 150) + L("M66 100 Q76 120 92 110") + hand(93, 109, J) +
+    bubble(112, 14, 76, 48, 120, 72, W) + T(150, 48, "Je…", 30, E),
+  "Droit de ne pas savoir": () => P(100, 150) + L("M80 108 L62 98 L58 84") + L("M120 108 L138 98 L142 84") + hand(58, 82) + hand(142, 82) +
+    T(100, 44, "?", 46, C) + T(140, 36, "?", 26, E, 14) + T(62, 38, "?", 22, E, -14),
+  "Franchise": () => P(45, 150, { s: .8 }) + P(155, 150, { s: .8 }) +
+    L("M70 86 H130", C, 4) + L("M120 78 L130 86 L120 94", C, 4) + L("M80 78 L70 86 L80 94", C, 4) + T(100, 60, "!", 34, E),
+  "Non-jugement": () => '<g transform="rotate(-28 100 85)"><rect ' + st(J) + ' x="96" y="78" width="70" height="12" rx="5"/><rect ' + st(E) + ' x="70" y="58" width="30" height="52" rx="6"/></g>' +
+    '<rect ' + st(G) + ' x="56" y="132" width="72" height="14" rx="4"/>' +
+    '<circle ' + st(null, C, 6) + ' cx="100" cy="88" r="66"/>' + L("M54 134 L146 42", C, 6),
+  "Aller à l'essentiel": () => '<circle ' + st(W) + ' cx="95" cy="92" r="58"/><circle ' + st(J) + ' cx="95" cy="92" r="38"/><circle ' + st(C) + ' cx="95" cy="92" r="18"/>' +
+    L("M95 92 L178 22", N, 4) + L("M168 18 L180 20 L178 32") + L("M160 26 l6 -14 M168 34 l14 -6", E),
+  "Droit au désaccord": () => P(55, 150, { s: .8 }) + P(145, 150, { s: .8 }) +
+    bubble(14, 10, 76, 44, 50, 66, W) + L("M38 32 l10 10 l18 -20", E, 5) +
+    bubble(110, 10, 76, 44, 150, 66, W) + L("M136 20 l24 24 M160 20 l-24 24", C, 5),
+  "Équilibre de la parole": () => '<path ' + st(E) + ' d="M84 150 L100 116 L116 150 Z"/><rect ' + st(J) + ' x="20" y="108" width="160" height="9" rx="4"/>' +
+    bubble(22, 58, 54, 34, 40, 106, C) + bubble(124, 58, 54, 34, 160, 106, B) + L("M34 72 h28", W, 3) + L("M136 72 h28", E, 3),
+  "Confidentialité": () => bubble(30, 16, 140, 104, 70, 146, W) +
+    '<path ' + st(null, N, 5) + ' d="M84 60 V48 a16 16 0 0 1 32 0 V60"/><rect ' + st(J) + ' x="74" y="58" width="52" height="42" rx="7"/>' +
+    '<circle style="fill:' + N + '" cx="100" cy="75" r="5"/>' + L("M100 76 V88"),
+  "Bienveillance": () => P(100, 150) + L("M80 108 Q64 112 56 98") + L("M120 108 Q136 112 144 98") + hand(56, 96) + hand(144, 96) +
+    heart(100, 30, 22) + L("M68 40 l-8 -4 M132 40 l8 -4 M100 6 v-4", C),
+  "Droit à l'erreur": () => '<path ' + st(null, "#B5BCC3", 3) + ' stroke-dasharray="5 6" d="M22 140 q12 -14 24 0 t24 0 t24 0"/>' +
+    L("M100 140 q14 -14 26 -6 t34 -10", E, 3.4) +
+    '<g transform="rotate(-38 110 78)"><rect ' + st(J) + ' x="50" y="66" width="100" height="22" rx="3"/><path ' + st(W) + ' d="M150 66 L172 77 L150 88 Z"/><path style="fill:' + N + '" d="M165 73.5 L172 77 L165 80.5 Z"/><rect ' + st(C) + ' x="30" y="66" width="20" height="22" rx="5"/></g>' +
+    '<circle style="fill:#B5BCC3" cx="44" cy="124" r="2.5"/><circle style="fill:#B5BCC3" cx="54" cy="130" r="2"/>',
+  "Entraide": () => '<rect ' + st(G) + ' x="16" y="118" width="84" height="32" rx="3"/>' + P(56, 118, { s: .8, noShadow: true }) + P(146, 150, { s: .8, fill: J }) +
+    L("M70 88 Q88 92 104 98") + L("M130 118 Q118 104 104 98") + hand(104, 98, C),
+  "Coresponsabilité": () => '<rect ' + st(J) + ' x="16" y="38" width="168" height="13" rx="5"/>' +
+    [44, 100, 156].map(x => P(x, 150, { s: .7 }) + L("M" + (x - 10) + " 116 L" + (x - 16) + " 52") + L("M" + (x + 10) + " 116 L" + (x + 16) + " 52")).join("") +
+    L("M40 24 l-4 -8 M100 22 v-10 M160 24 l4 -8", C),
+  "Curiosité": () => L("M128 112 L168 152", E, 13) + '<circle ' + st(W) + ' cx="96" cy="80" r="46"/>' +
+    '<path ' + st(W) + ' d="M62 80 Q96 50 130 80 Q96 110 62 80 Z"/><circle ' + st(B) + ' cx="96" cy="80" r="13"/><circle style="fill:' + N + '" cx="96" cy="80" r="5"/>' +
+    T(160, 42, "?", 32, C, 12),
+  "Humour": () => '<circle ' + st(J) + ' cx="100" cy="90" r="56"/>' + L("M70 76 q9 -10 18 0 M112 76 q9 -10 18 0") +
+    '<path ' + st(C) + ' d="M68 98 Q100 140 132 98 Z"/>' + T(30, 50, "HA", 24, E, -16) + T(172, 46, "HA", 24, E, 16) + T(170, 150, "ha", 20, C, 10),
+  "Ici, pas de grade": () => '<circle ' + st(J) + ' cx="100" cy="86" r="40"/>' +
+    [0, 1, 2, 3, 4, 5].map(i => { const a = i * Math.PI / 3 - Math.PI / 2, x = 100 + 64 * Math.cos(a), y = 86 + 62 * Math.sin(a);
+      return '<circle ' + st(W) + ' cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="14"/><path ' + st(null, N, 2.6) + ' d="M' + (x - 4).toFixed(1) + ' ' + (y - 3).toFixed(1) + ' v2 M' + (x + 4).toFixed(1) + ' ' + (y - 3).toFixed(1) + ' v2 M' + (x - 4).toFixed(1) + ' ' + (y + 4).toFixed(1) + ' q4 3 8 0"/>'; }).join(""),
+  "Accueil des différences": () => P(32, 150, { s: .6, fill: C }) + P(78, 150, { s: .88 }) + P(126, 150, { s: .7, fill: J }) + P(170, 150, { s: .55, fill: B }) +
+    L("M26 30 q6 -10 12 0 M88 20 q6 -10 12 0 M150 34 q6 -10 12 0", C),
+  "Ponctualité": () => '<path ' + st(C) + ' d="M46 50 a22 22 0 0 1 34 -22 Z"/><path ' + st(C) + ' d="M154 50 a22 22 0 0 0 -34 -22 Z"/>' +
+    L("M68 136 l-10 14 M132 136 l10 14") + '<circle ' + st(W) + ' cx="100" cy="92" r="50"/>' +
+    L("M100 48 v7 M144 92 h-7 M100 136 v-7 M56 92 h7") + L("M100 92 V60", N, 4) + L("M100 92 H126", N, 4) + '<circle style="fill:' + C + '" cx="100" cy="92" r="4"/>' +
+    L("M30 84 h-12 M32 100 h-10 M170 84 h12 M168 100 h10", E),
+  "Pauses": () => '<ellipse ' + st(G) + ' cx="95" cy="150" rx="64" ry="8"/>' +
+    '<path ' + st(J) + ' d="M52 72 H138 V112 a32 32 0 0 1 -32 32 H84 a32 32 0 0 1 -32 -32 Z"/><path ' + st() + ' d="M138 84 a17 17 0 0 1 0 34"/>' +
+    L("M76 58 q-8 -10 0 -20 t0 -22", C) + L("M95 58 q-8 -10 0 -20 t0 -22", C) + L("M114 58 q-8 -10 0 -20 t0 -22", C),
+  "Écrans rangés": () => '<rect ' + st(E) + ' x="66" y="30" width="62" height="112" rx="11"/><rect ' + st(W, N, 2.4) + ' x="74" y="42" width="46" height="84" rx="3"/>' +
+    '<path style="fill:' + J + ';stroke:' + N + ';stroke-width:2.4" d="M104 70 a16 16 0 1 0 0 26 a12 12 0 1 1 0 -26 Z"/>' +
+    T(152, 56, "Z", 30, C) + T(170, 34, "z", 24, C) + T(182, 18, "z", 18, C),
+  "Présence": () => '<ellipse ' + st(null, E, 2.6) + ' stroke-dasharray="6 6" cx="100" cy="150" rx="58" ry="11"/>' + P(100, 150, { noShadow: true }) +
+    '<path ' + st(C) + ' d="M100 52 C88 40 82 32 82 24 a18 18 0 0 1 36 0 c0 8 -6 16 -18 28Z"/><circle ' + st(W) + ' cx="100" cy="24" r="6"/>',
+  "Droit au silence": () => P(100, 150, { closed: true, fill: B }) + bubble(36, 6, 128, 40, 92, 56, W) +
+    '<circle style="fill:' + E + '" cx="80" cy="26" r="4"/><circle style="fill:' + E + '" cx="100" cy="26" r="4"/><circle style="fill:' + E + '" cx="120" cy="26" r="4"/>' +
+    L("M30 110 q-10 -8 -4 -20 M170 110 q10 -8 4 -20", "#B5BCC3"),
+  "Respect du temps": () => '<rect ' + st(E) + ' x="58" y="22" width="84" height="12" rx="4"/><rect ' + st(E) + ' x="58" y="140" width="84" height="12" rx="4"/>' +
+    '<path ' + st(W) + ' d="M68 34 C68 70 96 78 96 87 C96 96 68 104 68 140 H132 C132 104 104 96 104 87 C104 78 132 70 132 34 Z"/>' +
+    '<path style="fill:' + J + '" d="M78 50 H122 C118 64 104 72 100 80 C96 72 82 64 78 50Z"/><path style="fill:' + J + '" d="M76 138 Q100 112 124 138Z"/>' + L("M100 84 V128", J, 2.5) +
+    L("M40 60 l-10 -6 M38 88 h-12 M160 60 l10 -6 M162 88 h12", C),
+  "Décider ensemble": () => [45, 100, 155].map((x, i) => P(x, 150, { s: .75, fill: i === 1 ? J : W }) + L("M" + (x - 11) + " 114 L" + (x - 22) + " 74") + L("M" + (x + 11) + " 114 L" + (x + 22) + " 74") + hand(x - 22, 72) + hand(x + 22, 72)).join("") +
+    L("M84 30 l10 10 l20 -22", C, 5),
+  "Une chose à la fois": () => '<rect ' + st(G) + ' x="30" y="82" width="106" height="62" rx="6"/><rect ' + st(W) + ' x="44" y="62" width="106" height="62" rx="6"/>' +
+    '<rect ' + st(J) + ' x="58" y="40" width="112" height="66" rx="6"/>' + L("M74 62 h56 M74 78 h40", N, 3) + '<circle ' + st(C) + ' cx="150" cy="86" r="12"/>' + L("M144 86 l4 4 l8 -9", W, 3),
+  "Mouvement": () => '<ellipse style="fill:' + G + '" cx="100" cy="156" rx="30" ry="5"/>' + P(100, 132, { noShadow: true, fill: C, open: true }) +
+    L("M80 92 L62 66") + L("M120 92 L138 66") + hand(61, 64) + hand(139, 64) + L("M88 132 l-6 12 M112 132 l6 12") +
+    L("M38 90 h-16 M42 106 h-22 M162 90 h16 M158 106 h22", E),
+  "Droit de passer": () => P(72, 150) + L("M146 146 V82", N, 4) + '<rect ' + st(J) + ' x="104" y="40" width="84" height="44" rx="6"/>' + T(146, 69, "JE PASSE", 19, E) +
+    L("M88 104 Q118 114 146 106") + hand(146, 106),
+  "Mes besoins": () => '<path ' + st(W) + ' d="M50 46 L62 146 H104 L116 46 Z"/><path style="fill:' + B + '" d="M54 78 L62 144 H104 L112 78 Z"/>' + L("M50 46 L62 146 H104 L116 46 Z") +
+    '<path ' + st(C) + ' d="M152 98 c-14 -10 -32 2 -26 22 c4 16 16 26 26 20 c10 6 22 -4 26 -20 c6 -20 -12 -32 -26 -22 Z"/>' + L("M152 98 q2 -12 10 -16") + '<path ' + st("#9CCB86", N, 2.4) + ' d="M154 90 q12 -14 22 -6 q-10 12 -22 6Z"/>',
+  "Oser": () => '<ellipse ' + st(null, E, 2.6) + ' stroke-dasharray="6 6" cx="64" cy="146" rx="52" ry="14"/>' + P(150, 150, { fill: C }) +
+    L("M60 120 Q80 60 126 70", E) + L("M116 62 L127 70 L116 78", E) + star(40, 50, 12) + star(176, 38, 9),
+  "Plaisir": () => P(100, 150, { fill: J, open: true }) + L("M80 108 L60 72") + L("M120 108 L140 72") + hand(59, 70) + hand(141, 70) +
+    star(36, 40, 14, C) + star(164, 36, 12) + star(100, 22, 10) + star(170, 104, 8, C),
+  "Engagement": () => P(80, 150, { fill: E }) + '<path ' + st(C) + ' d="M128 30 Q150 22 174 32 V64 Q152 54 128 62Z"/>' + L("M128 150 V26", N, 4) +
+    L("M96 104 Q112 98 128 96") + hand(128, 96),
+  "Soucis à la porte": () => '<rect ' + st(W) + ' x="30" y="18" width="78" height="132"/><path ' + st(J) + ' d="M30 18 L84 30 V140 L30 150Z"/><circle style="fill:' + N + '" cx="74" cy="88" r="4"/>' +
+    '<rect ' + st(E) + ' x="126" y="128" width="58" height="20" rx="3"/><rect ' + st(C) + ' x="130" y="110" width="52" height="18" rx="3"/><rect ' + st(B) + ' x="124" y="92" width="56" height="18" rx="3"/>' +
+    T(154, 76, "plus tard", 18, E, -6),
+  "Venir comme je suis": () => P(90, 150, { fill: B }) + L("M70 108 Q54 112 48 96") + L("M110 108 Q126 112 132 96") + hand(48, 94) + hand(132, 94) +
+    '<path ' + st(W) + ' d="M142 138 q20 -16 40 0 q-4 14 -20 14 q-16 0 -20 -14Z"/><ellipse style="fill:' + N + '" cx="155" cy="141" rx="4" ry="3"/><ellipse style="fill:' + N + '" cx="169" cy="141" rx="4" ry="3"/>' +
+    heart(90, 30, 14),
+  "Ma météo": () => [0, 1, 2, 3, 4, 5, 6, 7].map(i => { const a = i * Math.PI / 4; return L("M" + (82 + 42 * Math.cos(a)).toFixed(1) + " " + (64 + 42 * Math.sin(a)).toFixed(1) + " L" + (82 + 54 * Math.cos(a)).toFixed(1) + " " + (64 + 54 * Math.sin(a)).toFixed(1), "#E0B52E", 4); }).join("") +
+    '<circle ' + st(J) + ' cx="82" cy="64" r="32"/>' + '<path ' + st(W) + ' d="M80 120 a20 20 0 0 1 18 -28 a26 26 0 0 1 50 -4 a20 20 0 0 1 14 32 Z"/>' +
+    L("M100 134 l-5 12 M122 134 l-5 12 M144 134 l-5 12", E, 3.4),
+  "Droit de changer d'avis": () => P(100, 150) + T(62, 70, "A", 30, E) + T(138, 70, "B", 30, C) +
+    L("M66 46 C66 10 134 10 134 44", N, 4) + L("M124 36 L134 46 L144 36", N, 4) + L("M84 104 Q74 92 70 84") + hand(70, 82, J),
+  "Célébrer les réussites": () => '<rect ' + st(E) + ' x="66" y="138" width="68" height="14" rx="4"/><rect ' + st(J) + ' x="90" y="112" width="20" height="26"/>' +
+    L("M70 46 Q40 46 46 72 Q52 90 74 88", N, 3.4) + L("M130 46 Q160 46 154 72 Q148 90 126 88", N, 3.4) +
+    '<path ' + st(J) + ' d="M68 36 H132 V70 a32 32 0 0 1 -64 0 Z"/>' + star(100, 62, 13, C) +
+    star(30, 30, 9) + star(172, 26, 11, C) + '<rect style="fill:' + C + '" x="40" y="104" width="7" height="7" transform="rotate(20 43 107)"/><rect style="fill:' + E + '" x="160" y="100" width="7" height="7" transform="rotate(-25 163 103)"/><rect style="fill:' + B + '" x="150" y="130" width="6" height="6"/>',
+  "Demander de l'aide": () => P(72, 150) + L("M88 102 L104 62") + hand(105, 60, J) + P(160, 150, { s: .75 }) +
+    bubble(112, 10, 80, 40, 126, 60, W) + T(152, 38, "aide ?", 24, E),
+  "Dire ce qui coince": () => gear(72, 96, 38, 9, J) + gear(142, 66, 26, 7, B) +
+    '<path ' + st(C) + ' d="M106 80 l9 -6 l5 8 l-8 7Z"/>' + T(150, 140, "!", 40, C) + T(170, 132, "?", 28, E, 10)
+};
+
+/* ---------- familles et cartes ---------- */
+const FAMS = {
+  parole: ["Écoute active", "Une parole à la fois", "Parler en « je »", "Droit de ne pas savoir", "Franchise", "Non-jugement", "Aller à l'essentiel", "Droit au désaccord", "Équilibre de la parole", "Droit de changer d'avis"],
+  collectif: ["Confidentialité", "Bienveillance", "Droit à l'erreur", "Entraide", "Coresponsabilité", "Curiosité", "Humour", "Ici, pas de grade", "Accueil des différences", "Célébrer les réussites"],
+  rythme: ["Ponctualité", "Pauses", "Écrans rangés", "Présence", "Droit au silence", "Respect du temps", "Décider ensemble", "Une chose à la fois", "Mouvement"],
+  soi: ["Droit de passer", "Mes besoins", "Oser", "Plaisir", "Engagement", "Soucis à la porte", "Venir comme je suis", "Ma météo", "Dire ce qui coince", "Demander de l'aide"]
+};
+
+function frame() {
+  return '<svg class="frame" viewBox="0 0 97 140" preserveAspectRatio="none" aria-hidden="true"><g filter="url(#wobf)" style="fill:none;stroke:var(--fc);stroke-linecap:round;stroke-linejoin:round">' +
+    '<rect x="5" y="5" width="87" height="130" rx="1.2" style="stroke-width:.8"/>' +
+    '<path d="M2.6 10 q-.4 -6.5 6 -7.2 q3.4 0 3.2 2.6 q-.3 2.2 -2.6 1.6" style="stroke-width:.7"/>' +
+    '<path d="M94.4 130 q.4 6.5 -6 7.2 q-3.4 0 -3.2 -2.6 q.3 -2.2 2.6 -1.6" style="stroke-width:.7"/>' +
+    '</g></svg>';
+}
+const SIG = '<div class="sig">✎ arnaud-simart.fr · bulle de confort</div>';
+
+function cardHTML(fam, title) {
+  return '<div class="card f-' + fam + '">' + frame() +
+    '<div class="art"><svg viewBox="0 0 200 170" role="img" aria-label="' + title + '"><g filter="url(#wob)">' + ART[title]() + '</g></svg></div>' +
+    '<h2' + (Math.max(...title.split(" ").map(w => w.length)) >= 13 ? ' style="font-size:2.05em"' : '') + '>' + title + '</h2>' + SIG + '</div>';
+}
+function blankHTML() {
+  return '<div class="card f-vierge">' + frame() + '<div class="art"></div><h2></h2>' + SIG + '</div>';
+}
+function guideHTML() {
+  return '<div class="card guide f-collectif">' + frame() +
+    '<h2>Mode d\'emploi</h2><div class="txt">' +
+    '<p><span class="k">L\'intention</span><br>Décider ensemble des principes de fonctionnement d\'un groupe, le temps d\'un atelier, d\'une formation ou d\'une réunion.</p>' +
+    '<p>Étale les cartes sur une table et pose une question :</p>' +
+    '<div class="q">De quoi avez-vous besoin pour bien vivre ensemble cette journée ?</div>' +
+    '<p>Chacun prend la ou les cartes qui comptent pour lui. Le groupe valide ensemble.</p>' +
+    '<p><span class="k">En équipe</span><br>Chacun choisit ses principes indispensables et dit ce qu\'ils représentent pour lui. Le groupe hiérarchise, puis précise comment chaque principe se vit au concret.</p>' +
+    '</div>' + SIG + '</div>';
+}
+function guide2HTML() {
+  return '<div class="card guide f-collectif">' + frame() +
+    '<h2>Autres usages</h2><div class="txt">' +
+    '<p><span class="k">En inclusion</span><br>Chacun choisit une carte et dit pourquoi.</p>' +
+    '<div class="q">Prends la carte dont tu as le plus besoin aujourd\'hui.</div>' +
+    '<p><span class="k">En cours de route</span><br>Garde les cartes choisies visibles sur la table. Quand un principe est oublié, chacun peut lever la carte. Plus doux qu\'un rappel à l\'ordre, et ça fait souvent sourire.</p>' +
+    '<p><span class="k">En clôture</span></p>' +
+    '<div class="q">Quel principe avons-nous le mieux vécu ? Lequel nous a manqué ?</div>' +
+    '</div>' + SIG + '</div>';
+}
+function versoHTML() {
+  const art = '<path ' + st(W, E, 3.4) + ' d="M100 18 C150 18 184 46 184 84 C184 118 156 140 116 144 L96 164 L98 144 C52 140 16 118 16 84 C16 46 50 18 100 18 Z"/>' +
+    P(64, 122, { s: .55, fill: C, noShadow: true }) + P(100, 122, { s: .62, fill: J, noShadow: true }) + P(136, 122, { s: .55, fill: B, noShadow: true }) +
+    heart(100, 44, 9);
+  return '<div class="card verso f-collectif">' + frame() +
+    '<div class="art"><svg viewBox="0 0 200 170" aria-hidden="true"><g filter="url(#wob)">' + art + '</g></svg></div>' +
+    '<h2>Bulle de confort</h2><div class="sig">✎ arnaud-simart.fr · facilitation & intelligence collective</div></div>';
+}
+
+const all = [guideHTML(), guide2HTML()];
+Object.keys(FAMS).forEach(f => FAMS[f].forEach(t => all.push(cardHTML(f, t))));
+while (all.length % 4 !== 0 || all.length < 48) all.push(blankHTML());
+
+let fmt = "a6", cuts = true, verso = false;
+function sheet(items) {
+  return '<div class="sheet-scroll"><div class="sheet ' + fmt + (cuts ? " cuts" : "") + '">' + items.map(h => '<div class="slot">' + (h || "") + '</div>').join("") + '</div></div>';
+}
+function render() {
+  const per = fmt === "a6" ? 4 : 2, out = [];
+  for (let i = 0; i < all.length; i += per) {
+    const items = all.slice(i, i + per);
+    out.push(sheet(items));
+    if (verso) out.push(sheet(items.map(() => versoHTML())));
+  }
+  document.getElementById("sheets").innerHTML = out.join("");
+  document.getElementById("pagesize").textContent = "@page { size: A4 " + (fmt === "a6" ? "portrait" : "landscape") + "; margin: 0; }";
+  document.getElementById("bt-a6").setAttribute("aria-pressed", fmt === "a6");
+  document.getElementById("bt-a5").setAttribute("aria-pressed", fmt === "a5");
+  document.getElementById("bt-cuts").setAttribute("aria-pressed", cuts);
+  document.getElementById("bt-verso").setAttribute("aria-pressed", verso);
+}
+document.getElementById("bt-a6").onclick = () => { fmt = "a6"; render(); };
+document.getElementById("bt-a5").onclick = () => { fmt = "a5"; render(); };
+document.getElementById("bt-cuts").onclick = () => { cuts = !cuts; render(); };
+document.getElementById("bt-verso").onclick = () => { verso = !verso; render(); };
+render();
+</script>
+</body>
+</html>
