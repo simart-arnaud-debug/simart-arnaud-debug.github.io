@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><title>Cartes rôles</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,follow"><title>Cartes rôles</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&family=Patrick+Hand&display=swap" rel="stylesheet">
 <style>
 :root{--b:#1C3F60;--c:#FF6F61;--j:#F7D774;--g:#F2F2F2;--n:#1A1A1A}
@@ -32,7 +32,23 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
 .pastille.photo{background:none;overflow:hidden;border:2mm solid var(--c);box-shadow:0 0 0 1.2mm var(--j)}
 .pastille.photo img{width:100%;height:100%;object-fit:cover;display:block}
 @media print{.pastille.photo img{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-</style></head><body>
+
+.card.v{background:var(--b);border-color:var(--b);justify-content:center;color:#fff;padding:0}
+.vin{position:absolute;inset:5mm;border:.6mm solid rgba(247,215,116,.55);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 6mm}
+.vdot{width:16mm;height:16mm;border-radius:50%;background:var(--c);margin-bottom:10mm}
+.vt{font-weight:700;font-size:30pt;line-height:1.05}
+.vh{font-family:"Patrick Hand",cursive;color:var(--j);font-size:17pt;margin-top:7mm;line-height:1.2}
+.vl{width:22mm;height:1mm;border-radius:1mm;background:var(--j);margin-top:9mm}
+.vs{font-family:"Patrick Hand",cursive;font-size:11pt;color:rgba(255,255,255,.8);position:absolute;bottom:6mm}
+.page.verso-page .card+.card::before{display:none}
+body:not(.versos) .verso-page{display:none}
+.tools{max-width:297mm;margin:10mm auto 0;display:flex;gap:12px;align-items:center;font-family:Poppins}
+.tools button{font:500 14px Poppins;padding:9px 18px;border-radius:999px;border:2px solid var(--b);background:#fff;color:var(--b);cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.tools span{font-family:"Patrick Hand",cursive;color:#555;font-size:16px}
+@media print{.tools{display:none}.card.v,.vdot,.vl{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style><script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></head><body>
+<div class="tools"><button id="btv" aria-pressed="false" onclick="document.body.classList.toggle('versos');this.setAttribute('aria-pressed',document.body.classList.contains('versos'))">Ajouter les dos</button><span>Avec les dos : impression recto-verso, A4 paysage, retourner sur le bord court.</span></div>
 <section class="page guide">
  <div class="gcol">
   <h1>Les rôles en atelier</h1>
@@ -56,6 +72,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   </ul></div>
  </div>
 </section>
+<section class="page verso-page"></section>
 <section class="page"><div class="card" style="--c:#1C3F60">
   <div class="pastille photo"><img src="role-facilitateur.jpg" alt="Facilitateur"></div>
   <h2>Facilitateur</h2>
@@ -80,7 +97,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Et toi, qu'en penses-tu ? »</div>
   <p class="piege"><b>Le piège :</b> faire le travail à la place du groupe.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#FF6F61">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#FF6F61">
   <div class="pastille photo"><img src="role-gardien-du-temps.jpg" alt="Gardien du temps"></div>
   <h2>Gardien du temps</h2>
   <p class="mission">S'assure que les horaires soient respectés et que l'on finisse dans les temps prévus.</p>
@@ -104,7 +121,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Il nous reste 5 minutes. »</div>
   <p class="piege"><b>Le piège :</b> couper tout le monde net, montre en main.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#1C3F60">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#1C3F60">
   <div class="pastille photo"><img src="role-scribe.jpg" alt="Scribe"></div>
   <h2>Scribe</h2>
   <p class="mission">S'assure que tout ce qui est partagé en groupe soit noté.</p>
@@ -128,7 +145,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Je le note bien comme ça ? »</div>
   <p class="piege"><b>Le piège :</b> trier ou résumer à sa sauce.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#FF6F61">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#FF6F61">
   <div class="pastille photo"><img src="role-porte-parole.jpg" alt="Porte-parole"></div>
   <h2>Porte-parole</h2>
   <p class="mission">Restitue les idées phares en grand groupe.</p>
@@ -152,7 +169,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Dans notre groupe, ce qui ressort… »</div>
   <p class="piege"><b>Le piège :</b> tout raconter dans l'ordre chronologique.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#1C3F60">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#1C3F60">
   <div class="pastille photo"><img src="role-hote.jpg" alt="Hôte"></div>
   <h2>Hôte</h2>
   <p class="mission">Accueille de nouveaux contributeurs et restitue les échanges précédents.</p>
@@ -176,7 +193,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Bienvenue ! Voilà où on en est. »</div>
   <p class="piege"><b>Le piège :</b> refaire tout le débat précédent.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#FF6F61">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#FF6F61">
   <div class="pastille photo"><img src="role-berger.jpg" alt="Berger"></div>
   <h2>Berger</h2>
   <p class="mission">Si besoin, aide le groupe à revenir « à ses moutons », à l'objectif.</p>
@@ -200,7 +217,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« On revient à nos moutons ? »</div>
   <p class="piege"><b>Le piège :</b> interdire toute digression, certaines valent de l'or.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#1C3F60">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#1C3F60">
   <div class="pastille photo"><img src="role-temoin.jpg" alt="Témoin"></div>
   <h2>Témoin</h2>
   <p class="mission">Apporte du feedback et des axes d'amélioration.</p>
@@ -224,7 +241,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Ce que j'ai observé… »</div>
   <p class="piege"><b>Le piège :</b> juger les personnes plutôt que le fonctionnement.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#FF6F61">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#FF6F61">
   <div class="pastille photo"><img src="role-gardien-de-l-energie.jpg" alt="Gardien de l'énergie"></div>
   <h2>Gardien de l'énergie</h2>
   <p class="mission">Sent quand le groupe s'essouffle et propose de changer de rythme.</p>
@@ -248,7 +265,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« On souffle deux minutes ? »</div>
   <p class="piege"><b>Le piège :</b> forcer la bonne humeur.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#1C3F60">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#1C3F60">
   <div class="pastille photo"><img src="role-avocat-du-diable.jpg" alt="Avocat du diable"></div>
   <h2>Avocat du diable</h2>
   <p class="mission">Challenge les idées pour les rendre plus solides.</p>
@@ -272,7 +289,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Je me fais l'avocat du diable… »</div>
   <p class="piege"><b>Le piège :</b> bloquer pour le plaisir de bloquer.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#FF6F61">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#FF6F61">
   <div class="pastille photo"><img src="role-recolteur-visuel.jpg" alt="Récolteur visuel"></div>
   <h2>Récolteur visuel</h2>
   <p class="mission">Rend les échanges visibles : schémas, dessins, carte mentale.</p>
@@ -296,7 +313,7 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« Regardez, ça donne ça ! »</div>
   <p class="piege"><b>Le piège :</b> chercher la jolie image plutôt que l'image utile.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section><section class="page"><div class="card" style="--c:#1C3F60">
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section><section class="page"><div class="card" style="--c:#1C3F60">
   <div class="pastille photo"><img src="role-gardien-du-cadre.jpg" alt="Gardien du cadre"></div>
   <h2>Gardien du cadre</h2>
   <p class="mission">Veille aux règles de fonctionnement que le groupe s'est données.</p>
@@ -320,5 +337,5 @@ ul{list-style:none;text-align:left;margin:7mm 0 0;width:100%}
   <div class="postit">« On s'était dit qu'on s'écoutait jusqu'au bout. »</div>
   <p class="piege"><b>Le piège :</b> jouer au gendarme.</p>
   <div class="sign">✎ arnaud-simart.fr</div>
-</div></section>
+</div></section><section class="page verso-page"><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div><div class="card v"><div class="vin"><div class="vdot"></div><div class="vt">Les rôles<br>en atelier</div><div class="vh">Et toi, quel rôle aujourd'hui ?</div><div class="vl"></div></div><div class="vs">✎ arnaud-simart.fr</div></div></section>
 </body></html>

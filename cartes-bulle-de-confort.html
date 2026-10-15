@@ -76,8 +76,10 @@ header.intro p { margin: 0; line-height: 1.6; color: var(--muted); }
 .guide .q { font-family: var(--f-main); font-size: 1.2em; line-height: 1.2; color: #1C3F60; background: #F7D774; border-radius: 2mm; padding: .35em .7em; }
 
 /* verso */
-.verso h2 { font-size: 3em; min-height: 0; color: #1C3F60; }
-.verso .sig { text-align: center; font-size: 1.05em; }
+.verso { background: #1C3F60; --fc: #F7D774; }
+.verso h2 { font-size: 3em; min-height: 0; color: #fff; }
+.verso .sig { text-align: center; font-size: 1.05em; color: rgba(255,255,255,.75); }
+.verso .vh { font-family: var(--f-main); color: #F7D774; text-align: center; font-size: 1.35em; margin: -.1em 0 .8em; }
 
 @media print {
   body { background: #fff; }
@@ -317,7 +319,7 @@ function versoHTML() {
     heart(100, 44, 9);
   return '<div class="card verso f-collectif">' + frame() +
     '<div class="art"><svg viewBox="0 0 200 170" aria-hidden="true"><g filter="url(#wob)">' + art + '</g></svg></div>' +
-    '<h2>Bulle de confort</h2><div class="sig">✎ arnaud-simart.fr · facilitation & intelligence collective</div></div>';
+    '<h2>Bulle de confort</h2><div class="vh">De quoi as-tu besoin aujourd\'hui ?</div><div class="sig">✎ arnaud-simart.fr · facilitation & intelligence collective</div></div>';
 }
 
 const all = [guideHTML(), guide2HTML()];
