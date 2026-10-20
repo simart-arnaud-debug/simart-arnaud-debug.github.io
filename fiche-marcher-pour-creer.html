@@ -62,92 +62,137 @@
   .imprimer{ display:inline-block; background:var(--corail); color:#fff; border:none; border-radius:20px; padding:8px 18px; font-family:inherit; font-weight:700; font-size:13px; cursor:pointer; margin-top:10px; }
   @media (max-width:640px){ .deux,.banque{ grid-template-columns:1fr; } .page{ padding:24px 16px 60px; } .hero{ padding:28px 22px; } }
   @media print{ .no-print{ display:none; } .page{ padding:0; } .feuille{ page-break-before:always; } h2{ break-after:avoid; } .etape,.rang,.bloc{ break-inside:avoid; } }
+  .cite{ border-left:4px solid var(--corail); padding:6px 0 6px 16px; margin:12px 0; font-size:14px; }
+  .cite em{ display:block; font-size:12px; color:#777; font-style:normal; margin-top:3px; }
+  .chiffre{ display:flex; gap:14px; align-items:center; margin:8px 0; }
+  .chiffre b{ font-size:24px; color:var(--corail); min-width:74px; text-align:center; }
+  .chiffre span{ font-size:13.5px; }
+  .src{ font-size:11.5px; color:#777; margin-top:6px; }
 </style>
 <script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <div class="page">
-
   <div class="hero">
     <span class="tag">Fiche · Créativité et innovation</span>
     <h1>Marcher pour créer</h1>
     <p>Les idées viennent en marchant. Encore faut-il avoir de quoi les noter.</p>
   </div>
 
-  <h2><span class="h2num">1</span>Ce que la marche fait à la tête</h2>
-  <div class="bloc bloc-gris">
-    <p>La marche est un déclencheur de créativité parmi d'autres. Dans la nature, sur un tapis, en déambulant dans un couloir, peu importe. Elle vide la tête, met les neurotransmetteurs en mouvement, et les réponses arrivent un peu toutes seules.</p>
-    <p>Elle ne fait pas tout, par contre. Elle nourrit surtout la pensée divergente, celle qui laisse monter les idées, avec un gain d'environ 60&nbsp;% dans les études. Elle n'améliore pas le raisonnement logique, ni la convergence. Pour trier et choisir, on se rassoit.</p>
+  <div class="bloc bloc-jaune">
+    <div class="bloc-title">💡 L'idée clé</div>
+    <p><strong>La marche ouvre, la chaise referme.</strong> Marcher aide à produire beaucoup d'idées, variées, originales. Pour trier, comparer et choisir, on revient s'asseoir. Une séance créative qui marche bien alterne les deux.</p>
   </div>
 
-  <h2><span class="h2num">2</span>Deux façons d'imaginer</h2>
+  <h2><span class="h2num">1</span>Ils le savaient déjà</h2>
+  <div class="cite">« Je ne puis méditer qu'en marchant ; sitôt que je m'arrête, je ne pense plus, et ma tête ne va qu'avec mes pieds. »<em>Jean-Jacques Rousseau, Les Confessions</em></div>
+  <div class="cite">« Seules les pensées qu'on a en marchant valent quelque chose. »<em>Friedrich Nietzsche, Crépuscule des idoles</em></div>
+  <p style="font-size:14px;">Pendant longtemps, c'était une intuition de philosophes. Depuis une dizaine d'années, les chercheurs l'ont mesurée.</p>
+
+  <h2><span class="h2num">2</span>Ce que disent les études</h2>
+  <div class="bloc bloc-gris">
+    <div class="bloc-title">Stanford, 2014 · marcher pendant qu'on cherche</div>
+    <p>Marily Oppezzo et Daniel Schwartz ont mené quatre expériences avec 176 personnes. La tâche : trouver le plus d'usages possibles à un objet banal, un pneu, un bouton (le test des usages alternatifs de Guilford).</p>
+    <div class="chiffre"><b>81&nbsp;%</b><span>des participants ont été plus créatifs en marchant qu'assis.</span></div>
+    <div class="chiffre"><b>+60&nbsp;%</b><span>d'idées en moyenne dans la première expérience.</span></div>
+    <ul>
+      <li><strong>Dedans ou dehors, ça marche.</strong> Un tapis de course face à un mur blanc suffit. C'est le mouvement qui compte, pas le décor. Dehors, les idées sont juste un peu plus originales.</li>
+      <li><strong>L'effet dure un peu.</strong> Ceux qui s'assoient après avoir marché restent plus créatifs que ceux qui sont restés assis tout du long.</li>
+      <li><strong>Mais ça n'aide pas à converger.</strong> Sur les problèmes à une seule bonne réponse, les marcheurs font même un peu moins bien.</li>
+    </ul>
+    <p class="src">Oppezzo et Schwartz (2014), <em>Journal of Experimental Psychology: Learning, Memory, and Cognition</em>.</p>
+  </div>
+  <div class="bloc bloc-gris">
+    <div class="bloc-title">Universités de l'Utah et du Kansas, 2012 · quatre jours dans la nature</div>
+    <p>56 randonneurs, sans téléphone ni écran. Après quatre jours de marche en pleine nature, ils réussissent environ 50&nbsp;% mieux un test de créativité qui consiste à trouver le lien entre trois mots. Ici, ce n'est plus seulement la marche : c'est la nature, et la coupure numérique.</p>
+    <p class="src">Atchley, Strayer et Atchley (2012), <em>PLOS ONE</em>.</p>
+  </div>
+  <div style="text-align:center;"><span class="postit">Pas besoin de forêt. Un couloir, un parking, un tour du pâté de maisons, ça compte.</span></div>
+
+  <h2><span class="h2num">3</span>Deux façons d'imaginer</h2>
   <div class="deux">
     <div class="bloc bloc-jaune">
       <div class="bloc-title">Reproductive · convergente</div>
-      <p>On s'appuie sur ce qu'on connaît. Je pense « vache », je vois la vache violette de la pub. Ce n'est pas créatif, elle existe déjà.</p>
-      <p>On respecte le cadre : logique, sélection des informations, déductions.</p>
+      <p>On va chercher ce qu'on connaît déjà. Je pense « vache », et je revois la vache violette de la pub. Pratique, mais pas créatif : elle existe déjà.</p>
+      <p>Utile pour raisonner, sélectionner, déduire. C'est le terrain de la chaise.</p>
     </div>
     <div class="bloc bloc-corail">
       <div class="bloc-title">Créative · divergente</div>
-      <p>On imagine une vache qui n'existe pas. On associe des idées qui n'ont rien à faire ensemble, on s'amuse.</p>
-      <p>Partir d'une image aide toujours. Et ça se réactive, comme un muscle.</p>
+      <p>On fabrique ce qui n'existe pas encore. Une vache qui… à vous de voir. On relie des choses qui n'ont rien à faire ensemble, et on s'amuse.</p>
+      <p>Ça se réveille et ça s'entretient, comme un muscle. C'est le terrain de la marche.</p>
     </div>
   </div>
-  <div style="text-align:center;"><span class="postit">Pour avoir des idées, il faut une bonne « base de données » : culture, curiosité, mémoire.</span></div>
-
-  <h2><span class="h2num">3</span>Les 8 critères de Guilford et Lowenfeld</h2>
-  <div class="banque">
-    <div class="carte-regle"><span class="cat">Sensibilité</span>Aux problèmes, aux nouveautés, à l'insolite, aux choses vécues</div>
-    <div class="carte-regle"><span class="cat">Réceptivité</span>Associer une foule d'idées à un objet qui sert de déclencheur</div>
-    <div class="carte-regle"><span class="cat">Mobilité</span>S'adapter aux situations nouvelles, réagir au changement</div>
-    <div class="carte-regle"><span class="cat">Originalité</span>Sortir des réponses attendues</div>
-    <div class="carte-regle"><span class="cat">Transformer</span>Changer, redéfinir, détourner la fonction d'un objet</div>
-    <div class="carte-regle"><span class="cat">Analyse</span>Abstraire, percevoir les différences</div>
-    <div class="carte-regle"><span class="cat">Synthèse</span>Rassembler plusieurs objets, ou des morceaux d'objets</div>
-    <div class="carte-regle"><span class="cat">Organisation</span>Mettre en harmonie pensées, sensibilité et perceptions</div>
-  </div>
-
-  <h2><span class="h2num">4</span>D'où vient une idée</h2>
   <div class="bloc bloc-gris">
-    <p>Une idée est une construction mentale. Elle s'appuie sur ce qu'on a en mémoire, et elle surgit souvent quand un sens est stimulé. Le hasard n'existe que dans ce déclencheur, le reste, c'est la mémoire qui le fournit.</p>
-    <p>Penser, c'est relier. Pour relier deux pensées éloignées, il faut parfois passer par des intermédiaires. Et la réalité est une perception propre à chacun : comprendre, c'est mettre en parallèle ce qu'on perçoit et ce qu'on a mémorisé.</p>
-    <p>Dernière chose, et pas la moindre : une idée qui arrive, il faut la fixer. Noter, et laisser venir la suivante. Si on se focalise dessus, on ne voit plus le reste. Le cerveau, lui, l'efface et passe à autre chose.</p>
+    <p>Pour relier deux idées éloignées, on passe parfois par des intermédiaires. Plus on a de matière en mémoire (culture, curiosité, expériences), plus il y a de ponts possibles. Le hasard existe, mais seulement comme déclencheur : un son, une image, une odeur. Le reste, c'est la mémoire qui le fournit.</p>
   </div>
-  <div style="text-align:center;"><span class="postit">On s'ennuie ? Tant mieux. C'est souvent là que ça démarre.</span></div>
 
-  <h2><span class="h2num">5</span>Ménager sa concentration</h2>
-  <div class="bloc bloc-jaune">
+  <h2><span class="h2num">4</span>Les 8 critères de la créativité</h2>
+  <p style="font-size:13.5px;margin-top:-4px;">Une grille issue des travaux de Viktor Lowenfeld, dans le prolongement de ceux de J. P. Guilford sur la pensée divergente. Pratique pour observer un groupe, ou se demander ce qu'on a envie de muscler.</p>
+  <div class="banque">
+    <div class="carte-regle"><span class="cat">Sensibilité</span>Repérer les problèmes, les nouveautés, ce qui cloche ou ce qui surprend</div>
+    <div class="carte-regle"><span class="cat">Fluidité</span>Associer beaucoup d'idées à un même point de départ</div>
+    <div class="carte-regle"><span class="cat">Mobilité</span>S'adapter vite à une situation nouvelle, changer d'angle</div>
+    <div class="carte-regle"><span class="cat">Originalité</span>Sortir des réponses attendues</div>
+    <div class="carte-regle"><span class="cat">Transformer</span>Redéfinir, détourner la fonction d'un objet</div>
+    <div class="carte-regle"><span class="cat">Analyse</span>Décomposer, abstraire, voir les différences</div>
+    <div class="carte-regle"><span class="cat">Synthèse</span>Assembler des objets, ou des morceaux d'objets, en un tout nouveau</div>
+    <div class="carte-regle"><span class="cat">Organisation</span>Mettre de la cohérence entre pensées, sensibilité et perceptions</div>
+  </div>
+
+  <h2><span class="h2num">5</span>Attraper l'idée au vol</h2>
+  <div class="bloc bloc-corail">
+    <p>Une idée qui passe, il faut la fixer tout de suite. Sinon le cerveau l'efface et passe à la suivante. Et si on s'accroche à elle, on ne voit plus le reste. Donc on note, et on laisse venir.</p>
     <ul>
-      <li>La concentration profonde consomme beaucoup d'énergie. Trois plages de 1h30 par jour, c'est un maximum.</li>
-      <li>Travailler par phases, avec la technique Pomodoro par exemple, en l'adaptant.</li>
-      <li>S'autoriser à n'être que sur un seul sujet, au moment où l'énergie est là.</li>
-      <li>Rester dans l'instant plutôt que dans l'instant d'après. De toute façon, 80&nbsp;% de ce qu'on prévoit ne se passe pas comme prévu.</li>
+      <li>En marchant, écrire est pénible. Parler est plus simple : dans l'étude de Stanford, les participants disaient leurs idées à voix haute.</li>
+      <li>Marcher à deux, c'est l'idéal : un qui parle, l'autre qui note. On échange les rôles à mi-parcours.</li>
+      <li>Seul, le mémo vocal du téléphone fait très bien l'affaire. Et après, téléphone dans la poche.</li>
     </ul>
   </div>
 
   <h2><span class="h2num">6</span>En pratique : une marche dans un atelier</h2>
-  <div class="etape"><div class="etape-num">1</div><div class="etape-content"><div class="titre">Cadrer la séquence</div><p>La marche fait partie du temps de travail. Elle a une durée, un objectif clair : produire des idées en sous-groupes, sur une question précise.</p></div></div>
-  <div class="etape"><div class="etape-num">2</div><div class="etape-content"><div class="titre">« Visualiser » la question</div><p>Une image, un concept, un objet pour démarrer. Puis laisser venir les idées. L'obstacle principal, c'est l'autocensure, on le dit avant de partir.</p></div></div>
-  <div class="etape"><div class="etape-num">3</div><div class="etape-content"><div class="titre">Version randonnée gourmande</div><p>Des étapes sur le parcours, et à chaque idée, une petite récompense. Les sous-groupes se forment d'eux-mêmes.</p></div></div>
-  <div class="etape"><div class="etape-num">4</div><div class="etape-content"><div class="titre">Converger, au retour</div><p>On rassemble les idées, on les trie, on les hiérarchise, on choisit. Assis, cette fois.</p></div></div>
+  <div class="etape"><div class="etape-num">1</div><div class="etape-content"><div class="titre">Poser une question précise (avant de partir)</div><p>Une seule question, écrite et donnée à chaque binôme ou trio. « Comment pourrait-on… ? » marche bien. Une image ou un objet peut servir de point de départ. On rappelle la règle : pas d'autocensure, toutes les idées sont bonnes à noter.</p></div></div>
+  <div class="etape"><div class="etape-num">2</div><div class="etape-content"><div class="titre">Marcher en petit groupe (15 à 30 min)</div><p>Deux ou trois personnes, pas plus, sinon on ne s'entend plus. Une durée et une heure de retour annoncées. Les groupes peuvent se former librement.</p></div></div>
+  <div class="etape"><div class="etape-num">3</div><div class="etape-content"><div class="titre">Variante : la randonnée gourmande</div><p>Des étapes sur le parcours. À chaque étape, on dépose une idée, et on reçoit une petite récompense. Parfait pour un groupe un peu fatigué en milieu d'après-midi.</p></div></div>
+  <div class="etape"><div class="etape-num">4</div><div class="etape-content"><div class="titre">Converger au retour, assis</div><p>On profite de l'élan résiduel : on rassemble toutes les idées au mur, puis on trie, on regroupe, on hiérarchise, on choisit. Le juge reprend sa place, mais seulement maintenant.</p></div></div>
 
-  <h2><span class="h2num">7</span>Et après : la résolution créative de problèmes</h2>
-  <div class="bloc bloc-gris">
-    <p>La méthode d'Alex Osborn et Sidney Parnes met la créativité au cœur du processus, pas dans une seule étape. Elle mobilise toutes les parties prenantes.</p>
+  <div class="bloc bloc-jaune">
+    <div class="bloc-title">Points de vigilance</div>
     <ul>
-      <li><strong>Clarifier l'objectif.</strong> Quel est le besoin ? Quelles informations a-t-on ? Qu'est-ce qui doit changer ?</li>
-      <li><strong>Trouver des solutions.</strong> Le plus d'idées possible, puis sélectionner les idées fortes et en faire des solutions acceptables.</li>
-      <li><strong>Passer à l'action.</strong> Un plan d'action, et son suivi.</li>
+      <li>Prévenir à l'avance : chaussures, manteau, parapluie. Une marche improvisée sous la pluie en escarpins tue l'élan.</li>
+      <li>Prévoir une alternative pour qui ne peut pas ou ne veut pas marcher : même consigne, en déambulant dans la salle, ou en duo près d'une fenêtre. Personne ne doit se sentir mis de côté.</li>
+      <li>Un parcours simple et sûr, qu'on n'a pas besoin de chercher. On doit pouvoir penser à autre chose qu'au chemin.</li>
+    </ul>
+  </div>
+
+  <h2><span class="h2num">7</span>Ménager sa concentration</h2>
+  <div class="bloc bloc-gris">
+    <p>La créativité a besoin d'énergie, et la concentration profonde en consomme beaucoup. Mes notes donnent un repère : pas plus de trois plages d'environ 1h30 par jour. Ce n'est pas une règle scientifique, juste un rappel qu'on travaille mieux par phases.</p>
+    <ul>
+      <li><strong>La technique Pomodoro.</strong> Imaginée par Francesco Cirillo à la fin des années 1980 : 25 minutes sur une seule tâche, 5 minutes de pause, et une pause plus longue toutes les quatre séquences. À adapter à son rythme.</li>
+      <li><strong>Un seul sujet à la fois.</strong> S'autoriser à ne penser qu'à ça, au moment où l'énergie est là.</li>
+      <li><strong>Une pause marche entre deux séquences</strong> fait d'une pierre deux coups.</li>
+    </ul>
+  </div>
+  <div style="text-align:center;"><span class="postit">On s'ennuie ? Tant mieux. C'est souvent là que ça démarre.</span></div>
+
+  <h2><span class="h2num">8</span>Et après : de l'idée à l'action</h2>
+  <div class="bloc bloc-gris">
+    <p>La résolution créative de problèmes, d'Alex Osborn et Sidney Parnes, met la créativité au cœur de tout le processus, et pas seulement dans le moment « idées ».</p>
+    <ul>
+      <li><strong>Clarifier.</strong> Quel est le besoin ? Que sait-on déjà ? Qu'est-ce qui doit changer ?</li>
+      <li><strong>Imaginer.</strong> Le plus d'idées possible (la marche est faite pour ça), puis sélectionner les plus fortes.</li>
+      <li><strong>Développer.</strong> Transformer ces idées en solutions acceptables et enrichies.</li>
+      <li><strong>Agir.</strong> Un plan d'action, et quelqu'un pour le suivre.</li>
     </ul>
   </div>
 
   <div class="bloc" style="background:var(--bleu);color:#fff;text-align:center;margin-top:30px;">
-    <p style="font-size:16px;font-weight:700;margin:0;">Innover, c'est transformer une idée en valeur.</p>
-    <p style="font-size:12.5px;opacity:.85;margin:6px 0 0;">L'OCDE distingue quatre formes d'innovation : de produit, de procédé, d'organisation et de commercialisation.</p>
+    <p style="font-size:16px;font-weight:700;margin:0;">Être créatif, c'est avoir des idées. Innover, c'est en faire quelque chose.</p>
+    <p style="font-size:12.5px;opacity:.85;margin:6px 0 0;">L'OCDE parle d'innovation quand un produit, un procédé, une organisation ou une façon de faire connaître son offre, nouveaux ou nettement améliorés, sont réellement mis en œuvre.</p>
   </div>
 
   <div class="no-print" style="text-align:center;"><button class="imprimer" onclick="window.print()">Imprimer la fiche</button></div>
-  <p class="credit">D'après les notes d'Arnaud Simart sur la créativité, l'innovation et la marche. Sur le lien marche et pensée divergente : Oppezzo et Schwartz (2014), Université de Stanford. Manuel d'Oslo, OCDE (2005).</p>
+  <p class="credit">Sources : Oppezzo et Schwartz (2014), « Give Your Ideas Some Legs », <em>Journal of Experimental Psychology</em>, APA · Atchley, Strayer et Atchley (2012), « Creativity in the Wild », <em>PLOS ONE</em> · Lowenfeld et Beittel (1959), critères de la créativité · Osborn (1953) et Parnes, résolution créative de problèmes · Cirillo, technique Pomodoro · OCDE, Manuel d'Oslo (2005). Citations : Rousseau, <em>Les Confessions</em> ; Nietzsche, <em>Crépuscule des idoles</em>.</p>
 
   <footer>✎ arnaud-simart.fr</footer>
 </div>
