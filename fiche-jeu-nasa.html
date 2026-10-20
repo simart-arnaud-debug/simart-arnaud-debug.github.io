@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiche animateur · Le jeu de la NASA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; --vert:#2F6E5C; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero-img{ display:block; width:100%; border-radius:20px; margin:-14px 0 30px; aspect-ratio:944/528; object-fit:cover; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:38px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .bloc{ border-radius:14px; padding:18px 22px; margin-bottom:14px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-corail{ background:#FFF0EE; border:1px solid var(--corail); }
+  .bloc-title{ font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:8px; }
+  .bloc p{ margin:0 0 8px 0; font-size:14px; }
+  .bloc p:last-child{ margin-bottom:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:5px; font-size:14px; }
+
+  .etape{ display:flex; gap:16px; margin-bottom:18px; align-items:flex-start; }
+  .etape-num{ background:var(--bleu); color:#fff; width:32px;height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .etape-content{ flex:1; }
+  .etape-content .titre{ font-weight:700; color:var(--bleu); font-size:14.5px; margin-bottom:3px; }
+  .etape-content p{ margin:0; font-size:13.5px; color:#3A4552; }
+
+  .banque{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px; }
+  .carte-regle{ background:#fff; border:2px solid var(--gris); border-radius:10px; padding:10px 14px; font-size:12.5px; }
+  .carte-regle .cat{ font-family:'Patrick Hand',cursive; font-size:11.5px; color:var(--corail); display:block; margin-bottom:2px; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+</style>
+<style>
+  table.nasa{ width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+  table.nasa th{ background:var(--bleu); color:#fff; font-weight:500; padding:8px 6px; font-size:12px; text-align:center; }
+  table.nasa th:first-child{ text-align:left; }
+  table.nasa td{ border:1px solid #D9DDE2; padding:8px 6px; }
+  table.nasa td.c{ width:13%; }
+  table.nasa tr.tot td{ font-weight:700; background:var(--gris); }
+  .rang{ display:grid; grid-template-columns:38px 1fr; gap:4px 12px; align-items:start; padding:9px 0; border-bottom:1px dashed #D9DDE2; font-size:13.5px; }
+  .rang b{ background:var(--corail); color:#fff; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+  .rang span{ color:#3A4552; }
+  .rang strong{ color:var(--bleu); }
+  .deux{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .credit{ font-size:12px; color:#777; text-align:center; margin-top:30px; }
+  .imprimer{ display:inline-block; background:var(--corail); color:#fff; border:none; border-radius:20px; padding:8px 18px; font-family:inherit; font-weight:700; font-size:13px; cursor:pointer; margin-top:10px; }
+  @media (max-width:640px){ .deux,.banque{ grid-template-columns:1fr; } .page{ padding:24px 16px 60px; } .hero{ padding:28px 22px; } }
+  @media print{ .no-print{ display:none; } .page{ padding:0; } .feuille{ page-break-before:always; } h2{ break-after:avoid; } .etape,.rang,.bloc{ break-inside:avoid; } }
+</style>
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="tag">Fiche animateur · Décider en groupe</span>
+    <h1>Le jeu de la NASA</h1>
+    <p>Seul, on se trompe. Ensemble, on se trompe moins… si on s'écoute.</p>
+  </div>
+
+  <h2><span class="h2num">1</span>Intention</h2>
+  <div class="bloc bloc-gris">
+    <p>Faire vivre au groupe la différence entre décider seul et décider ensemble. On compare un classement individuel, un classement collectif et celui des experts de la NASA. Presque à chaque fois, le groupe fait mieux que la moyenne de ses membres. Et il arrive qu'une personne sans aucune compétence spatiale batte tout le monde, ce qui ouvre une belle discussion sur les voix qu'on n'a pas écoutées.</p>
+    <p>Côté créativité, on voit vite qui détourne un objet de sa fonction (le parachute qui devient un abri, le canot qui devient un moteur).</p>
+  </div>
+
+  <div class="deux">
+    <div class="bloc bloc-jaune">
+      <div class="bloc-title">Pour qui, combien de temps</div>
+      <ul>
+        <li>Sous-groupes de 5 à 7 personnes</li>
+        <li>1h30 à 2h30 selon la longueur du débrief</li>
+        <li>Un ou deux observateurs par sous-groupe, si le nombre le permet</li>
+      </ul>
+    </div>
+    <div class="bloc bloc-jaune">
+      <div class="bloc-title">Matériel</div>
+      <ul>
+        <li>La feuille de décision (page suivante), une par personne</li>
+        <li>Le classement NASA, gardé secret jusqu'à la phase 3</li>
+        <li>Un paperboard pour comparer les scores</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2><span class="h2num">2</span>Le scénario, à lire au groupe</h2>
+  <div class="bloc bloc-corail">
+    <p>« Vous faites partie de l'équipage d'un vaisseau spatial qui devait rejoindre une fusée mère sur la face éclairée de la Lune. Après une avarie, vous avez dû alunir à environ 320 km du point de rendez-vous. Presque tout l'équipement est détruit, sauf les 15 objets de la liste. Votre survie dépend de votre capacité à rejoindre la fusée mère. Classez ces objets du plus utile (1) au moins utile (15). »</p>
+  </div>
+
+  <h2><span class="h2num">3</span>Déroulé, pas à pas</h2>
+  <div class="etape"><div class="etape-num">1</div><div class="etape-content"><div class="titre">Le classement individuel (10 min)</div><p>Chacun remplit la colonne « Mon classement », en silence. Aucun échange, même pas un regard appuyé vers le voisin.</p></div></div>
+  <div class="etape"><div class="etape-num">2</div><div class="etape-content"><div class="titre">Le classement collectif (45 à 60 min)</div><p>Les sous-groupes se réunissent et doivent produire un seul classement. Je peux varier les consignes d'un groupe à l'autre : l'un décide à la majorité, l'autre au consensus, un troisième sans consigne du tout. Je peux aussi donner à un seul groupe les règles du consensus ci-dessous, et voir ce que ça change.</p></div></div>
+  <div class="etape"><div class="etape-num">3</div><div class="etape-content"><div class="titre">La comparaison (15 min)</div><p>Je dévoile le classement NASA. Chacun calcule ses points d'écart, objet par objet : la différence entre son rang et celui de la NASA, sans tenir compte du signe. Même chose pour le classement du groupe. Plus le total est bas, mieux c'est. Au paperboard, je note pour chaque groupe : le meilleur score individuel, la moyenne des scores individuels, le score collectif.</p></div></div>
+  <div class="etape"><div class="etape-num">4</div><div class="etape-content"><div class="titre">Le débrief (20 à 40 min)</div><p>J'explique les raisons de la NASA, puis on parle de comment le groupe a fonctionné. C'est là que tout se joue, ne le sacrifiez pas.</p></div></div>
+
+  <h2><span class="h2num">4</span>Les règles du consensus</h2>
+  <div class="banque">
+    <div class="carte-regle"><span class="cat">Écouter</span>Présenter son point de vue clairement, puis écouter les réactions et les reformuler avant d'insister</div>
+    <div class="carte-regle"><span class="cat">Chercher</span>En cas d'impasse, chercher la solution la plus acceptable pour tous, pas celle de la majorité</div>
+    <div class="carte-regle"><span class="cat">Se méfier</span>Se méfier des accords trop rapides. Un désaccord caché ne disparaît pas, il attend</div>
+    <div class="carte-regle"><span class="cat">Éviter</span>Pas de vote, pas de tirage au sort, pas de « je te cède celui-là si tu me laisses l'autre »</div>
+    <div class="carte-regle"><span class="cat">Accueillir</span>Les divergences sont normales. Elles apportent de l'information, pas seulement du conflit</div>
+    <div class="carte-regle"><span class="cat">Inclure</span>Veiller à ce que chacun participe vraiment à la décision</div>
+  </div>
+
+  <h2><span class="h2num">5</span>Questions pour le débrief</h2>
+  <div class="bloc bloc-gris">
+    <ul>
+      <li>Le groupe s'est-il donné une méthode avant de classer (vital, utile, inutile…) ?</li>
+      <li>Chacun a-t-il pu s'exprimer ? Qui a parlé le plus, qui le moins ?</li>
+      <li>A-t-on écouté les idées des autres, ou défendu sa propre liste ?</li>
+      <li>Y a-t-il eu un leader, des alliances, des conflits ?</li>
+      <li>Quelqu'un avait-il un meilleur score que le groupe ? Le groupe l'a-t-il entendu ?</li>
+      <li>A-t-on détourné des objets de leur usage habituel ? Qui a eu ces idées ?</li>
+    </ul>
+  </div>
+  <div style="text-align:center;"><span class="postit">Le score n'est qu'un prétexte. Le vrai sujet, c'est la façon de décider.</span></div>
+
+  <h2><span class="h2num">6</span>Le classement NASA et ses raisons</h2>
+  <div class="bloc" style="padding:6px 22px;border:2px solid var(--gris);"><div class="rang"><b>1</b><div><strong>Deux réservoirs de 50 kg d'oxygène</strong><br><span>Le plus vital. Il n'y a pas d'air sur la Lune.</span></div></div><div class="rang"><b>2</b><div><strong>25 litres d'eau</strong><br><span>Pour compenser les pertes en eau sous la chaleur de la face éclairée.</span></div></div><div class="rang"><b>3</b><div><strong>Une carte céleste des constellations lunaires</strong><br><span>Le seul vrai moyen de s'orienter vers le point de rendez-vous.</span></div></div><div class="rang"><b>4</b><div><strong>Des aliments concentrés</strong><br><span>Un moyen efficace de tenir la distance, de l'énergie sous un petit volume.</span></div></div><div class="rang"><b>5</b><div><strong>Un émetteur-récepteur à énergie solaire</strong><br><span>Pour joindre la fusée mère, mais sa portée est courte : il faut être en vue.</span></div></div><div class="rang"><b>6</b><div><strong>50 mètres de corde en nylon</strong><br><span>Pour s'encorder, escalader une paroi, tirer un blessé.</span></div></div><div class="rang"><b>7</b><div><strong>Une trousse médicale et des seringues</strong><br><span>Pour soigner, et les combinaisons ont des ouvertures prévues pour les injections.</span></div></div><div class="rang"><b>8</b><div><strong>Un parachute en soie</strong><br><span>Un abri contre le rayonnement solaire, ou un traîneau pour porter le matériel.</span></div></div><div class="rang"><b>9</b><div><strong>Un canot de sauvetage auto-gonflable</strong><br><span>Un abri possible, et la cartouche de gaz peut servir à se propulser.</span></div></div><div class="rang"><b>10</b><div><strong>Des signaux lumineux</strong><br><span>Pour signaler sa position quand la fusée mère sera en vue.</span></div></div><div class="rang"><b>11</b><div><strong>Deux pistolets calibre 45</strong><br><span>Le recul peut servir de petite propulsion. C'est à peu près tout.</span></div></div><div class="rang"><b>12</b><div><strong>Une caisse de lait en poudre</strong><br><span>De la nourriture, oui, mais il faut de l'eau pour la préparer.</span></div></div><div class="rang"><b>13</b><div><strong>Un appareil de chauffage à énergie solaire</strong><br><span>Inutile sur la face éclairée, il y fait déjà très chaud.</span></div></div><div class="rang"><b>14</b><div><strong>Un compas magnétique</strong><br><span>Il ne sert à rien : la Lune n'a pas de champ magnétique utilisable.</span></div></div><div class="rang"><b>15</b><div><strong>Une boîte d'allumettes</strong><br><span>Aucune utilité : sans oxygène, rien ne brûle.</span></div></div></div>
+
+  <div class="feuille">
+    <h2><span class="h2num">✎</span>Feuille de décision</h2>
+    <p style="font-size:13.5px;margin:0 0 6px;">Classez les 15 objets de 1 (le plus important) à 15 (le moins utile).</p>
+    <table class="nasa">
+      <tr><th>Objet</th><th>Mon classement</th><th>Écart</th><th>Classement du groupe</th><th>Écart</th><th>NASA</th></tr>
+      <tr><td>Une boîte d'allumettes</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Des aliments concentrés</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>50 mètres de corde en nylon</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Un parachute en soie</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Un appareil de chauffage à énergie solaire</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Deux pistolets calibre 45</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Une caisse de lait en poudre</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Deux réservoirs de 50 kg d'oxygène</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Une carte céleste des constellations lunaires</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Un canot de sauvetage auto-gonflable</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Un compas magnétique</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>25 litres d'eau</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Une trousse médicale et des seringues</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Des signaux lumineux</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr><tr><td>Un émetteur-récepteur à énergie solaire</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+      <tr class="tot"><td>Total des écarts</td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td><td class="c"></td></tr>
+    </table>
+    <div class="no-print" style="text-align:center;"><button class="imprimer" onclick="window.print()">Imprimer la fiche</button></div>
+  </div>
+
+  <p class="credit">Exercice classique de dynamique de groupe, créé par Jay Hall dans les années 1970 avec un classement établi par des experts de la NASA. Présentation inspirée de l'article de Muriel Astier, <em>Travaux &amp; Innovations</em> n°171, octobre 2010.</p>
+
+  <footer>✎ arnaud-simart.fr</footer>
+</div>
+</body>
+</html>

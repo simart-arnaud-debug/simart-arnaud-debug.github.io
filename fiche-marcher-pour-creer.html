@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fiche · Marcher pour créer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{ --bleu:#1C3F60; --corail:#FF6F61; --jaune:#F7D774; --gris:#F2F2F2; --noir:#1A1A1A; --vert:#2F6E5C; }
+  *{box-sizing:border-box;}
+  body{ margin:0; font-family:'Poppins',sans-serif; color:var(--noir); background:#fff; line-height:1.6; }
+  .page{ max-width:920px; margin:0 auto; padding:40px 30px 80px; }
+
+  .hero{ background:var(--bleu); color:#fff; border-radius:24px; padding:38px 40px; margin-bottom:34px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; width:160px;height:160px; background:var(--corail); border-radius:50%; opacity:.25; top:-50px; right:-50px; }
+  .tag{ display:inline-block; background:var(--corail); color:#fff; font-weight:700; font-size:13px; padding:6px 16px; border-radius:20px; margin-bottom:14px; }
+  .hero h1{ font-size:25px; margin:0 0 6px 0; }
+  .hero-img{ display:block; width:100%; border-radius:20px; margin:-14px 0 30px; aspect-ratio:944/528; object-fit:cover; }
+  .hero p{ font-family:'Patrick Hand',cursive; font-size:16px; color:var(--jaune); margin:0; }
+
+  h2{ font-size:20px; color:var(--bleu); margin:38px 0 14px 0; display:flex; align-items:center; gap:10px; }
+  .h2num{ background:var(--corail); color:#fff; width:30px;height:30px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:14px; flex-shrink:0; }
+
+  .bloc{ border-radius:14px; padding:18px 22px; margin-bottom:14px; }
+  .bloc-gris{ background:var(--gris); }
+  .bloc-jaune{ background:#FDF3DC; }
+  .bloc-corail{ background:#FFF0EE; border:1px solid var(--corail); }
+  .bloc-title{ font-weight:700; font-size:12px; text-transform:uppercase; letter-spacing:.4px; color:var(--bleu); margin-bottom:8px; }
+  .bloc p{ margin:0 0 8px 0; font-size:14px; }
+  .bloc p:last-child{ margin-bottom:0; }
+  .bloc ul{ margin:0; padding-left:18px; }
+  .bloc li{ margin-bottom:5px; font-size:14px; }
+
+  .etape{ display:flex; gap:16px; margin-bottom:18px; align-items:flex-start; }
+  .etape-num{ background:var(--bleu); color:#fff; width:32px;height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+  .etape-content{ flex:1; }
+  .etape-content .titre{ font-weight:700; color:var(--bleu); font-size:14.5px; margin-bottom:3px; }
+  .etape-content p{ margin:0; font-size:13.5px; color:#3A4552; }
+
+  .banque{ display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; margin-top:10px; }
+  .carte-regle{ background:#fff; border:2px solid var(--gris); border-radius:10px; padding:10px 14px; font-size:12.5px; }
+  .carte-regle .cat{ font-family:'Patrick Hand',cursive; font-size:11.5px; color:var(--corail); display:block; margin-bottom:2px; }
+
+  .postit{ background:var(--jaune); padding:12px 16px; border-radius:10px; font-family:'Patrick Hand',cursive; font-size:15px; display:inline-block; transform:rotate(-1deg); box-shadow:2px 3px 6px rgba(0,0,0,.08); margin:16px 0; }
+
+  footer{ text-align:center; padding:36px 20px 10px; font-family:'Patrick Hand',cursive; font-size:17px; color:var(--bleu); }
+</style>
+<style>
+  table.nasa{ width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+  table.nasa th{ background:var(--bleu); color:#fff; font-weight:500; padding:8px 6px; font-size:12px; text-align:center; }
+  table.nasa th:first-child{ text-align:left; }
+  table.nasa td{ border:1px solid #D9DDE2; padding:8px 6px; }
+  table.nasa td.c{ width:13%; }
+  table.nasa tr.tot td{ font-weight:700; background:var(--gris); }
+  .rang{ display:grid; grid-template-columns:38px 1fr; gap:4px 12px; align-items:start; padding:9px 0; border-bottom:1px dashed #D9DDE2; font-size:13.5px; }
+  .rang b{ background:var(--corail); color:#fff; border-radius:50%; width:30px; height:30px; display:flex; align-items:center; justify-content:center; font-size:13px; }
+  .rang span{ color:#3A4552; }
+  .rang strong{ color:var(--bleu); }
+  .deux{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .credit{ font-size:12px; color:#777; text-align:center; margin-top:30px; }
+  .imprimer{ display:inline-block; background:var(--corail); color:#fff; border:none; border-radius:20px; padding:8px 18px; font-family:inherit; font-weight:700; font-size:13px; cursor:pointer; margin-top:10px; }
+  @media (max-width:640px){ .deux,.banque{ grid-template-columns:1fr; } .page{ padding:24px 16px 60px; } .hero{ padding:28px 22px; } }
+  @media print{ .no-print{ display:none; } .page{ padding:0; } .feuille{ page-break-before:always; } h2{ break-after:avoid; } .etape,.rang,.bloc{ break-inside:avoid; } }
+</style>
+<script data-goatcounter="https://arnaudsimart.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="tag">Fiche · Créativité et innovation</span>
+    <h1>Marcher pour créer</h1>
+    <p>Les idées viennent en marchant. Encore faut-il avoir de quoi les noter.</p>
+  </div>
+
+  <h2><span class="h2num">1</span>Ce que la marche fait à la tête</h2>
+  <div class="bloc bloc-gris">
+    <p>La marche est un déclencheur de créativité parmi d'autres. Dans la nature, sur un tapis, en déambulant dans un couloir, peu importe. Elle vide la tête, met les neurotransmetteurs en mouvement, et les réponses arrivent un peu toutes seules.</p>
+    <p>Elle ne fait pas tout, par contre. Elle nourrit surtout la pensée divergente, celle qui laisse monter les idées, avec un gain d'environ 60&nbsp;% dans les études. Elle n'améliore pas le raisonnement logique, ni la convergence. Pour trier et choisir, on se rassoit.</p>
+  </div>
+
+  <h2><span class="h2num">2</span>Deux façons d'imaginer</h2>
+  <div class="deux">
+    <div class="bloc bloc-jaune">
+      <div class="bloc-title">Reproductive · convergente</div>
+      <p>On s'appuie sur ce qu'on connaît. Je pense « vache », je vois la vache violette de la pub. Ce n'est pas créatif, elle existe déjà.</p>
+      <p>On respecte le cadre : logique, sélection des informations, déductions.</p>
+    </div>
+    <div class="bloc bloc-corail">
+      <div class="bloc-title">Créative · divergente</div>
+      <p>On imagine une vache qui n'existe pas. On associe des idées qui n'ont rien à faire ensemble, on s'amuse.</p>
+      <p>Partir d'une image aide toujours. Et ça se réactive, comme un muscle.</p>
+    </div>
+  </div>
+  <div style="text-align:center;"><span class="postit">Pour avoir des idées, il faut une bonne « base de données » : culture, curiosité, mémoire.</span></div>
+
+  <h2><span class="h2num">3</span>Les 8 critères de Guilford et Lowenfeld</h2>
+  <div class="banque">
+    <div class="carte-regle"><span class="cat">Sensibilité</span>Aux problèmes, aux nouveautés, à l'insolite, aux choses vécues</div>
+    <div class="carte-regle"><span class="cat">Réceptivité</span>Associer une foule d'idées à un objet qui sert de déclencheur</div>
+    <div class="carte-regle"><span class="cat">Mobilité</span>S'adapter aux situations nouvelles, réagir au changement</div>
+    <div class="carte-regle"><span class="cat">Originalité</span>Sortir des réponses attendues</div>
+    <div class="carte-regle"><span class="cat">Transformer</span>Changer, redéfinir, détourner la fonction d'un objet</div>
+    <div class="carte-regle"><span class="cat">Analyse</span>Abstraire, percevoir les différences</div>
+    <div class="carte-regle"><span class="cat">Synthèse</span>Rassembler plusieurs objets, ou des morceaux d'objets</div>
+    <div class="carte-regle"><span class="cat">Organisation</span>Mettre en harmonie pensées, sensibilité et perceptions</div>
+  </div>
+
+  <h2><span class="h2num">4</span>D'où vient une idée</h2>
+  <div class="bloc bloc-gris">
+    <p>Une idée est une construction mentale. Elle s'appuie sur ce qu'on a en mémoire, et elle surgit souvent quand un sens est stimulé. Le hasard n'existe que dans ce déclencheur, le reste, c'est la mémoire qui le fournit.</p>
+    <p>Penser, c'est relier. Pour relier deux pensées éloignées, il faut parfois passer par des intermédiaires. Et la réalité est une perception propre à chacun : comprendre, c'est mettre en parallèle ce qu'on perçoit et ce qu'on a mémorisé.</p>
+    <p>Dernière chose, et pas la moindre : une idée qui arrive, il faut la fixer. Noter, et laisser venir la suivante. Si on se focalise dessus, on ne voit plus le reste. Le cerveau, lui, l'efface et passe à autre chose.</p>
+  </div>
+  <div style="text-align:center;"><span class="postit">On s'ennuie ? Tant mieux. C'est souvent là que ça démarre.</span></div>
+
+  <h2><span class="h2num">5</span>Ménager sa concentration</h2>
+  <div class="bloc bloc-jaune">
+    <ul>
+      <li>La concentration profonde consomme beaucoup d'énergie. Trois plages de 1h30 par jour, c'est un maximum.</li>
+      <li>Travailler par phases, avec la technique Pomodoro par exemple, en l'adaptant.</li>
+      <li>S'autoriser à n'être que sur un seul sujet, au moment où l'énergie est là.</li>
+      <li>Rester dans l'instant plutôt que dans l'instant d'après. De toute façon, 80&nbsp;% de ce qu'on prévoit ne se passe pas comme prévu.</li>
+    </ul>
+  </div>
+
+  <h2><span class="h2num">6</span>En pratique : une marche dans un atelier</h2>
+  <div class="etape"><div class="etape-num">1</div><div class="etape-content"><div class="titre">Cadrer la séquence</div><p>La marche fait partie du temps de travail. Elle a une durée, un objectif clair : produire des idées en sous-groupes, sur une question précise.</p></div></div>
+  <div class="etape"><div class="etape-num">2</div><div class="etape-content"><div class="titre">« Visualiser » la question</div><p>Une image, un concept, un objet pour démarrer. Puis laisser venir les idées. L'obstacle principal, c'est l'autocensure, on le dit avant de partir.</p></div></div>
+  <div class="etape"><div class="etape-num">3</div><div class="etape-content"><div class="titre">Version randonnée gourmande</div><p>Des étapes sur le parcours, et à chaque idée, une petite récompense. Les sous-groupes se forment d'eux-mêmes.</p></div></div>
+  <div class="etape"><div class="etape-num">4</div><div class="etape-content"><div class="titre">Converger, au retour</div><p>On rassemble les idées, on les trie, on les hiérarchise, on choisit. Assis, cette fois.</p></div></div>
+
+  <h2><span class="h2num">7</span>Et après : la résolution créative de problèmes</h2>
+  <div class="bloc bloc-gris">
+    <p>La méthode d'Alex Osborn et Sidney Parnes met la créativité au cœur du processus, pas dans une seule étape. Elle mobilise toutes les parties prenantes.</p>
+    <ul>
+      <li><strong>Clarifier l'objectif.</strong> Quel est le besoin ? Quelles informations a-t-on ? Qu'est-ce qui doit changer ?</li>
+      <li><strong>Trouver des solutions.</strong> Le plus d'idées possible, puis sélectionner les idées fortes et en faire des solutions acceptables.</li>
+      <li><strong>Passer à l'action.</strong> Un plan d'action, et son suivi.</li>
+    </ul>
+  </div>
+
+  <div class="bloc" style="background:var(--bleu);color:#fff;text-align:center;margin-top:30px;">
+    <p style="font-size:16px;font-weight:700;margin:0;">Innover, c'est transformer une idée en valeur.</p>
+    <p style="font-size:12.5px;opacity:.85;margin:6px 0 0;">L'OCDE distingue quatre formes d'innovation : de produit, de procédé, d'organisation et de commercialisation.</p>
+  </div>
+
+  <div class="no-print" style="text-align:center;"><button class="imprimer" onclick="window.print()">Imprimer la fiche</button></div>
+  <p class="credit">D'après les notes d'Arnaud Simart sur la créativité, l'innovation et la marche. Sur le lien marche et pensée divergente : Oppezzo et Schwartz (2014), Université de Stanford. Manuel d'Oslo, OCDE (2005).</p>
+
+  <footer>✎ arnaud-simart.fr</footer>
+</div>
+</body>
+</html>
